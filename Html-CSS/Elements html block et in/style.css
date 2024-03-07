@@ -1,0 +1,18 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+p{
+    background-color: blue;
+    border: 3px solid yellowgreen;
+    display: inline-block;
+    width: 200px;
+}
+
+a{
+    background-color: red;
+    display: block;
+    width: 40vw;
+}
