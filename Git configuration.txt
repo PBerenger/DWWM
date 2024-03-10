@@ -1,0 +1,9 @@
+* Lien avec github :
+
+- git config --global user.name "John Doe"
+- git config --global user.email johndoe@example.com
+
+		Vérifications : git config --global --list
+
+
+*
