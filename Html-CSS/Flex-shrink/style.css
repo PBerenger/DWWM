@@ -1,0 +1,30 @@
+#container{
+    /* background-color: cadetblue;
+    height: 500px;
+    width: 700px; */
+    border: 2px solid sienna;
+    /* margin: 10% auto; */
+    display: flex;
+}
+
+#flex-item1{
+    background-color: red;
+    width: 400px;
+    height: 500px;
+    flex-shrink: 1;
+}
+
+#flex-item2{
+    background-color: blue;
+    width: 400px;
+    height: 300px;
+    flex-shrink: 2;
+}
+
+#flex-item3{
+    background-color: yellow;
+    width: 400px;
+    height: 700px;
+    flex-shrink: 3;
+}
+
