@@ -25,15 +25,10 @@ body{
     justify-content: space-evenly;
     height: 200px;
 }
-.item1{
+.item1, .item2{
     width: 440px;
     background-color: greenyellow;
     margin-right: 10px;
-}
-.item2{
-    width: 440px;
-    background-color: greenyellow;
-    margin-left: 10px;
 }
 
 

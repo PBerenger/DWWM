@@ -15,7 +15,7 @@ body{
 .item1{
     background-color: pink;
     text-align: center;
-    height: 200px;
+    flex-grow: 1;
     display: flex;
     margin-bottom: 1%;
 }
@@ -36,7 +36,7 @@ body{
 .item3{
     background-color: green;
     text-align: center;
-    height: 250px;
+    /* height: 250px; */
     display: flex;
     flex-grow: 2;
 }
@@ -45,7 +45,7 @@ body{
 .item4{
     background-color: yellow;
     text-align: center;
-    height: 200px;
+    flex-grow: 1;
     display: flex;
     margin-bottom: 1%;
 }

@@ -1,0 +1,29 @@
+.grid-container{
+    display: grid;
+
+    /* Diviser la grid */
+
+
+    /* grid-template-columns: 25% auto 200px;
+    grid-template-rows: 200px 150px 80px; */
+
+    /* grid-template-columns: 1fr 2fr 3fr 1fr; */
+    /* un septième - 2/7 - 3/7 - 1/7 */
+
+    /* grid-template-columns: repeat(8,1fr); */
+
+
+
+
+    /* LE GAP */
+
+    grid-template-columns: 1fr repeat(2,100px);
+    grid-template-rows: repeat(2,150px) 200px;
+    column-gap: 20px;
+    row-gap: 50px;
+}
+
+div{
+    border: 1px dotted black;
+}
+
