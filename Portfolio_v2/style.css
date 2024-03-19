@@ -1,0 +1,59 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+body{
+    /* background-color: #efe784; */
+}
+
+.background{
+    height: 100%;
+    width: 100%;
+    background: url(Designs/Background.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* position: relative; */
+    display: grid;
+}
+
+.boxleft{
+
+}
+
+.visage{
+    height: 915px;
+    width: 825.6px;
+    background: url(Designs/Visagerubberhose/Visage.png);
+    background-size: cover;
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+}
+
+.nom{
+    height: 664.51px;
+    width: 669.44px;
+    background: url(Designs/Nom\ prenom-couleur.png);
+    background-size: cover;
+}
+
+.here{
+    height: 320.57px;
+    width: 557.92px;
+    background: url(Designs/it\ is\ here.png);
+    background-size: cover;
+    margin-left: 4%;
+}
+.accueil{
+    height: 320.57px;
+    width: 557.92px;
+    background: url(Designs/Accueil.png);
+    background-size: cover;
+    justify-content: flex-end;
+}

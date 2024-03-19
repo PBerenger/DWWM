@@ -1,0 +1,682 @@
+%!Adobe-FontList 1.23
+%Locale:0xc0a
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:aAbstractGroovy
+FamilyName:a Abstract Groovy
+StyleName:Regular
+FullName:Abstract Groovy
+MenuName:a Abstract Groovy
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\4. Créations Dev\RepoLocal\DWWM\Portfolio_v2\Designs\Font\AbstractGroovy-K7Zdy.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:18684
+FileModTime:1710466904
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Abstract Groovy
+NameArray:0,Win,1,a Abstract Groovy
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:aAbstractGroovy
+FamilyName:a Abstract Groovy
+StyleName:Regular
+FullName:Abstract Groovy
+MenuName:a Abstract Groovy
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\4. Créations Dev\RepoLocal\DWWM\Portfolio_v2\Designs\Font\AbstractGroovy-MV3ZJ.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:16032
+FileModTime:1710466904
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Abstract Groovy
+NameArray:0,Win,1,a Abstract Groovy
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:CclassicPersonalUse
+FamilyName:Cclassic Personal Use
+StyleName:Regular
+FullName:Cclassic Personal Use
+MenuName:Cclassic Personal Use
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\4. Créations Dev\RepoLocal\DWWM\Portfolio_v2\Designs\Font\CclassicPersonalUse-gxJD1.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:163424
+FileModTime:1710466904
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,18,Cclassic Personal Use
+NameArray:0,Mac,4,Cclassic Personal Use
+NameArray:0,Win,1,Cclassic Personal Use
+NameArray:0,Win,16,Cclassic Personal Use
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:Griaste-Regular
+FamilyName:Griaste
+StyleName:Regular
+FullName:Griaste Regular
+MenuName:Griaste
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\4. Créations Dev\RepoLocal\DWWM\Portfolio_v2\Designs\Font\GriasteRegular-gx8xR.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:18396
+FileModTime:1710466904
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Griaste Regular
+NameArray:0,Win,1,Griaste
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:Junicat
+FamilyName:Junicat
+StyleName:Regular
+FullName:Junicat
+MenuName:Junicat
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\4. Créations Dev\RepoLocal\DWWM\Portfolio_v2\Designs\Font\Junicat.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:28564
+FileModTime:1709897450
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Junicat
+NameArray:0,Win,1,Junicat
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Junicat
+FamilyName:Junicat
+StyleName:Regular
+FullName:Junicat
+MenuName:Junicat
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\4. Créations Dev\RepoLocal\DWWM\Portfolio_v2\Designs\Font\Junicat.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:44588
+FileModTime:1709897458
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Junicat
+NameArray:0,Win,1,Junicat
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:KABIF-Regular
+FamilyName:KABIF
+StyleName:Regular
+FullName:KABIF Regular
+MenuName:KABIF
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\4. Créations Dev\RepoLocal\DWWM\Portfolio_v2\Designs\Font\KabifRegular-BWV3d.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:12100
+FileModTime:1710466904
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,KABIF Regular
+NameArray:0,Win,1,KABIF
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:KEXINU-Regular
+FamilyName:KEXINU
+StyleName:Regular
+FullName:KEXINU Regular
+MenuName:KEXINU
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\4. Créations Dev\RepoLocal\DWWM\Portfolio_v2\Designs\Font\KexinuRegular-lgwRD.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:102056
+FileModTime:1710466904
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,KEXINU Regular
+NameArray:0,Win,1,KEXINU
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:KongGroovy
+FamilyName:Kong Groovy
+StyleName:Regular
+FullName:Kong Groovy
+MenuName:Kong Groovy
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\4. Créations Dev\RepoLocal\DWWM\Portfolio_v2\Designs\Font\KongGroovy-w1XBz.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:253012
+FileModTime:1710466904
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Kong Groovy
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:Lindraki-Regular
+FamilyName:Lindraki
+StyleName:Regular
+FullName:Lindraki Regular
+MenuName:Lindraki
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\4. Créations Dev\RepoLocal\DWWM\Portfolio_v2\Designs\Font\LindrakiRegular-Yzx4o.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:19704
+FileModTime:1710466904
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Lindraki Regular
+NameArray:0,Win,1,Lindraki
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:Masterday
+FamilyName:Masterday
+StyleName:Regular
+FullName:Masterday
+MenuName:Masterday
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\4. Créations Dev\RepoLocal\DWWM\Portfolio_v2\Designs\Font\Masterday-ow65z.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:131724
+FileModTime:1710466904
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Masterday
+NameArray:0,Win,1,Masterday
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:Rastiku-Regular
+FamilyName:Rastiku
+StyleName:Regular
+FullName:Rastiku Regular
+MenuName:Rastiku
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\4. Créations Dev\RepoLocal\DWWM\Portfolio_v2\Designs\Font\RastikuRegular-MVxgY.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:16556
+FileModTime:1710466904
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Rastiku Regular
+NameArray:0,Win,1,Rastiku
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:RetroGroovyRegular
+FamilyName:Retro Groovy
+StyleName:Regular
+FullName:Retro Groovy
+MenuName:Retro Groovy
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\4. Créations Dev\RepoLocal\DWWM\Portfolio_v2\Designs\Font\RetroGroovy-JRxXM.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:70340
+FileModTime:1710466904
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Retro Groovy
+NameArray:0,Win,1,Retro Groovy
+NameArray:0,Win,16,Retro Groovy
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:SunnySpellsBasic-Regular
+FamilyName:Sunny Spells Basic
+StyleName:Regular
+FullName:Sunny Spells Basic Regular
+MenuName:Sunny Spells Basic
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\4. Créations Dev\RepoLocal\DWWM\Portfolio_v2\Designs\Font\Sunny Spells Basic.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:69368
+FileModTime:1707908148
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Sunny Spells Basic Regular
+NameArray:0,Win,1,Sunny Spells Basic
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:SuperBloom
+FamilyName:Super Bloom
+StyleName:Regular
+FullName:Super Bloom
+MenuName:Super Bloom
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\4. Créations Dev\RepoLocal\DWWM\Portfolio_v2\Designs\Font\Super Bloom Personal Use.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:107728
+FileModTime:1709987572
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Super Bloom
+NameArray:0,Win,1,Super Bloom
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Thebringa-Regular
+FamilyName:The bringa
+StyleName:Regular
+FullName:The bringa Regular
+MenuName:The bringa
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\4. Créations Dev\RepoLocal\DWWM\Portfolio_v2\Designs\Font\TheBringaRegular-0W9VP.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:61932
+FileModTime:1710466904
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,The bringa Regular
+NameArray:0,Win,1,The bringa
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Thebringa-Regular
+FamilyName:The bringa
+StyleName:Regular
+FullName:The bringa Regular
+MenuName:The bringa
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\4. Créations Dev\RepoLocal\DWWM\Portfolio_v2\Designs\Font\TheBringaRegular-Eajxj.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:62800
+FileModTime:1710466904
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,The bringa Regular
+NameArray:0,Win,1,The bringa
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Thebringa-Regular
+FamilyName:The bringa
+StyleName:Regular
+FullName:The bringa Regular
+MenuName:The bringa
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\4. Créations Dev\RepoLocal\DWWM\Portfolio_v2\Designs\Font\TheBringaRegular-axjnm.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:62800
+FileModTime:1710466904
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,The bringa Regular
+NameArray:0,Win,1,The bringa
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:TheArtmarsScript
+FamilyName:The Artmars Script
+StyleName:Regular
+FullName:The Artmars Script
+MenuName:The Artmars Script
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\4. Créations Dev\RepoLocal\DWWM\Portfolio_v2\Designs\Font\Theartmarsscript-0WArX.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:104140
+FileModTime:1710466904
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,18,The Artmars Script
+NameArray:0,Mac,4,The Artmars Script
+NameArray:0,Win,1,The Artmars Script
+NameArray:0,Win,16,The Artmars Script
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:TheArtmarsScript
+FamilyName:The Artmars Script
+StyleName:Regular
+FullName:TheArtmarsScript
+MenuName:The Artmars Script
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\4. Créations Dev\RepoLocal\DWWM\Portfolio_v2\Designs\Font\Theartmarsscript-eZdYB.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:192480
+FileModTime:1710466904
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,18,The Artmars Script
+NameArray:0,Mac,4,The Artmars Script
+NameArray:0,Win,1,The Artmars Script
+NameArray:0,Win,16,The Artmars Script
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:TheArtmarsScriptExtrude
+FamilyName:The Artmars Script Extrude
+StyleName:Regular
+FullName:The Artmars Script Extrude
+MenuName:The Artmars Script Extrude
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\4. Créations Dev\RepoLocal\DWWM\Portfolio_v2\Designs\Font\Theartmarsscriptextrude-Wynav.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:100512
+FileModTime:1710466904
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,18,The Artmars Script Extrude
+NameArray:0,Mac,4,The Artmars Script Extrude
+NameArray:0,Win,1,The Artmars Script Extrude
+NameArray:0,Win,16,The Artmars Script Extrude
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:TheArtmarsScriptExtrude
+FamilyName:The Artmars Script Extrude
+StyleName:Regular
+FullName:TheArtmarsScriptExtrude
+MenuName:The Artmars Script Extrude
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\4. Créations Dev\RepoLocal\DWWM\Portfolio_v2\Designs\Font\Theartmarsscriptextrude-axv19.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:159096
+FileModTime:1710466904
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,18,The Artmars Script Extrude
+NameArray:0,Mac,4,The Artmars Script Extrude
+NameArray:0,Win,1,The Artmars Script Extrude
+NameArray:0,Win,16,The Artmars Script Extrude
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:VintageBridgePersonalUse
+FamilyName:Vintage Bridge Personal Use
+StyleName:Regular
+FullName:Vintage Bridge Personal Use
+MenuName:Vintage Bridge Personal Use
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\4. Créations Dev\RepoLocal\DWWM\Portfolio_v2\Designs\Font\VintageBridgePersonalUse-z8xd3.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:180724
+FileModTime:1710466904
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Vintage Bridge Personal Use
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:VintageKingdompersonaluse
+FamilyName:Vintage Kingdom personal use
+StyleName:Regular
+FullName:Vintage Kingdom personal use
+MenuName:Vintage Kingdom personal use
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\4. Créations Dev\RepoLocal\DWWM\Portfolio_v2\Designs\Font\VintageKingdomPersonalUse-YzBdv.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:170600
+FileModTime:1710466904
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Vintage Kingdom personal use
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:VintageRotterPersonalUse
+FamilyName:Vintage Rotter Personal Use
+StyleName:Regular
+FullName:Vintage Rotter Personal Use
+MenuName:Vintage Rotter Personal Use
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\4. Créations Dev\RepoLocal\DWWM\Portfolio_v2\Designs\Font\VintageRotterPersonalUse-VGVZw.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:125604
+FileModTime:1710466904
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Vintage Rotter Personal Use
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:Whocats
+FamilyName:Whocats
+StyleName:Regular
+FullName:Whocats
+MenuName:Whocats
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\4. Créations Dev\RepoLocal\DWWM\Portfolio_v2\Designs\Font\Whocats.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:48712
+FileModTime:1709914084
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Whocats
+NameArray:0,Win,1,Whocats
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Whocats
+FamilyName:Whocats
+StyleName:Regular
+FullName:Whocats
+MenuName:Whocats
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\4. Créations Dev\RepoLocal\DWWM\Portfolio_v2\Designs\Font\Whocats.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:81524
+FileModTime:1709914078
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Whocats
+NameArray:0,Win,1,Whocats
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:WickedMouse
+FamilyName:Wicked Mouse
+StyleName:Regular
+FullName:Wicked Mouse
+MenuName:Wicked Mouse
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\4. Créations Dev\RepoLocal\DWWM\Portfolio_v2\Designs\Font\WickedMouse-aGoK.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:28660
+FileModTime:1710466904
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Wicked Mouse
+NameArray:0,Win,1,Wicked Mouse
+%EndFont
+
