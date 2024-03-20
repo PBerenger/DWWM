@@ -1,59 +1,51 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100vh;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
 }
-
-body{
-    /* background-color: #efe784; */
+body {
+  height: 100%;
+  width: 100%;
+  background: url(Designs/Background.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
-
-.background{
-    height: 100%;
-    width: 100%;
-    background: url(Designs/Background.gif);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    /* position: relative; */
-    display: grid;
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
 }
-
-.boxleft{
-
+.container .boxleft {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
 }
-
-.visage{
-    height: 915px;
-    width: 825.6px;
-    background: url(Designs/Visagerubberhose/Visage.png);
-    background-size: cover;
-    /* position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
+.container .boxleft .nom {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  margin: auto;
 }
-
-.nom{
-    height: 664.51px;
-    width: 669.44px;
-    background: url(Designs/Nom\ prenom-couleur.png);
-    background-size: cover;
+.container .boxleft .here {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  width: 60%;
+  height: 33%;
+  margin: auto;
 }
-
-.here{
-    height: 320.57px;
-    width: 557.92px;
-    background: url(Designs/it\ is\ here.png);
-    background-size: cover;
-    margin-left: 4%;
+.container .visage {
+  width: 90%;
+  height: 95%;
+  margin: auto;
+  grid-column: 2/3;
+  grid-row: 1/3;
 }
-.accueil{
-    height: 320.57px;
-    width: 557.92px;
-    background: url(Designs/Accueil.png);
-    background-size: cover;
-    justify-content: flex-end;
+.container .accueil {
+  width: 46%;
+  height: 80%;
+  margin: auto;
+  grid-column: 3/4;
+  grid-row: 1/2;
 }
