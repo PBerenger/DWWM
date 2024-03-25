@@ -1,0 +1,232 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+body {
+  font-family: roboto condensed;
+  margin: auto;
+  width: 1440px;
+}
+header ul {
+  display: flex;
+  justify-content: space-around;
+  background-color: #ECEFD8;
+  padding: 20px;
+}
+header ul a {
+  color: #393939;
+  letter-spacing: 3px;
+}
+header .bgmont {
+  display: flex;
+  background-size: cover;
+  justify-content: center;
+}
+header .bgmont .bglogo {
+  margin-top: 10vh;
+  position: absolute;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+}
+header .bgmont .bglogo p {
+  color: #FFFFFF;
+  border-top: 2px solid #FFFFFF;
+  border-bottom: 2px solid #FFFFFF;
+  align-self: center;
+  margin-top: 30px;
+  font-size: 24px;
+}
+.bonjour {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 440px;
+  background-color: #ECEFD8;
+  margin: auto;
+  color: #191A18;
+}
+.bonjour h2 {
+  font-size: 30px;
+  margin-top: 30px;
+}
+.bonjour p {
+  margin-left: 28%;
+  margin-right: 28%;
+  font-size: 20px;
+  line-height: 40px;
+}
+.bonjour button {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  max-width: 211px;
+  max-height: 65px;
+}
+.bonjour button a {
+  position: absolute;
+  align-self: center;
+  color: #EED690;
+  font-size: 16px;
+}
+.moment {
+  display: flex;
+  flex-direction: column;
+  height: 560px;
+  background-color: #393939;
+  text-align: center;
+  color: #849561;
+  justify-content: space-around;
+  font-size: 22px;
+}
+.moment .expos {
+  display: flex;
+  justify-content: space-around;
+}
+.moment .expos .ishi {
+  align-items: center;
+  justify-content: space-between;
+  max-width: 252px;
+  height: 382px;
+  display: flex;
+  flex-direction: column;
+  background-color: #849561;
+}
+.moment .expos .ishi h3 {
+  color: #FFFFFF;
+}
+.moment .expos .ishi p {
+  color: #FFFFFF;
+  text-align: center;
+  max-width: 75%;
+  font-size: 14px;
+}
+.moment .expos .ishi .decouvrir {
+  display: flex;
+  justify-content: center;
+}
+.moment .expos .ishi .decouvrir h3 {
+  position: absolute;
+  align-self: center;
+  color: #FFFFFF;
+  font-size: 16px;
+}
+.moment .expos .anxiety {
+  align-items: center;
+  justify-content: space-between;
+  max-width: 252px;
+  height: 382px;
+  display: flex;
+  flex-direction: column;
+  background-color: #849561;
+}
+.moment .expos .anxiety h3 {
+  color: #FFFFFF;
+}
+.moment .expos .anxiety p {
+  color: #FFFFFF;
+  text-align: center;
+  max-width: 75%;
+  font-size: 14px;
+}
+.moment .expos .anxiety .decouvrir {
+  display: flex;
+  justify-content: center;
+}
+.moment .expos .anxiety .decouvrir h3 {
+  position: absolute;
+  align-self: center;
+  color: #FFFFFF;
+  font-size: 16px;
+}
+.moment .expos .apollinaire {
+  align-items: center;
+  justify-content: space-between;
+  max-width: 252px;
+  height: 382px;
+  display: flex;
+  flex-direction: column;
+  background-color: #849561;
+}
+.moment .expos .apollinaire h3 {
+  color: #FFFFFF;
+}
+.moment .expos .apollinaire p {
+  color: #FFFFFF;
+  text-align: center;
+  max-width: 75%;
+  font-size: 14px;
+}
+.moment .expos .apollinaire .decouvrir {
+  display: flex;
+  justify-content: center;
+}
+.moment .expos .apollinaire .decouvrir h3 {
+  position: absolute;
+  align-self: center;
+  color: #FFFFFF;
+  font-size: 16px;
+}
+.moment .expos .photographes {
+  align-items: center;
+  justify-content: space-between;
+  max-width: 252px;
+  height: 382px;
+  display: flex;
+  flex-direction: column;
+  background-color: #849561;
+}
+.moment .expos .photographes h3 {
+  color: #FFFFFF;
+}
+.moment .expos .photographes p {
+  color: #FFFFFF;
+  text-align: center;
+  max-width: 75%;
+  font-size: 14px;
+}
+.moment .expos .photographes .decouvrir {
+  display: flex;
+  justify-content: center;
+}
+.moment .expos .photographes .decouvrir h3 {
+  position: absolute;
+  align-self: center;
+  color: #FFFFFF;
+  font-size: 16px;
+}
+.nympheas {
+  display: flex;
+}
+.nympheas .installation {
+  display: flex;
+  flex-direction: column;
+  max-width: 1440px;
+  position: absolute;
+  color: #FFFFFF;
+  text-align: center;
+  align-items: center;
+  height: 375px;
+  justify-content: center;
+}
+.nympheas .installation h2 {
+  font-size: 22px;
+  padding-bottom: 30px;
+}
+.nympheas .installation p {
+  font-size: 16px;
+  line-height: 30px;
+  width: 40%;
+}
+.footer .box {
+  display: flex;
+  flex-direction: column;
+  background-color: #393939;
+  width: 1440px;
+  height: 100%;
+}
