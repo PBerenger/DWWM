@@ -86,7 +86,6 @@ header {
             position: absolute;
             align-self: center;
             color: #EED690;
-            font-size: 16px;
         }
     }
 }
@@ -110,7 +109,7 @@ header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            max-width: 252px; //peut être à supprimer
+            max-width: 252px;
             height: 382px;
             display: flex;
             flex-direction: column;
@@ -145,7 +144,7 @@ header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            max-width: 252px; //peut être à supprimer
+            max-width: 252px;
             height: 382px;
             display: flex;
             flex-direction: column;
@@ -180,7 +179,7 @@ header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            max-width: 252px; //peut être à supprimer
+            max-width: 252px;
             height: 382px;
             display: flex;
             flex-direction: column;
@@ -215,7 +214,7 @@ header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            max-width: 252px; //peut être à supprimer
+            max-width: 252px;
             height: 382px;
             display: flex;
             flex-direction: column;
@@ -254,46 +253,118 @@ header {
 .nympheas{
     display: flex;
 
-
-
     .installation{
+        position: absolute;
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
         max-width: 1440px;
-        position: absolute;
+        min-width: 1440px;
+        height: 375px;
+        margin: auto;
         color: #FFFFFF;
         text-align: center;
-        align-items: center;
-        height: 375px;
-        justify-content: center;
 
-
-
+        img{
+            border : 2px solid white;
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+            padding: 10px
+        }
 
         h2{
             font-size: 22px;
-            padding-bottom: 30px;
+            padding-bottom: 10px;
         }
 
         p{
            font-size: 16px;
            line-height: 30px;
            width: 40%;
+           margin-bottom: 20px;
         }
 
     }
 }
 
-.footer{
+footer{
+    background-color: #393939;
+
+    p{
+        padding-bottom: 30px;
+        font-size: 14px;
+        line-height: 25px;
+    }
+
     .box{
         display: flex;
         flex-direction: column;
-        background-color: #393939;
-        width: 1440px;
         height: 100%;
-    }
+        align-items: center;
+        color: #849561;
+        padding-bottom: 40px;
+        padding-top: 40px;
+
+        >h3{
+            padding-top: 20px;
+            margin-bottom: 130px;
+            font-size: 20px;
+        }
+
+        .BGLS{
+            display: flex;
+            
+
+            .BG, .LS{
+                max-width: 462px;
+                height: fit-content;
+                background-color: #849561;
+                color: #FFFFFF;
+                padding-left: 40px;
+                padding-right: 40px;
+                position:relative;
+                margin: 20px;
+
+                h3{
+                    border-top: 2px solid white;
+                    margin-top: 120px;
+                    padding-top: 20px;
+                    padding-bottom: 20px;
+                }
 
 
 
-    
+                >img{
+                    position: absolute;
+                    display: block;
+                    margin: auto;
+                    top: 0;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+
+            .reseaux{
+                display: flex;
+
+                .goo, .twe, .fac{
+                    padding: 10px;
+                    width: 40px;
+                    height: 40px;
+                    background-color: #393939;
+                    margin-bottom: 40px;
+                    margin-right: 10px;
+
+                }
+                
+            }
+        }
+    }  
+}
+
+@media screen and (max-width:768px){
+    //merdia queries : sur moment et footer : cadres
+
 }

@@ -72,7 +72,6 @@ header .bgmont .bglogo p {
   position: absolute;
   align-self: center;
   color: #EED690;
-  font-size: 16px;
 }
 .moment {
   display: flex;
@@ -204,29 +203,99 @@ header .bgmont .bglogo p {
   display: flex;
 }
 .nympheas .installation {
+  position: absolute;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   max-width: 1440px;
-  position: absolute;
+  min-width: 1440px;
+  height: 375px;
+  margin: auto;
   color: #FFFFFF;
   text-align: center;
-  align-items: center;
-  height: 375px;
-  justify-content: center;
+}
+.nympheas .installation img {
+  border: 2px solid white;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+  padding: 10px;
 }
 .nympheas .installation h2 {
   font-size: 22px;
-  padding-bottom: 30px;
+  padding-bottom: 10px;
 }
 .nympheas .installation p {
   font-size: 16px;
   line-height: 30px;
   width: 40%;
+  margin-bottom: 20px;
 }
-.footer .box {
+footer {
+  background-color: #393939;
+}
+footer p {
+  padding-bottom: 30px;
+  font-size: 14px;
+  line-height: 25px;
+}
+footer .box {
   display: flex;
   flex-direction: column;
-  background-color: #393939;
-  width: 1440px;
   height: 100%;
+  align-items: center;
+  color: #849561;
+  padding-bottom: 40px;
+  padding-top: 40px;
+}
+footer .box > h3 {
+  padding-top: 20px;
+  margin-bottom: 130px;
+  font-size: 20px;
+}
+footer .box .BGLS {
+  display: flex;
+}
+footer .box .BGLS .BG,
+footer .box .BGLS .LS {
+  max-width: 462px;
+  height: fit-content;
+  background-color: #849561;
+  color: #FFFFFF;
+  padding-left: 40px;
+  padding-right: 40px;
+  position: relative;
+  margin: 20px;
+}
+footer .box .BGLS .BG h3,
+footer .box .BGLS .LS h3 {
+  border-top: 2px solid white;
+  margin-top: 120px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+footer .box .BGLS .BG > img,
+footer .box .BGLS .LS > img {
+  position: absolute;
+  display: block;
+  margin: auto;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+footer .box .BGLS .reseaux {
+  display: flex;
+}
+footer .box .BGLS .reseaux .goo,
+footer .box .BGLS .reseaux .twe,
+footer .box .BGLS .reseaux .fac {
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  background-color: #393939;
+  margin-bottom: 40px;
+  margin-right: 10px;
+}
+@media screen and (max-width: 768px) {
 }
