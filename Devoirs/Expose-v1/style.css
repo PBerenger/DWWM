@@ -8,7 +8,7 @@
 body {
   font-family: roboto condensed;
   margin: auto;
-  width: 1440px;
+  max-width: 1440px;
 }
 header ul {
   display: flex;
@@ -46,7 +46,7 @@ header .bgmont .bglogo p {
   align-items: center;
   justify-content: space-around;
   width: 100%;
-  height: 440px;
+  min-height: 440px;
   background-color: #ECEFD8;
   margin: auto;
   color: #191A18;
@@ -60,6 +60,7 @@ header .bgmont .bglogo p {
   margin-right: 28%;
   font-size: 20px;
   line-height: 40px;
+  text-align: center;
 }
 .bonjour button {
   display: flex;
@@ -76,21 +77,27 @@ header .bgmont .bglogo p {
 .moment {
   display: flex;
   flex-direction: column;
-  height: 560px;
+  min-height: 560px;
   background-color: #393939;
   text-align: center;
   color: #849561;
   justify-content: space-around;
   font-size: 22px;
+  padding-bottom: 30px;
+}
+.moment h2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .moment .expos {
   display: flex;
   justify-content: space-around;
+  margin-bottom: 20px;
 }
 .moment .expos .ishi {
   align-items: center;
   justify-content: space-between;
-  max-width: 252px;
+  width: 252px;
   height: 382px;
   display: flex;
   flex-direction: column;
@@ -115,10 +122,13 @@ header .bgmont .bglogo p {
   color: #FFFFFF;
   font-size: 16px;
 }
+.moment .expos .ishi .decouvrir h3 a {
+  color: #FFFFFF;
+}
 .moment .expos .anxiety {
   align-items: center;
   justify-content: space-between;
-  max-width: 252px;
+  width: 252px;
   height: 382px;
   display: flex;
   flex-direction: column;
@@ -143,10 +153,13 @@ header .bgmont .bglogo p {
   color: #FFFFFF;
   font-size: 16px;
 }
+.moment .expos .anxiety .decouvrir h3 a {
+  color: #FFFFFF;
+}
 .moment .expos .apollinaire {
   align-items: center;
   justify-content: space-between;
-  max-width: 252px;
+  width: 252px;
   height: 382px;
   display: flex;
   flex-direction: column;
@@ -171,10 +184,13 @@ header .bgmont .bglogo p {
   color: #FFFFFF;
   font-size: 16px;
 }
+.moment .expos .apollinaire .decouvrir h3 a {
+  color: #FFFFFF;
+}
 .moment .expos .photographes {
   align-items: center;
   justify-content: space-between;
-  max-width: 252px;
+  width: 252px;
   height: 382px;
   display: flex;
   flex-direction: column;
@@ -199,8 +215,16 @@ header .bgmont .bglogo p {
   color: #FFFFFF;
   font-size: 16px;
 }
+.moment .expos .photographes .decouvrir h3 a {
+  color: #FFFFFF;
+}
 .nympheas {
   display: flex;
+  background-color: #1D1B1BFC;
+  width: 100%;
+}
+.nympheas > img {
+  width: 100%;
 }
 .nympheas .installation {
   position: absolute;
@@ -209,8 +233,7 @@ header .bgmont .bglogo p {
   justify-content: center;
   align-items: center;
   max-width: 1440px;
-  min-width: 1440px;
-  height: 375px;
+  min-height: 375px;
   margin: auto;
   color: #FFFFFF;
   text-align: center;
@@ -239,6 +262,7 @@ footer p {
   padding-bottom: 30px;
   font-size: 14px;
   line-height: 25px;
+  letter-spacing: 2px;
 }
 footer .box {
   display: flex;
@@ -298,4 +322,33 @@ footer .box .BGLS .reseaux .fac {
   margin-right: 10px;
 }
 @media screen and (max-width: 768px) {
+  body .bonjour p {
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 20px;
+    line-height: 40px;
+  }
+  body .moment h2 {
+    font-size: 20px;
+  }
+  body .moment .expos {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+  }
+  body .moment .expos .ishi,
+  body .moment .expos .anxiety,
+  body .moment .expos .apollinaire,
+  body .moment .expos .photographes {
+    margin-bottom: 20px;
+  }
+  body .nympheas {
+    padding-top: 30px;
+  }
+  body .nympheas .installation {
+    position: static;
+  }
+  body .nympheas > img {
+    display: none;
+  }
 }
