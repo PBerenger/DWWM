@@ -1,0 +1,11 @@
+.global-container{
+    max-width: 1920px;
+    margin: auto;
+}
+
+video{
+    object-fit: cover;
+}
+
+
+
