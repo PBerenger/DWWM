@@ -1,0 +1,28 @@
+#container{
+    background-color: cadetblue;
+    height: 500px;
+    width: 700px;
+    border: 2px solid sienna;
+    margin: 10% auto;
+    display: flex;
+    flex-direction: row;
+}
+
+#flex-item1{
+    background-color: red;
+    /* width: 400px;
+    height: 50px; */
+    flex: 1 1 200;
+}
+
+#flex-item2{
+    background-color: blue;
+    flex: 1 4 400;
+
+}
+
+#flex-item3{
+    background-color: yellow;
+    flex: 3 1 200;
+}
+

@@ -1,0 +1,28 @@
+- résulttat de l'expression ([]) : consol.log d'un type (chiffre, string, boolean (true-false) ici 'object'
+- les tableaux sont des objets en javascript
+- push : ajouter un élément à la fin d'un tableau
+- == : va comparer deux parties
+- === : va comparer deux parties ET le type
+- parseInt : méthode pour convertir une chaine en un nombre entier
+- forEach : boucler à travers un tableau
+- undifined : déclaration sans valeur (non affecté)
+- null : type de valiable (il n'y a rien - par exemple fin de chaine de caractère)
+- submit : envoyer un form
+- () => {'action'} : fonction flechée
+- prompt : demander à l'utilisateur des informations
+- pop() : supprimer dernier élement d'un tableau (method)
+- removeLastChild : dernier element du dom
+- JSON : ce sont des données (capable d'être lu par la majorités des languages) - se définie sans guillement
+- les 'object = { } : déclarer un objet
+- objet : se définie entre guillements
+- split : diviser des mots de caractère dans un tableau
+- let string = " " - let tab [ ...string] : diviser une chaine de caractère dans un tableau
+- addEventListener : ajouter un ecouteur d'evenement à un element HTML en JS
+- toLowerCase : convertir une chaine en minuscule
+- "si c'est vrai = ok; sinon : tu fait autre ça" (condition ? exprSiVrai : exprSiFaux;) : opération ternaire (if else sur une seule ligne
+- consol.error() : afficher un message d'erreur dans la console
+- array1.concat(array2) : concaténer deux tableaux
+- [0] : acceder au premier element d'un tableau
+- sort() : trier un tableau (method)
+- push() : ajoute un element au tableau (method)
+- AJAX : lors d'un action déclenchée l'objectif est de bloquer l'action sans rafraichir la page

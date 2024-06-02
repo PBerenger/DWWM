@@ -1,0 +1,1 @@
+id/class : id est unique/class peut avoir plusieurs fois le même nom

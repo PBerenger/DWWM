@@ -1,0 +1,39 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+body{
+  display: flex;
+  flex-wrap: wrap;
+}
+#baseAccueil {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(img/R&M_accueil.png);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+}
+#baseAccueil .container {
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: black;
+  background-color: bisque;
+  flex-direction: column;
+  height: 100px;
+}
+h1 {
+  text-align: center;
+}
+h3{
+
+}
+div .cardNameImg {
+}

@@ -1,0 +1,131 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #efe784;
+    margin: auto;
+    width: 960px;
+}
+
+.box{
+    width: 960px;
+    height: 3014px;
+    font-family: "roboto", sans-serif;
+}
+
+.header_img{
+    width: 960px;
+    height: 350px;
+    background-image: url(L_IMG/header.jpg);
+    background-repeat: no-repeat;
+}
+
+.logo{
+    text-align: center;
+    padding-top: 100px;
+}
+
+.b{
+    color: #efe784;
+}
+
+h2{
+    letter-spacing: 20px;
+    line-height: 40px;
+}
+
+
+
+.part1{
+    text-align: center;
+    background-color: #282828;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: #efe784;
+}
+
+.intro{
+    border-top: 1px solid #efe784;
+    border-bottom: 1px solid #efe784;
+    display: inline-block;
+}
+
+p{
+    padding-top: 20px;
+    padding-left: 180px;
+    padding-right: 180px;
+    line-height: 30px;
+    padding-bottom: 30px;
+}
+
+
+
+.part2{
+    background-color: #ffffff;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: left;
+
+}
+
+.tfilma{
+    color: #6cbcb3;
+    text-align: center;
+}
+
+.avengers{
+    width: 600px;
+    height: 338px;
+    background-image: url(L_IMG/avengers.jpg);
+    background-repeat: no-repeat;
+    margin-left: 180px;
+}
+
+
+
+.part3{
+    background-color: #6cbcb3;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: left;
+
+}
+
+.tfilmb{
+    color: #3e3838;
+    text-align: center;
+}
+
+.asib{
+    width: 600px;
+    height: 338px;
+    background-image: url(L_IMG/star.jpg);
+    background-repeat: no-repeat;
+    margin-left: 180px;
+}
+
+
+
+.part4{
+    background-color: #3e3838;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: left;
+
+}
+
+.tfilmc{
+    color: #ffffff;
+    text-align: center;
+}
+
+.waw{
+    width: 600px;
+    height: 338px;
+    background-image: url(L_IMG/woman.jpg);
+    background-repeat: no-repeat;
+    margin-left: 180px;
+}

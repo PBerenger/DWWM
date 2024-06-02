@@ -1,0 +1,82 @@
+Comment fonctionne les fonctiond :
+
+
+- premiere phrase : fonction * nom de la fonction * (variable)
+entre les {} : l'ordre(s) à donner :
+- ordre (console.log, return, etc.) et ("chainecarac" + nom de la fonction"
+dernière phrase : appeler la fonction pour qu'elle s'affiche :
+- nom de la fonction(texte ou "chaine de caractères" pour remplacer la variable)
+
+
+
+vocabulaire :
+
+- fonction : Une fonction est une procédure JavaScript, un ensemble d'instructions effectuant une tâche ou calculant une valeur
+
+- Valeur : une valeur qui n'est pas un objet et qui ne peut pas être modifiée.
+
+- variable : Une variable est un objet repéré par son nom, pouvant contenir des données, qui pourront être modifiées lors de l'exécution du programme.
+
+- parametre : Un paramètre est une variable nommée passée à une fonction. Les paramètres servent à importer des arguments à l'intérieur des fonctions.
+
+- string (chaine de caractères) : 
+
+- évenement : se place au début de la fonction flechée (est précédée d'un virgule)
+
+
+
+
+
+
+
+formulaire :
+const nom = document.querySelector('nom');
+console.log(nom);
+
+vocabulaire :
+
+
+const myVar : déclarer une variable
+console.log : afficher un message dans la console
+=== : vérifier la valeur et le type stricte
+== : vérifer la valeur premiere
+function maFonction () {} : déclarer une fonction
+let function = fonction () {} : affecter une fonction dans une variable (ou let function = () => {})
+push () : pour ajouter un élément à la fin d'un tableau
+typeof : renvoie le type de la variable (vérification) ???
+onclick : evenement déclenché par le clic
+for (let i = 0; i <5; i++) {} : effectuer une boucle
+foreach (let i = 0; i <5; i++) {} : sélectionner chaque element d'une boucle
+2 + "2" = 22
+// 'comment' & /* -- */ : commenter
+round() : arrondir un nombre à l'eniter le plus proche
+floor() : arrondir à l'entier inférieur
+ceil() : arrondir à l'entier suppérieur
+length : obtenir la longueur d'une chaine de caractère
+&& : opérateur logique "et"
+|| : opérateur "ou"
+arr[0] : pour accéder au premier élement du tableau
+pop() : pour supprimer dernier element d'un tableau
+splice() : supprimer un element sélectionner n'importe où
+let : peut etre réaffecter
+const : ne peut être réaffecter
+toUpperCase : convertit une chaine en majuscule
+() => {= : créer une fonction fléchée
+[] : déclarer un tableau vide
+sort() : trier par ordre alphabétique element d'un tableau
+concat() : concaténer (mettre bout à bout) deux tableaux
+console.warn() : ecrire un avertissement dans la console
+array.isArray() : determiner si l'element est un tableau
+XML : maniere de stockage de données en balise
+AJAX : faire une action sans raffraichir la page (démarrer par event.priventDefaukt() )
+document.getElementById() : sélemectionner un element par son ID
+document. querySelector() : selectionner n'importe quel element
+document. querySelectorAll() : selectionner TOUS les elements
+textContent : pour acceder a un element texte
+document.createElement('div') : créer un nouvel element (doit etre ratacher ensuite)
+element.Src : changer attribut src d'une balise image
+insertBefore : déplacer element dans le DOM
+element.empty() : supprimer tous les enfants d'un element
+element.firstElementChild() : selectionner premier element enfant d'un element
+fetch : faire une requete en AJAX
+

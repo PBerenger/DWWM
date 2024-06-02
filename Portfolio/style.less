@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+@font-face {
+    font-family: 'ALOALLA';
+    src: url("/Font/ALOALLA.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Coolvetica';
+    src: url("/Font/coolvetica.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url("/Font/Roboto-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --color1: #184561;
+    --color2: #3D657B;
+    --color3: #71ACA4;
+    --color4: #D1D8C5;
+    --color5: #EEEEEE;
+    --color6: #000000;
+
+    --fontLogo: 'ALOALLA';
+    --fontTitre: 'Coolvetica';
+    --fontTexte: 'Roboto-Regular';
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh; 
+}
+
+// Barre de navigation
+.navbar {
+    background-color: var(--color1);
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    box-sizing: border-box;
+    align-items: center;
+    
+    // Logo haut gauche
+    .logo {
+        font-family: var(--fontLogo);
+        font-size: 4em;
+        color: var(--color4);
+    }
+    
+    // Boutons haut droite
+    .navlink ul {
+        display: flex;
+        align-items: center;
+
+        // Lien actif
+        li.active a{
+            color: var(--color5);
+            font-size: 44px;
+        }
+        
+        li {
+            margin: 0 15px;
+        }
+        
+        a {
+            color: var(--color3);
+            font-family: var(--fontTitre);
+            font-size: 34px;
+        }
+        
+    }
+
+    .menuBurger {
+        display: none;
+        width: 35px;
+
+    }
+}
+
+header {
+    width: 100vw;
+    height: 100px;
+}
+
+.background {
+    width: 100%;
+    height: 100%;
+    background-image: url(/Ressources/Wallpaper5.1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+footer {
+    .footerBarre {
+        background-color: var(--color1);
+        width: 100vw;
+        height: 100px;
+    }
+}
+
+//media queries Telephone
+@media screen and (max-width: 450px) {
+    .navbar {
+        padding: 10px 0;
+
+        .logo {
+            font-size: 24px;
+        }
+        
+
+        .navlink {
+            background-color: rgba(255, 255, 255, 0.281);
+            backdrop-filter: blur(8px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: none;
+            
+            ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                
+                li {
+                    margin: 15px 0;
+                    font-size: 2em;
+                }
+            }
+        }
+    }
+
+    .navbar .menuBurger {
+        display: block;
+        justify-content: flex-end;
+    }
+    
+    .background {
+        background-position: center;
+    }
+}
+
+

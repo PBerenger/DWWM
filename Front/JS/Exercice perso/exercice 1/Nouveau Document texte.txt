@@ -1,0 +1,6 @@
+- Let-const : créer une variable (le nom de la variable le précède)
+- document. querySelector("div") : ici c'est créer une variable dans une balise HTML("div")
+- 'nomVariableParent'.action = 'nomVariableAction' : pour créer une action sur la variable
+	ex : varBase.textContent = VarAct
+- Let var1 = document.createElement("p") : ici, je (document = variable dans laquelle il y a un objet), 'createElement()' est la méthode pour créer un noeud HTML ("p") qui sera stoqué dans la variable 'var1'.
+

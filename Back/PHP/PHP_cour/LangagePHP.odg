@@ -1,0 +1,31 @@
+Lien apprentissage : https://openclassrooms.com/en/courses/918836-concevez-votre-site-web-avec-php-et-mysql
+
+Commandes pour afficher la page .php dans le terminal pour XAMP:
+- ouvrir le fichier VSC avec PowerShell
+- Taper dans le terminal : php -S localhost:8080
+- cliquer sur le lien entre parenthèses
+
+
+<?php /* */ ?> : balise PHP 
+
+
+commande pour lacer via WAMP:
+- php -S localhost:8080
+
+
+POUR OUVRIR LE TERMINAL DU PHP : clic droit sur le fichier "ouvrir le terminal"
+
+
+
+
+INSTRUCTIONS :
+- echo : affiche une ou plusieurs expressions, sans espaces ou nouvelle ligne additionnelle.
+- \" texte \" : affiche le texte entre guillemets
+
+
+Tableau d'erreurs :
+
+- PHP dispose d'un mode de déboggage pour afficher les erreurs contenues dans vos scripts.
+- Pour activer le déboggage, on modifie la configuration de PHP en éditant le fichier php.ini.
+- On peut trouver la localisation de ce fichier (et plein d'autres informations) en exécutant la fonction phpinfo() <?php phpinfo(); ?>  .
+- Pour activer l'affichage, on change la propriété display_errors à On et on filtre le type d'erreurs avec error_reporting (on choisira E_ALL pour voir toutes les erreurs !).

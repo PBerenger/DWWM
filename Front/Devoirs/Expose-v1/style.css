@@ -1,0 +1,354 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+body {
+  font-family: roboto condensed;
+  margin: auto;
+  max-width: 1440px;
+}
+header ul {
+  display: flex;
+  justify-content: space-around;
+  background-color: #ECEFD8;
+  padding: 20px;
+}
+header ul a {
+  color: #393939;
+  letter-spacing: 3px;
+}
+header .bgmont {
+  display: flex;
+  background-size: cover;
+  justify-content: center;
+}
+header .bgmont .bglogo {
+  margin-top: 10vh;
+  position: absolute;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+}
+header .bgmont .bglogo p {
+  color: #FFFFFF;
+  border-top: 2px solid #FFFFFF;
+  border-bottom: 2px solid #FFFFFF;
+  align-self: center;
+  margin-top: 30px;
+  font-size: 24px;
+}
+.bonjour {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  min-height: 440px;
+  background-color: #ECEFD8;
+  margin: auto;
+  color: #191A18;
+}
+.bonjour h2 {
+  font-size: 30px;
+  margin-top: 30px;
+}
+.bonjour p {
+  margin-left: 28%;
+  margin-right: 28%;
+  font-size: 20px;
+  line-height: 40px;
+  text-align: center;
+}
+.bonjour button {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  max-width: 211px;
+  max-height: 65px;
+}
+.bonjour button a {
+  position: absolute;
+  align-self: center;
+  color: #EED690;
+}
+.moment {
+  display: flex;
+  flex-direction: column;
+  min-height: 560px;
+  background-color: #393939;
+  text-align: center;
+  color: #849561;
+  justify-content: space-around;
+  font-size: 22px;
+  padding-bottom: 30px;
+}
+.moment h2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.moment .expos {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+.moment .expos .ishi {
+  align-items: center;
+  justify-content: space-between;
+  width: 252px;
+  height: 382px;
+  display: flex;
+  flex-direction: column;
+  background-color: #849561;
+}
+.moment .expos .ishi h3 {
+  color: #FFFFFF;
+}
+.moment .expos .ishi p {
+  color: #FFFFFF;
+  text-align: center;
+  max-width: 75%;
+  font-size: 14px;
+}
+.moment .expos .ishi .decouvrir {
+  display: flex;
+  justify-content: center;
+}
+.moment .expos .ishi .decouvrir h3 {
+  position: absolute;
+  align-self: center;
+  color: #FFFFFF;
+  font-size: 16px;
+}
+.moment .expos .ishi .decouvrir h3 a {
+  color: #FFFFFF;
+}
+.moment .expos .anxiety {
+  align-items: center;
+  justify-content: space-between;
+  width: 252px;
+  height: 382px;
+  display: flex;
+  flex-direction: column;
+  background-color: #849561;
+}
+.moment .expos .anxiety h3 {
+  color: #FFFFFF;
+}
+.moment .expos .anxiety p {
+  color: #FFFFFF;
+  text-align: center;
+  max-width: 75%;
+  font-size: 14px;
+}
+.moment .expos .anxiety .decouvrir {
+  display: flex;
+  justify-content: center;
+}
+.moment .expos .anxiety .decouvrir h3 {
+  position: absolute;
+  align-self: center;
+  color: #FFFFFF;
+  font-size: 16px;
+}
+.moment .expos .anxiety .decouvrir h3 a {
+  color: #FFFFFF;
+}
+.moment .expos .apollinaire {
+  align-items: center;
+  justify-content: space-between;
+  width: 252px;
+  height: 382px;
+  display: flex;
+  flex-direction: column;
+  background-color: #849561;
+}
+.moment .expos .apollinaire h3 {
+  color: #FFFFFF;
+}
+.moment .expos .apollinaire p {
+  color: #FFFFFF;
+  text-align: center;
+  max-width: 75%;
+  font-size: 14px;
+}
+.moment .expos .apollinaire .decouvrir {
+  display: flex;
+  justify-content: center;
+}
+.moment .expos .apollinaire .decouvrir h3 {
+  position: absolute;
+  align-self: center;
+  color: #FFFFFF;
+  font-size: 16px;
+}
+.moment .expos .apollinaire .decouvrir h3 a {
+  color: #FFFFFF;
+}
+.moment .expos .photographes {
+  align-items: center;
+  justify-content: space-between;
+  width: 252px;
+  height: 382px;
+  display: flex;
+  flex-direction: column;
+  background-color: #849561;
+}
+.moment .expos .photographes h3 {
+  color: #FFFFFF;
+}
+.moment .expos .photographes p {
+  color: #FFFFFF;
+  text-align: center;
+  max-width: 75%;
+  font-size: 14px;
+}
+.moment .expos .photographes .decouvrir {
+  display: flex;
+  justify-content: center;
+}
+.moment .expos .photographes .decouvrir h3 {
+  position: absolute;
+  align-self: center;
+  color: #FFFFFF;
+  font-size: 16px;
+}
+.moment .expos .photographes .decouvrir h3 a {
+  color: #FFFFFF;
+}
+.nympheas {
+  display: flex;
+  background-color: #1D1B1BFC;
+  width: 100%;
+}
+.nympheas > img {
+  width: 100%;
+}
+.nympheas .installation {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1440px;
+  min-height: 375px;
+  margin: auto;
+  color: #FFFFFF;
+  text-align: center;
+}
+.nympheas .installation img {
+  border: 2px solid white;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+.nympheas .installation h2 {
+  font-size: 22px;
+  padding-bottom: 10px;
+}
+.nympheas .installation p {
+  font-size: 16px;
+  line-height: 30px;
+  width: 40%;
+  margin-bottom: 20px;
+}
+footer {
+  background-color: #393939;
+}
+footer p {
+  padding-bottom: 30px;
+  font-size: 14px;
+  line-height: 25px;
+  letter-spacing: 2px;
+}
+footer .box {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  color: #849561;
+  padding-bottom: 40px;
+  padding-top: 40px;
+}
+footer .box > h3 {
+  padding-top: 20px;
+  margin-bottom: 130px;
+  font-size: 20px;
+}
+footer .box .BGLS {
+  display: flex;
+}
+footer .box .BGLS .BG,
+footer .box .BGLS .LS {
+  max-width: 462px;
+  height: fit-content;
+  background-color: #849561;
+  color: #FFFFFF;
+  padding-left: 40px;
+  padding-right: 40px;
+  position: relative;
+  margin: 20px;
+}
+footer .box .BGLS .BG h3,
+footer .box .BGLS .LS h3 {
+  border-top: 2px solid white;
+  margin-top: 120px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+footer .box .BGLS .BG > img,
+footer .box .BGLS .LS > img {
+  position: absolute;
+  display: block;
+  margin: auto;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+footer .box .BGLS .reseaux {
+  display: flex;
+}
+footer .box .BGLS .reseaux .goo,
+footer .box .BGLS .reseaux .twe,
+footer .box .BGLS .reseaux .fac {
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  background-color: #393939;
+  margin-bottom: 40px;
+  margin-right: 10px;
+}
+@media screen and (max-width: 768px) {
+  body .bonjour p {
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 20px;
+    line-height: 40px;
+  }
+  body .moment h2 {
+    font-size: 20px;
+  }
+  body .moment .expos {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+  }
+  body .moment .expos .ishi,
+  body .moment .expos .anxiety,
+  body .moment .expos .apollinaire,
+  body .moment .expos .photographes {
+    margin-bottom: 20px;
+  }
+  body .nympheas {
+    padding-top: 30px;
+  }
+  body .nympheas .installation {
+    position: static;
+  }
+  body .nympheas > img {
+    display: none;
+  }
+}

@@ -1,0 +1,67 @@
+tags importants HTML : <...>
+
+
+
+LES BLOCKS
+
+- article : contenu indépendant (stylisable)
+- aside : contenu en dehors d'un contenu mais lié à celui-ci (barre lattérale - stylisable)
+- div : division
+- footer : pied de page
+- header : haut de page
+- h1... : titre diff taille (1 - 6)
+- ul : liste non ordonnée (sans chiffre)
+- ol : liste ordonnée (avec chiffre ou lettre)
+- li : la liste
+- main : contenu principal d'un document
+- nav : lien de navigation
+- p : paragraphe
+- section : une section dans un document
+- label : légende d'un objet (peut etre visible)
+
+
+LES INLINES
+
+- a : texte liens
+- b : gras (1 mot)
+- br : saut de ligne
+- button : bouton cliquable
+- cite : citation (italique)
+- em : souligner
+- i : italique (1 mot)
+- img : image
+- map : image cliquable
+- object : ressource externe (page web, image, lecteur multimédia ou plugg-in)
+- q : courte citation
+- script : intégrer du javascript (aussi <noscript>)
+- select: pour liste déroulante (avec balise <label>)
+- small : texte plus petit
+- span : conteneur pour partie d'un texte ou document
+- strong : texte gras
+- sub : texte en indice
+- textarea : pour collecter entrées utilisteurs (commentaires - avis)
+- time : définit une heure spécifique
+
+
+
+
+
+
+
+RACCOURCIS pour placer objet:
+
+place-self : align et justify
+align-self : sur le plan vertical
+justify-self : sur le plan horizontal (penser texte)
+width : fit-content : evite le "display : inline block" sur la largeur
+position absolute : elève du flux par rapport au parent
+
+classes:
+- container : centre et marge automatiquement
+
+
+MODIFICATIONS :
+
+(&):nth-child : cibler parent et enfant (placer dans l'enfant)
+@media screen and ('max-width:"800px){} : média querise
+!important : prend la place la plus importante sur les valeurs

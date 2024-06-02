@@ -1,0 +1,34 @@
+CREER BASE DE DONNEE :
+aller dans un terminal extérieur et taper "le chemin" puis ">mongoimport --db 'nomdb' --collection 'nomcollection' --jsonArray --file 'nomdufichier'.json"
+
+
+
+
+- show dbs : voir database
+- use 'database" : utiliser la database
+
+
+- show collections : voir collection
+- db.'collection'.find() : lire la collection
+- db.'collection'.find().limit('chiffre') : affiche 'chiffre' tab
+
+
+- db.'collection'.find({},{Title :1, Year:1}).limit('chiffre') : affiche id, titre : (1valeure), année (: 1valeur), limitée à 'chiffre'
+
+- db.'collection'.find({},{Title :1, Year:1,_id:0}).limit('chiffre') : ... ici n'affiche pas l'ID
+
+
+
+Méthodes :
+countDocument() : renvoie le nombre entier de documents
+distinct() : renvoie une liste de différents champs dans une sorte de document
+find() : renvoie le document de plusieurs selections
+findOne() :renvoie UN seul document
+getCollection('nomCollection') : appellation identique à db'comCollection'
+'nomDoc':{$lt : 'nombre'} : nomDoc INFERIEUR à 'nombre'
+'nomDoc':{$ne : 'nombre'} : pas égale
+"NA" : null
+{'nomDoc': -1} : ordre décroissant
+$match: {'nom'} : se réfere qu'au 'nom'
+$unwind: "$'nom' : transformer un tableau en plusieurs doc
+$group : faire un groupe

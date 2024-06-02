@@ -1,0 +1,429 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+
+.accueil {
+    height: 100vh;
+    width: 100vw;
+    background-image: url(img/Marais.webp);
+    background-size: cover;
+    display: block;
+
+    .containerAccueil {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        .titre {
+            margin-top: 4%;
+            margin-bottom: 2%;
+            background-color: blue;
+            border-radius: 25% 10%;
+            padding: 20px;
+
+            h3 {
+                color: white;
+                text-align: center;
+                font-size: 30px;
+            }
+
+            h2 {
+                color: aquamarine;
+                text-align: center;
+                font-size: 50px;
+            }
+        }
+
+        .buttons {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            
+            .start {
+                padding: 10px;
+                margin-bottom: 30px;
+                background-color: red;
+                font-size: 30px;
+                border-radius: 10px;
+            }
+            
+            .regles, .options {
+                padding: 10px;
+                margin-bottom: 30px;
+                background-color: aqua;
+                font-size: 30px;
+                border-radius: 10px;
+            }
+        }
+
+
+    }
+}
+
+
+#reglesDuJeu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    
+    .popUpRegles {
+        max-width: 300px;
+        width: 100%;
+        background-color: aqua;
+        border: 4mm ridge rgba(50, 61, 220, 0.6);
+        padding: 2%;
+        box-sizing: border-box;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+
+
+        h4 {
+            text-align: center;
+        }
+
+        .quitRegles {
+            border: 3px solid black;
+            background-color: red ;
+            margin-top: 20px;
+            padding: 2%;
+            align-self: center;
+        }
+    }
+
+}
+
+
+.selectionPersonnages {
+    height: 100vh;
+    width: 100vw;
+    background-image: url(./img/colines\ nuit.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: none;
+    justify-content: center;
+
+    .gridJ1J2 {
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+
+        .selectionJoueur1 {
+
+            color: blue;
+            display: flex;
+            flex-direction: column;
+
+
+            .flexMid {
+                width: 100vh;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+
+                .selectionG {
+                    display: flex;
+                    flex-direction: column;
+                    background-color: blue;
+                    justify-content: space-around;
+                    height: 300px;
+                    width: 300px;
+
+                    img {
+                        height: 70px;
+                        width: 70px;
+                    }
+                    button {
+                        height: 20px;
+                        width : fit-content;
+                        width: 100px;
+                    }
+
+                    .guerrierInfos, .guerisseurInfos, .magicienInfos {
+                        display: flex;
+                        color: black;
+                        justify-content: space-around;
+                        border : 2px solid white;
+                    }
+                }
+                
+                .choixPersoG {
+                    display: flex;
+                    flex-direction: column;
+                    
+                    img {
+                        height: 300px;
+                        width: 300px;
+                    }
+                }
+            }
+            
+            .ready1 {
+                font-size: 30px;
+                color: blue;
+                margin-left: 300px;
+                margin-right: 300px;
+                background-color: grey;
+            }
+        }
+        
+        .selectionJoueur2 {
+            
+            color: red;
+            display: flex;
+            flex-direction: column;
+            
+            
+            .flexMid {
+                width: 100vh;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                
+                .selectionD {
+                    display: flex;
+                    flex-direction: column;
+                    background-color: red;
+                    justify-content: space-around;
+                    height: 300px;
+                    width: 300px;
+                    
+                    img {
+                        height: 70px;
+                        width: 70px;
+                    }
+
+                    button {
+                        height: 20px;
+                        width : fit-content;
+                        width: 100px;
+                    }
+
+                    .guerrierInfos, .guerisseurInfos, .magicienInfos {
+                        display: flex;
+                        color: black;
+                        justify-content: space-around;
+                        border : 2px solid white;
+                    }
+                }
+                
+                .choixPersoD {
+                    display: flex;
+                    flex-direction: column;
+
+                    img {
+                        height: 300px;
+                        width: 300px;
+                    }
+                }
+            }
+
+            .ready2 {
+                font-size: 30px;
+                color: red;
+                margin-left: 300px;
+                margin-right: 300px;
+                background-color: grey;
+
+            }
+        }
+    }
+
+    .retourMenu {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .boutonMenu {
+            width: 150px;
+            height: 50px;
+            background-color: aqua;
+            font-size: 40px;
+            // width: fit-content;
+        }
+    }
+
+    #btnFight {
+        display: flex;
+        align-items: end;
+        width: 100vw;
+        justify-content: center;
+        
+        button {
+            font-size: 5rem;
+            height: 200px;
+            width: 500px;
+        }
+    }
+
+    #readyToFight {
+        
+        .fighterGauche{
+            display: none;
+            bottom: 0;
+            width: 45%;
+            left: 0;
+            position: absolute;
+            animation: 1s fighter1;
+            background-color: blue;
+            border-radius: 0% 50% 0% 0%;
+    
+            .readyG {
+                display: flex;
+                justify-content: space-around;
+            }
+            
+            .readyG, #reBl {
+                width: 85%;
+            }
+        }
+        
+        .fighterDroite{
+            display: none;
+            bottom: 0;
+            width: 45%;
+            right: 0;
+            position: absolute;
+            animation: 1s fighter2;
+            background-color: red;
+            border-radius: 50% 0 0 0;
+    
+            .readyD {
+                display: flex;
+                justify-content: space-around;
+
+            }
+            
+            .readyD, #reRe {
+                width: 200%;
+            }
+        }
+    }
+}
+
+@keyframes fighter1 {
+    from {
+        left: -50%;
+        background-color: orange;
+        animation-duration: 3s;
+    }
+    
+    to {
+        left: 0%;
+    }
+}
+
+@keyframes fighter2 {
+    from {
+        right: -50%;
+        background-color: orange;
+        animation-duration: 3s;
+    }
+    
+    to {
+        right: 0%;
+    }
+}
+
+.areneDeCombat {
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    // background-image: url(./img/Montagne\ matin.webp);
+    // background-size: cover;
+    
+    .container .joueur1 {
+        background-image: url(./img/Montagne\ matin.webp);
+        display: flex;
+	    float: left;
+        width: 50%;
+        height: 100vh;
+        border-right: 4px solid blue;
+        // justify-content: center;
+        
+        .imgPersoJou1 {
+            width: 300px;
+            height: 300px;
+            margin-right: 150px;
+            border-right: 8px solid blue;
+            border-bottom: 8px solid blue;
+        }
+
+        .nomClasse1 {
+            position: absolute;
+            left: 25%;
+            font-size: 3rem;
+            background-color: blue;
+            height: 4rem;
+            padding: 5px;
+            border: 4px dashed white;
+        }
+        
+        .statistiquesJ1 {
+            position: absolute;
+            justify-content: center;
+            top: 150px;
+            left: 25%;
+            font-size: 1.5rem;
+            background-color: azure;
+            border: thick double blue;
+            padding: 10px;
+        }
+    }
+    
+    .container .joueur2 {
+        background-image: url(./img/Montagne\ soir.webp);
+        display: flex;
+	    float: right;
+        width: 50%;
+        height: 100vh;
+        border-left: 4px solid red;
+        justify-content: flex-end;
+        
+        .nomClasse2 {
+            position: absolute;
+            right: 25%;
+            font-size: 3rem;
+            background-color: red;
+            height: 4rem;
+            padding: 5px;
+            border: 4px dashed white;
+        }
+
+        
+        .imgPersoJou2 {
+            width: 300px;
+            height: 300px;
+            margin-left: 150px;
+            border-left: 8px solid red;
+            border-bottom: 8px solid red;
+        }
+        
+        .statistiquesJ2 {
+            position: absolute;
+            justify-content: center;
+            top: 150px;
+            right: 25%;
+            font-size: 1.5rem;
+            background-color: azure;
+            border: thick double red;
+            padding: 10px;
+        }
+        
+
+    }
+    
+}

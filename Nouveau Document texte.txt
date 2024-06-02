@@ -1,0 +1,4 @@
+get : prendre
+post : envoyer (patcher tout de suite)
+put : mettre à jour
+delete : supprimer

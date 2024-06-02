@@ -1,0 +1,6 @@
+le script se met toujours à la fin pour éviter un probleme de chargement de la page du site
+
+etapes
+- copier le CSS
+- bundle
+- separate

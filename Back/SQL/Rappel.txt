@@ -1,0 +1,6 @@
+SQL est une bibliothèque de données
+
+
+- Mettre diagramme de classe dans le projet final
+- Règles de gestion
+- 

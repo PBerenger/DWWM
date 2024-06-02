@@ -1,0 +1,90 @@
+* Lien user avec github :
+
+- git config --global user.name "John Doe"
+- git config --global user.email johndoe@example.com
+
+		Vérifications : git config --global --list
+
+
+	* envoyer sûr :
+	git push -u origin main : configure la branche local vers la branche en ligne
+
+
+- git push -u origin main :
+	* au départ :
+
+- git init à initialiser le repository
+- git config --global user.name "John Doe"
+- git config --global user.email johndoe@example.com
+
+
+	* cloner :
+- créer repository
+- sur le bureau
+	- creer dossier
+	- ouvrir gitbash
+	- récupérer le lien htpps"
+	- "git clone" et coller le lien
+	
+
+	* vocabulaire :
+-u : upstream
+-d : supprimerl
+-m = message
+pwd = savoir dans quel dossier on est
+ls = liste des dossiers
+ls -a = détails
+cd 'titre' = entrer dans le dossier
+cd .. = revenir en arrière
+cd = revenir à la source où on a ouvert le git bash
+
+
+clear = effacer/nettoyer le terminal
+git diff = voir différences
+touch index.html = créer un fichier html
+
+git log = savoir qui a modifié fichier et quand, etc. _affiche l'identifiant perso)
+
+
+	* Pour garder un fichier à ne pas envoyer :
+- touch .gitignore : créer un fichier ignorer
+- nano .gitignore
+- (dans nano) taper le nom du fichier.
+
+- git add .gitignore : envoyer sans fichier voulu
+
+
+	* créer fichier avec texte dedans :
+- touch titre.twt = créer fichier texte
+- echo "ecrire texte" > titre.txt
+- cat titre.txt (ouvrir)
+- rm titre.txt (supprimer)
+
+
+	* mise à jour :
+- git add * = envoyer sur le local
+- git status = vérifier la modification
+- git commit -m "" =
+- git push = envoyer sur le server
+
+
+	* retour à un point précis :
+- git checkout 'numero du cat' (numero en rapport avec le commentaire où on veut remonter)
+- git checkout main : revenir au main (donc la dernière modif)
+
+
+	* tout annuler :
+git reset 'numéro du cat'
+
+
+
+* travailler à plusieurs :
+- git branch : savoir combien il y a de branche
+- git branch nombranch : créer branche
+- git checkout nom-de-la-branche : changer de branche
+- git push git push --set-upstream origin nombranche : push la branche sur github
+- git branch -d nomdebranche : supprimer branche
+
+
+	*fusionner :
+- git merge nom branche : pour amener un fichier d'une autre branche

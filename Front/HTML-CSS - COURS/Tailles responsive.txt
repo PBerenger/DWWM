@@ -1,0 +1,3 @@
+Desktop : 1200 px
+Tablet : 768 px
+Phone : 320 px

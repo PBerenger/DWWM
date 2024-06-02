@@ -1,0 +1,36 @@
+Pseudo classes : 
+
+"tag":"nom"
+
+- :hover : change dès que la sourie passe dessus
+- :visited : change après avoir cliqué
+- :focus : change quand on clique (ex : dans un carré de formulaire)
+
+
+
+pseudos elements :
+
+- before
+- after
+- first letter
+- first lign
+
+
+
+transform er:
+- transform
+
+
+
+transitions :
+
+- transition-duration : 2s;
+- transition-property: background;
+- transition-timing-function: ease-in-out;
+
+
+
+Animations :
+
+-animation: fadeIn 1s 5s
+	(temps d'anim)	(temps déclenchement)

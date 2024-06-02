@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="accueil">
+        <div class="containerAccueil">
+            <div class="titre">
+                <h3>Jeu au</h3>
+                <h2>TOUR</h2>
+                <h3>par</h3>
+                <h2>TOUR</h2>
+            </div>
+            
+            <div class="logo"></div>
+            
+            <div class="buttons">
+                <button class="start">COMBATTEZ</button>
+                <button class="regles">Règles</button>
+                <button class="options">Options</button>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    <div id="reglesDuJeu">
+        <div class="popUpRegles">
+            <h4>Règles du jeu</h4>
+            <br>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, commodi consequuntur. Fuga, quam! Nobis cumque, iusto nisi eos beatae accusamus eum numquam officiis commodi dolor ullam maxime? Enim, deleniti expedita.</p>
+            <button class="quitRegles">OK</button>
+        </div>
+    </div>
+    
+
+    <div class="selectionPersonnages">
+        
+        <div class="gridJ1J2">
+        
+            <div class=selectionJoueur1>
+                <h2 id="jun">Joueur 1</h2>
+                <div class="flexMid">
+                    <div class="selectionG">
+                        <button class="guerrierG">GUERRIER</button>
+                        <div class="guerrierInfos">
+                            <img src="img/boar.webp" alt="boar">
+                            <p>PV : 100 <br>Att : 20</p>
+                        </div>
+                        <button class="guerisseurG">GUERISSEUR</button>
+                        <div class="guerisseurInfos">
+                            <img src="img/bear.webp" alt="bear">
+                            <p>PV : 70 <br>Att : 30</p>
+                        </div>
+                        <button class="magicienG">MAGICIEN</button>
+                        <div class="magicienInfos">
+                            <img src="img/wolf.webp" alt="wolf">
+                            <p>PV : 50 <br>Att : 40</p>
+                        </div>
+                    </div>
+                    
+                    <div class="choixPersoG">
+                        <img id=imgJoueur1 src="img/Base.webp" alt="point d'intérrogation">
+
+                    </div>
+                </div>
+                
+                <Button class="ready1" disabled>Prêt(e)</Button>
+                
+            </div>
+            
+            <div class=selectionJoueur2>
+                <h2 id="jdeux">Joueur 2</h2>
+                <div class="flexMid">
+                    <div class="selectionD">
+                        <button class="guerrierD">GUERRIER</button>
+                        <div class="guerrierInfos">
+                            <img src="img/boar2.webp" alt="boar2">
+                            <p>PV : 100 <br>Att : 20</p>
+                        </div>
+                        <button class="guerisseurD">GUERISSEUR</button>
+                        <div class="guerisseurInfos">
+                            <img src="img/bear2.webp" alt="bear2">
+                            <p>PV : 70 <br>Att : 30</p>
+                        </div>
+                        <button class="magicienD">MAGICIEN</button>
+                        <div class="magicienInfos">
+                            <img src="img/wolf2.webp" alt="wolf2">
+                            <p>PV : 50 <br>Att : 40</p>
+                        </div>
+                    </div>
+    
+                    <div class="choixPersoD">
+                        <img id="imgJoueur2" src="img/Base.webp" alt="point d'intérrogation">
+                    </div>
+                </div>
+
+                <Button class="ready2">Prêt(e)</Button>
+
+            </div>
+        </div>
+
+        <div class="retourMenu">
+            <button class="boutonMenu">Menu</button>
+        </div>
+
+        <div id="btnFight">
+            <button>! FIGHT !</button>
+        </div>
+        
+        <!-- <div id="readyToFight">
+            <div class="fighterGauche">
+                <div class="readyG">
+                    <img id="reBl" src="img/ReadyBlue.png" alt="Ready Blue">
+                </div>
+            </div>
+            <div class="fighterDroite">
+                <div class="readyD">
+                    <img id="reRe" src="img/ReadyRed.png" alt="Ready Red">
+                </div>
+            </div>
+        </div> -->
+
+
+    </div>
+    
+    
+    <div class="areneDeCombat">
+        <div class="container">
+            <div class="joueur1">
+                <img src="" class="imgPersoJou1" alt="">
+                <div class="nomClasse1">Nom de la classe</div>
+                <div class="statistiquesJ1">
+                    <p>Statistiques du personnage :<br>PV : <br>Att :  </p>
+                </div>
+            </div>
+            <div class="joueur2">
+                <div class="nomClasse2">Nom de la classe</div>
+                <div class="statistiquesJ2">
+                    <p>Statistiques du personnage :</p>
+                    <p>PV : <span id="pvJ2"></span></p>
+                    <p>Att : <span id="attJ2"></span></p>
+                </div>
+                <img src="" class="imgPersoJou2" alt="">
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="js.js"></script>
+</body>
+
+</html>

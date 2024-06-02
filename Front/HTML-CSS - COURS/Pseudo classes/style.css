@@ -1,0 +1,26 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+:root{
+    background-color: grey;
+}
+
+a{
+    font-size: 3em;
+}
+
+a:visited{
+    color: red;
+}
+
+a:hover{
+    color: white;
+    font-size: 6em;
+}
+
+input:focus{
+    background-color: blue;
+}

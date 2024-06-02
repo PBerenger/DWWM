@@ -1,0 +1,24 @@
+:root{
+    background-color: pink;
+}
+
+.required::after{
+    content: "LALALA";
+    color: brown;
+    font-size: 3em;
+}
+
+
+.required::before{
+    content: "HUHUHU";
+    color: yellow;
+    font-size: 1.5em;
+}
+
+.quote{
+    font-style: italic;
+
+}
+.quote::before{
+    content: "\201C";
+}

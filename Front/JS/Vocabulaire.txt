@@ -1,0 +1,36 @@
+const : constante = 
+valeure : 
+paramètre :
+Function : fonction = 
+Tab : Tableau
+
+
+____________________________________________________________________________
+
+
+
+Manière 1 d'appeler une fonction (DIRECT): 
+
+	function nomFonction(nomParametre) {
+		nomParametre.'action'(); };
+
+mettre en route une fonction :
+
+	nomFonction2.addEventListener('click', () => {
+		nomFonction(objetCiblé); });
+
+----------------------------------------------------------------------------
+
+
+Manière 2 d'appeler une fonction (:
+
+	const/let nomFonction = document.querySelector("nomElement-HTML")
+
+mettre en route fonction :
+
+	nomFonction.addEventlistener('click', () => {
+		nomFonction(objetCiblé); });
+
+-----------------------------------------------------------------------------
+
+Manière 3 d'appeler une fonction :

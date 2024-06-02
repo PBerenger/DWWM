@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+body h1,
+body h2 {
+  font-family: "Radio Canada Big", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+body h3,
+body h4,
+body h5,
+body h6 {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+body p {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}

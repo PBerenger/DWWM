@@ -1,0 +1,10 @@
+Appuyer sur la touche shift + clic droit dans le dossier
+ouvrir powershel
+
+ecrire : code .
+
+créer fichier html : code index.html
+créer fichier js : code js.js
+etc.
+
+s'il ne trouve pas de fichier du meme nom il va en créer un dans le dossier

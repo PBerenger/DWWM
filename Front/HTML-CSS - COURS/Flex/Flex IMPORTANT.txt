@@ -1,0 +1,16 @@
+Paramettre base CSS :
+
+* {
+Margin : 0;
+Padding : 0;
+box-sizing : border-box;
+}
+
+________________________________________________________________________________________
+
+- 'display' est tout le temps sur le parent pour agir sur le/les enfants.
+- une flexbox suit un axe particulier : horizontal - x - justify-content /// vertical - y - align-items
+=> flex en 'column : les deux axes sont inversés
+
+
+- 'position' : rien à voir avec le flexbox, placer un objet par rapport à un autre

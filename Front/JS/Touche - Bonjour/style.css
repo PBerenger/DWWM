@@ -1,0 +1,37 @@
+.quatresRectangles {
+    display: flex;
+    color: white;
+    text-align: center;
+    font-size: 3rem;
+    
+    
+    .rectangle1 {
+        width: 200px;
+        height: 150px;
+        background-color: blue;
+        border: 4px solid black;
+        margin: 20px;
+    }
+    .rectangle2 {
+        width: 200px;
+        height: 150px;
+        background-color: red;
+        border: 4px solid black;
+        margin: 20px;
+    }
+    .rectangle3 {
+        width: 200px;
+        height: 150px;
+        background-color: green;
+        border: 4px solid black;
+        margin: 20px;
+    }
+    .rectangle4 {
+        width: 200px;
+        height: 150px;
+        background-color: yellow;
+        border: 4px solid black;
+        margin: 20px;
+    }
+
+}
