@@ -1,21 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-    <head>
-        <meta charset="utf-8"/>
-        <title>Ceci est une page HTML de test</title>
-    </head>
 
-    <body>
     <?php
-        $fullname = "Mathieu Nebra";
-        echo "Bonjour $fullname et bienvenue !";
 
-    ?>
+$userAge = readline("Entrez votre âge");
 
-    </body>
-</html>
+$isAdult = ($userAge >= 18) ? "c'est bon tu peux entrer MaCouille !" : "Tu es trop jeune va pleurer chez ta mère enculé de ta race de sale gosse de merde !!!";
+
+echo $isAdult;

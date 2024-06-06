@@ -1,0 +1,59 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    background-color: blueviolet;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+}
+
+main {
+    flex: 1;
+}
+
+h1 {
+    text-align: center;
+}
+
+body header {
+    height: 50px;
+    background-color: black;
+    opacity: 0.7;
+    display: flex;
+    justify-content: center;
+
+}
+
+header nav{
+    display: flex;
+    align-items: center;
+}
+
+header nav ul {
+    display: flex;
+    flex-direction: row;
+}
+
+header nav ul li a {
+    color: aliceblue;
+    padding: 30px;
+    font-size: 2em;
+}
+
+.form1 {
+    padding-top: 50px;
+}
+
+footer {
+    background-color: black;
+    opacity: 0.7;
+    color: aliceblue;
+    
+}
