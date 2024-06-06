@@ -12,9 +12,11 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">Présentation</a></li>
-                <li><a href="#">Projets</a></li>
+                <li><a href="index.php">Accueil</a></li>
+                <li><a href="cercle.php">Cercle EN POST</a></li>
+                <li><a href="cercle2.php">Cercle EN GET</a></li>
+                <li><a href="calculatrice.php">Calculatrice</a></li>
+                <li><a href="formulaire.php">Formulaire</a></li>
                 </ul>
                 </nav>
                 </header>

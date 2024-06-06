@@ -16,6 +16,9 @@ body {
 
 main {
     flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 h1 {
@@ -45,15 +48,38 @@ header nav ul li a {
     color: aliceblue;
     padding: 30px;
     font-size: 2em;
+
 }
 
-.form1 {
-    padding-top: 50px;
+a:hover {
+    background-color: yello;
+    opacity: 10;
+}
+
+form {
+    width: 20em;
+    justify-content: center;
+    text-align: center;
+    background-color: aliceblue;
+    border-radius: 30px;
 }
 
 footer {
     background-color: black;
     opacity: 0.7;
     color: aliceblue;
-    
+    padding: 1%;  
+}
+
+label {
+    background-color: aliceblue;
+}
+
+input {
+    background-color: yellow;
+}
+
+button {
+    background-color: black;
+    color: red;
 }
