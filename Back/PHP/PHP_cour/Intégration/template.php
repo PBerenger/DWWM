@@ -25,6 +25,7 @@
     <main>
         <h1><?= $titre ?></h1>
         <?= $content ?>
+        <br>
 
     </main>
 </body>

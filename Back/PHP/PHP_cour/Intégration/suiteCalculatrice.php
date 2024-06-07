@@ -1,36 +1,24 @@
 <?php
-
 require "fonction.php";
-// $nombre1 = $nombre2 = $resultat = "";
+$resultat = "";
 
+if (isset($_GET["nombre1"], $_GET["nombre2"], $_GET["calculateur"])) {
+    $nombre1 = $_GET['nombre1'];
+    $nombre2 = $_GET['nombre2'];
+    $choix = $_GET['calculateur'];
 
-// $_GET[demanderNombre($message)];
-// $_GET[operation($choix,$nombre1,$nombre2)];
-// $_GET[continuer()];
-
-if(isset($_GET[$resultat])) {
-    $restultat = $_GET[$resultat];
-    if(verifieSaisie($restultat)) {
-        $resultat = operation($choix,$nombre1,$nombre2);
-
-    }else{
-        $message = "NOOOOOOOO";
+    if (verifierSaisie($nombre1) && verifieSaisie($nombre2)) {
+        $resultat = operation($choix, $nombre1, $nombre2);
+    } else {
+        $resultat = "Nombre choisi invalide.";
     }
 }
+
 ob_start();
+if (isset($resultat)) {
+    echo $resultat;
+}
 
-?>
-
-
-<?php if ($resultat) : ?>
-    <p>Le résultat de l'addition est : <?= $resultat['addition']; ?></p>
-    <p>Le résultat de la soustraction est : <?= $resultat['soustraction']; ?></p>
-    <p>Le résultat de la multiplication est : <?= $resultat['multiplication']; ?></p>
-    <p>Le résultat de la division est : <?= $resultat['division']; ?></p>
-<?php endif; ?>
-
-<?php
 $content = ob_get_clean();
-$titre = "Claculatrice";
+$titre = "resultat opération";
 require "template.php";
-?>

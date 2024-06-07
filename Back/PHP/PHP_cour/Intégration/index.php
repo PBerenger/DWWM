@@ -12,3 +12,4 @@
     $titre = "Mon Titre d'accueil";
     require "template.php";
 ?>
+

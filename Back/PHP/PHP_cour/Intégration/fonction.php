@@ -1,6 +1,7 @@
 <?php
 // Vérification saisie (si numérique et il ne doit pas être inférieur ou égal à zero)
-function verifieSaisie($value) {
+function verifieSaisie($value)
+{
     if (!is_numeric($value) || $value <= 0) {
         echo "Nombre invalide, recommencez : \n";
         return false;
@@ -9,7 +10,8 @@ function verifieSaisie($value) {
 }
 
 // fonction calcul du cercle
-function calculeRayon($rayon) {
+function calculeRayon($rayon)
+{
 
     // circonférence - surface
     $circonference = 2 * M_PI * $rayon;
@@ -26,73 +28,39 @@ function calculeRayon($rayon) {
 // CALCULATRICE
 
 //Fonction pour demander un nombre à l'utilisateur
-function demanderNombre($message){
-    $nbreValide = false;
-    while(!$nbreValide){
-        echo $message;
-        $saisie =readline();
-        $nbreValide = verifieSaisie($saisie);
+function verifierSaisie($nombre)
+{
+    if (!is_numeric($nombre)) {
+        return false;
     }
-    return $saisie;
+    return true;
 }
 
-//Fonction pour afficher le menu et obtenir le chois de l'utilisateur
-
-function afficherMenu(){
-    echo "\n";
-    echo "-----------------------------------------\n";
-    echo "Menu :\n";
-    echo "1. Addition\n";
-    echo "2. soustraction\n";
-    echo "3. Multiplication\n";
-    echo "4. Division\n";
-    $choix = readline("entrez le numéro de l'opération que vous voulez effectuer :\n");
-    echo "-----------------------------------------\n";
-    return $choix;
-
-}
 
 //fonction pour effectuer l'opération choisie par l'utilisateur
 
-function operation($choix,$nombre1,$nombre2){
+function operation($choix, $nombre1, $nombre2)
+{
+    $resultat = "";
 
-    switch($choix){
-        case 1: 
+    switch ($choix) {
+        case "addition":
             $resultat = $nombre1 + $nombre2;
-            echo "Le résultat de l'adition est : $resultat\n";
-            break;
-        
-        case 2: 
+            return "Le resultat de l'addition est : $resultat";
+        case "soustraction":
             $resultat = $nombre1 - $nombre2;
-            echo "Le résultat de la soustraction est : $resultat\n";
-            break;
-        
-        case 3:
+            return "Le resultat de la soustraction est : $resultat";
+        case "multiplication":
             $resultat = $nombre1 * $nombre2;
-            echo "Le résultat de la multiplication est : $resultat\n";
-            break;
-        
-        case 4:
-
-            //Vérification du deuxième nombre
-            if($nombre2 != 0){
-                $resultat = $nombre1 / $nombre2;
-                echo "Le résultat de la division est : $resultat\n";
-            }else{
-                echo "erreur : division par zéro \n";
+            return "Le resultat de la multiplication est : $resultat";
+        case "division":
+            if ($nombre2 != 0) {
+            $resultat = $nombre1 / $nombre2;
+            return "Le resultat de la division est : $resultat";
+            } else {
+                return "Erreur";
             }
-            break;
-        default:
-        echo "Choix invalide\n";
+            default:
+            return "Choix invalide.";
     }
-
 }
-
-//Fonction pour demander à l'utilisateur s'il veut continuer ou quitter
-
-function continuer(){
-    $reponse = readline("Voulez-vous effectuer une autre opération ? (o/n) :");
-    return strtolower($reponse) == "o";
-}
-
-?>

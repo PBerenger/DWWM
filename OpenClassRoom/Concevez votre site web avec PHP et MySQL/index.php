@@ -1,8 +1,15 @@
+<?php
 
-    <?php
+// Premier utilisateur
+$userName1 = 'Mickaël Andrieu';
+$userEmail1 = 'mickael.andrieu@exemple.com';
+$userPassword1 = 'S3cr3t';
+$userAge1 = 34;
 
-$userAge = readline("Entrez votre âge");
+// Deuxième utilisatrice
+$userName2 = 'Laurène Castor';
+$userEmail2 = 'laurene.castor@exemple.com';
+$userPassword2 = 'P4ssW0rD';
+$userAge2 = 28;
 
-$isAdult = ($userAge >= 18) ? "c'est bon tu peux entrer MaCouille !" : "Tu es trop jeune va pleurer chez ta mère enculé de ta race de sale gosse de merde !!!";
-
-echo $isAdult;
+// ... et ainsi de suite pour les autres utilisateurs.
