@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #48a9a6;
+
+}
+form {
+    background-color: #81a094;
+}
+
+.modif {
+    background-color: red;
+}
+
+.modif2 {
+    background-color: green;
+}
+
