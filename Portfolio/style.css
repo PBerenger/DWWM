@@ -88,6 +88,15 @@ footer .footerBarre {
   width: 100vw;
   height: 100px;
 }
+footer .footerBarre h6 {
+  font-family: var(--fontTexte);
+  color: var(--color3);
+  font-size: 2.3em;
+  text-align: end;
+  margin: 0 15px;
+  padding-top: 20px;
+  padding-right: 10%;
+}
 @media screen and (max-width: 450px) {
   .navbar {
     padding: 10px 0;
@@ -109,7 +118,7 @@ footer .footerBarre {
     align-items: center;
   }
   .navbar .navlink ul li {
-    margin: 15px 0;
+    margin: 15px;
     font-size: 2em;
   }
   .navbar .menuBurger {

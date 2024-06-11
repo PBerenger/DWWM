@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    width: 100vw;
+    background-color: #102C57;
+    display: flex;
+    justify-content: center;
+}
+
+
+.formulaire {
+    margin-top: 30px;
+    text-align: start;
+    width: 300px;
+    background-color: #1679AB;
+    border-radius: 30px;
+}
+
+h1 {
+    color: beige;
+    text-align: center;
+}
+
+h2 {
+    margin-top: 20px;
+    text-align: center;
+}
+
+p {
+    color: beige;
+}
+
+.part1 {
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 20px;
+    border-radius: 30px;
+    background-color: #FFB1B1;
+}
+
+.buttonValid {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.buttonValid input {
+    background-color: #F1F8E8;
+    font-weight: bold;
+    font-size: 1.5em;
+    border: 10px solid #102C57;
+    margin: 10px;
+}

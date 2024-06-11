@@ -143,6 +143,8 @@
         } else {
             echo "<p>Genre invalide : aucune option sélectionnée.</p>" . "\n\n";
         }
+    } else {
+        echo "";
     }
 
     ?>
