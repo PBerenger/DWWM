@@ -1,0 +1,6 @@
+$nom = variable
+fonction(paramètre);
+ce qu'il y a dans une fonction on appelle ça des attributs
+index = indice (dans un tableau)
+WHILE (): tant que
+FOREACH (): pour chaque élément

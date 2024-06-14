@@ -13,6 +13,12 @@ body {
     color: #EE4E4E;
 }
 
+
+.imgAccueil {
+    padding-top: 3%;
+    text-align: center;
+}
+
 header {
     background-color: #219C90;
     color: #FFC700;
@@ -89,6 +95,16 @@ form input[type="submit"] {
     border: none;
     cursor: pointer;
 }
+
+tr td form button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 30px;
+}
+
 
 form input[type="submit"]:hover {
     background-color: #555;

@@ -19,6 +19,10 @@ verifAdmin();
     <p>Utilisez le menu ci-dessus pour naviger entre les différentes action du CRUD</p>
 </div>
 
+<div class="imgAccueil">
+    <img src="img/crud.jpeg" alt="">
+</div>
+
 <?php
 // ob_start();
 ?>

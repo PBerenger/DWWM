@@ -10,6 +10,7 @@ if (session_status() == PHP_SESSION_NONE) session_start();
 // }
 
 // Récupérer les données du formulaire
+
 if (isset($_POST['email'])) {
     $email = $_POST['email'];
     $pdo = getPDOConnection();

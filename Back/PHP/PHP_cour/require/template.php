@@ -23,7 +23,7 @@ if (session_status() == PHP_SESSION_NONE) session_start();
                 <li><a href="index.php">Accueil</a></li>
                 <li><a href="create.php">Ajouter un utilisateur</a></li>
                 <li><a href="read.php">Voir les utilisateurs</a></li>
-                <li><a href="update.php">Modifier un utilisateur</a></li>
+                <li><a href="update.php">Modifier/Supprimer un utilisateur</a></li>
                 <!-- <li><a href="delete.php">Supprimer un utilisateur</a></li> -->
                 <?php
                 if (isset($_SESSION["user_id"])) :
