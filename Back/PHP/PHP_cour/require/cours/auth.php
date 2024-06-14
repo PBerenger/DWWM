@@ -6,6 +6,7 @@ if(session_status()==PHP_SESSION_NONE)session_start();
 // }
 
 require_once 'dbConnect.php';
+
 function estAdmin($userId)  {
     $pdo = getPDOConnection();
     // Préparation de la requete SQL
@@ -21,12 +22,12 @@ function estAdmin($userId)  {
 
 function verifAdmin() {
     if(!isset($_SESSION['user_id'])) {
-        echo'Session non définie.';
+        echo 'Session non définie.';
         exit();
     }else{
         $userId = $_SESSION['user_id'];
         if(!estAdmin($userId)) {
-            echo"L'utilisateur $userId n'est pas administrateur";
+            echo "L'utilisateur $userId n'est pas administrateur";
             exit();
         }
     }

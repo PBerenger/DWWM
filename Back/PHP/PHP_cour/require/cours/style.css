@@ -7,14 +7,15 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #FFF455;
     margin: 0;
     padding: 0;
+    color: #EE4E4E;
 }
 
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: #219C90;
+    color: #FFC700;
     padding: 10px 0;
 }
 
@@ -31,13 +32,17 @@ header nav ul li {
 }
 
 header nav ul li a {
-    color: #fff;
+    color: #FFC700;
     text-decoration: none;
     font-weight: bold;
 }
 
 header nav ul li a:hover {
     text-decoration: underline;
+}
+
+.Welcome-text{
+    text-align: center;
 }
 
 h1 {

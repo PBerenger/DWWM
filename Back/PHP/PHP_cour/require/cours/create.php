@@ -1,6 +1,7 @@
 <?php
 ob_start();
 require_once("auth.php");
+require 'functions.php';
 
 // Créer une connexion
 
@@ -28,9 +29,9 @@ if (isset($_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['telephone'],
 // execute la requette
     $stmt->execute([$userId,$role]);
 
-    echo "ajouté avec succès";
+    phpAlert("ajouté avec succès");
 }else{
-    echo "tous les champs ne sont pas remplis";
+    phpAlert("tous les champs ne sont pas remplis");
 }
 
 ?>

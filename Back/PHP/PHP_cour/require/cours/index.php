@@ -13,7 +13,7 @@ if(!isset($_SESSION['user_id'])) {
 }
 verifAdmin();
 ?>
-
+<br><br>
 <div class="Welcome-text">
     <h2>Bienvenue sur la page d'accueil du CRUD Répertoire</h2>
     <p>Utilisez le menu ci-dessus pour naviger entre les différentes action du CRUD</p>
