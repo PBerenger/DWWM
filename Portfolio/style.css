@@ -38,64 +38,102 @@ body {
   flex-direction: column;
   width: 100vw;
   height: 100vh;
+  margin: 0;
+  background: linear-gradient(#184561, #71ACA4);
+  align-items: center;
+  justify-content: center;
+  user-select: none;
 }
-.navbar {
-  background-color: var(--color1);
+header {
+  width: 100vw;
+}
+header .navbar {
   padding: 10px;
   display: flex;
   justify-content: space-around;
   box-sizing: border-box;
   align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
-.navbar .logo {
+header .navbar .logo {
   font-family: var(--fontLogo);
-  font-size: 4em;
+  font-size: 2em;
   color: var(--color4);
 }
-.navbar .navlink ul {
+header .navbar .navlink ul {
   display: flex;
   align-items: center;
 }
-.navbar .navlink ul li.active a {
+header .navbar .navlink ul li.active a {
   color: var(--color5);
-  font-size: 44px;
+  font-size: 2em;
 }
-.navbar .navlink ul li {
+header .navbar .navlink ul li {
   margin: 0 15px;
 }
-.navbar .navlink ul a {
+header .navbar .navlink ul a {
   color: var(--color3);
   font-family: var(--fontTitre);
-  font-size: 34px;
+  font-size: 1em;
 }
-.navbar .menuBurger {
+header .navbar .menuBurger {
   display: none;
   width: 35px;
 }
-header {
-  width: 100vw;
-  height: 100px;
+.group {
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
 }
-.background {
+.group .item {
+  width: 15vw;
+  height: 20vw;
+  background-position: center;
+  background-size: 75vh;
+  margin: 1vw;
+  border-radius: 3vw;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.group .item .imgCard {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
-  height: 100%;
-  background-image: url(/Ressources/Wallpaper5.1.png);
-  background-repeat: no-repeat;
+  max-width: 100%;
+  height: 48vh;
   background-size: cover;
 }
-footer .footerBarre {
-  background-color: var(--color1);
-  width: 100vw;
-  height: 100px;
+.group .item .text {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  padding: 10px;
+  color: white;
+  font-size: 2em;
+  text-align: center;
+  display: none;
+  transition: opacity 0.3s ease;
+  /* Transition pour l'opacité */
 }
-footer .footerBarre h6 {
-  font-family: var(--fontTexte);
-  color: var(--color3);
-  font-size: 2.3em;
-  text-align: end;
-  margin: 0 15px;
-  padding-top: 20px;
-  padding-right: 10%;
+.group .item:hover {
+  transform: translateY(-25px) rotateX(10deg);
+  /* Translation vers le haut et rotation */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  /* Ombre plus prononcée */
+}
+.group .item:hover .text {
+  display: block;
+  /* Afficher le texte quand on passe en hover */
 }
 @media screen and (max-width: 450px) {
   .navbar {

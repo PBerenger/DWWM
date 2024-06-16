@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <header>
@@ -14,23 +16,80 @@
             <div class="navlink">
                 <ul>
                     <li class="active"><a href="#">Accueil</a></li>
-                    <li><a href="#">Présentation</a></li>
+                    <!-- <li><a href="#">Présentation</a></li>
                     <li><a href="#">Projets</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Contact</a></li> -->
                 </ul>
 
             </div>
         </nav>
     </header>
 
-    <div class="background"></div>
-
-    <footer>
-        <div class="footerBarre">
-            <h6>Copyright BP</h6>
+    <!-- Accordéon effect -->
+    <div class="group">
+        <div class="item" style="background-image: url(/ressources/buttonsAcc.png)">
+            <div class="imgCard" style="background-image: url(/ressources/presentationJoc.png);"></div>
+            <div class="text">Présentation</div>
         </div>
-    </footer>
+        <div class="item" style="background-image: url(/ressources/buttonsAcc.png)">
+            <div class="imgCard" style="background-image: url(/ressources/projetsRou.png);"></div>
 
-    
+            <div class="text">Projets</div>
+        </div>
+        <div class="item" style="background-image: url(/ressources/buttonsAcc.png)">
+            <div class="imgCard" style="background-image: url(/ressources/contactsTel.png);"></div>
+
+            <div class="text">Contacts</div>
+        </div>
+    </div>
+
+    <!-- Présentation rapide -->
+
+    <!-- ATTENTION toutes les classes sont dans la classe générale "presentationRap" -->
+    <p class="presentationRap">
+        <span class="line">
+            <span class="word">Bonjour</span>
+        </span>
+        <br>
+        <span class="line">
+            <span class="word">Je </span>
+            <span class="word">m'appelle </span>
+            <span class="word">Bérenger </span>
+            <span class="word">POMMELET.</span>
+        </span>
+        <br>
+        <span class="line">
+            <span class="word">Je </span>
+            <span class="word">suis </span>
+            <span class="word">développeur </span>
+            <span class="word">Web </span>
+            <span class="word">et </span>
+            <span class="word">souhaite</span>
+            <span class="word">vous </span>
+            <span class="word">partager </span>
+            <span class="word">ici </span>
+            <span class="word">mes </span>
+            <span class="word">connaissances </span>
+            <span class="word">et </span>
+            <span class="word">mes </span>
+            <span class="word">projets.</span>
+        </span>
+        <br>
+        <span class="line">
+            <span class="word">Vous </span>
+            <span class="word">pouvez </span>
+            <span class="word">également </span>
+            <span class="word">me </span>
+            <span class="word">retrouver </span>
+            <span class="word">sur </span>
+            <a href="https://github.com/PBerenger">GITHUB </a>
+            <span class="word">et </span>
+            <a href="https://www.linkedin.com/in/b%C3%A9renger-pommelet-85195b159/">LINKEDIN.</a>
+        </span>
+        <br>
+    </p>
+
+    <script src="js.js"></script>
 </body>
+
 </html>
