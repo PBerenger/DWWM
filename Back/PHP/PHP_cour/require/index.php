@@ -7,6 +7,7 @@ if (session_status() == PHP_SESSION_NONE) session_start();
 
 require_once "dbConnect.php";
 require_once "auth.php";
+// Vérification de la variable $_SESSION['user_id'] dans le fichier 'index.php' pour s'assurer que seuls les utilisateurs authentifiés y accèdent. 
 if(!isset($_SESSION['user_id'])) {
     header('location: login.php');
     exit();

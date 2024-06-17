@@ -7,10 +7,10 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #FFF455;
+    background-color: #F7C566;
     margin: 0;
     padding: 0;
-    color: #EE4E4E;
+    color: #6C0345;
 }
 
 
@@ -20,8 +20,8 @@ body {
 }
 
 header {
-    background-color: #219C90;
-    color: #FFC700;
+    background-color: #6C0345;
+    color: #DC6B19;
     padding: 10px 0;
 }
 
@@ -38,7 +38,7 @@ header nav ul li {
 }
 
 header nav ul li a {
-    color: #FFC700;
+    color: #F7C566;
     text-decoration: none;
     font-weight: bold;
 }
@@ -72,6 +72,15 @@ h1 {
     border-radius: 8px;
 }
 
+.formulaire {
+    width: 300px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
 form label {
     display: block;
     margin-bottom: 10px;
@@ -80,6 +89,7 @@ form label {
 
 form input[type="text"],
 form input[type="email"],
+form input[type="password"],
 form input[type="submit"],
 form select {
     width: calc(100% - 16px);
@@ -90,15 +100,15 @@ form select {
 }
 
 form input[type="submit"] {
-    background-color: #333;
-    color: #fff;
+    background-color: #FFF8DC;
+    color: #333;
     border: none;
     cursor: pointer;
 }
 
 tr td form button {
-    background-color: #333;
-    color: #fff;
+    background-color: #FFF8DC;
+    color: #333;
     border: none;
     cursor: pointer;
     padding: 10px;
@@ -107,7 +117,7 @@ tr td form button {
 
 
 form input[type="submit"]:hover {
-    background-color: #555;
+    background-color: #DC6B19;
 }
 
 table {

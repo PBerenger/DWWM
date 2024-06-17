@@ -33,6 +33,7 @@ if (session_status() == PHP_SESSION_NONE) session_start();
                     <li><a href="login.php">Login</a></li>
                 <?php endif;?>
 
+
             </ul>
 
         </nav>

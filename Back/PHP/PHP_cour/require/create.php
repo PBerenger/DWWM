@@ -7,26 +7,31 @@ require 'functions.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Vérifier si toutes les données nécessaires sont présentes
-    if (isset($_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['telephone'], $_POST['role'])) {
+    if (isset($_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['mdp'], $_POST['telephone'], $_POST['role'])) {
         $nom = $_POST['nom'];
         $prenom = $_POST['prenom'];
         $email = $_POST['email'];
+        $mdp = $_POST['mdp'];
         $tel = $_POST['telephone'];
         $role = $_POST['role'];
 
         // Vérifier si l'email existe déjà dans la base de données
         $pdo = getPDOConnection(); // Assurez-vous d'avoir une fonction getPDOConnection() qui retourne l'objet PDO avec la connexion établie
+        // Hasher le mot de passe (le crypter)
+        $mdp = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
         
         $stmt = $pdo->prepare('SELECT email FROM users WHERE email = ?');
         $stmt->execute([$email]);
         $existingUser = $stmt->fetch();
 
+        // Verifier si le mail existe déjà dans la BDD
         if ($existingUser) {
-            phpAlert("Email déjà existantdans la base de données.");
+            phpAlert("Email déjà existant dans la base de données.");
         } else {
             // Insérer un nouvel utilisateur dans la table 'users'
-            $stmt = $pdo->prepare('INSERT INTO users(nom, prenom, email, telephone) VALUES (?, ?, ?, ?)');
-            $stmt->execute([$nom, $prenom, $email, $tel]);
+            $stmt = $pdo->prepare('INSERT INTO users(nom, prenom, email, mdp, telephone) VALUES (?, ?, ?, ?, ?)');
+            $stmt->execute([$nom, $prenom, $email, $mdp, $tel]);
+
 
             // Récupérer l'ID de l'utilisateur inséré
             $userId = $pdo->lastInsertId();
@@ -48,20 +53,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 <div class="form-container">
-    <form method="POST">
-        <label for="nom">Nom:</label>
+    <form action="functions.php" method="POST">
+        <label for="nom">Nom: </label>
         <input type="text" name="nom" required><br>
 
-        <label for="prenom">Prénom:</label>
+        <label for="prenom">Prénom: </label>
         <input type="text" name="prenom" required><br>
 
-        <label for="email">Email:</label>
+        <label for="email">Email: </label>
         <input type="email" name="email" required><br>
 
-        <label for="telephone">Téléphone:</label>
+        <label for="mdp">Mot de passe :</label>
+        <input type="password" name="mdp" required><br>
+
+        <label for="telephone">Téléphone: </label>
         <input type="text" name="telephone" required><br>
 
-        <label for="role">Rôle:</label>
+        <label for="role">Rôle: </label>
 
         <select name="role" required>
             <option value="admin">Admin</option>

@@ -3,6 +3,7 @@
   padding: 0;
   text-decoration: none;
   list-style: none;
+  box-sizing: border-box;
 }
 @font-face {
   font-family: 'ALOALLA';
@@ -44,10 +45,11 @@ body {
   justify-content: center;
   user-select: none;
 }
+/* Barre de navigation */
 header {
   width: 100vw;
 }
-header .navbar {
+.navbar {
   padding: 10px;
   display: flex;
   justify-content: space-around;
@@ -58,60 +60,53 @@ header .navbar {
   width: 100%;
   z-index: 1000;
 }
-header .navbar .logo {
+.logo {
   font-family: var(--fontLogo);
   font-size: 2em;
   color: var(--color4);
 }
-header .navbar .navlink ul {
+.navlink ul {
   display: flex;
   align-items: center;
 }
-header .navbar .navlink ul li.active a {
+.navlink li.active a {
   color: var(--color5);
   font-size: 2em;
 }
-header .navbar .navlink ul li {
+.navlink li {
   margin: 0 15px;
 }
-header .navbar .navlink ul a {
+.navlink a {
   color: var(--color3);
   font-family: var(--fontTitre);
   font-size: 1em;
 }
-header .navbar .menuBurger {
+.menuBurger {
   display: none;
   width: 35px;
 }
+/* Cards Items */
 .group {
+  padding-top: 90px;
+  display: flex;
   text-align: center;
-  white-space: nowrap;
   overflow: hidden;
 }
-.group .item {
+.item {
   width: 15vw;
-  height: 20vw;
+  height: 50vh;
   background-position: center;
-  background-size: 75vh;
   margin: 1vw;
   border-radius: 3vw;
-  display: inline-block;
   cursor: pointer;
-  position: relative;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.group .item .imgCard {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  max-width: 100%;
+.imgCard {
   height: 48vh;
   background-size: cover;
 }
-.group .item .text {
+.text {
   position: absolute;
   top: 100%;
   left: 50%;
@@ -123,47 +118,11 @@ header .navbar .menuBurger {
   text-align: center;
   display: none;
   transition: opacity 0.3s ease;
-  /* Transition pour l'opacité */
 }
-.group .item:hover {
+.item:hover {
   transform: translateY(-25px) rotateX(10deg);
-  /* Translation vers le haut et rotation */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  /* Ombre plus prononcée */
 }
-.group .item:hover .text {
+.item:hover .text {
   display: block;
-  /* Afficher le texte quand on passe en hover */
-}
-@media screen and (max-width: 450px) {
-  .navbar {
-    padding: 10px 0;
-  }
-  .navbar .logo {
-    font-size: 24px;
-  }
-  .navbar .navlink {
-    background-color: rgba(255, 255, 255, 0.281);
-    backdrop-filter: blur(8px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    display: none;
-  }
-  .navbar .navlink ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .navbar .navlink ul li {
-    margin: 15px;
-    font-size: 2em;
-  }
-  .navbar .menuBurger {
-    display: block;
-    justify-content: flex-end;
-  }
-  .background {
-    background-position: center;
-  }
 }
