@@ -72,6 +72,20 @@ h1 {
     border-radius: 8px;
 }
 
+.validator {
+    span {
+        color: #333;
+
+            .invalid {
+                color: red;
+            }
+    
+            .valid {
+                color: green;
+            }
+    }
+}
+
 .formulaire {
     width: 300px;
     margin: 20px auto;

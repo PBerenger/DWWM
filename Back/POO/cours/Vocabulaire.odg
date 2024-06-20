@@ -1,0 +1,18 @@
+formation d'un objet :
+
+classe : plantes
+
+attributs :
+nom
+type
+hauteur
+durée vie
+famille
+
+****************************
+
+"public", "private", "protected" : mot clef pour réutilisation ou pas sur une autre page.
+
+seuls les attributs sont mis en PRIVATE, car le reste, comme les fonctions, pourront être réutilisées ailleurs.
+
+$this : mot clé
