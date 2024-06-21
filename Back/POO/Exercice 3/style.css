@@ -1,0 +1,19 @@
+* {
+    margin: auto;
+    padding: auto;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body {
+    background-color: #658147;
+    display: flex;
+}
+
+.card {
+    padding: 20px;
+    margin: 20px;
+    max-width: 200px;
+    background-color: salmon;
+    border : 4px solid black
+}

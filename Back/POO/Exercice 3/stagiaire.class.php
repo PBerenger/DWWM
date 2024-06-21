@@ -1,7 +1,7 @@
 <?php
 
 // 1
-class stagiaire
+class Stagiaire
 {
     //2
     //privé et publique
@@ -44,7 +44,7 @@ class stagiaire
 
 
     //3
-    // Méthode pour calculer la moyenne des notes
+    // Méthode pour calculer la moyenne des notes ("if" est utilisé ici pour vérifier si le tableau n'est pas vide et parce qu'on ne peut pas diviser par zero)
     public function calculerMoyenne()
     {
         if (count($this->notes) == 0) {
@@ -70,15 +70,5 @@ class stagiaire
             return 0; // Pour gérer le cas où il n'y a pas de notes
         }
         return min($this->notes);
-    }
-
-
-
-
-
-    // Methode d'affichage
-    public function afficher()
-    {
-
     }
 }
