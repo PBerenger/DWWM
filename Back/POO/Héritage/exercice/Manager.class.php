@@ -1,13 +1,11 @@
 <?php
 
-class Manager {
-    private $nom;
-    private $salaire;
+class Manager extends Employe {
     private $employes = [];
 
-    public function __construct($nom, $salaire) {
-        $this->nom = $nom;
-        $this->salaire = $salaire;
+    public function __construct($nom, $salaire, array $employes = []) {
+        parent::__construct($nom, $salaire);
+        $this->employes = $employes;
     }
 
     public function ajouterEmploye(Employe $employe) {
