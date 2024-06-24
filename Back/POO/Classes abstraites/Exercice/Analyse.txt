@@ -1,0 +1,10 @@
+1 on voit 4 classes :
+- index.php
+- iDeplacement.class.php
+	donc une inteface de déplacement avec une fonction
+- Animal.class.php
+	classe abstraite qui implémente le déplacement
+	une fonction construire la couleur
+	
+
+	

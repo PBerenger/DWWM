@@ -9,7 +9,7 @@ $lapin = new Lapin("blanc", 4);
 $chasseur = new Chasseur("Paul");
 
 // // Le lapin se nourrit
-// $lapin->seNourrir();
+$lapin->seNourrir();
 
 while ($lapin->estEnVie()) {
     // Le chasseur se déplace
