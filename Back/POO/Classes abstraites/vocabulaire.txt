@@ -1,0 +1,25 @@
+Les assesseurs (getters) :  Les assesseurs permettront de récupérer les contenus des variables.
+
+Par convention ces méthodes portent le même nom précédé de get et sans l'underscore que les propriétés dont elles renvoient les valeurs.
+
+    *on crée une méthode getters permettant de récupérer le contenu de la propriété $_nom de l'objet elev1
+    *par convention elle porte le même nom que la propriété à renvoyer précédé de get: getNom()
+    *la méthode est public afin d'être accessible à partir de n'importe quel point du programme
+
+
+
+Les mutateurs (setters)
+
+Les mutateurs permettront la mise à jour des contenus des variables.
+
+Par convention ces méthodes portent le même nom précédé de set et sans l'underscore que les propriétés dont elles modifient les valeurs.
+
+Il est impératif que la classe soit protégée des affectations fantaisistes, il y a donc lieu de tester les valeurs avant affectation afin que le principe d'encapsulation soit respecté.
+
+    on crée une méthode setters permettant de modifier la propriété $_nom de l'objet elev1, on teste le paramètre pour bloquer toutes entrées non autorisées.
+    par convention elle porte le même nom que la propriété à renvoyer précédé de set: setNom()
+    on crée une méthode getters permettant de renvoyer le contenu de la propriété $_nom de l'objet elev1
+    ces méthodes sont public afin d'être accessible à partir de n'importe quel point du programme
+
+
+$this : fait référence à l'instance de l'objet (ref au new "Class")
