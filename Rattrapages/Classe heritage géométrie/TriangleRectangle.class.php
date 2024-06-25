@@ -2,8 +2,8 @@
 
 class TriangleRectangle 
 {
-    private $base;
-    private $hauteur;
+    protected $base;
+    protected $hauteur;
 
     public function __construct($base, $hauteur)
     {

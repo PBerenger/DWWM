@@ -2,7 +2,7 @@
 
 class Cercle 
 {
-    private $rayon;
+    protected float $rayon;
 
     public function __construct($rayon)
     {
