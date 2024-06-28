@@ -39,6 +39,9 @@ if (session_status() == PHP_SESSION_NONE) session_start();
         </nav>
     </header>
 
+    <script src="js.js"></script>
+
+
     <h1><?= $titre ?></h1>
     <?= $content ?>
 </body>

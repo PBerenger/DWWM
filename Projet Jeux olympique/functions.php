@@ -1,7 +1,10 @@
 <?php
-function phpAlert($msg)
-{
+
+// Fonction pour afficher des alertes en utilisant JavaScript
+function phpAlert($msg) {
+    // Assurez-vous que le message est correctement échappé pour éviter les problèmes de sécurité
     $safe_msg = htmlspecialchars($msg, ENT_QUOTES, 'UTF-8');
+    // Utilisez json_encode pour gérer les guillemets et les caractères spéciaux correctement
     echo '<script type="text/javascript">alert(' . json_encode($safe_msg) . ');</script>';
 }
 

@@ -1,183 +1,38 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    list-style: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
 }
-
+@font-face {
+  font-family: 'Paris2024';
+  src: url("/Font/Paris2024-Variable.woff2") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Coolvetica';
+  src: url("/Font/coolvetica.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto-Regular';
+  src: url("/Font/Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+:root {
+  --color1: #022366;
+  --color2: #FBA9CB;
+  --color3: #F3F3F3;
+  --color4: #D1D8C5;
+  --color5: #EEEEEE;
+  --color6: #000000;
+  --fontLogo: 'Paris2024';
+  --fontTitre: 'Coolvetica';
+  --fontTexte: 'Roboto-Regular';
+}
 body {
-    font-family: Arial, sans-serif;
-    background-color: #F7C566;
-    margin: 0;
-    padding: 0;
-    color: #6C0345;
-}
-
-
-.imgAccueil {
-    padding-top: 3%;
-    text-align: center;
-}
-
-header {
-    background-color: #6C0345;
-    color: #DC6B19;
-    padding: 10px 0;
-}
-
-header nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-}
-
-header nav ul li {
-    margin: 0 15px;
-}
-
-header nav ul li a {
-    color: #F7C566;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-header nav ul li a:hover {
-    text-decoration: underline;
-}
-
-.Welcome-text{
-    text-align: center;
-}
-
-h1 {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.welcome-text {
-    text-align: center;
-    margin: 20px auto;
-    width: 80%;
-    max-width: 600px;
-}
-
-.form-container {
-    width: 300px;
-    margin: 20px auto;
-    background: #fff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
-
-.validator {
-    span {
-        color: #333;
-
-            .invalid {
-                color: red;
-            }
-    
-            .valid {
-                color: green;
-            }
-    }
-}
-
-.formulaire {
-    width: 300px;
-    margin: 20px auto;
-    background: #fff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
-
-form label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
-}
-
-form input[type="text"],
-form input[type="email"],
-form input[type="password"],
-form input[type="submit"],
-form select {
-    width: calc(100% - 16px);
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-form input[type="submit"] {
-    background-color: #FFF8DC;
-    color: #333;
-    border: none;
-    cursor: pointer;
-}
-
-tr td form button {
-    background-color: #FFF8DC;
-    color: #333;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 30px;
-}
-
-
-form input[type="submit"]:hover {
-    background-color: #DC6B19;
-}
-
-table {
-    width: 80%;
-    margin: 20px auto;
-    border-collapse: collapse;
-    background: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-table th,
-table td {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: left;
-}
-
-table th {
-    background-color: #f4f4f4;
-}
-
-table a {
-    color: #333;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-table a:hover {
-    text-decoration: underline;
-}
-
-.login-container {
-    width: 300px;
-    margin: 50px auto;
-    padding: 20px;
-    background: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    text-align: center;
-}
-
-.login-container h1 {
-    margin-bottom: 20px;
-}
-
-.error {
-    color: red;
-    margin-bottom: 15px;
+  background-color: var(--color3);
 }

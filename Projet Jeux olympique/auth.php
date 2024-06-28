@@ -10,7 +10,7 @@ require_once 'dbConnect.php';
 function estAdmin($userId)  {
     $pdo = getPDOConnection();
     // Préparation de la requete SQL
-    $stmt = $pdo->prepare('SELECT role FROM userRoles WHERE user_id = ?');
+    $stmt = $pdo->prepare('SELECT role FROM jo_skateboard WHERE user_id = ?');
     // Execution de la requête
     $stmt->execute([$userId]);
     // Récupération du résultat

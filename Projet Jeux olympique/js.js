@@ -10,14 +10,22 @@ let corresp = document.querySelector(".corresp");
 console.log(long);
 
 
-// input.addEventListener("input", function(){
-//     validation(this);
+// afficher information du mot de passe 
+document.addEventListener("DOMContentLoaded", function() {
+    const passwordField = document.getElementById("passwordField");
+    const validator = document.getElementById("validator");
 
-//     if(!this.value){
-//         remove();
-//     }
-// })
+    passwordField.addEventListener("mouseover", function() {
+        validator.style.display = "block";
+    });
 
-// function verifPassword() {
-    
-// }
+    passwordField.addEventListener("mouseout", function() {
+        validator.style.display = "none";
+    });
+
+    // Optionnel : Pour positionner le validator près du champ de mot de passe
+    passwordField.addEventListener("mousemove", function(event) {
+        validator.style.top = (event.clientY + 10) + 'px';
+        validator.style.left = (event.clientX + 10) + 'px';
+    });
+});
