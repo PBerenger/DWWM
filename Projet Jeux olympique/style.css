@@ -11,8 +11,8 @@
   font-style: normal;
 }
 @font-face {
-  font-family: 'Coolvetica';
-  src: url("/Font/coolvetica.otf") format("opentype");
+  font-family: 'Roboto-Black';
+  src: url("/Font/Roboto-Black.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -27,12 +27,127 @@
   --color2: #FBA9CB;
   --color3: #F3F3F3;
   --color4: #D1D8C5;
-  --color5: #EEEEEE;
-  --color6: #000000;
-  --fontLogo: 'Paris2024';
-  --fontTitre: 'Coolvetica';
+  --color5: #000000;
+  --color6: #EEEEEE;
+  --fontTitre: 'Paris2024';
+  --fontButton: 'Roboto-Black';
   --fontTexte: 'Roboto-Regular';
 }
 body {
   background-color: var(--color3);
+}
+body header .connection {
+  width: 100vw;
+  background-color: var(--color2);
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+body header .connection li {
+  font-family: var(--fontButton);
+  background-color: var(--color3);
+  padding: 10px;
+  margin: 10px;
+  border-radius: 50px;
+}
+body header .connection li a {
+  color: var(--color5);
+}
+body header .navigation {
+  width: 100vw;
+  background-color: var(--color1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body header .navigation ul {
+  display: flex;
+}
+body header .navigation ul li {
+  font-family: var(--fontButton);
+  background-color: var(--color3);
+  padding: 10px;
+  margin: 10px;
+  border-radius: 50px;
+}
+body header .navigation ul li a {
+  color: var(--color5);
+}
+footer .foot1 {
+  height: 70px;
+  width: 100vw;
+  background-color: var(--color2);
+}
+footer .foot2 {
+  width: 100vw;
+  padding: 20px;
+  background-color: var(--color1);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+footer .foot2 ul {
+  font-family: var(--fontTexte);
+  color: var(--color3);
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.content h1 {
+  position: absolute;
+  font-family: var(--fontTitre);
+  font-size: 5em;
+  color: var(--color3);
+  padding: 40px;
+  z-index: 3;
+}
+.content .asterisque {
+  color: var(--color2);
+}
+.content #section1 {
+  position: relative;
+}
+.content #section1 img {
+  width: 100vw;
+  height: auto;
+  object-fit: cover;
+  z-index: 1;
+}
+.content #section1 .intro {
+  position: absolute;
+  z-index: 2;
+  top: 30%;
+  margin: 30px;
+}
+.content #section1 .intro p {
+  width: 30%;
+  font-family: var(--fontTexte);
+  font-size: 2.2em;
+  background-color: rgba(0, 0, 0, 0.33);
+  border-radius: 50PX;
+  padding: 20px;
+  color: var(--color3);
+}
+.content #section2 {
+  text-align: justify;
+  margin: 5%;
+  font-family: var(--fontTexte);
+}
+.content #section2 .un {
+  text-indent: 5%;
+}
+.content #section2 .deux {
+  display: inline-block;
+  position: absolute;
+  right: 5%;
+  margin-top: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  background-color: var(--color3);
+  color: var(--color2);
+  text-align: end;
+  font-style: italic;
+  font-size: 13px;
+  padding: 10px;
 }
