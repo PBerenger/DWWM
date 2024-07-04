@@ -1,0 +1,3 @@
+('Great Britain', '1')
+
+INSERT INTO country (nom) VALUES ('Great Britain');

@@ -18,6 +18,7 @@ require_once "auth.php";
 // ob_start();
 ?>
 <div id="section1">
+    <h1 class="overElement">Epreuve de Skateboard aux jeux Olympiques de Paris 2024</h1>
     <img src="/img/Desktop/headerAccueilDesktop1.jpg" alt="">
     <div class="intro">
         <p>
@@ -43,6 +44,5 @@ require_once "auth.php";
 
 <?php
 $content = ob_get_clean();
-$titre = "Epreuve de Skateboard aux jeux Olympiques de Paris 2024";
 require "template.php";
 ?>

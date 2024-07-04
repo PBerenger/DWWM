@@ -60,7 +60,15 @@ body {
       background-color: var(--color2);
       display: flex;
       align-items: center;
-      justify-content: end;
+      justify-content: space-around;
+
+      .logo2 {
+        img {
+          width: 5%;
+          // margin-left: 30px;
+          clip-path: ellipse(45% 50%);
+        }
+      }
 
       li {
         font-family: var(--fontButton);
@@ -130,12 +138,20 @@ footer {
   position: relative;
 
   h1 {
-    position: absolute;
     font-family: var(--fontTitre);
     font-size: 5em;
-    color: var(--color3);
     padding: 40px;
+  }
+
+  .overElement {
+    position: absolute;
     z-index: 3;
+    color: var(--color3);
+
+  }
+
+  .upElement {
+    color: var(--color5);
   }
 
   .asterisque {
@@ -178,11 +194,11 @@ footer {
     .un {
       text-indent: 5%; //décaller première phrase
     }
+
     // POURQUOI .deux est en dehors de la section2 ???
     .deux {
-      display: inline-block;
-      position: absolute;
-      right: 5%;
+      width: fit-content; //prend la taille de l'élément
+      margin-left: auto; // créé une marge auto sur la gauche
       margin-top: 10px;
       box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
       background-color: var(--color3);
@@ -193,4 +209,51 @@ footer {
       padding: 10px;
     }
   }
+}
+
+.content {
+  background-image: url(/img/all/logo4.jpg);
+  background-repeat: no-repeat;
+  //redimensionner image !!!
+  background-color: var(--color3);
+  .containerFormInsc {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    place-items: center;
+    margin-bottom: 20px;
+    .form-container {
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+      border-radius: 50px;
+      form {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--color4);
+        border-radius: 50px;
+        margin: 10px;
+        padding: 30px;
+        font-family: var(--fontTexte);
+        input {
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+          margin-bottom: 10px;
+        }
+        select {
+          margin-bottom: 10px;
+          background-color: var(--color3);
+        }
+
+        .add {
+          margin-top: 10px;
+          padding: 10px;
+          background-color: var(--color2);
+          border-radius: 50px;
+        }
+        .validator {
+          display: none;
+        }
+
+      }
+    }
+
+  }
+
 }

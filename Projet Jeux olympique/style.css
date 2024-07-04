@@ -41,7 +41,11 @@ body header .connection {
   background-color: var(--color2);
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: space-around;
+}
+body header .connection .logo2 img {
+  width: 5%;
+  clip-path: ellipse(45% 50%);
 }
 body header .connection li {
   font-family: var(--fontButton);
@@ -96,12 +100,17 @@ footer .foot2 ul {
   position: relative;
 }
 .content h1 {
-  position: absolute;
   font-family: var(--fontTitre);
   font-size: 5em;
-  color: var(--color3);
   padding: 40px;
+}
+.content .overElement {
+  position: absolute;
   z-index: 3;
+  color: var(--color3);
+}
+.content .upElement {
+  color: var(--color5);
 }
 .content .asterisque {
   color: var(--color2);
@@ -139,9 +148,8 @@ footer .foot2 ul {
   text-indent: 5%;
 }
 .content #section2 .deux {
-  display: inline-block;
-  position: absolute;
-  right: 5%;
+  width: fit-content;
+  margin-left: auto;
   margin-top: 10px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   background-color: var(--color3);
@@ -150,4 +158,45 @@ footer .foot2 ul {
   font-style: italic;
   font-size: 13px;
   padding: 10px;
+}
+.content {
+  background-image: url(/img/all/logo4.jpg);
+  background-repeat: no-repeat;
+  background-color: var(--color3);
+}
+.content .containerFormInsc {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  place-items: center;
+  margin-bottom: 20px;
+}
+.content .containerFormInsc .form-container {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  border-radius: 50px;
+}
+.content .containerFormInsc .form-container form {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color4);
+  border-radius: 50px;
+  margin: 10px;
+  padding: 30px;
+  font-family: var(--fontTexte);
+}
+.content .containerFormInsc .form-container form input {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  margin-bottom: 10px;
+}
+.content .containerFormInsc .form-container form select {
+  margin-bottom: 10px;
+  background-color: var(--color3);
+}
+.content .containerFormInsc .form-container form .add {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: var(--color2);
+  border-radius: 50px;
+}
+.content .containerFormInsc .form-container form .validator {
+  display: none;
 }

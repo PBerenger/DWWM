@@ -19,6 +19,7 @@ if (session_status() == PHP_SESSION_NONE) session_start();
 <body>
     <header>
         <nav class="connection">
+            <div class="logo2"><img src="/img/all/logo2.jpg" alt=""></div>
             <li><a href="create.php">S'inscrire</a></li>
             <?php
             if (isset($_SESSION["user_id"])) :
@@ -45,7 +46,6 @@ if (session_status() == PHP_SESSION_NONE) session_start();
     <script src="js.js"></script>
 
     <div class="content">
-        <h1><?= $titre ?></h1>
         <?= $content ?>
     </div>
 

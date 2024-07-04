@@ -1,6 +1,4 @@
-SQL est une bibliothèque de données
-
-
-- Mettre diagramme de classe dans le projet final
-- Règles de gestion
-- 
+pour modifier une ligne de msql via le terminal :
+exemple : 
+(maj)	     (prendre la colonne = ici cryptage du mdp)				      (vers le nom colonne = la liogne)
+UPDATE users SET pwd = "$2y$10$G1t9q6Ag6/4LPJn0n49Bd.FuSmQZpmZ7Lex2hZeRfU1dZVCrjy8m6" WHERE id = 2;

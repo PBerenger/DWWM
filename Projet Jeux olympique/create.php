@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     // Hasher le mot de passe (le crypter)
                     $mdp = password_hash($mdp, PASSWORD_DEFAULT);
 
-                    $stmt = $pdo->prepare('SELECT email FROM users WHERE email = ?');
+                    $stmt = $pdo->prepare('SELECT userEmail FROM users WHERE userEmail = ?');
                     $stmt->execute([$email]);
                     $existingUser = $stmt->fetch();
 
@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         }
 
                         // Insérer un nouvel utilisateur dans la table 'users'
-                        $stmt = $pdo->prepare('INSERT INTO users(nom, prenom, email, mdp, dateNaissance, genre, phone, role_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)');
+                        $stmt = $pdo->prepare('INSERT INTO users(userLastName, userFirstName, UserEmail, userPassword, userDateBirth, userGender, userPhone, role_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)');
                         $stmt->execute([$nom, $prenom, $email, $mdp, $dateNaissance, $genre, $phone, $role_id]);
 
                         phpAlert("Utilisateur ajouté avec succès.");
@@ -70,58 +70,60 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         phpAlert("Tous les champs ne sont pas remplis.");
     }
 } else {
-    echo '<div style="text-align: center;">Remplissez tous les champs.</div>';
+    echo '<div style="text-align: right; color: red; font-style: bold; margin-right: 19%;">Remplissez tous les champs.</div>';
 }
 
 ?>
-
-<div class="form-container">
-    <form action="create.php" method="POST">
-        <label for="nom">Nom : </label>
-        <input type="text" name="nom" id="nom" required>
-
-        <label for="prenom">Prénom : </label>
-        <input type="text" name="prenom" id="prenom" required>
-
-        <label for="email">Email : </label>
-        <input type="email" name="email" id="email" required>
-
-        <label for="mdp">Mot de passe :</label>
-        <input type="password" name="mdp" id="mdp" required>
-        <div class="validator">
-            <!-- faire une liste (li) -->
-            <p>Le mot de passe doit respecter ces conditions :</p>
-            <li id="long" class="invalid">- faire au moins <b>8 caractère de long</b></li>
-            <li id="minusc" class="invalid">- contenir au moins une <b>minuscule</b></li>
-            <li id="majusc" class="invalid">- contenir au moins une <b>majuscule</b></li>
-            <li id="spec" class="invalid">- contenir au moins un <b>caractère spécial ($@!%*#?&)</b></li>
-            <li id="chiffre" class="invalid">- contenir au moins <b>un chiffre</b></li>
-            <li id="corresp" class="invalid">- les mots de passe doivent <b>correspondre</b></li>
-        </div>
-
-        <label for="mdp_confirm">Confirmer le mot de passe :</label>
-        <input type="password" name="mdp_confirm" id="mdp_confirm" required>
-
-        <label for="dateNaissance">Votre date de naissance :</label>
-        <input type="date" name="dateNaissance" id="datenaissance" required>
-
-        <label for="genre">Votre genre</label>
-        <select name="genre" id="genre" required>
-            <option value="Homme">Homme</option>
-            <option value="Femme">Femme</option>
-        </select>
-
-        <label for="phone">Téléphone: </label>
-        <input type="text" name="phone" id="phone" required>
-
-        <label for="roleDescription">Rôle: </label>
-        <select name="roleDescription" id="roleDescription" required>
-            <option value="admin">Admin</option>
-            <option value="non-admin">Non-Admin</option>
-        </select>
-
-        <input type="submit" value="Ajouter">
-    </form>
+<div class="containerFormInsc">
+    <h1 class="upElement">INCRIPTION</h1>
+    <div class="form-container">
+        <form action="create.php" method="POST">
+            <label for="nom">Nom : </label>
+            <input type="text" name="nom" id="nom" required>
+    
+            <label for="prenom">Prénom : </label>
+            <input type="text" name="prenom" id="prenom" required>
+    
+            <label for="email">Email : </label>
+            <input type="email" name="email" id="email" required>
+    
+            <label for="mdp">Mot de passe :</label>
+            <input type="password" name="mdp" id="mdp" required>
+            <div class="validator">
+                <!-- faire une liste (li) -->
+                <p>Le mot de passe doit respecter ces conditions :</p>
+                <li id="long" class="invalid">- faire au moins <b>8 caractère de long</b></li>
+                <li id="minusc" class="invalid">- contenir au moins une <b>minuscule</b></li>
+                <li id="majusc" class="invalid">- contenir au moins une <b>majuscule</b></li>
+                <li id="spec" class="invalid">- contenir au moins un <b>caractère spécial ($@!%*#?&)</b></li>
+                <li id="chiffre" class="invalid">- contenir au moins <b>un chiffre</b></li>
+                <li id="corresp" class="invalid">- les mots de passe doivent <b>correspondre</b></li>
+            </div>
+    
+            <label for="mdp_confirm">Confirmer le mot de passe :</label>
+            <input type="password" name="mdp_confirm" id="mdp_confirm" required>
+    
+            <label for="dateNaissance">Votre date de naissance :</label>
+            <input type="date" name="dateNaissance" id="datenaissance" required>
+    
+            <label for="genre">Votre genre</label>
+            <select name="genre" id="genre" required>
+                <option value="Homme">Homme</option>
+                <option value="Femme">Femme</option>
+            </select>
+    
+            <label for="phone">Téléphone: </label>
+            <input type="text" name="phone" id="phone" required>
+    
+            <label for="roleDescription">Rôle: </label>
+            <select name="roleDescription" id="roleDescription" required>
+                <option value="admin">Admin</option>
+                <option value="non-admin">Non-Admin</option>
+            </select>
+    
+            <input class="add" type="submit" value="Ajouter">
+        </form>
+    </div>
 </div>
 
 <script>
@@ -130,6 +132,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <?php
 $content = ob_get_clean();
-$titre = "Créer utilisateur";
 require "template.php";
 ?>
