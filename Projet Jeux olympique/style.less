@@ -5,6 +5,8 @@
   list-style: none;
 }
 
+// options :
+//----------------------------------------------------------------------
 @font-face {
   font-family: 'Paris2024';
   src: url("/Font/Paris2024-Variable.woff2") format("opentype");
@@ -51,6 +53,8 @@ body {
   background-color: var(--color3);
 }
 
+
+//==========================================================================
 // TEMPLATE
 
 body {
@@ -132,6 +136,8 @@ footer {
   }
 }
 
+
+//============================================================================
 .content {
   display: flex;
   flex-direction: column;
@@ -195,10 +201,9 @@ footer {
       text-indent: 5%; //décaller première phrase
     }
 
-    // POURQUOI .deux est en dehors de la section2 ???
     .deux {
-      width: fit-content; //prend la taille de l'élément
-      margin-left: auto; // créé une marge auto sur la gauche
+      width: fit-content;
+      margin-left: auto;
       margin-top: 10px;
       box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
       background-color: var(--color3);
@@ -211,31 +216,50 @@ footer {
   }
 }
 
+
+//===============================================================================
+// INSCRIPTION
 .content {
-  background-image: url(/img/all/logo4.jpg);
-  background-repeat: no-repeat;
-  //redimensionner image !!!
   background-color: var(--color3);
+  
   .containerFormInsc {
+    background-image: url(/img/all/logo4.jpg);
+    background-repeat: no-repeat;
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 1fr 1fr;
     place-items: center;
     margin-bottom: 20px;
+    background-color: var(--color6);
+    background-size: cover;
+
+
     .form-container {
-      box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+                  rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+                  rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
       border-radius: 50px;
+      width: 500px;
+
       form {
         display: flex;
         flex-direction: column;
-        background-color: var(--color4);
+        background-color: var(--color1);
         border-radius: 50px;
         margin: 10px;
         padding: 30px;
         font-family: var(--fontTexte);
+        color: var(--color3);
+
         input {
-          box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+                      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+                      rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
           margin-bottom: 10px;
+          height: 35px;
+
+
         }
+
         select {
           margin-bottom: 10px;
           background-color: var(--color3);
@@ -247,13 +271,41 @@ footer {
           background-color: var(--color2);
           border-radius: 50px;
         }
+
         .validator {
           display: none;
         }
-
+        .pswButton {
+          display: flex;
+        }
       }
     }
-
   }
+}
 
+/* Style pour masquer le div des conditions de mot de passe */
+#passwordConditions {
+  display: none;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+/* Style pour le bouton */
+#showConditionsButton {
+  width: fit-content;
+  cursor: pointer;
+  background-color: var(--color2);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-left: 30px;
+  border-radius: 50px;
+}
+
+/* Style pour afficher les conditions lorsque le bouton est survolé */
+#showConditionsButton:hover + #passwordConditions {
+  display: block;
 }

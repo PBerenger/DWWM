@@ -75,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 ?>
 <div class="containerFormInsc">
-    <h1 class="upElement">INCRIPTION</h1>
+    <h1 class="upElement">INSCRIPTION</h1>
     <div class="form-container">
         <form action="create.php" method="POST">
             <label for="nom">Nom : </label>
@@ -86,18 +86,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
             <label for="email">Email : </label>
             <input type="email" name="email" id="email" required>
-    
-            <label for="mdp">Mot de passe :</label>
+
+            <div class="pswButtons">
+                <label for="mdp">Mot de passe :</label>
+                <button type="button" id="showConditionsButton">?</button>
+            </div>
             <input type="password" name="mdp" id="mdp" required>
-            <div class="validator">
-                <!-- faire une liste (li) -->
+            
+            
+            <div class="validator" id="passwordConditions">
                 <p>Le mot de passe doit respecter ces conditions :</p>
-                <li id="long" class="invalid">- faire au moins <b>8 caractère de long</b></li>
-                <li id="minusc" class="invalid">- contenir au moins une <b>minuscule</b></li>
-                <li id="majusc" class="invalid">- contenir au moins une <b>majuscule</b></li>
-                <li id="spec" class="invalid">- contenir au moins un <b>caractère spécial ($@!%*#?&)</b></li>
-                <li id="chiffre" class="invalid">- contenir au moins <b>un chiffre</b></li>
-                <li id="corresp" class="invalid">- les mots de passe doivent <b>correspondre</b></li>
+                <ul>
+                    <li id="long" class="invalid">- faire au moins <b>8 caractères de long</b></li>
+                    <li id="minusc" class="invalid">- contenir au moins une <b>minuscule</b></li>
+                    <li id="majusc" class="invalid">- contenir au moins une <b>majuscule</b></li>
+                    <li id="spec" class="invalid">- contenir au moins un <b>caractère spécial ($@!%*#?&)</b></li>
+                    <li id="chiffre" class="invalid">- contenir au moins <b>un chiffre</b></li>
+                    <li id="corresp" class="invalid">- les mots de passe doivent <b>correspondre</b></li>
+                </ul>
             </div>
     
             <label for="mdp_confirm">Confirmer le mot de passe :</label>

@@ -160,32 +160,37 @@ footer .foot2 ul {
   padding: 10px;
 }
 .content {
-  background-image: url(/img/all/logo4.jpg);
-  background-repeat: no-repeat;
   background-color: var(--color3);
 }
 .content .containerFormInsc {
+  background-image: url(/img/all/logo4.jpg);
+  background-repeat: no-repeat;
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 1fr 1fr;
   place-items: center;
   margin-bottom: 20px;
+  background-color: var(--color6);
+  background-size: cover;
 }
 .content .containerFormInsc .form-container {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   border-radius: 50px;
+  width: 500px;
 }
 .content .containerFormInsc .form-container form {
   display: flex;
   flex-direction: column;
-  background-color: var(--color4);
+  background-color: var(--color1);
   border-radius: 50px;
   margin: 10px;
   padding: 30px;
   font-family: var(--fontTexte);
+  color: var(--color3);
 }
 .content .containerFormInsc .form-container form input {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   margin-bottom: 10px;
+  height: 35px;
 }
 .content .containerFormInsc .form-container form select {
   margin-bottom: 10px;
@@ -199,4 +204,31 @@ footer .foot2 ul {
 }
 .content .containerFormInsc .form-container form .validator {
   display: none;
+}
+.content .containerFormInsc .form-container form .pswButton {
+  display: flex;
+}
+/* Style pour masquer le div des conditions de mot de passe */
+#passwordConditions {
+  display: none;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+/* Style pour le bouton */
+#showConditionsButton {
+  width: fit-content;
+  cursor: pointer;
+  background-color: var(--color2);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-left: 30px;
+  border-radius: 50px;
+}
+/* Style pour afficher les conditions lorsque le bouton est survolé */
+#showConditionsButton:hover + #passwordConditions {
+  display: block;
 }

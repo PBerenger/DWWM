@@ -29,3 +29,13 @@ document.addEventListener("DOMContentLoaded", function() {
         validator.style.left = (event.clientX + 10) + 'px';
     });
 });
+
+// form inscription_passwordCondition
+document.getElementById('showConditionsButton').addEventListener('click', function() {
+    var conditions = document.getElementById('passwordConditions');
+    if (conditions.style.display === 'block') {
+        conditions.style.display = 'none';
+    } else {
+        conditions.style.display = 'block';
+    }
+});
