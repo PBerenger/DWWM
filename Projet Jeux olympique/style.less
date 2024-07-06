@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   list-style: none;
+  text-decoration: none;
 }
 
 // options :
@@ -214,6 +215,118 @@ footer {
       padding: 10px;
     }
   }
+}
+
+//===============================================================================
+// CONNECTION
+
+#connectionContent {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: var(--fontTexte);
+  background-image: url(/img/all/skateboard-trick.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  .cerateUser {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    span {
+      color: var(--color5);
+      background-color: var(--color2);
+      padding: 10px 30px;
+      margin-bottom: 20px;
+      border-radius: 50px;
+
+    }
+    li {
+      font-size: 70px;
+      background-color: var(--color1);
+      border-radius: 50px;
+      padding: 0px 60px;
+      a {
+        color: var(--color3);
+        
+      }
+    }
+    
+  }
+  .connectUser {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    span {
+      color: var(--color5);
+      background-color: var(--color2);
+      padding: 10px 30px;
+      margin-bottom: 20px;
+      border-radius: 50px;
+    }
+    li {
+      font-size: 70px;
+      background-color: var(--color1);
+      border-radius: 50px;
+      padding: 0px 60px;
+      a {
+        color: var(--color3);
+        
+      }
+    }
+  }
+  
+  .arrow1 {
+    font-size: 4rem;
+    animation: moveArrow 1s infinite;
+    color: var(--color5);
+    background-color: var(--color3);
+    width: 100px;       /* Largeur du cercle */
+    height: 100px;      /* Hauteur du cercle */
+    border-radius: 50%; /* Pour rendre l'élément circulaire */
+    display: flex;      /* Pour utiliser le modèle Flexbox */
+    justify-content: center; /* Centre le contenu horizontalement */
+    align-items: center; /* Centre le contenu verticalement */
+}
+
+@keyframes moveArrow {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.arrow2 {
+  font-size: 4rem;
+  animation: moveArrow 1s infinite;
+  color: var(--color3);
+  background-color: var(--color5);
+  width: 100px;       /* Largeur du cercle */
+  height: 100px;      /* Hauteur du cercle */
+  border-radius: 50%; /* Pour rendre l'élément circulaire */
+  display: flex;      /* Pour utiliser le modèle Flexbox */
+  justify-content: center; /* Centre le contenu horizontalement */
+  align-items: center; /* Centre le contenu verticalement */
+}
+
+@keyframes moveArrow {
+  0% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(20px);
+  }
+  100% {
+      transform: translateY(0);
+  }
+}
+
 }
 
 

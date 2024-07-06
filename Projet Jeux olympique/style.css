@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   list-style: none;
+  text-decoration: none;
 }
 @font-face {
   font-family: 'Paris2024';
@@ -158,6 +159,117 @@ footer .foot2 ul {
   font-style: italic;
   font-size: 13px;
   padding: 10px;
+}
+#connectionContent {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: var(--fontTexte);
+  background-image: url(/img/all/skateboard-trick.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+#connectionContent .cerateUser {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#connectionContent .cerateUser span {
+  color: var(--color5);
+  background-color: var(--color2);
+  padding: 10px 30px;
+  margin-bottom: 20px;
+  border-radius: 50px;
+}
+#connectionContent .cerateUser li {
+  font-size: 70px;
+  background-color: var(--color1);
+  border-radius: 50px;
+  padding: 0px 60px;
+}
+#connectionContent .cerateUser li a {
+  color: var(--color3);
+}
+#connectionContent .connectUser {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#connectionContent .connectUser span {
+  color: var(--color5);
+  background-color: var(--color2);
+  padding: 10px 30px;
+  margin-bottom: 20px;
+  border-radius: 50px;
+}
+#connectionContent .connectUser li {
+  font-size: 70px;
+  background-color: var(--color1);
+  border-radius: 50px;
+  padding: 0px 60px;
+}
+#connectionContent .connectUser li a {
+  color: var(--color3);
+}
+#connectionContent .arrow1 {
+  font-size: 4rem;
+  animation: moveArrow 1s infinite;
+  color: var(--color5);
+  background-color: var(--color3);
+  width: 100px;
+  /* Largeur du cercle */
+  height: 100px;
+  /* Hauteur du cercle */
+  border-radius: 50%;
+  /* Pour rendre l'élément circulaire */
+  display: flex;
+  /* Pour utiliser le modèle Flexbox */
+  justify-content: center;
+  /* Centre le contenu horizontalement */
+  align-items: center;
+  /* Centre le contenu verticalement */
+}
+@keyframes moveArrow {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+#connectionContent .arrow2 {
+  font-size: 4rem;
+  animation: moveArrow 1s infinite;
+  color: var(--color3);
+  background-color: var(--color5);
+  width: 100px;
+  /* Largeur du cercle */
+  height: 100px;
+  /* Hauteur du cercle */
+  border-radius: 50%;
+  /* Pour rendre l'élément circulaire */
+  display: flex;
+  /* Pour utiliser le modèle Flexbox */
+  justify-content: center;
+  /* Centre le contenu horizontalement */
+  align-items: center;
+  /* Centre le contenu verticalement */
+}
+@keyframes moveArrow {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 .content {
   background-color: var(--color3);

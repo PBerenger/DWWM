@@ -1,9 +1,5 @@
 <?php
 if (session_status() == PHP_SESSION_NONE) session_start();
-//ou
-// if(session_status()==PHP_SESSION_NONE){
-//     session_start();
-// }
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +8,7 @@ if (session_status() == PHP_SESSION_NONE) session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>jo_skateboard2024bady</title>
+    <title>jo_Skate4Accueily</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -20,28 +16,30 @@ if (session_status() == PHP_SESSION_NONE) session_start();
     <header>
         <nav class="connection">
             <div class="logo2"><img src="/img/all/logo2.jpg" alt=""></div>
-            <li><a href="create.php">S'inscrire</a></li>
-            <?php
+
+            <li><a href="connection.php">Connection</a></li>
+            <!-- <?php
             if (isset($_SESSION["user_id"])) :
             ?>
                 <li><a href="logout.php">Déconnection</a></li>
             <?php else : ?>
                 <li><a href="login.php">Login</a></li>
-            <?php endif; ?>
-
+            <?php endif; ?> -->
         </nav>
         <nav class="navigation">
             <ul>
                 <li><a href="index.php">Accueil</a></li>
-                <li><a href="read.php">Voir les utilisateurs (admin)</a></li>
-                <li><a href="update.php">Modifier/Supprimer un utilisateur</a></li>
-                <li><a href="delete.php">Supprimer un utilisateur</a></li>
+                <?php if (isset($_SESSION["user_role"]) && $_SESSION["user_role"] === "admin") : ?>
+                    <li><a href="read.php">Voir les utilisateurs (admin)</a></li>
+                    <li><a href="update.php">Modifier/Supprimer un utilisateur</a></li>
+                    <li><a href="delete.php">Supprimer un utilisateur</a></li>
+                    <li><a href="admin">Espace administrateur</a></li>
+                <?php endif; ?>
+                <li><a href="athletes">Athlètes</a></li>
+                <li><a href="event">Évènements</a></li>
             </ul>
-
         </nav>
     </header>
-
-
 
     <script src="js.js"></script>
 
