@@ -182,6 +182,7 @@ footer .foot2 ul {
   padding: 10px 30px;
   margin-bottom: 20px;
   border-radius: 50px;
+  font-size: 2em;
 }
 #connectionContent .cerateUser li {
   font-size: 70px;
@@ -191,6 +192,7 @@ footer .foot2 ul {
 }
 #connectionContent .cerateUser li a {
   color: var(--color3);
+  font-family: var(--fontButton);
 }
 #connectionContent .connectUser {
   display: flex;
@@ -203,6 +205,7 @@ footer .foot2 ul {
   padding: 10px 30px;
   margin-bottom: 20px;
   border-radius: 50px;
+  font-size: 2em;
 }
 #connectionContent .connectUser li {
   font-size: 70px;
@@ -212,24 +215,19 @@ footer .foot2 ul {
 }
 #connectionContent .connectUser li a {
   color: var(--color3);
+  font-family: var(--fontButton);
 }
 #connectionContent .arrow1 {
   font-size: 4rem;
   animation: moveArrow 1s infinite;
-  color: var(--color5);
   background-color: var(--color3);
   width: 100px;
-  /* Largeur du cercle */
   height: 100px;
-  /* Hauteur du cercle */
   border-radius: 50%;
-  /* Pour rendre l'élément circulaire */
   display: flex;
-  /* Pour utiliser le modèle Flexbox */
   justify-content: center;
-  /* Centre le contenu horizontalement */
   align-items: center;
-  /* Centre le contenu verticalement */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 @keyframes moveArrow {
   0% {
@@ -245,20 +243,14 @@ footer .foot2 ul {
 #connectionContent .arrow2 {
   font-size: 4rem;
   animation: moveArrow 1s infinite;
-  color: var(--color3);
-  background-color: var(--color5);
+  background-color: var(--color3);
   width: 100px;
-  /* Largeur du cercle */
   height: 100px;
-  /* Hauteur du cercle */
   border-radius: 50%;
-  /* Pour rendre l'élément circulaire */
   display: flex;
-  /* Pour utiliser le modèle Flexbox */
   justify-content: center;
-  /* Centre le contenu horizontalement */
   align-items: center;
-  /* Centre le contenu verticalement */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 @keyframes moveArrow {
   0% {
