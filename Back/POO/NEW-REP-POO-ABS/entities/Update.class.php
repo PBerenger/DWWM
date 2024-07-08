@@ -1,7 +1,24 @@
 <?php
+// Démarrer la sortie HTML
+header("Content-Type: text/html; charset=UTF-8");
+?>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page avec CSS</title>
+    <link rel="stylesheet" href="../public/css/style.css">
+</head>
+<body>
+</body>
+</html>
+
+<?php
 ob_start();
-require_once 'Auth.class.php';
-require_once 'User.class.php';
+require_once __DIR__ . '/../entities/Auth.class.php';
+require_once __DIR__ . '/../entities/User.class.php';
 Auth::verifyAdmin();
 
 if(isset($_POST['id'], $_POST['nom'], $_POST['prenom'], $_POST['email'], $_POST['telephone'], $_POST['role'])) {
@@ -56,5 +73,5 @@ if (isset($_GET['id'])) {
 <?php
 $content = ob_get_clean();
 $titre = "Modifier un utilisateur";
-require "template.php";
+require "/../public/template.php";
 ?>

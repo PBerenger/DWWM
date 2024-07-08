@@ -1,6 +1,6 @@
 <?php
 session_start();
 session_destroy();
-header('Location: Login.class.php');
+header('Location: ../entities/Login.class.php');
 exit();
 

@@ -1,7 +1,7 @@
 <?php
 ob_start();
-require_once 'Auth.class.php';
-require_once 'MyDbConnection.php';
+require_once __DIR__ . '../entities/Auth.class.php';
+require_once __DIR__ . '../dbconnect/MyDbConnection.php';
 
 Auth::startSession();
 
@@ -19,7 +19,7 @@ if (isset($_POST['email'], $_POST['password'])) {
 
     if ($user && password_verify($password, $user['pwd'])) {
         $_SESSION['user_id'] = $user['id'];
-        header('Location: index.php');
+        header('Location: ../index.php');
         exit();
     } else {
         $error = "Email ou mot de passe incorrect.";
@@ -43,5 +43,5 @@ if (isset($_POST['email'], $_POST['password'])) {
 <?php
 $content = ob_get_clean();
 $titre = "Identification Espace Administrateur";
-require "template.php";
+require __DIR__ . "/../public/template.php";
 ?>

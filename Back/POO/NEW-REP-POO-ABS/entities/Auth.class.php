@@ -1,7 +1,7 @@
 <?php
 
-//récupère 'myDbConnection' donc 'dbCOnnect'
-require_once 'MyDbConnection.php';
+//récupère 'myDbConnection' donc 'dbConnect'
+require_once __DIR__ . '/../dbconnect/MyDbConnection.php';
 
 class Auth {
     public static function startSession() {

@@ -1,5 +1,5 @@
 <?php
-require_once "Auth.class.php";
+require_once "entities/Auth.class.php";
 ob_start();
 Auth::startSession();
 ?>
@@ -12,5 +12,5 @@ Auth::startSession();
 <?php
 $content = ob_get_clean();
 $titre = "Accueil";
-require "template.php";
+require "public/template.php";
 ?>

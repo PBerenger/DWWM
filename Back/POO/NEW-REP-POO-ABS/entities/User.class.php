@@ -1,6 +1,6 @@
 <?php
 
-require_once 'MyDbConnection.php';
+require_once __DIR__ . '/../dbconnect/MyDbConnection.php';
 
 class User {
     public static function createUser($nom, $prenom, $email, $telephone, $password, $role) {

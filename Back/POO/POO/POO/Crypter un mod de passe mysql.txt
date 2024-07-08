@@ -1,0 +1,5 @@
+// afficher le mot de passe crypté :
+echo password_hash("password2", PASSWORD_DEFAULT);
+
+aller dans la base de donner, la sélectionner et faire cette ligne :
+UPDATE users SET pwd = '$2y$10$4ATMWqMWyDsB5dvqBwYYFu1AF6ldPq/2dJ27GeBfIRNhrAA2ZHe5y ' WHERE id = 2;
