@@ -9,6 +9,7 @@ Auth::startSession();
     <p>Utilisez le menu ci-dessus pour naviguer entre les différentes actions CRUD.</p>
 </div>
 
+
 <?php
 $content = ob_get_clean();
 $titre = "Accueil";

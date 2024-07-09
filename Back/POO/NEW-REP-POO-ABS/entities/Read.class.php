@@ -1,55 +1,44 @@
-<?php
-// Démarrer la sortie HTML
-header("Content-Type: text/html; charset=UTF-8");
-?>
+    <?php
+    ob_start();
+    require_once 'Auth.class.php';
+    require_once 'User.class.php';
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page avec CSS</title>
-    <link rel="stylesheet" href="../public/css/style.css">
-</head>
-<body>
-</body>
-</html>
+    // Vérifier si l'utilisateur est un administrateur
+    Auth::verifyAdmin();
 
-<?php
-ob_start();
-require_once 'Auth.class.php';
-require_once  'User.class.php';
+    // Récupérer tous les utilisateurs avec leurs rôles
+    $users = User::getAllUsersWithRoles();
+    ?>
 
-Auth::verifyAdmin();
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Image</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Email</th>
+            <th>Téléphone</th>
+            <th>Rôle</th>
+            <th>Actions</th>
+        </tr>
+        <?php foreach ($users as $user) : ?>
+            <tr>
+                <td><?= htmlspecialchars($user['id']); ?></td>
+                <td>
+                    <img src="../public/img/<?= htmlspecialchars($user['image_name']); ?>" alt="Image de <?php echo htmlspecialchars($user['nom']); ?>" style="width:100px;height:auto;">
+                </td>
+                <td><?= htmlspecialchars($user['nom']); ?></td>
+                <td><?= htmlspecialchars($user['prenom']); ?></td>
+                <td><?= htmlspecialchars($user['email']); ?></td>
+                <td><?= htmlspecialchars($user['telephone']); ?></td>
+                <td><?= htmlspecialchars($user['role']); ?></td>
+                <td><a href="Update.class.php?id=<?= htmlspecialchars($user['id']); ?>">Modifier</a></td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
 
-$users = User::getAllUsersWithRoles();
-?>
-
-<table border="1">
-    <tr>
-        <th>ID</th>
-        <th>Nom</th>
-        <th>Prénom</th>
-        <th>Email</th>
-        <th>Téléphone</th>
-        <th>Rôle</th>
-        <th>Actions</th>
-    </tr>
-    <?php foreach ($users as $user): ?>
-    <tr>
-        <td><?php echo htmlspecialchars($user['id']); ?></td>
-        <td><?php echo htmlspecialchars($user['nom']); ?></td>
-        <td><?php echo htmlspecialchars($user['prenom']); ?></td>
-        <td><?php echo htmlspecialchars($user['email']); ?></td>
-        <td><?php echo htmlspecialchars($user['telephone']); ?></td>
-        <td><?php echo htmlspecialchars($user['role']); ?></td>
-        <td><a href="Update.class.php?id=<?php echo $user['id']; ?>">Modifier</a></td>
-    </tr>
-    <?php endforeach; ?>
-</table>
-
-<?php
-$content = ob_get_clean();
-$titre = "Voir les utilisateurs";
-require __DIR__ . "/../public/template.php";
-?>
+    <?php
+    $content = ob_get_clean();
+    $titre = "Voir les utilisateurs";
+    require __DIR__ . "/../public/template.php";
+    ?>
