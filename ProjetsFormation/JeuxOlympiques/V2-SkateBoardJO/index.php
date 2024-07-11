@@ -13,7 +13,8 @@ use Application\Controllers\Post\Post;
 try {
     if (isset($_GET['action']) && $_GET['action'] !== '') {
         // changer le === 'lien de la page'
-        if ($_GET['action'] === 'post') {
+        if ($_GET['action'] === '') {
+            
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 $identifier = $_GET['id'];
 

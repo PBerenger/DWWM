@@ -26,7 +26,7 @@
         </nav>
         <nav class="navigation">
             <ul>
-                <li><a href="index.php">Accueil</a></li>
+                <li><a href="homepage.php">Accueil</a></li>
                 <?php if (isset($_SESSION["user_role"]) && $_SESSION["user_role"] === "admin") : ?>
                     <li><a href="templates/read.php">Voir les utilisateurs (admin)</a></li>
                     <li><a href="templates/update.php">Modifier/Supprimer un utilisateur</a></li>
