@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>Les Bonnes Pièces</title>
+		<link rel="stylesheet" href="styles.css">
+		<script src="node_modules/chart.js/dist/chart.umd.js" defer></script>
+		<script type="module" src="pieces.js"></script>
+	</head>
+	<body>
+		<header>
+			<img src="images/logo-les-bonnes-pieces.png" alt="LOGO">
+			<h1>Les Bonnes Pièces</h1>
+		</header>
+		<main>
+			<!-- Menu de recherche -->
+			<section class="filtres">
+				<h3>Filtres</h3>
+				<button class="btn-trier-croissant">Trier par prix croissant</button>
+				<button class="btn-trier-decroissant">Trier par prix décroissant</button>
+				<button class="btn-filtrer-disponible">Filtrer les pièces non disponibles</button>
+				<button class="btn-filtrer-prix-max">Filtrer les pièces non abordables</button>
+				<label for="prixMax">Prix Max</label>
+				<div>
+					<input type="range" name="prixMax" id="prixMax" min="0" max="60" value="40" step="5">
+					<span id="prixMaxOutput">40</span>
+				</div>
+				<h3>Ajouter un avis</h3>
+				<form class="formulaire-avis">
+					<label for="piece-id">Identifiant de la pièce :</label>
+					<input type="number" min="0" name="piece-id" id="piece-id">
+					<label for="utilisateur">Nom d'utilisateur :</label>
+					<input type="text" name="utilisateur" id="utilisateur">
+					<label for="commentaire">Avis :</label>
+					<input type="text" name="commentaire" id="commentaire">
+					<button>Envoyer</button>
+				</form>
+				<h3>Données</h3>
+				<button class="btn-reset-filtres">Remettre à zéro les filtres</button>
+				<button class="btn-maj">Mettre à jour les pièces</button>
+				<h3>Aperçu des avis</h3>
+				<canvas id="graphique-avis" height="200px"></canvas>
+				<canvas id="graphique-nbCommentDispo" height="200px"></canvas>
+			</section>
+
+			<!-- Fiches produits -->
+			<section class="fiches">
+			</section>
+		</main>
+	</body>
+</html>

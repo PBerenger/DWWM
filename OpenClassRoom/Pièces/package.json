@@ -1,0 +1,29 @@
+{
+  "name": "oc-site-web-dynamique",
+  "version": "1.0.0",
+  "description": "Ma version du support de Code pour le cours OpenClassrooms Creez des pages web dynamiques avec javascript",
+  "main": "pieces.js",
+  "scripts": {
+    "start": "http-server",
+    "dev": "http-server -c-1",
+    "lint": "eslint *.js",
+    "fix": "eslint *.js --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ColleMarvin/oc-site-web-dynamique"
+  },
+  "author": "OpenClassrooms",
+  "license": "ISC",
+  "homepage": "https://github.com/ColleMarvin/oc-site-web-dynamique#readme",
+  "dependencies": {
+    "chart.js": "^4.4.3",
+    "http-server": "^14.1.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.3.0",
+    "@stylistic/eslint-plugin-js": "^2.1.0",
+    "eslint": "^9.3.0",
+    "globals": "^15.3.0"
+  }
+}

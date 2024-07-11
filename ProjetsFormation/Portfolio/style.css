@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: 'ALOALLA';
+  src: url("/Font/ALOALLA.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Coolvetica';
+  src: url("/Font/coolvetica.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto-Regular';
+  src: url("/Font/Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+:root {
+  --color1: #184561;
+  --color2: #3D657B;
+  --color3: #71ACA4;
+  --color4: #D1D8C5;
+  --color5: #EEEEEE;
+  --color6: #000000;
+  --fontLogo: 'ALOALLA';
+  --fontTitre: 'Coolvetica';
+  --fontTexte: 'Roboto-Regular';
+}
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(#184561, #71ACA4);
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+/* Barre de navigation */
+header {
+  width: 100vw;
+}
+.navbar {
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  box-sizing: border-box;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.logo {
+  font-family: var(--fontLogo);
+  font-size: 2em;
+  color: var(--color4);
+}
+.navlink ul {
+  display: flex;
+  align-items: center;
+}
+.navlink li.active a {
+  color: var(--color5);
+  font-size: 2em;
+}
+.navlink li {
+  margin: 0 15px;
+}
+.navlink a {
+  color: var(--color3);
+  font-family: var(--fontTitre);
+  font-size: 1em;
+}
+.menuBurger {
+  display: none;
+  width: 35px;
+}
+/* Cards Items */
+.group {
+  padding-top: 90px;
+  display: flex;
+  text-align: center;
+  overflow: hidden;
+}
+.item {
+  width: 15vw;
+  height: 50vh;
+  background-position: center;
+  margin: 1vw;
+  border-radius: 3vw;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.imgCard {
+  height: 48vh;
+  background-size: cover;
+}
+.text {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  padding: 10px;
+  color: white;
+  font-size: 2em;
+  text-align: center;
+  display: none;
+  transition: opacity 0.3s ease;
+}
+.item:hover {
+  transform: translateY(-25px) rotateX(10deg);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.item:hover .text {
+  display: block;
+}
