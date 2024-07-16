@@ -1,0 +1,6 @@
+Exemple de chemin pour le bouton "login":
+
+1/ clique sur Login -> "loginController.class.php"
+2/ login controler a besoin "authManager.php et de MyDbConnection.php (doncdbConnect.php) -> login.view.php
+3/ login.view.php affiche le formulaire -> Template.php
+4/ template.php affiche le form avec le template

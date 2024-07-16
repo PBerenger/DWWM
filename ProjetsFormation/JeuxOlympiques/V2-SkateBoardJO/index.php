@@ -12,12 +12,25 @@ use Application\Controllers\Post\Post;
 
 try {
     if (isset($_GET['action']) && $_GET['action'] !== '') {
-        // changer le === 'lien de la page'
-        if ($_GET['action'] === '') {
-            
+        switch ($_GET['action']) {
+            case 'templates/homepage':
+                // Inclure le fichier de la page d'accueil
+                include 'templates/homepage.php';
+                break;
+
+                // Vous pouvez ajouter d'autres cas ici pour d'autres actions
+                // case 'templates/otherpage':
+                //     include 'templates/otherpage.php';
+                //     break;
+
+            default:
+                echo "Action non reconnue.";
+                break;
+        }
+
+        if ($_GET['action'] === 'post') {
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 $identifier = $_GET['id'];
-
                 (new Post())->execute($identifier);
             } else {
                 throw new Exception('Aucun identifiant de billet envoyé');
@@ -25,7 +38,6 @@ try {
         } elseif ($_GET['action'] === 'addComment') {
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 $identifier = $_GET['id'];
-
                 (new AddComment())->execute($identifier, $_POST);
             } else {
                 throw new Exception('Aucun identifiant de billet envoyé');
@@ -33,12 +45,10 @@ try {
         } elseif ($_GET['action'] === 'updateComment') {
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 $identifier = $_GET['id'];
-                // It sets the input only when the HTTP method is POST (ie. the form is submitted).
                 $input = null;
                 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $input = $_POST;
                 }
-
                 (new UpdateComment())->execute($identifier, $input);
             } else {
                 throw new Exception('Aucun identifiant de commentaire envoyé');
@@ -51,6 +61,5 @@ try {
     }
 } catch (Exception $e) {
     $errorMessage = $e->getMessage();
-
     require('templates/error.php');
 }

@@ -7,47 +7,40 @@
     <link href="../style.css" rel="stylesheet" />
 </head>
 
-
-
 <body>
 
     <header>
         <nav class="connection">
-            <div class="logo2"><img src="/img/all/logo2.jpg" alt=""></div>
+            <div class="logo2"><img src="/ressources/img/all/logo2.jpg" alt="Logo"></div>
 
-            <li><a href="templates/connection.php">Connexion</a></li>
-            <!-- <?php
-                    if (isset($_SESSION["user_id"])) :
-                    ?>
-                <li><a href="logout.php">Déconnexion</a></li>
+            <li><a href="index.php?action=connexion">Connexion</a></li>
+            <!-- <?php if (isset($_SESSION["user_id"])) : ?>
+                <li><a href="index.php?action=logout">Déconnexion</a></li>
             <?php else : ?>
-                <li><a href="login.php">Login</a></li>
+                <li><a href="index.php?action=login">Login</a></li>
             <?php endif; ?> -->
         </nav>
         <nav class="navigation">
             <ul>
-                <li><a href="homepage.php">Accueil</a></li>
+                <li><a href="index.php?action=homepage">Accueil</a></li>
                 <?php if (isset($_SESSION["user_role"]) && $_SESSION["user_role"] === "admin") : ?>
-                    <li><a href="templates/read.php">Voir les utilisateurs (admin)</a></li>
-                    <li><a href="templates/update.php">Modifier/Supprimer un utilisateur</a></li>
-                    <li><a href="delete.php">Supprimer un utilisateur</a></li>
-                    <li><a href="admin">Espace administrateur</a></li>
+                    <li><a href="index.php?action=readUsers">Voir les utilisateurs (admin)</a></li>
+                    <li><a href="index.php?action=updateUser">Modifier/Supprimer un utilisateur</a></li>
+                    <li><a href="index.php?action=deleteUser">Supprimer un utilisateur</a></li>
+                    <li><a href="index.php?action=admin">Espace administrateur</a></li>
                 <?php endif; ?>
-                <li><a href="athletes">Athlètes</a></li>
-                <li><a href="event">Évènements</a></li>
+                <li><a href="index.php?action=athletes">Athlètes</a></li>
+                <li><a href="index.php?action=event">Évènements</a></li>
             </ul>
         </nav>
-
     </header>
 
-
     <?= $content ?>
-
 
     <footer>
         <div class="foot1"></div>
         <div class="foot2">
-            <div class="logoF"><img src="/img/all/Paris2024_Olywhiteleft.png" alt=""></div>
+            <div class="logoF"><img src="/ressources/img/all/Paris2024_Olywhiteleft.png" alt="Logo"></div>
             <ul>
                 <li>POMMELET Bérenger</li>
                 <li>Plan du site</li>

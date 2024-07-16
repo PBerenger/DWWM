@@ -36,6 +36,9 @@
 body h1 {
   font-family: var(--fontTitre);
 }
+body h2 {
+  font-family: var(--fontTexte);
+}
 body header .connection {
   width: 100vw;
   background-color: var(--color2);
@@ -77,6 +80,82 @@ body header .navigation ul li {
 body header .navigation ul li a {
   color: var(--color5);
 }
+body .asterisque {
+  color: var(--color2);
+}
+body #topContent {
+  position: relative;
+  width: fit-content;
+}
+body #topContent .textTopContent {
+  position: absolute;
+  top: 20px;
+  left: 50px;
+  color: var(--color3);
+  padding: 10px;
+}
+body #topContent .textTopContent h1 {
+  font-size: 3em;
+  max-width: 750px;
+}
+body #topContent .textTopContent h2 {
+  margin-top: 100px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 50px;
+  max-width: 500px;
+}
+body #topContent img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+body #midContent {
+  margin: 100px;
+  font-family: var(--fontTexte);
+  text-align: justify;
+}
+body #midContent .asterisque {
+  text-align: justify;
+  width: 400px;
+  padding: 10px;
+  border-radius: 25px;
+  background-color: var(--color1);
+  margin-left: auto;
+  margin-right: 0;
+}
+body #botContent {
+  position: relative;
+  width: fit-content;
+}
+body #botContent .comments {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+body #botContent .comments h2 {
+  background-color: white;
+  color: var(--color1);
+  text-align: center;
+  font-size: 3em;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-radius: 0% 0% 30% 30%;
+}
+body #botContent .comments .afficherCom {
+  color: var(--color5);
+}
+body #botContent .comments .afficherCom .news {
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 5px solid var(--color2);
+}
+body #botContent img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 footer .foot1 {
   height: 70px;
   width: 100vw;
@@ -94,23 +173,22 @@ footer .foot2 ul {
   font-family: var(--fontTexte);
   color: var(--color3);
 }
-#connectionContent {
+#connexionContent {
   display: flex;
   justify-content: space-around;
   align-items: center;
   font-family: var(--fontTexte);
-  background-image: url(/img/all/skateboard-trick.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   width: 100vw;
   height: 100vh;
 }
-#connectionContent .cerateUser {
+#connexionContent .cerateUser {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
-#connectionContent .cerateUser span {
+#connexionContent .cerateUser span {
   color: var(--color5);
   background-color: var(--color2);
   padding: 10px 30px;
@@ -118,22 +196,22 @@ footer .foot2 ul {
   border-radius: 50px;
   font-size: 2em;
 }
-#connectionContent .cerateUser li {
+#connexionContent .cerateUser li {
   font-size: 70px;
   background-color: var(--color1);
   border-radius: 50px;
   padding: 0px 60px;
 }
-#connectionContent .cerateUser li a {
+#connexionContent .cerateUser li a {
   color: var(--color3);
   font-family: var(--fontButton);
 }
-#connectionContent .connectUser {
+#connexionContent .connectUser {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
-#connectionContent .connectUser span {
+#connexionContent .connectUser span {
   color: var(--color5);
   background-color: var(--color2);
   padding: 10px 30px;
@@ -141,17 +219,17 @@ footer .foot2 ul {
   border-radius: 50px;
   font-size: 2em;
 }
-#connectionContent .connectUser li {
+#connexionContent .connectUser li {
   font-size: 70px;
   background-color: var(--color1);
   border-radius: 50px;
   padding: 0px 60px;
 }
-#connectionContent .connectUser li a {
+#connexionContent .connectUser li a {
   color: var(--color3);
   font-family: var(--fontButton);
 }
-#connectionContent .arrow1 {
+#connexionContent .arrow1 {
   font-size: 4rem;
   animation: moveArrow 1s infinite;
   background-color: var(--color3);
@@ -174,7 +252,7 @@ footer .foot2 ul {
     transform: translateY(0);
   }
 }
-#connectionContent .arrow2 {
+#connexionContent .arrow2 {
   font-size: 4rem;
   animation: moveArrow 1s infinite;
   background-color: var(--color3);

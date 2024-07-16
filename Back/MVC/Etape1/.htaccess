@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# Si ce n'est pas un fichier
+RewriteCond %{REQUEST_FILENAME} !-f
+#si ce n'est pas un répertoire
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ index.php?page=$1 [L]
