@@ -6,7 +6,7 @@ ob_start();
     <?php if ($utilisateur) : ?>
         <form method="POST" enctype="multipart/form-data" action="<?= URL ?>update">
             <input type="hidden" name="id" value="<?php echo htmlspecialchars($utilisateur['id']); ?>">
-            <input type="hidden" name="currentImage" value="<?php echo htmlspecialchars($utilisateur['nomImage']); ?>">
+            <input type="hidden" name="currentImage" value="<?php echo htmlspecialchars($utilisateur['image_name']); ?>">
             <label for="nom">Nom:</label>
             <input type="text" name="nom" value="<?php echo htmlspecialchars($utilisateur['nom']); ?>" required><br>
             <label for="prenom">Prénom:</label>

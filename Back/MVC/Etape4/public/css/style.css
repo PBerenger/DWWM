@@ -10,6 +10,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: #dbd9d9;
 }
+
 .home-image {
     display: block;
     margin: 50px auto;
@@ -89,6 +90,7 @@ form label {
 form input[type="text"],
 form input[type="email"],
 form input[type="submit"],
+input[type="password" i],
 form select {
     width: calc(100% - 16px);
     padding: 8px;
@@ -137,9 +139,24 @@ table a:hover {
     text-decoration: underline;
 }
 
+.addButton {
+    width: fit-content;
+    text-align: center;
+    margin: 20px auto;
+    color: #fff;
+    background: #333;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    text-decoration: none;
+    line-height: 1;
+}
+
 .login-container {
     width: 300px;
-    margin: 50px auto;
+    margin: 30px auto;
     padding: 20px;
     background: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);

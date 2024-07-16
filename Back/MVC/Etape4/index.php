@@ -1,6 +1,6 @@
 <?php
 // Définit la constante URL
-define("URL", str_replace("index.php", "", (isset($_SERVER["HTTPS"]) ? "https" : "http") . "://".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']));
+define("URL", str_replace("index.php", "", (isset($_SERVER["HTTPS"]) ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF']));
 
 // Inclure les fichiers de contrôleurs nécessaires
 require_once './Controllers/UserController.class.php';
@@ -14,8 +14,8 @@ try {
     } else {
         $url = explode("/", filter_var($_GET["page"], FILTER_SANITIZE_URL));
         switch ($url[0]) {
-            case "accueil": 
-                require "views/accueil.view.php"; 
+            case "accueil":
+                require "views/accueil.view.php";
                 break;
             case "login":
                 $controller = new LoginController();
@@ -41,7 +41,25 @@ try {
                     }
                 }
                 break;
-            default: 
+            case "delete":
+                $controller = new UserController();
+                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                    $controller->deleteUser($_POST['id']);
+                } else {
+                    if (isset($url[1])) {
+                        $controller->deleteForm();
+                    }
+                }
+                break;
+            case "add":
+                $controller = new UserController();
+                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                    $controller->addUser($_POST, $_FILES);
+                } else {
+                    $controller->addForm();
+                }
+                break;
+            default:
                 throw new Exception("La page n'existe pas");
         }
     }

@@ -1,3 +1,10 @@
+Etape de travail :
+
+1 - faire le controller
+2 - faire la méthode
+3 - faire le view
+4 - faire l'index
+
 Exemple de chemin pour le bouton "login":
 
 1/ clique sur Login -> "loginController.class.php"

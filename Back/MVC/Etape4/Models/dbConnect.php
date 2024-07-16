@@ -6,7 +6,7 @@ abstract class DbConnect {
     protected function __construct() {
         $host = getenv('DB_HOST') ?: 'localhost';
         $port = getenv('DB_PORT') ?: '3306';
-        $db = getenv('DB_NAME') ?: 'rep-v3';
+        $db = getenv('DB_NAME') ?: 'repertoire';
         $user = getenv('DB_USER') ?: 'root';
         $pass = getenv('DB_PASS') ?: '';
         $charset = 'utf8mb4';

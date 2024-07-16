@@ -20,10 +20,7 @@ error_log('Session user_id: ' . (isset($_SESSION['user_id']) ? $_SESSION['user_i
         <nav>
             <ul>
                 <li><a href="<?= URL ?>accueil">Accueil</a></li>
-                <li><a href="<?= URL ?>ajouter">Ajouter</a></li>
                 <li><a href="<?= URL ?>read">Voir les utilisateurs</a></li>
-                <li><a href="<?= URL ?>update">Modifier</a></li>
-                <li><a href="<?= URL ?>delecte">Supprimer</a></li>
                 <?php if (isset($_SESSION['user_id'])): ?>
                     <li><a href="<?= URL ?>logout">Déconnexion</a></li>
                 <?php else : ?>
