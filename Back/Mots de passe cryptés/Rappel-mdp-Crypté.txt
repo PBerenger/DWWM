@@ -1,0 +1,8 @@
+aller sur le site : https://www.bcrypt.fr/
+
+POUR CRYPTER LE MOT DE PASSE NON CRYPTE
+
+pour modifier une ligne de msql via le terminal :
+exemple : 
+(maj)	     (prendre la colonne = ici cryptage du mdp)				      (vers le nom colonne = la ligne)
+UPDATE users SET userPassword = "$2y$10$UAUMxv1OMcW8qTkqhR7hhuoNvudoEV1EXJXHTfcA9VEQ5BJj.oejC" WHERE id_user = 13;

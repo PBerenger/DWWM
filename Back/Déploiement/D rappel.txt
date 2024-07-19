@@ -1,0 +1,6 @@
+- numéro d'hôte
+- nom utilisateur
+- mot de passe
+- port
+
+glisser dossier dans site distant et remplir l'url : dkdwwm.fr/nom_du_réseau/emplacement_fichier

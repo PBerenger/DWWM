@@ -1,1 +1,5 @@
-lancer un projet : symfony new --webapp my_project
+Créer un projet: symfony new --webapp my_project
+
+lancer serveur: aller dans le repertoire et commande: symfony server:start
+
+créer un controlleur : php bin/console make: controller nomController
