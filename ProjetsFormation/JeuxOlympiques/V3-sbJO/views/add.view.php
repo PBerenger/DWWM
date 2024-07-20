@@ -3,6 +3,7 @@ ob_start();
 ?>
 
 
+
 <div class="form-container">
     <form method="POST" action="add" enctype="multipart/form-data">
         <label for="nom">Nom:</label>
@@ -44,6 +45,7 @@ ob_start();
 
         <input type="submit" value="Ajouter">
     </form>
+    <img src="../public/images/Desktop/addDesktop2.jpg" alt="pipe">
 
     <p><?php echo $message ?? ''; ?></p>
 </div>

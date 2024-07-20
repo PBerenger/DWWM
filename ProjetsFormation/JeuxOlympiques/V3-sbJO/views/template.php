@@ -11,12 +11,12 @@ $userController = new UserController();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?= URL ?>public/css/style.css">
-    <title>Répertoire - POO - MVC</title>
+    <title>Epreuve de Skateboard - JO2024</title>
 </head>
 
 <body>
     <header>
-        <img src="<?= URL ?>public/images/logo.png" alt="Logo" class="nav-logo">
+        <img src="<?= URL ?>public/images/all/Paris2024_Olywhiteleft.png" alt="Logo" class="nav-logo">
         <nav>
             <ul>
                 <li><a href="<?= URL ?>accueil">Accueil</a></li>
@@ -40,11 +40,10 @@ $userController = new UserController();
             </ul>
         </nav>
     </header>
-    <h1><?= $titre ?></h1>
     <?= $content ?>
 
     <footer>
-        <p class="foot">Copyright AFCI - 2024</p>
+        <p class="foot">Copyright POMMELET Bérenger - 2024</p>
     </footer>
 </body>
 
