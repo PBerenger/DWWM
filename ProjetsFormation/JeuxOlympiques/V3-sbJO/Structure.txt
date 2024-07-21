@@ -1,73 +1,79 @@
 Structure du dossier pour le volume OS
 Le numÚro de sÚrie du volume est AE56-713A
 C:.
-ª   .htaccess
-ª   EXEMPLE DE CHEMIN.txt
-ª   index.php
-ª   INFOS - Structure.txt
-ª   readMe.md
-ª   structure.txt
-ª   
+|   .htaccess
+|   EXEMPLE DE CHEMIN.txt
+|   index.php
+|   INFOS - Structure.txt
+|   readMe.md
+|   
 +---Controllers
-ª       loginController.class.php
-ª       LogoutController.class.php
-ª       UserController.class.php
-ª       
+|       loginController.class.php
+|       LogoutController.class.php
+|       UserController.class.php
+|       
 +---Models
-ª       AuthManager.class.php
-ª       dbConnect.php
-ª       MyDbConnection.php
-ª       UserManager.class.php
-ª       
+|       AuthManager.class.php
+|       dbConnect.php
+|       MyDbConnection.php
+|       UserManager.class.php
+|       
 +---public
-ª   +---css
-ª   ª       style.css
-ª   ª       
-ª   +---Font
-ª   ª       Paris2024-Variable.woff2
-ª   ª       Roboto-Black.ttf
-ª   ª       Roboto-Regular.ttf
-ª   ª       
-ª   +---images
-ª   ª   ª   bart.png
-ª   ª   ª   bob.jpg
-ª   ª   ª   boy.jpg
-ª   ª   ª   default.jpg
-ª   ª   ª   donald.png
-ª   ª   ª   dupont.png
-ª   ª   ª   logo.png
-ª   ª   ª   repartoire.jpg
-ª   ª   ª   titi.jpg
-ª   ª   ª   
-ª   ª   +---all
-ª   ª   ª       logo2.jpg
-ª   ª   ª       logo3.jpg
-ª   ª   ª       logo4.jpg
-ª   ª   ª       Paris2024_Olywhiteleft.png
-ª   ª   ª       skateboard-trick.jpg
-ª   ª   ª       
-ª   ª   +---Desktop
-ª   ª   ª       headerAccueilDesktop1.jpg
-ª   ª   ª       headerAccueilDesktop2.jpg
-ª   ª   ª       imgCalendrier.jpg
-ª   ª   ª       imgConnexion.jpg
-ª   ª   ª       
-ª   ª   +---phone
-ª   ª           phoneAccueil.jpg
-ª   ª           phoneAthletes1.png
-ª   ª           phoneAthletes2.png
-ª   ª           phoneAthletes3.png
-ª   ª           phoneAthlÞtes 4.JPG
-ª   ª           phoneCalendrier.jpg
-ª   ª           phoneConnection.jpg
-ª   ª           
-ª   +---SQL
-ª           contenu.sql
-ª           jo_skateboard.sql
-ª           
+|   +---css
+|   |       style.css
+|   |       style.less
+|   |       
+|   +---Font
+|   |       Paris2024-Variable.woff2
+|   |       Roboto-Black.ttf
+|   |       Roboto-Regular.ttf
+|   |       
+|   +---images
+|   |   |   bart.png
+|   |   |   bob.jpg
+|   |   |   boy.jpg
+|   |   |   default.jpg
+|   |   |   donald.png
+|   |   |   dupont.png
+|   |   |   titi.jpg
+|   |   |   
+|   |   +---all
+|   |   |       logo2.jpg
+|   |   |       logo3.jpg
+|   |   |       logo4.jpg
+|   |   |       Paris2024_Olywhiteleft.png
+|   |   |       skateboard-trick.jpg
+|   |   |       Swheel.ai
+|   |   |       Swheel.png
+|   |   |       
+|   |   +---Desktop
+|   |   |       addDesktop2.jpg
+|   |   |       headerAccueilDesktop1.jpg
+|   |   |       imgCalendrier.jpg
+|   |   |       imgConnexion.jpg
+|   |   |       
+|   |   +---phone
+|   |           phoneAccueil.jpg
+|   |           phoneAthletes1.png
+|   |           phoneAthletes2.png
+|   |           phoneAthletes3.png
+|   |           phoneAthlÞtes 4.JPG
+|   |           phoneCalendrier.jpg
+|   |           phoneConnection.jpg
+|   |           
+|   +---js
+|   |       script.js
+|   |       
+|   +---SQL
+|           contenu.sql
+|           jo_skateboard.sql
+|           
 +---views
         accueil.view.php
         add.view.php
+        athletes.view.php
+        calendrier.view.php
+        classement.view.php
         delete.view.php
         login.view.php
         read.view.php

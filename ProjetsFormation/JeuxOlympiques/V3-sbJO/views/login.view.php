@@ -1,16 +1,21 @@
 <?php ob_start(); ?>
 
-<div class="login-container">
-    <?php if (isset($error)): ?>
+<div class="form-container">
+    <h1>Connexion</h1>
+    <form method="POST">
+        <div class="inputBx">
+            <input type="email" name="email" placeholder="Email" required>
+        </div>
+        <div class="inputBx">
+            <input type="password" name="password" placeholder="Mot de passe" required>
+        </div>
+        <div class="inputBx">
+            <input type="submit" value="Connexion">
+        </div>
+    </form>
+    <?php if (isset($error)) : ?>
         <p class="error"><?php echo htmlspecialchars($error); ?></p>
     <?php endif; ?>
-    <form method="POST">
-        <label for="email">Email:</label>
-        <input type="email" name="email" required>
-        <label for="password">Mot de passe:</label>
-        <input type="password" name="password" required>
-        <input type="submit" value="Login">
-    </form>
 </div>
 
 

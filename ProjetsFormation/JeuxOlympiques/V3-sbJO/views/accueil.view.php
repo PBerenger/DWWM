@@ -6,7 +6,7 @@
         <h2>La liste des skateurs qui participeront aux Olympic Qualifier Series (OQS) a été dressée.
             Au total, 176 athlètes participeront aux OQS et tenteront d'obtenir un quota<span class="asterisque">*</span> pour les prochains Jeux Olympiques de Paris 2024.</h2>
     </div>
-    <img src="../public/images/Desktop/headerAccueilDesktop1.jpg" alt="topSkate">
+    <img class="imgAccueil" src="../public/images/Desktop/headerAccueilDesktop1.jpg" alt="topSkate">
 </div>
 
 <div id="midContent">

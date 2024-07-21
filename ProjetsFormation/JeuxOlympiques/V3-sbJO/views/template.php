@@ -16,35 +16,35 @@ $userController = new UserController();
 
 <body>
     <header>
-        <img src="<?= URL ?>public/images/all/Paris2024_Olywhiteleft.png" alt="Logo" class="nav-logo">
+        <img class="imgLogo" src="<?= URL ?>public/images/all/Paris2024_Olywhiteleft.png" alt="Logo" class="nav-logo">
         <nav>
-            <ul>
-                <li><a href="<?= URL ?>accueil">Accueil</a></li>
-                <li><a href="<?= URL ?>accueil">Calendrier</a></li>
-                <li><a href="<?= URL ?>accueil">Classement</a></li>
-                <li><a href="<?= URL ?>accueil">Athlètes</a></li>
-                <div class="Loginout">
-                    <?php if (isset($_SESSION['user_id'])) : ?>
-                        <?php if ($userController->isAdmin()) : ?>
-                            <li><a href="<?= URL ?>read">Administration</a></li>
-                        <?php else : ?>
-                            <li><a href="<?= URL ?>update/<?= htmlspecialchars($_SESSION['user_id'])?>" >Modification du profil</a></li>
-                        <?php endif; ?>
-                        <li><a href="<?= URL ?>logout">Déconnexion</a></li>
-                    <?php else : ?>
-                        <li><a class="validButton" href="<?= URL ?>add">Inscription</a></li>
-                        <li><a href="<?= URL ?>login">Connexion</a></li>
-                    <?php endif; ?>
-                </div>
+        <ul>
+        <li><a href="<?= URL ?>accueil">Accueil</a></li>
+        <li><a href="<?= URL ?>accueil">Calendrier</a></li>
+        <li><a href="<?= URL ?>accueil">Classement</a></li>
+        <li><a href="<?= URL ?>accueil">Athlètes</a></li>
 
-            </ul>
+        <?php if (isset($_SESSION['user_id'])) : ?>
+            <?php if ($userController->isAdmin()) : ?>
+                <li><a href="<?= URL ?>read">Administration</a></li>
+            <?php else : ?>
+                <li class="userButt"><a href="<?= URL ?>update/<?= htmlspecialchars($_SESSION['user_id']) ?>">Profil</a></li>
+            <?php endif; ?>
+            <li class="userButt"><a href="<?= URL ?>logout">Déconnexion</a></li>
+        <?php else : ?>
+            <li class="userButt"><a href="<?= URL ?>add">Inscription</a></li>
+            <li class="userButt"><a href="<?= URL ?>login">Connexion</a></li>
+        <?php endif; ?>
+    </ul>
         </nav>
+        <div class="rotating-image"></div>
     </header>
     <?= $content ?>
-
+    
     <footer>
         <p class="foot">Copyright POMMELET Bérenger - 2024</p>
     </footer>
+    
+    <script src="<?= URL ?>public/js/script.js"></script>
 </body>
-
 </html>

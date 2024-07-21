@@ -35,9 +35,9 @@
   //second navbar
   --color2: #FBA9CB;
   //main background
-  --color3: #EEE;
+  --color3: white;
   //second background
-  --color4: #D1D8C5;
+  --color4: #DDDDDD;
   //main text
   --color5: #000;
 
@@ -49,6 +49,10 @@
   --fontTexte: 'Roboto-Regular';
 }
 
+
+// =======================================
+// =======================================
+// =======================================
 
 body {
   //GENERAL
@@ -67,15 +71,17 @@ body {
     letter-spacing: 1px;
   }
 
+  // =======================================
   // TEMPLATE
+
   header {
     display: flex;
     justify-content: space-around;
     align-items: center;
     background-color: var(--color1);
-    height: 100px;
+    height: 128px;
 
-    img {
+    .imgLogo {
       height: 100%;
       object-fit: contain;
     }
@@ -90,19 +96,88 @@ body {
         display: flex;
         justify-content: center;
         background-color: var(--color3);
-        padding: 5px 10px 5px 10px;
-        margin: 20px;
+        padding: 5px 10px;
+        margin: 0 20px;
         border-radius: 50px;
-        width: 110px;
+        width: 125px;
+        border: 3px solid var(--color2);
 
         a {
           color: var(--color5);
           font-family: var(--fontButton);
         }
+
+        &:hover {
+          transition: background-color 0.3s ease-in-out, color 0.5s ease-in-out 0.2s;
+          background-color: var(--color2);
+          border: 3px solid var(--color3);
+
+          a {
+            color: var(--color3);
+          }
+        }
       }
+
+      /* Styles pour les éléments avec la classe 'userButt' */
+      li.userButt {
+        background-color: var(--color2);
+        margin: 0;
+        width: 140px;
+        border: 4px solid var(--color2);
+        border-radius: 0;
+      }
+      
+      li.userButt a {
+        display: flex;
+        align-items: center;
+        color: var(--color3);
+        height: 110px;
+      }
+
+      li.userButt:hover {
+        background-color: var(--color3);
+        border: 4px solid var(--color2);
+      }
+
+      li.userButt:hover a {
+        color: var(--color2);
+      }
+    }
+
+    .rotating-image {
+      height: 100px;
+      width: 100px;
+      object-fit: contain;
+      background-image: url('../images/all/Swheel.png');
+      background-size: cover;
+      background-color: var(--color3);
+      border: 5px solid var(--color3);
+      border-radius: 50%;
+      transition: transform 5s ease-out;
+      transform: rotate(0deg);
+    }
+
+    .rotating-image:hover {
+      animation: spin 0.2s linear infinite;
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .stop-spin {
+      animation: none;
     }
   }
 
+  // =======================================
+  // FOOTER
   footer {
     display: flex;
     justify-content: space-around;
@@ -110,115 +185,241 @@ body {
     background-color: var(--color2);
     height: 100px;
   }
+}
+
+// =======================================
+// =======================================
+// ACCUEIL
+
+.asterisque {
+  color: var(--color4);
+}
+
+#topContent {
+  width: 100%;
+  position: relative;
+  // width: fit-content;
+
+  .textTopContent {
+    position: absolute;
+    top: 20px;
+    left: 50px;
+    color: var(--color3);
+    padding: 10px;
+    // z-index: 1; ??
+
+    h1 {
+      font-size: 3em;
+      max-width: 750px;
+    }
+
+    h2 {
+      margin-top: 100px;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 50px;
+      max-width: 500px;
+    }
+
+  }
+
+  .imgAccueil {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+#midContent {
+  margin: 100px;
+  font-family: var(--fontTexte);
+  text-align: justify;
 
 
-  // =======================================
-  // =======================================
-  // ACCUEIL
-
-  //Content
   .asterisque {
-    color: var(--color2);
-  }
-
-  #topContent {
-    position: relative;
-    width: fit-content;
-
-    .textTopContent {
-      position: absolute;
-      top: 20px;
-      left: 50px;
-      color: var(--color3);
-      padding: 10px;
-      // z-index: 1; ??
-
-      h1 {
-        font-size: 3em;
-        max-width: 750px;
-      }
-
-      h2 {
-        margin-top: 100px;
-        background-color: rgba(0, 0, 0, 0.5);
-        padding: 20px;
-        border-radius: 50px;
-        max-width: 500px;
-      }
-
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-      height: auto;
-    }
-  }
-
-  #midContent {
-    margin: 100px;
-    font-family: var(--fontTexte);
     text-align: justify;
+    width: 400px;
+    padding: 10px;
+    border-radius: 25px;
+    background-color: var(--color1);
+    margin-left: auto;
+    margin-right: 0;
+
+  }
+}
 
 
-    .asterisque {
-      text-align: justify;
-      width: 400px;
-      padding: 10px;
-      border-radius: 25px;
-      background-color: var(--color1);
-      margin-left: auto;
-      margin-right: 0;
+// =======================================
+// =======================================
+// FORMS : LOGIN/ADD
 
-    }
+.form-container {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+
+  h1 {
+    color: var(--color5);
   }
 
+  .error {
+    color: red;
+    margin-bottom: 15px;
+  }
 
-  // =======================================
-  // =======================================
-  // ADD
-
-
-  // revoir le margin, le display et le butt submit
-  .form-container {
-    width: 300px;
-    margin: 20px auto;
-    background: #fff;
+  form {
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    display: flex;
+    border-radius: 40px;
+    border: 4px solid var(--color4);
 
-    form {
+    .inputBx {
+      position: relative;
+      width: 100%;
+      padding-bottom: 20px;
 
-      label {
-        display: block;
-        margin-bottom: 10px;
-        font-weight: bold;
-      }
-
-      input[type="text"] input[type="email"] input[type="submit"] input[type="password" i] select {
-        width: calc(100% - 16px);
-        padding: 8px;
-        margin-bottom: 10px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
+      input {
+        position: relative;
+        width: 100%;
+        padding: 12px 20px;
+        background: transparent;
+        border: 2px solid var(--color4);
+        border-radius: 40px;
+        font-size: 1.2em;
+        color: var(--color5);
+        box-shadow: none;
+        outline: none;
       }
 
       input[type="submit"] {
-        background-color: #333;
-        color: #fff;
+        width: 100%;
+        background-color: var(--color2);
         border: none;
         cursor: pointer;
+        box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
       }
 
       input[type="submit"]:hover {
-        background-color: #555;
+        background: transparent;
+        color: var(--color1);
+      }
+
+      input[type="file"] {
+        /* ??? */
+        background-color: red;
       }
     }
   }
+}
 
-  img {
-    width: 500px;
+.parcourir {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+select {
+  position: relative;
+  width: 100%;
+  padding: 12px 20px;
+  background: transparent;
+  border: 2px solid var(--color4);
+  border-radius: 40px;
+  font-size: 1.2em;
+  color: var(--color5);
+  box-shadow: none;
+  outline: none;
+  margin-bottom: 20px;
+}
+
+form:hover {
+  border: 4px solid var(--color2);
+}
+
+.login-container h1 {
+  margin-bottom: 20px;
+}
+
+
+// =======================================
+// =======================================
+// READ
+
+.readButtons {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  // margin: 50px 0;
+  padding: 50px;
+  border-radius: 0% 0% 20% 20%;
+  background-color: #022366;
+}
+
+.validButton {
+  padding: 12px 20px;
+  border: 2px solid var(--color3);
+  border-radius: 40px;
+  font-size: 1.2em;
+  color: var(--color3);
+  background: transparent;
+  cursor: pointer;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  font-family: var(--fontButton);
+  margin: 0 10px;
+  white-space: nowrap;
+}
+
+.validButton:hover {
+  background-color: var(--color2);
+  color: var(--color1);
+}
+
+// Table
+
+table {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background: var(--color3);
+  font-family: var(--fontTexte);
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 20px;
+  overflow: hidden;
+
+
+  th,
+  td {
+    border: 1px solid var(--color1);
+    padding: 10px;
+    text-align: left;
+    padding: 8px;
   }
+
+  th {
+    background-color: var(--color2);
+  }
+
+  td {
+    background-color: var(--color4);
+  }
+
+  a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
 }

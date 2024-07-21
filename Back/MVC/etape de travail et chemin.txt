@@ -11,3 +11,11 @@ Exemple de chemin pour le bouton "login":
 2/ login controler a besoin "authManager.php et de MyDbConnection.php (doncdbConnect.php) -> login.view.php
 3/ login.view.php affiche le formulaire -> Template.php
 4/ template.php affiche le form avec le template
+
+
+
+Afficher la structure dans le terminal
+tree
+
+créer un fichier de la structure
+tree /F | Out-File -FilePath ./structure.txt
