@@ -9,14 +9,21 @@
 <body>
     <h1>Vérification du mot de passe</h1>
     <label for="passwordSaisie">Entrez votre mot de passe</label>
-    <input type="password" id="passwordSaisie" oninput="verifPassword()" >
-    <p id="longueurMDP" class="invalid">- Doit comporter au minimum 8 caractères</p>
-    <p id="majuscule" class="invalid"> Au moins une majuscule</p>
-    <p id="minuscule" class="invalid"> Au moins une minuscule</p>
-    <p id="nombre" class="invalid"> Au moins un chiffre</p>
-    <p id="specialChar" class="invalid"> Au moins un caractère spécial</p>
+    <div class="mdpInput">
+        <input type="password" id="passwordSaisie" oninput="verifPassword()">
+        <button type="button" id="togglePassword">
+            <img src="eyesOpen.png" alt="Afficher le mot de passe">
+        </button>
+        <div id="mdpContainer" class="mdpContainer">
+            <h4>Doit comporter au minimum:</h4>
+            <p id="longueurMDP" class="invalid">8 caractères</p>
+            <p id="majuscule" class="invalid">1 majuscule</p>
+            <p id="minuscule" class="invalid">1 minuscule</p>
+            <p id="nombre" class="invalid">1 chiffre</p>
+            <p id="specialChar" class="invalid">1 caractère spécial</p>
+        </div>
+    </div>
 
     <script src="script.js"></script>
-    
 </body>
 </html>

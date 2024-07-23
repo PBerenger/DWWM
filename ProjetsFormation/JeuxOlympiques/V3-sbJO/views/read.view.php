@@ -1,9 +1,11 @@
-<?php ob_start(); ?>
+<?php 
+ob_start(); 
+?>
 
 
 <div class="readButtons">
     <a class="validButton" href="<?= URL ?>add">Ajouter un utilisateur</a>
-    <a class="validButton" href="<?= URL ?>delete/1">Supprimer un utilisateur</a>
+    <a class="validButton" href="<?= URL ?>delete">Supprimer un utilisateur</a>
 </div>
 
 <table border="1">
@@ -29,10 +31,10 @@
             <td><?= htmlspecialchars($user['userLastName'] ?? 'Nom inconnu', ENT_QUOTES, 'UTF-8'); ?></td>
             <td><?= htmlspecialchars($user['userFirstName'] ?? 'Prénom inconnu', ENT_QUOTES, 'UTF-8'); ?></td>
             <td><?= htmlspecialchars($user['userEmail'], ENT_QUOTES, 'UTF-8'); ?></td>
-            <td><?= htmlspecialchars($user['userDateBirth'] ?? 'Date de naissance inconnue', ENT_QUOTES, 'UTF-8'); ?></td>
+            <td><?= htmlspecialchars($user['birthDay'] ?? 'Date de naissance inconnue', ENT_QUOTES, 'UTF-8'); ?></td>
             <td><?= htmlspecialchars($user['userGender'], ENT_QUOTES, 'UTF-8'); ?></td>
             <td><?= htmlspecialchars($user['UserPhone'] ?? 'Téléphone inconnu', ENT_QUOTES, 'UTF-8'); ?></td>
-            <td><?= htmlspecialchars($user['role_id'] ?? 'Rôle inconnu', ENT_QUOTES, 'UTF-8'); ?></td>
+            <td><?= htmlspecialchars($user['roleDescription'] ?? 'Rôle inconnu', ENT_QUOTES, 'UTF-8'); ?></td>
             <td><a href="<?= URL ?>update/<?= htmlspecialchars($user['id_user'], ENT_QUOTES, 'UTF-8'); ?>">Modifier</a></td>
         </tr>
     <?php endforeach; ?>

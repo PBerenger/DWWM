@@ -11,6 +11,7 @@ class UserController
         $this->userManager = new UserManager();
     }
 
+    //----------------------------------------------------------------------------------------------------------------------------------------
     // Récupère tous les utilisateurs via $userManager->getAllUsers().
     // Inclut le fichier de vue read.view.php pour afficher la liste des utilisateurs.
     public function listUsers()
@@ -24,6 +25,7 @@ class UserController
         require './views/read.view.php';
     }
 
+    //----------------------------------------------------------------------------------------------------------------------------------------
     // Récupère les informations d'un utilisateur spécifique via $userManager->getUserById($id).
     // Inclut le fichier de vue update.view.php pour afficher le formulaire de mise à jour avec les informations de l'utilisateur.
     public function UpdateForm($id)
@@ -32,6 +34,7 @@ class UserController
         require __DIR__ . '/../views/update.view.php';
     }
 
+    //----------------------------------------------------------------------------------------------------------------------------------------
     // Si l'utilisateur est admin
     public function isAdmin()
     {
@@ -42,12 +45,14 @@ class UserController
         return $user['role_id'] === 1;
     }
 
+    //----------------------------------------------------------------------------------------------------------------------------------------
     // Extrait les informations de l'utilisateur (ID, nom, prénom, email, téléphone, rôle) depuis le tableau $data.
     // Gère l'upload d'une image de profil si un fichier est fourni et valide.
     // Appelle $userManager->updateUser pour mettre à jour les informations de l'utilisateur en base de données.
     // Affiche la liste des utilisateurs mise à jour en appelant listUsers().
     public function updateUser($data, $files)
     {
+        $id = $data['id_user'];
         $nom = $data['nom'];
         $prenom = $data['prenom'];
         $email = $data['email'];
@@ -58,6 +63,8 @@ class UserController
         $pwd = $data['password'];
         $nomImage = 'default.jpg';
 
+        $hashedPwd = password_hash($pwd, PASSWORD_BCRYPT);
+
         // Gestion de l'upload de l'image
         if (isset($files['image']) && $files['image']['error'] === UPLOAD_ERR_OK) {
             $tmp_name = $files['image']['tmp_name'];
@@ -66,12 +73,12 @@ class UserController
             $nomImage = $name;
         }
 
-
-        $message = $this->userManager->updateUser($nom, $prenom, $email, $dateNaissance, $genre, $telephone, $role, $nomImage, $pwd);
+        $message = $this->userManager->updateUser($id, $nom, $prenom, $email, $dateNaissance, $genre, $telephone, $role, $nomImage, $hashedPwd);
         $this->listUsers();
     }
 
-    // Supprime un utilisateur par id
+    //----------------------------------------------------------------------------------------------------------------------------------------
+    // // Supprime un utilisateur par id
     public function deleteForm()
     {
         $users =  $this->userManager->getAllUsers();
@@ -89,6 +96,7 @@ class UserController
     }
 
 
+    //----------------------------------------------------------------------------------------------------------------------------------------
     // Fonction qui permet d'ajouter un nouvel utilisateur dans une base de données.
     public function addUser($data, $files)
     {
@@ -134,8 +142,7 @@ class UserController
         exit;
     }
 
-
-
+    //----------------------------------------------------------------------------------------------------------------------------------------
     // Méthode pour afficher le formulaire d'ajout
     public function addForm()
     {

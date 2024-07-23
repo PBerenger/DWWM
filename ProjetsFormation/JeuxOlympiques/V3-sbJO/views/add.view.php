@@ -1,11 +1,21 @@
 <?php
 ob_start();
+$authManager = new AuthManager();
+$authManager->startSession();
+$userController = new UserController();
 ?>
 
-
+<?php if (isset($_SESSION['user_id'])) : ?>
+    <?php if ($userController->isAdmin()) : ?>
+        <div class="readButtons">
+            <a class="validButton" href="<?= URL ?>read">Retour</a>
+            <a class="validButton" href="<?= URL ?>delete">Supprimer un utilisateur</a>
+        </div>
+    <?php endif; ?>
+<?php endif; ?>
 
 <div class="form-container">
-    <form method="POST" action="add" enctype="multipart/form-data">
+    <form method="POST" action="<?= URL ?>add" enctype="multipart/form-data">
         <div class="inputBx">
             <input type="text" name="nom" placeholder="nom" required>
         </div>
@@ -27,11 +37,23 @@ ob_start();
         </select>
 
         <div class="inputBx">
-            <input type="text" name="telephone" placeholder="telephone" required>
+            <input type="text" id="passwordSaisie" oninput="verifPassword()" name="telephone" placeholder="telephone" required>
         </div>
         <div class="inputBx">
             <input type="password" name="password" placeholder="Mot de passe" required>
+            <button type="button" id="togglePassword">
+                <img class="eyePSW" src="../public/images/all/eyesOpen.png" alt="Afficher le mot de passe">
+            </button>
+            <div id="mdpContainer" class="mdpContainer">
+                <h4>Doit comporter au minimum:</h4>
+                <p id="longueurMDP" class="invalid">8 caractères</p>
+                <p id="majuscule" class="invalid">1 majuscule</p>
+                <p id="minuscule" class="invalid">1 minuscule</p>
+                <p id="nombre" class="invalid">1 chiffre</p>
+                <p id="specialChar" class="invalid">1 caractère spécial</p>
+            </div>
         </div>
+        
         <div class="inputBx">
             <input type="password" name="confirm_password" placeholder="Confirmer le mot de passe" required>
         </div>
@@ -43,11 +65,12 @@ ob_start();
         </select><br>
 
         <div class="inputBx">
-            <input class="parcourir" type="file" name="image" /><br>
+            <label for="file-upload" class="parcourir">Téléchargez une image de profil</label>
+            <input id="file-upload" type="file" name="image" /><br>
         </div>
 
         <div class="inputBx">
-            <input type="submit" value="Connexion">
+            <input type="submit" value="Ajouter">
         </div>
     </form>
 

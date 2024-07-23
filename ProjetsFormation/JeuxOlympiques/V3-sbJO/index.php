@@ -44,21 +44,19 @@ try {
                     }
                 }
                 break;
-                case "delete":
-                    $controller = new UserController();
-                    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                        if (isset($_POST['ids']) && is_array($_POST['ids'])) {
-                            $controller->deleteUsers($_POST['ids']);
-                        } else {
-                            // Gérer le cas où aucun utilisateur n'a été sélectionné
-                            $controller->listUsers();
-                        }
+            case "delete":
+                $controller = new UserController();
+                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                    if (isset($_POST['ids'])) {
+                        $controller->deleteUsers($_POST['ids']);
                     } else {
-                        if (isset($url[1])) {
-                            $controller->deleteForm();
-                        }
+                        // Gérer le cas où aucun utilisateur n'a été sélectionné
+                        $controller->listUsers();
                     }
-                    break;
+                } else {
+                    $controller->deleteForm();
+                }
+                break;
             case "add":
                 $controller = new UserController();
                 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

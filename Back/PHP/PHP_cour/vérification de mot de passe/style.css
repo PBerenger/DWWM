@@ -1,6 +1,5 @@
 
 body{
-    text-align: center;
     margin: 50px;
 }
 
@@ -15,4 +14,34 @@ body{
 
 .valid{
     color : green;
+}
+
+button {
+    background: none;
+    border: none;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    outline: none;
+    box-shadow: none;
+}
+
+
+img {
+    display: block;
+    height: 20px;
+
+}
+
+.mdpContainer {
+    display: none;
+    position: absolute;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    z-index: 1;
+}
+
+.mdpContainer {
+    left: 500px;
 }

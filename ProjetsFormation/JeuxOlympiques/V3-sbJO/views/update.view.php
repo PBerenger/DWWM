@@ -5,24 +5,53 @@ ob_start();
 <div class="form-container">
     <?php if ($utilisateur) : ?>
         <form method="POST" enctype="multipart/form-data" action="<?= URL ?>update">
-            <input type="hidden" name="id" value="<?php echo htmlspecialchars($utilisateur['id_user']); ?>">
+            <input type="hidden" name="id_user" value="<?php echo htmlspecialchars($utilisateur['id_user']); ?>">
             <input type="hidden" name="currentImage" value="<?php echo htmlspecialchars($utilisateur['image_name'] ?? 'default.jpg'); ?>">
-            <label for="nom">Nom:</label>
-            <input type="text" name="nom" value="<?php echo htmlspecialchars($utilisateur['userLastName'] ?? 'Entrez votre nom'); ?>" required><br>
-            <label for="prenom">Prénom:</label>
-            <input type="text" name="prenom" value="<?php echo htmlspecialchars($utilisateur['userFirstName'] ?? 'Entrez votre Prénom'); ?>" required><br>
-            <label for="email">Email:</label>
-            <input type="email" name="email" value="<?php echo htmlspecialchars($utilisateur['userEmail'] ?? 'Entrez votre Mail'); ?>" required><br>
-            <label for="telephone">Téléphone:</label>
-            <input type="text" name="telephone" value="<?php echo htmlspecialchars($utilisateur['userPhone'] ?? 'Entrez votre numéro de téléphone'); ?>" required><br>
-            <label for="role">Rôle:</label>
+            <div class="inputBx">
+                <input type="text" name="nom" value="<?php echo htmlspecialchars($utilisateur['userLastName'] ?? 'Entrez votre nom'); ?>" required><br>
+            </div>
+            <div class="inputBx">
+                <input type="text" name="prenom" value="<?php echo htmlspecialchars($utilisateur['userFirstName'] ?? 'Entrez votre Prénom'); ?>" required><br>
+            </div>
+            <div class="inputBx">
+                <input type="email" name="email" value="<?php echo htmlspecialchars($utilisateur['userEmail'] ?? 'Entrez votre Mail'); ?>" required><br>
+            </div>
+            <div class="inputBx">
+                <input type="text" name="telephone" value="<?php echo htmlspecialchars($utilisateur['userPhone'] ?? 'Numéro de téléphone'); ?>" required><br>
+            </div>
+
+            <div class="inputBx">
+                <input type="date" name="dateNaissance" required>
+            </div>
+
+            <div class="inputBx">
+                <input type="password" name="password" placeholder="Nouveau mot de passe" required>
+            </div>
+            <div class="inputBx">
+                <input type="password" name="confirm_password" placeholder="Confirmer le nouveaumot de passe" required>
+            </div>
+
+            <select id="genre" name="genre" required>
+                <option class="disabled" value="" disabled selected>Genre</option>
+                <option value="masculin">Masculin</option>
+                <option value="féminin">Féminin</option>
+                <option value="autre">Autre</option>
+            </select>
+
             <select name="role" required>
-                <option value="admin" <?php if ($utilisateur['role_id'] == 'admin') echo 'selected'; ?>>Admin</option>
-                <option value="non-admin" <?php if ($utilisateur['role_id'] == 'non-admin') echo 'selected'; ?>>Non-Admin</option>
+                <option class="disabled" value="" disabled selected>Rôle</option>
+                <option value='admin'>Admin</option>
+                <option value='non-admin'>Non-Admin</option>
             </select><br>
-            <label for="image">Image:</label>
-            <input type="file" name="image"><br>
-            <input type="submit" value="Mettre à jour">
+
+            <div class="inputBx">
+                <label for="file-upload" class="parcourir">Image de profil</label>
+                <input id="file-upload" type="file" name="image" /><br>
+            </div>
+
+            <div class="inputBx">
+                <input type="submit" value="Mettre à jour">
+            </div>
         </form>
     <?php else : ?>
         <p>Utilisateur non trouvé.</p>

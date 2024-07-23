@@ -14,20 +14,24 @@ class UserManager
     public function getAllUsers()
     {
         $sql = '
-            SELECT users.id_user, users.userLastName, users.userFirstName, users.userEmail, users.userDateBirth, users.userGender, users.UserPhone, userroles.role_id, users.image_name
+            SELECT users.id_user, users.userLastName, users.userFirstName, users.userEmail, DATE_FORMAT(users.userDateBirth, "%d / %m / %Y") AS birthDay, users.userGender, users.UserPhone, userroles.role_id, userroles.roleDescription, users.image_name
             FROM users
             JOIN userroles ON users.role_id = userroles.role_id
+            ORDER BY role_id, userLastName, userFirstName
         ';
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute();
-        return $stmt->fetchAll();
+        $users = $stmt->fetchAll();
+    
+        return $users;
     }
+    
 
     // Cette fonction est conçue pour récupérer les informations d'un utilisateur spécifique, identifié par son id.
     public function getUserById($id)
     {
         $sql = '
-            SELECT users.id_user, users.userLastName, users.userFirstName, users.userEmail, users.userDateBirth, users.userGender, users.UserPhone, userroles.role_id, users.image_name
+            SELECT users.id_user, users.userLastName, users.userFirstName, users.userEmail, DATE_FORMAT(users.userDateBirth, "%d / %m / %Y") AS birthDay, users.userGender, users.UserPhone, userroles.role_id, users.image_name
             FROM users
             JOIN userroles ON users.role_id = userroles.role_id
             WHERE users.id_user = ?
@@ -39,18 +43,21 @@ class UserManager
 
     // Cette fonction est conçue pour mettre à jour les informations d'un utilisateur dans une base de données.
     // implanter "changer de mot de passe"
-    public function updateUser($id, $nom, $prenom, $email, $dateNaissance, $genre,  $telephone, $role, $nomImage)
+    public function updateUser($id, $nom, $prenom, $email, $dateNaissance, $genre,  $telephone, $role, $nomImage, $pwd)
     {
+        $role_id = $role === 'admin' ? 1 : 2;
         try {
-            $stmt = $this->pdo->prepare('UPDATE users SET userLastName = ?, userFirstName = ?, userEmail = ?, userDateBirth = ?, userGender = ?, UserPhone = ?, role_id = ?, image_name = ? WHERE user_id = ?');
-            $stmt->execute([$nom, $prenom, $email, $dateNaissance, $telephone, $genre, $nomImage, $id]);
-
-            $stmt = $this->pdo->prepare('UPDATE userroles SET role = ? WHERE role_id = ?');
-            $stmt->execute([$role, $id]);
+            $stmt = $this->pdo->prepare('   UPDATE
+                                                users 
+                                            SET 
+                                                userLastName = ?, userFirstName = ?, userEmail = ?, userPassword = ?, userDateBirth = ?, userGender = ?, UserPhone = ?, role_id = ?,    image_name = ?
+                                            WHERE 
+                                                id_user = ?');
+            $stmt->execute([$nom, $prenom, $email, $pwd, $dateNaissance, $genre, $telephone, $role_id, $nomImage, $id]);
 
             return "Utilisateur mis à jour avec succès.";
         } catch (PDOException $e) {
-            return "Erreur : " . $e->getMessage();
+            $_SESSION['error'] = "Erreur : " . $e->getMessage();
         }
     }
 

@@ -1,0 +1,9 @@
+- node -v : vérifier  que node JS est installé
+
+- npm : (not packet manager) pour télécharger des paquerts de Library etc.
+- npm -v : installer les paquets
+
+
+DANS VS CODE :
+cmd :
+- npx create-react-app 'nomDuProjet' : créer un projet

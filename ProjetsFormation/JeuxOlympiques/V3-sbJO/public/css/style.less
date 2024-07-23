@@ -35,7 +35,7 @@
   //second navbar
   --color2: #FBA9CB;
   //main background
-  --color3: white;
+  --color3: #FFFFFF;
   //second background
   --color4: #DDDDDD;
   //main text
@@ -54,111 +54,100 @@
 // =======================================
 // =======================================
 
-body {
-  //GENERAL
+//GENERAL
 
-  h1 {
-    font-family: var(--fontTitre);
+h1 {
+  font-family: var(--fontTitre);
+}
+
+h2 {
+  font-family: var(--fontTexte);
+}
+
+p {
+  font-family: var(--fontTexte);
+  text-indent: 5%;
+  letter-spacing: 1px;
+}
+
+// =======================================
+// TEMPLATE
+
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--color1);
+  height: 128px;
+
+  .imgLogo {
+    height: 100%;
+    object-fit: contain;
   }
 
-  h2 {
-    font-family: var(--fontTexte);
-  }
-
-  p {
-    font-family: var(--fontTexte);
-    text-indent: 5%;
-    letter-spacing: 1px;
-  }
-
-  // =======================================
-  // TEMPLATE
-
-  header {
+  ul {
     display: flex;
-    justify-content: space-around;
+    color: var(--color5);
     align-items: center;
-    background-color: var(--color1);
-    height: 128px;
+    width: fit-content;
 
-    .imgLogo {
-      height: 100%;
-      object-fit: contain;
-    }
-
-    ul {
+    li {
       display: flex;
-      color: var(--color5);
-      align-items: center;
-      width: fit-content;
+      justify-content: center;
 
-      li {
-        display: flex;
-        justify-content: center;
-        background-color: var(--color3);
-        padding: 5px 10px;
+      a {
+        text-align: center;
+        padding: 15px 10px;
         margin: 0 20px;
-        border-radius: 50px;
         width: 125px;
-        border: 3px solid var(--color2);
-
-        a {
-          color: var(--color5);
-          font-family: var(--fontButton);
-        }
+        font-family: var(--fontButton);
+        background: var(--color2);
+        border: none;
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 12px;
 
         &:hover {
-          transition: background-color 0.3s ease-in-out, color 0.5s ease-in-out 0.2s;
-          background-color: var(--color2);
-          border: 3px solid var(--color3);
-
-          a {
-            color: var(--color3);
-          }
+          background: var(--color3);
+          border: 3px solid var(--color2);
+          color: var(--color5);
         }
       }
-
-      /* Styles pour les éléments avec la classe 'userButt' */
-      li.userButt {
-        background-color: var(--color2);
-        margin: 0;
-        width: 140px;
-        border: 4px solid var(--color2);
-        border-radius: 0;
-      }
-      
-      li.userButt a {
-        display: flex;
-        align-items: center;
-        color: var(--color3);
-        height: 110px;
-      }
-
-      li.userButt:hover {
-        background-color: var(--color3);
-        border: 4px solid var(--color2);
-      }
-
-      li.userButt:hover a {
-        color: var(--color2);
-      }
     }
 
-    .rotating-image {
-      height: 100px;
-      width: 100px;
-      object-fit: contain;
-      background-image: url('../images/all/Swheel.png');
-      background-size: cover;
-      background-color: var(--color3);
-      border: 5px solid var(--color3);
-      border-radius: 50%;
-      transition: transform 5s ease-out;
-      transform: rotate(0deg);
-    }
+    /* Styles pour les éléments avec la classe 'userButt' */
+    .userButt a {
+      background: var(--color1);
+      border: 3px solid var(--color3);
+      margin: 4px 2px;
+      overflow: hidden;
 
-    .rotating-image:hover {
-      animation: spin 0.2s linear infinite;
+      &:hover {
+        background: var(--color3);
+        border: 3px solid var(--color5);
+        color: var(--color5);
+      }
+    }
+  }
+
+
+
+  .rotating-image {
+    height: 100px;
+    width: 100px;
+    object-fit: contain;
+    background-image: url('../images/all/Swheel.png');
+    background-size: cover;
+    background-color: var(--color3);
+    border: 5px solid var(--color3);
+    border-radius: 50%;
+    transition: transform 0s ease-out;
+    transform: rotate(0deg);
+
+    &:hover {
+      animation: spin 0.2s linear 3000;
     }
 
     @keyframes spin {
@@ -176,6 +165,14 @@ body {
     }
   }
 
+
+  a.actif {
+    box-shadow: 0 0 20px rgb(255, 255, 255);
+    margin-bottom: 10px;
+    background: var(--color3);
+    color: var(--color2);
+  }
+
   // =======================================
   // FOOTER
   footer {
@@ -186,6 +183,7 @@ body {
     height: 100px;
   }
 }
+
 
 // =======================================
 // =======================================
@@ -254,10 +252,9 @@ body {
 // FORMS : LOGIN/ADD
 
 .form-container {
-
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  padding-top: 20px;
   align-items: center;
   min-height: 100vh;
   width: 100%;
@@ -269,6 +266,7 @@ body {
 
   .error {
     color: red;
+    width: 300px;
     margin-bottom: 15px;
   }
 
@@ -282,17 +280,21 @@ body {
       width: 100%;
       padding-bottom: 20px;
 
-      input {
+      input,
+      .parcourir {
         position: relative;
         width: 100%;
         padding: 12px 20px;
         background: transparent;
-        border: 2px solid var(--color4);
         border-radius: 40px;
         font-size: 1.2em;
-        color: var(--color5);
         box-shadow: none;
         outline: none;
+      }
+
+      .parcourir:hover {
+        color: var(--color3);
+        background: var(--color1);
       }
 
       input[type="submit"] {
@@ -309,20 +311,55 @@ body {
       }
 
       input[type="file"] {
-        /* ??? */
-        background-color: red;
+        display: none;
       }
+
+      .parcourir {
+        display: block;
+        width: 100%;
+        background-color: var(--color3);
+        font-family: var(--fontTexte);
+        cursor: pointer;
+        box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+      }
+
+      // Password
+
+      .invalid {
+        color: red;
+      }
+
+      .valid {
+        color: green;
+      }
+
+      #togglePassword {
+        background: none;
+        border: none;
+        font: inherit;
+        color: inherit;
+        cursor: pointer;
+        outline: none;
+        box-shadow: none;
+
+        img {
+          display: block;
+          height: 20px;
+        }
+      }
+
+      .mdpContainer {
+        background-color: white;
+        border: 1px solid #ccc;
+        z-index: 1;
+        left: 500px;
+      }
+      
     }
   }
 }
 
-.parcourir {
-  background-color: red;
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-}
+
 
 select {
   position: relative;
@@ -357,7 +394,6 @@ form:hover {
   height: 50px;
   align-items: center;
   justify-content: center;
-  // margin: 50px 0;
   padding: 50px;
   border-radius: 0% 0% 20% 20%;
   background-color: #022366;
@@ -398,7 +434,7 @@ table {
 
   th,
   td {
-    border: 1px solid var(--color1);
+    border: 1px solid var(--color4);
     padding: 10px;
     text-align: left;
     padding: 8px;
@@ -406,10 +442,6 @@ table {
 
   th {
     background-color: var(--color2);
-  }
-
-  td {
-    background-color: var(--color4);
   }
 
   a {
@@ -421,5 +453,121 @@ table {
   a:hover {
     text-decoration: underline;
   }
+}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+table tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+
+// =======================================
+// =======================================
+// DELETE
+
+.form-container {
+  width: 100%;
+
+  h2 {
+    font-family: var(--fontTexte);
+    text-decoration: underline;
+  }
+}
+
+.users-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.user-row {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: var(--fontTexte);
+  font-size: 1em;
+  padding-bottom: 10px;
+  width: 200px;
+  height: 40px;
+}
+
+.user-row:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.user-checkbox-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.user-checkbox-container input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+
+.inputBxSupp {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+
+  input,
+  button {
+    padding: 12px 20px;
+    border-radius: 40px;
+    font-size: 1em;
+    box-shadow: none;
+    outline: none;
+  }
+
+  input[type="submit"],
+  button[type="button"] {
+    background-color: var(--color2);
+    border: none;
+    cursor: pointer;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    border: 2px solid var(--color5);
+  }
+
+  input[type="submit"]:hover,
+  button[type="button"]:hover {
+    background: var(--color3);
+    color: var(--color1);
+    border: 2px solid var(--color1);
+  }
+
+  .retourArrow {
+    text-align: end;
+
+    img {
+      width: 75px;
+      height: auto;
+      background-color: var(--color2);
+      box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+      border: 2px solid var(--color5);
+      padding: 12px 20px;
+      border-radius: 40px;
+      cursor: pointer;
+
+      &:hover {
+        background: var(--color3);
+        color: var(--color1);
+        border: 2px solid var(--color1);
+      }
+    }
+  }
+}
+
+.fixed-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  padding: 10px;
 
 }

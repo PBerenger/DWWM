@@ -19,16 +19,16 @@ $userController = new UserController();
         <img class="imgLogo" src="<?= URL ?>public/images/all/Paris2024_Olywhiteleft.png" alt="Logo" class="nav-logo">
         <nav>
         <ul>
-        <li><a href="<?= URL ?>accueil">Accueil</a></li>
+        <li><a class="actif" href="<?= URL ?>accueil">Accueil</a></li>
         <li><a href="<?= URL ?>accueil">Calendrier</a></li>
         <li><a href="<?= URL ?>accueil">Classement</a></li>
         <li><a href="<?= URL ?>accueil">Athlètes</a></li>
 
         <?php if (isset($_SESSION['user_id'])) : ?>
             <?php if ($userController->isAdmin()) : ?>
-                <li><a href="<?= URL ?>read">Administration</a></li>
+                <li class="userButt"><a href="<?= URL ?>read">Administration</a></li>
             <?php else : ?>
-                <li class="userButt"><a href="<?= URL ?>update/<?= htmlspecialchars($_SESSION['user_id']) ?>">Profil</a></li>
+                <li class="userButt"><a href="<?= URL ?>update/<?= htmlspecialchars($_SESSION['user_id']) ?>">Modifier profil</a></li>
             <?php endif; ?>
             <li class="userButt"><a href="<?= URL ?>logout">Déconnexion</a></li>
         <?php else : ?>
