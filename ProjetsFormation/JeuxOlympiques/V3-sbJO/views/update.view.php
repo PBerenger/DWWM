@@ -2,6 +2,8 @@
 ob_start();
 ?>
 
+<h2 class="titrePage">Modifier les informations</h2>
+
 <div class="form-container">
     <?php if ($utilisateur) : ?>
         <form method="POST" enctype="multipart/form-data" action="<?= URL ?>update">
@@ -24,9 +26,24 @@ ob_start();
                 <input type="date" name="dateNaissance" required>
             </div>
 
+
             <div class="inputBx">
-                <input type="password" name="password" placeholder="Nouveau mot de passe" required>
+                <input type="password" id="passwordSaisie" oninput="verifPassword()" name="password" placeholder="Mot de passe" required>
+                <button type="button" id="togglePassword">
+                    <img class="eyePSW" src="../public/images/all/eyesOpen.png" alt="Afficher le mot de passe">
+                </button>
             </div>
+
+            <div id="mdpContainer" class="mdpContainer">
+                <h4>Doit comporter au minimum:</h4>
+                <p id="longueurMDP" class="invalid">8 caractères</p>
+                <p id="majuscule" class="invalid">1 majuscule</p>
+                <p id="minuscule" class="invalid">1 minuscule</p>
+                <p id="nombre" class="invalid">1 chiffre</p>
+                <p id="specialChar" class="invalid">1 caractère spécial</p>
+            </div>
+
+
             <div class="inputBx">
                 <input type="password" name="confirm_password" placeholder="Confirmer le nouveaumot de passe" required>
             </div>

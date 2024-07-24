@@ -40,6 +40,10 @@
   --color4: #DDDDDD;
   //main text
   --color5: #000;
+  //invalid
+  --color6: #EB3678;
+  //valid
+  --color7: #88D66C;
 
   //main fontText
   --fontTitre: 'Paris2024';
@@ -55,6 +59,9 @@
 // =======================================
 
 //GENERAL
+body {
+  display: contents;
+}
 
 h1 {
   font-family: var(--fontTitre);
@@ -103,7 +110,7 @@ header {
         font-family: var(--fontButton);
         background: var(--color2);
         border: none;
-        color: white;
+        color: var(--color3);
         text-decoration: none;
         font-size: 16px;
         cursor: pointer;
@@ -165,9 +172,8 @@ header {
     }
   }
 
-
   a.actif {
-    box-shadow: 0 0 20px rgb(255, 255, 255);
+    box-shadow: 0 0 5px rgb(255, 255, 255);
     margin-bottom: 10px;
     background: var(--color3);
     color: var(--color2);
@@ -175,12 +181,19 @@ header {
 
   // =======================================
   // FOOTER
-  footer {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: var(--color2);
-    height: 100px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--color2);
+  height: 100px;
+
+  p {
+    font-family: var(--fontTexte);
+    text-align: center;
+    width: 500px;
   }
 }
 
@@ -204,7 +217,6 @@ header {
     left: 50px;
     color: var(--color3);
     padding: 10px;
-    // z-index: 1; ??
 
     h1 {
       font-size: 3em;
@@ -213,10 +225,11 @@ header {
 
     h2 {
       margin-top: 100px;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: var(--color5);
       padding: 20px;
       border-radius: 50px;
       max-width: 500px;
+      background-color: hsla(0, 0, 0, 0.5);
     }
 
   }
@@ -265,7 +278,7 @@ header {
   }
 
   .error {
-    color: red;
+    color: var(--color6);
     width: 300px;
     margin-bottom: 15px;
   }
@@ -323,16 +336,6 @@ header {
         box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
       }
 
-      // Password
-
-      .invalid {
-        color: red;
-      }
-
-      .valid {
-        color: green;
-      }
-
       #togglePassword {
         background: none;
         border: none;
@@ -341,26 +344,52 @@ header {
         cursor: pointer;
         outline: none;
         box-shadow: none;
-
-        img {
-          display: block;
-          height: 20px;
-        }
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
       }
 
-      .mdpContainer {
-        background-color: white;
-        border: 1px solid #ccc;
-        z-index: 1;
-        left: 500px;
+      .eyePSW {
+        transform: translate(-25%, -30%);
+        width: 30px;
+        height: 20px;
       }
-      
     }
   }
 }
 
+.mdpContainer {
+  display: none;
+}
+
+.mdpContainer.visible {
+  display: block;
+}
+
+.mdpContainer {
+  font-family: var(--fontTitre);
+  position: absolute;
+  background-color: var(--color3);
+  border: 1px solid var(--color4);
+  z-index: 1;
+  transform: translate(-110%, -80%);
+  border-radius: 5px;
+  width: 300px;
+  p {
+    font-family: var(--fontTitre);
+  }
+  .invalid {
+    color: var(--color6);
+  }
+  
+  .valid {
+    color: var(--color7);
+  }
+}
 
 
+// SELECT BUTTONS
 select {
   position: relative;
   width: 100%;
@@ -387,6 +416,10 @@ form:hover {
 // =======================================
 // =======================================
 // READ
+.titrePage {
+  padding: 10px;
+  text-align: center;
+}
 
 .readButtons {
   display: flex;
@@ -396,7 +429,7 @@ form:hover {
   justify-content: center;
   padding: 50px;
   border-radius: 0% 0% 20% 20%;
-  background-color: #022366;
+  background-color: var(--color1);
 }
 
 .validButton {

@@ -4,9 +4,10 @@ require_once "Controllers/functions.php";
 ?>
 
 <div class="readButtons">
-    <a class="validButton" href="<?= URL ?>read">Retour</a>
+    <a class="validButton" href="<?= URL ?>read">RETOUR</a>
     <a class="validButton" href="<?= URL ?>delete">Supprimer un utilisateur</a>
 </div>
+<h2 class="titrePage">Supprimer un utilisateur</h2>
 
 
 <div class="form-container">

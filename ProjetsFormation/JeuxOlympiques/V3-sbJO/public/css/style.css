@@ -29,9 +29,14 @@
   --color3: #FFFFFF;
   --color4: #DDDDDD;
   --color5: #000;
+  --color6: #EB3678;
+  --color7: #88D66C;
   --fontTitre: 'Paris2024';
   --fontButton: 'Roboto-Black';
   --fontTexte: 'Roboto-Regular';
+}
+body {
+  display: contents;
 }
 h1 {
   font-family: var(--fontTitre);
@@ -74,7 +79,7 @@ header ul li a {
   font-family: var(--fontButton);
   background: var(--color2);
   border: none;
-  color: white;
+  color: var(--color3);
   text-decoration: none;
   font-size: 16px;
   cursor: pointer;
@@ -123,17 +128,22 @@ header .rotating-image .stop-spin {
   animation: none;
 }
 header a.actif {
-  box-shadow: 0 0 20px #ffffff;
+  box-shadow: 0 0 5px #ffffff;
   margin-bottom: 10px;
   background: var(--color3);
   color: var(--color2);
 }
-header footer {
+footer {
   display: flex;
   justify-content: space-around;
   align-items: center;
   background-color: var(--color2);
   height: 100px;
+}
+footer p {
+  font-family: var(--fontTexte);
+  text-align: center;
+  width: 500px;
 }
 .asterisque {
   color: var(--color4);
@@ -155,10 +165,11 @@ header footer {
 }
 #topContent .textTopContent h2 {
   margin-top: 100px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--color5);
   padding: 20px;
   border-radius: 50px;
   max-width: 500px;
+  background-color: hsla(0, 0%, 0%, 0.5);
 }
 #topContent .imgAccueil {
   display: block;
@@ -192,7 +203,7 @@ header footer {
   color: var(--color5);
 }
 .form-container .error {
-  color: red;
+  color: var(--color6);
   width: 300px;
   margin-bottom: 15px;
 }
@@ -243,12 +254,6 @@ header footer {
   cursor: pointer;
   box-shadow: #26394d 0px 20px 30px -10px;
 }
-.form-container form .inputBx .invalid {
-  color: red;
-}
-.form-container form .inputBx .valid {
-  color: green;
-}
 .form-container form .inputBx #togglePassword {
   background: none;
   border: none;
@@ -257,16 +262,40 @@ header footer {
   cursor: pointer;
   outline: none;
   box-shadow: none;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
 }
-.form-container form .inputBx #togglePassword img {
-  display: block;
+.form-container form .inputBx .eyePSW {
+  transform: translate(-25%, -30%);
+  width: 30px;
   height: 20px;
 }
-.form-container form .inputBx .mdpContainer {
-  background-color: white;
-  border: 1px solid #ccc;
+.mdpContainer {
+  display: none;
+}
+.mdpContainer.visible {
+  display: block;
+}
+.mdpContainer {
+  font-family: var(--fontTitre);
+  position: absolute;
+  background-color: var(--color3);
+  border: 1px solid var(--color4);
   z-index: 1;
-  left: 500px;
+  transform: translate(-110%, -80%);
+  border-radius: 5px;
+  width: 300px;
+}
+.mdpContainer p {
+  font-family: var(--fontTitre);
+}
+.mdpContainer .invalid {
+  color: var(--color6);
+}
+.mdpContainer .valid {
+  color: var(--color7);
 }
 select {
   position: relative;
@@ -287,6 +316,10 @@ form:hover {
 .login-container h1 {
   margin-bottom: 20px;
 }
+.titrePage {
+  padding: 10px;
+  text-align: center;
+}
 .readButtons {
   display: flex;
   width: 100%;
@@ -295,7 +328,7 @@ form:hover {
   justify-content: center;
   padding: 50px;
   border-radius: 0% 0% 20% 20%;
-  background-color: #022366;
+  background-color: var(--color1);
 }
 .validButton {
   padding: 12px 20px;

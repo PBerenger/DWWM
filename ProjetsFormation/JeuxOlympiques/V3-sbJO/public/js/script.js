@@ -50,27 +50,49 @@ function deselectAll() {
 //------------------------------------------------------------------------------------------------
 
 // Condition PSW
-function verifPassword(){
-    let password = document.getElementById("passwordSaisie").value;
+document.addEventListener("DOMContentLoaded", function() {
+    let passwordInput = document.getElementById("passwordSaisie");
+    let mdpContainer = document.getElementById("mdpContainer");
 
-    let regexMajuscule = /[A-Z]/;
-    let regexMinuscule = /[a-z]/;
-    let regexNombre = /[0-9]/;
-    let regexSpecialChar = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/;
+    passwordInput.addEventListener("focus", function() {
+        mdpContainer.classList.add("visible");
+        verifPassword();
+    });
+    
+    passwordInput.addEventListener("blur", function() {
+        // Ajoute un délai pour que le conteneur reste visible
+        // un petit moment après avoir quitté le champ de saisie.
+        setTimeout(function() {
+            mdpContainer.classList.remove("visible");
+        }, 200);
+    });
 
-    let longueurMDP = document.getElementById("longueurMDP");
-    let majusculeMDP = document.getElementById("majuscule");
-    let minusculeMDP = document.getElementById("minuscule");
-    let nombreMDP = document.getElementById("nombre");
-    let specialCharMDP = document.getElementById("specialChar");
+    passwordInput.addEventListener("input", verifPassword);
 
-    longueurMDP.className = password.length >=8 ? "valid" : "invalid";
-    majusculeMDP.className = regexMajuscule.test(password) ? "valid" : "invalid";
-    minusculeMDP.className = regexMinuscule.test(password) ? "valid" : "invalid";
-    nombreMDP.className = regexNombre.test(password) ? "valid" : "invalid";
-    specialCharMDP.className = regexSpecialChar.test(password) ? "valid" : "invalid";
+    function verifPassword(){
+        let password = passwordInput.value;
 
-}
+        let regexMajuscule = /[A-Z]/;
+        let regexMinuscule = /[a-z]/;
+        let regexNombre = /[0-9]/;
+        let regexSpecialChar = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/;
+
+        let longueurMDP = document.getElementById("longueurMDP");
+        let majusculeMDP = document.getElementById("majuscule");
+        let minusculeMDP = document.getElementById("minuscule");
+        let nombreMDP = document.getElementById("nombre");
+        let specialCharMDP = document.getElementById("specialChar");
+
+        longueurMDP.className = password.length >= 8 ? "valid" : "invalid";
+        majusculeMDP.className = regexMajuscule.test(password) ? "valid" : "invalid";
+        minusculeMDP.className = regexMinuscule.test(password) ? "valid" : "invalid";
+        nombreMDP.className = regexNombre.test(password) ? "valid" : "invalid";
+        specialCharMDP.className = regexSpecialChar.test(password) ? "valid" : "invalid";
+    }
+});
+
+
+
 
 // Afficher contenu
 document.getElementById('passwordSaisie').addEventListener('focus', function() {
@@ -88,15 +110,23 @@ function verifPassword() {
 // Afficher le mot de passe
 document.addEventListener('DOMContentLoaded', (event) => {
     const togglePassword = document.getElementById('togglePassword');
-    const passwordSaisie = document.getElementById('passwordSaisie');
+    const passwordInput = document.querySelector('input[name="password"]'); // Cibler le bon champ de mot de passe
 
     togglePassword.addEventListener('click', () => {
-        const type = passwordSaisie.getAttribute('type') === 'password' ? 'text' : 'password';
-        passwordSaisie.setAttribute('type', type);
-        
-        togglePassword.querySelector('img').src = type === 'password' ? 'eyesOpen.png' : 'eyesClose.png';
+        // Vérifier le type actuel du champ de mot de passe
+        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordInput.setAttribute('type', type);
+
+        // Mettre à jour l'image de l'icône
+        const img = togglePassword.querySelector('img');
+        if (type === 'password') {
+            img.src = '../public/images/all/eyesOpen.png';
+        } else {
+            img.src = '../public/images/all/eyesClose.png';
+        }
     });
 });
+
 
 
 // Vérification des PSW avant soumission

@@ -61,16 +61,31 @@ class UserController
         $telephone = $data['telephone'];
         $role = $data['role'];
         $pwd = $data['password'];
+        $confirm_pwd = $_POST['confirm_password'];
         $nomImage = 'default.jpg';
 
+        if ($pwd !== $confirm_pwd) {
+            $message = "Les mots de passe ne correspondent pas.";
+            header('Location: /add');
+            echo $message;
+            return;
+        }
+
+        // Hachage du mot de passe
         $hashedPwd = password_hash($pwd, PASSWORD_BCRYPT);
 
         // Gestion de l'upload de l'image
         if (isset($files['image']) && $files['image']['error'] === UPLOAD_ERR_OK) {
             $tmp_name = $files['image']['tmp_name'];
             $name = basename($files['image']['name']);
-            move_uploaded_file($tmp_name, "./public/images/$name");
-            $nomImage = $name;
+            if (move_uploaded_file($tmp_name, "./public/images/$name")) {
+                $nomImage = $name;
+                $message = 'Image uploadée avec succès.';
+            } else {
+                $message = 'Erreur lors de l\'upload de l\'image.';
+            }
+        } else if (isset($files['image']) && $files['image']['error'] !== UPLOAD_ERR_NO_FILE) {
+            $message = 'Erreur lors de l\'upload de l\'image.';
         }
 
         $message = $this->userManager->updateUser($id, $nom, $prenom, $email, $dateNaissance, $genre, $telephone, $role, $nomImage, $hashedPwd);

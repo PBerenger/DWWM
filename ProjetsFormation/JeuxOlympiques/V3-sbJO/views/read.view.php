@@ -2,11 +2,12 @@
 ob_start(); 
 ?>
 
-
 <div class="readButtons">
-    <a class="validButton" href="<?= URL ?>add">Ajouter un utilisateur</a>
+    <a class="validButton" href="<?= URL ?>add">Ajouter/Modifier un utilisateur</a>
     <a class="validButton" href="<?= URL ?>delete">Supprimer un utilisateur</a>
 </div>
+
+<h2 class="titrePage">Espace Administrateur</h2>
 
 <table border="1">
     <tr>
@@ -42,5 +43,4 @@ ob_start();
 
 <?php
 $content = ob_get_clean();
-$titre = "Voir les utilisateurs";
 require "template.php";
