@@ -63,6 +63,7 @@ body {
   display: contents;
 }
 
+
 h1 {
   font-family: var(--fontTitre);
 }
@@ -189,6 +190,7 @@ footer {
   align-items: center;
   background-color: var(--color2);
   height: 100px;
+  margin-top: 30px;
 
   p {
     font-family: var(--fontTexte);
@@ -202,22 +204,18 @@ footer {
 // =======================================
 // ACCUEIL
 
-.asterisque {
-  color: var(--color4);
-}
 
 #topContent {
   width: 100%;
   position: relative;
-  // width: fit-content;
 
   .textTopContent {
     position: absolute;
     top: 20px;
     left: 50px;
-    color: var(--color3);
     padding: 10px;
-
+    color: var(--color3);
+    
     h1 {
       font-size: 3em;
       max-width: 750px;
@@ -230,8 +228,11 @@ footer {
       border-radius: 50px;
       max-width: 500px;
       background-color: hsla(0, 0, 0, 0.5);
-    }
 
+      .asterisque {
+        color: var(--color2);
+      }
+    }
   }
 
   .imgAccueil {
@@ -253,6 +254,7 @@ footer {
     padding: 10px;
     border-radius: 25px;
     background-color: var(--color1);
+    color: var(--color2);
     margin-left: auto;
     margin-right: 0;
 

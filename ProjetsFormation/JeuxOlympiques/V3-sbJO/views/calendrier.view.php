@@ -1,10 +1,12 @@
 <?php ob_start(); ?>
 
 
-<div class="readButtons">
+<!-- <div class="readButtons">
     <a class="validButton" href="<?= URL ?>add">Ajouter un utilisateur</a>
     <a class="validButton" href="<?= URL ?>delete/1">Supprimer un utilisateur</a>
-</div>
+</div> -->
+
+<h1>CALENDRIER</h1>
 
 <table border="1">
     <tr>

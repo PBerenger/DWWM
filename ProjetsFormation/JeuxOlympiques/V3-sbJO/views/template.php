@@ -19,9 +19,9 @@ $userController = new UserController();
             <nav>
                 <ul>
         <li><a href="<?= URL ?>accueil">Accueil</a></li>
-        <li><a href="<?= URL ?>accueil">Calendrier</a></li>
-        <li><a href="<?= URL ?>accueil">Classement</a></li>
-        <li><a href="<?= URL ?>accueil">Athlètes</a></li>
+        <li><a href="<?= URL ?>calendrier">Calendrier</a></li>
+        <li><a href="<?= URL ?>classement">Classement</a></li>
+        <li><a href="<?= URL ?>athletes">Athlètes</a></li>
 
         <?php if (isset($_SESSION['user_id'])) : ?>
             <?php if ($userController->isAdmin()) : ?>

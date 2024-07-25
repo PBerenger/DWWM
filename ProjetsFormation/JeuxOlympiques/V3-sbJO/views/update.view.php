@@ -1,5 +1,8 @@
 <?php
 ob_start();
+$authManager = new AuthManager();
+$authManager->startSession();
+$userController = new UserController();
 ?>
 
 <h2 class="titrePage">Modifier les informations</h2>
@@ -55,14 +58,20 @@ ob_start();
                 <option value="autre">Autre</option>
             </select>
 
-            <select name="role" required>
-                <option class="disabled" value="" disabled selected>Rôle</option>
-                <option value='admin'>Admin</option>
-                <option value='non-admin'>Non-Admin</option>
-            </select><br>
+
+            <?php if (isset($_SESSION['user_id'])) : ?>
+                <?php if ($userController->isAdmin()) : ?>
+                    <select name="role" required>
+                        <option class="disabled" value="" disabled selected>Rôle</option>
+                        <option value='admin'>Admin</option>
+                        <option value='non-admin'>Non-Admin</option>
+                    </select><br>
+                <?php endif; ?>
+            <?php endif; ?>
+
 
             <div class="inputBx">
-                <label for="file-upload" class="parcourir">Image de profil</label>
+                <label for="file-upload" class="parcourir">Télécharger une image de profil</label>
                 <input id="file-upload" type="file" name="image" /><br>
             </div>
 

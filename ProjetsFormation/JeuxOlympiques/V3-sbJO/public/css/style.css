@@ -139,14 +139,12 @@ footer {
   align-items: center;
   background-color: var(--color2);
   height: 100px;
+  margin-top: 30px;
 }
 footer p {
   font-family: var(--fontTexte);
   text-align: center;
   width: 500px;
-}
-.asterisque {
-  color: var(--color4);
 }
 #topContent {
   width: 100%;
@@ -156,8 +154,8 @@ footer p {
   position: absolute;
   top: 20px;
   left: 50px;
-  color: var(--color3);
   padding: 10px;
+  color: var(--color3);
 }
 #topContent .textTopContent h1 {
   font-size: 3em;
@@ -170,6 +168,9 @@ footer p {
   border-radius: 50px;
   max-width: 500px;
   background-color: hsla(0, 0%, 0%, 0.5);
+}
+#topContent .textTopContent h2 .asterisque {
+  color: var(--color2);
 }
 #topContent .imgAccueil {
   display: block;
@@ -187,6 +188,7 @@ footer p {
   padding: 10px;
   border-radius: 25px;
   background-color: var(--color1);
+  color: var(--color2);
   margin-left: auto;
   margin-right: 0;
 }

@@ -20,6 +20,17 @@ try {
             case "accueil":
                 require "views/accueil.view.php";
                 break;
+
+            case "calendrier":
+                require "views/calendrier.view.php";
+                break;
+            case "classement":
+                require "views/classement.view.php";
+                break;
+            case "athletes":
+                require "views/athletes.view.php";
+                break;
+
             case "login":
                 $controller = new LoginController();
                 $controller->login();
