@@ -22,16 +22,16 @@ $userController = new UserController();
                 <input type="email" name="email" value="<?php echo htmlspecialchars($utilisateur['userEmail'] ?? 'Entrez votre Mail'); ?>" required><br>
             </div>
             <div class="inputBx">
-                <input type="text" name="telephone" value="<?php echo htmlspecialchars($utilisateur['userPhone'] ?? 'Numéro de téléphone'); ?>" required><br>
+                <input type="text" name="telephone" value="<?php echo htmlspecialchars($utilisateur['userPhone'] ?? 'Votre numéro de téléphone'); ?>" required><br>
             </div>
 
             <div class="inputBx">
-                <input type="date" name="dateNaissance" required>
+                <input type="date" name="dateNaissance" value="<?php echo htmlspecialchars($utilisateur['userDateBirth'] ?? ''); ?>"required>
             </div>
 
 
             <div class="inputBx">
-                <input type="password" id="passwordSaisie" oninput="verifPassword()" name="password" placeholder="Mot de passe" required>
+                <input type="password" id="passwordSaisie" oninput="verifPassword()" name="password" placeholder="Mot de passe">
                 <button type="button" id="togglePassword">
                     <img class="eyePSW" src="../public/images/all/eyesOpen.png" alt="Afficher le mot de passe">
                 </button>
@@ -48,7 +48,7 @@ $userController = new UserController();
 
 
             <div class="inputBx">
-                <input type="password" name="confirm_password" placeholder="Confirmer le nouveaumot de passe" required>
+                <input type="password" name="confirm_password" placeholder="Confirmer le nouveaumot de passe">
             </div>
 
             <select id="genre" name="genre" required>

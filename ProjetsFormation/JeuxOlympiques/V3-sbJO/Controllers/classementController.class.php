@@ -2,24 +2,24 @@
 require_once './Models/athleteManager.class.php';
 require_once './Models/UserManager.class.php';
 
-class AthletesController
+class ClassementController
 {
-    private $athleteManager;
+    private $classementManager;
 
     public function __construct()
     {
-        $this->athleteManager = new AthletesManager();
+        $this->classementManager = new ClassementManager();
     }
 
-    public function listAthletes()
+    public function listClassement()
     {
         if (!$this->isAdmin()) {
             header('Location: ' . URL . 'accueil'); // Redirection si pas administrateur
             exit;
         }
 
-        $athletes = $this->athleteManager->getAllAthletes();
-        require './views/athletes.view.php';
+        $classement = $this->classementManager->getClassement();
+        require './views/classements.view.php';
     }
 
     private function isAdmin() {

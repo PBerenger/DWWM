@@ -1,25 +1,25 @@
 <?php
-require_once './Models/athleteManager.class.php';
+require_once './Models/calendrierManager.class.php';
 require_once './Models/UserManager.class.php';
 
-class AthletesController
+class CalendrierController
 {
-    private $athleteManager;
+    private $calendrierManager;
 
     public function __construct()
     {
-        $this->athleteManager = new AthletesManager();
+        $this->calendrierManager = new CalendrierManager();
     }
 
-    public function listAthletes()
+    public function listEvents()
     {
         if (!$this->isAdmin()) {
             header('Location: ' . URL . 'accueil'); // Redirection si pas administrateur
             exit;
         }
 
-        $athletes = $this->athleteManager->getAllAthletes();
-        require './views/athletes.view.php';
+        $events = $this->calendrierManager->getEvents();
+        require './views/calendrier.view.php';
     }
 
     private function isAdmin() {

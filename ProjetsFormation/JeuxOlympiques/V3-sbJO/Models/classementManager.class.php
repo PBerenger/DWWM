@@ -1,7 +1,7 @@
 <?php
 require_once './Models/MyDbConnection.php';
 
-class AthletesManager
+class ClassementManager
 {
     private $pdo;
 
@@ -11,28 +11,28 @@ class AthletesManager
     }
 
     // Cette fonction est conçue pour récupérer des informations sur tous les athlètes présents dans la base de données.
-    public function getAllAthletes()
+    public function getClassement()
     {
         $sql = '
-                SELECT athlete.id_athlete, athlete.athleteLastName, athlete.athleteFirstName, athlete.athleteGender, athlete.athleteDateBirth, athlete.athleteGender, athlete.gold, athlete.silver, athlete.bronze, country.countryName, country.countryShortName
+                SELECT id_athlete, athleteLastName, athleteFirstName, athleteGender, athleteDateBirth, athleteGender, gold, silver, bronze, country.countryName, country.countryShortName
                 FROM athlete
-                JOIN country ON athlete.id_Country = country.id_country
-                ORDER BY athlete.athleteLastName, athlete.athleteFirstName
+                JOIN country ON id_Country = country.id_country
+                ORDER BY athleteLastName, athleteFirstName
             ';
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute();
-        $athletes = $stmt->fetchAll();
+        $classement = $stmt->fetchAll();
 
-        return $athletes;
+        return $classement;
     }
 
 
-    public function getAthletesById($id)
+    public function getClassementById($id)
     {
         $sql = '
-            SELECT athlete.id_athlete, athlete.athleteLastName, athlete.athleteFirstName, athlete.athleteGender, athlete.athleteDateBirth, athlete.athleteGender, athlete.gold, athlete.silver, athlete.bronze, country.countryName, country.countryShortName
+            SELECT id_athlete, athleteLastName, athleteFirstName, athleteGender, athleteDateBirth, athleteGender, gold, silver, bronze, country.countryName, country.countryShortName
             FROM athlete
-            JOIN country ON athlete.id_Country = country.id_country
+            JOIN country ON id_Country = country.id_country
             WHERE id_country = ?
         ';
         $stmt = $this->pdo->prepare($sql);

@@ -6,41 +6,31 @@
     <a class="validButton" href="<?= URL ?>delete/1">Supprimer un utilisateur</a>
 </div> -->
 
-<h1>CALENDRIER</h1>
+<h2 class="titrePage">CALENDRIER</h2>
 
 <table border="1">
     <tr>
-        <th>ID</th>
-        <th>Image</th>
-        <th>Nom</th>
-        <th>Prénom</th>
-        <th>Email</th>
-        <th>Date de Naissance</th>
-        <th>Genre</th>
-        <th>Téléphone</th>
-        <th>Rôle</th>
-        <th>Actions</th>
+        <th>Lieu</th>
+        <th>Ville</th>
+        <th>Epreuve</th>
+        <th>Date</th>
+        <th>Phase</th>
     </tr>
-    <?php foreach ($users as $user) : ?>
-        <tr>
-            <td><?= htmlspecialchars($user['id_user'], ENT_QUOTES, 'UTF-8'); ?></td>
-            <td>
-                <?php $imagePath = '../public/images/' . htmlspecialchars($user['image_name'] ?? 'default.jpg', ENT_QUOTES, 'UTF-8'); ?>
-                <img src="<?= $imagePath; ?>" alt="Image de <?= htmlspecialchars($user['nom'] ?? 'Nom inconnu', ENT_QUOTES, 'UTF-8'); ?>" width="40">
-            </td>
-            <td><?= htmlspecialchars($user['userLastName'] ?? 'Nom inconnu', ENT_QUOTES, 'UTF-8'); ?></td>
-            <td><?= htmlspecialchars($user['userFirstName'] ?? 'Prénom inconnu', ENT_QUOTES, 'UTF-8'); ?></td>
-            <td><?= htmlspecialchars($user['userEmail'], ENT_QUOTES, 'UTF-8'); ?></td>
-            <td><?= htmlspecialchars($user['userDateBirth'] ?? 'Date de naissance inconnue', ENT_QUOTES, 'UTF-8'); ?></td>
-            <td><?= htmlspecialchars($user['userGender'], ENT_QUOTES, 'UTF-8'); ?></td>
-            <td><?= htmlspecialchars($user['UserPhone'] ?? 'Téléphone inconnu', ENT_QUOTES, 'UTF-8'); ?></td>
-            <td><?= htmlspecialchars($user['role_id'] ?? 'Rôle inconnu', ENT_QUOTES, 'UTF-8'); ?></td>
-            <td><a href="<?= URL ?>update/<?= htmlspecialchars($user['id_user'], ENT_QUOTES, 'UTF-8'); ?>">Modifier</a></td>
-        </tr>
-    <?php endforeach; ?>
+    <?php if (!isset($events) || !is_array($events)) : ?>
+        <p>Les données des évènements sont manquantes.</p>
+    <?php else : ?>
+        <?php foreach ($events as $event) : ?>
+            <tr>
+                <td><?= htmlspecialchars($event['eventName'] ?? 'Nom inconnu', ENT_QUOTES, 'UTF-8'); ?></td>
+                <td><?= htmlspecialchars($event['eventRegion'] ?? 'Région inconnu', ENT_QUOTES, 'UTF-8'); ?></td>
+                <td><?= htmlspecialchars($event['eventGender'] ?? 'Epreuve inconnue', ENT_QUOTES, 'UTF-8'); ?></td>
+                <td><?= htmlspecialchars($event['eventDate'] ?? "Date d'épreuve inconnue", ENT_QUOTES, 'UTF-8'); ?></td>
+                <td><?= htmlspecialchars($event['phase'] ?? "phase inconnue", ENT_QUOTES, 'UTF-8'); ?></td>
+            </tr>
+        <?php endforeach; ?>
+    <?php endif; ?>
 </table>
 
 <?php
 $content = ob_get_clean();
-$titre = "Voir les utilisateurs";
 require "template.php";

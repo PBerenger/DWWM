@@ -3,7 +3,7 @@ ob_start();
 ?>
 
 <div class="readButtons">
-    <a class="validButton" href="<?= URL ?>add">Ajouter/Modifier un utilisateur</a>
+    <a class="validButton" href="<?= URL ?>add">Ajouter un utilisateur</a>
     <a class="validButton" href="<?= URL ?>delete">Supprimer un utilisateur</a>
 </div>
 

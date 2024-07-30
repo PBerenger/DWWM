@@ -3,11 +3,16 @@
 define("URL", str_replace("index.php", "", (isset($_SERVER["HTTPS"]) ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF']));
 // echo var_dump($_SESSION);
 // Inclure les fichiers de contrôleurs nécessaires
+//USERS
 require_once './Controllers/UserController.class.php';
 require_once './Controllers/LoginController.class.php';
 require_once './Controllers/LogoutController.class.php';
 require_once './Models/AuthManager.class.php';
 $authManager = new AuthManager();
+//ATHLETES
+require_once './Controllers/calendrierController.class.php';
+require_once './Controllers/classementController.class.php';
+require_once './Controllers/athleteController.class.php';
 $authManager->startSession();
 
 try {
@@ -20,15 +25,17 @@ try {
             case "accueil":
                 require "views/accueil.view.php";
                 break;
-
             case "calendrier":
-                require "views/calendrier.view.php";
+                $controller = new CalendrierController();
+                $controller->listEvents();
                 break;
             case "classement":
-                require "views/classement.view.php";
+                $controller = new ClassementController();
+                $controller->listClassement();
                 break;
             case "athletes":
-                require "views/athletes.view.php";
+                $controller = new AthletesController();
+                $controller->listAthletes();
                 break;
 
             case "login":
