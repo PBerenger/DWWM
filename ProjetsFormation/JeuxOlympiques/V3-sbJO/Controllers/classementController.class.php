@@ -1,5 +1,5 @@
 <?php
-require_once './Models/athleteManager.class.php';
+require_once './Models/classementManager.class.php';
 require_once './Models/UserManager.class.php';
 
 class ClassementController
@@ -19,7 +19,7 @@ class ClassementController
         }
 
         $classement = $this->classementManager->getClassement();
-        require './views/classements.view.php';
+        require './views/classement.view.php';
     }
 
     private function isAdmin() {

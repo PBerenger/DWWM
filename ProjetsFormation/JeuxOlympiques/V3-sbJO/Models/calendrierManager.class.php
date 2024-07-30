@@ -14,7 +14,7 @@ class CalendrierManager
     public function getEvents()
     {
         $sql = '
-                SELECT id_event, eventName, eventRegion, eventGender, DATE_FORMAT(eventDate, "%Y %m %d %H:%i:%s"), phase
+                SELECT id_event, eventName, eventRegion, eventGender, DATE_FORMAT(eventDate, "%Y / %m / %d - à %H:%i") AS dateForm, phase
                 FROM event
                 ORDER BY eventDate
             ';

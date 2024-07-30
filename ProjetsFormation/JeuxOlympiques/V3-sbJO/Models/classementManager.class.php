@@ -14,9 +14,9 @@ class ClassementManager
     public function getClassement()
     {
         $sql = '
-                SELECT id_athlete, athleteLastName, athleteFirstName, athleteGender, athleteDateBirth, athleteGender, gold, silver, bronze, country.countryName, country.countryShortName
+                SELECT id_athlete, athleteLastName, athleteFirstName
                 FROM athlete
-                JOIN country ON id_Country = country.id_country
+                JOIN country ON athlete.id_Country = country.id_country
                 ORDER BY athleteLastName, athleteFirstName
             ';
         $stmt = $this->pdo->prepare($sql);

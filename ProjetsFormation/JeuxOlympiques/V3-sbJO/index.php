@@ -11,7 +11,7 @@ require_once './Models/AuthManager.class.php';
 $authManager = new AuthManager();
 //ATHLETES
 require_once './Controllers/calendrierController.class.php';
-require_once './Controllers/classementController.class.php';
+// require_once './Controllers/classementController.class.php';
 require_once './Controllers/athleteController.class.php';
 $authManager->startSession();
 
@@ -30,8 +30,8 @@ try {
                 $controller->listEvents();
                 break;
             case "classement":
-                $controller = new ClassementController();
-                $controller->listClassement();
+                $controller = new athletesController();
+                $controller->listAthletes();
                 break;
             case "athletes":
                 $controller = new AthletesController();

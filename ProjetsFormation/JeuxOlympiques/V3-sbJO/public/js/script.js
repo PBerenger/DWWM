@@ -142,3 +142,68 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+
+// Tableau des scores
+
+function sortTable(n) {
+    var table, rows, switching, i, x, y, shouldSwitch, dir, switchCount = 0;
+    table = document.getElementById("scoreTable");
+    switching = true;
+    // Initial direction is ascending
+    dir = "asc"; 
+
+    // Loop until no switching is needed
+    while (switching) {
+        // Start by saying: no switching is done
+        switching = false;
+        rows = table.getElementsByTagName("TR");
+        
+        // Loop through all table rows (except the first, which is the header)
+        for (i = 1; i < (rows.length - 1); i++) {
+            shouldSwitch = false;
+            x = rows[i].getElementsByTagName("TD")[n];
+            y = rows[i + 1].getElementsByTagName("TD")[n];
+            
+            // Determine if we should switch the rows
+            if (dir === "asc") {
+                if (n === 1) { // If the column is "Score" (numeric)
+                    if (Number(x.innerHTML) < Number(y.innerHTML)) {
+                        shouldSwitch = true;
+                        break;
+                    }
+                } else { // If the column is "Name" (text)
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                        shouldSwitch = true;
+                        break;
+                    }
+                }
+            } else if (dir === "desc") {
+                if (n === 1) { // If the column is "Score" (numeric)
+                    if (Number(x.innerHTML) > Number(y.innerHTML)) {
+                        shouldSwitch = true;
+                        break;
+                    }
+                } else { // If the column is "Name" (text)
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                        shouldSwitch = true;
+                        break;
+                    }
+                }
+            }
+        }
+
+        if (shouldSwitch) {
+            // Perform the switch
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            switching = true;
+            switchCount++;
+        } else {
+            // If no switching has been done and direction is "asc", set direction to "desc" and run the loop again
+            if (switchCount === 0 && dir === "asc") {
+                dir = "desc";
+                switching = true;
+            }
+        }
+    }
+}
