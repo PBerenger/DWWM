@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
 
-// Vérification des PSW avant soumission
+// Vérification des Password avant soumission
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('form');
     const password = document.querySelector('input[name="password"]');
@@ -143,66 +143,88 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// Sélectionner par colonnes athlètes
+function sortTable(columnIndex) {
+    var table = document.getElementById("athletesTable");
+    var rows = table.rows;
+    var switching = true;
+    var shouldSwitch, i;
+    var dir = "asc"; 
+    var switchcount = 0;
 
-// Tableau des scores
-
-function sortTable(n) {
-    var table, rows, switching, i, x, y, shouldSwitch, dir, switchCount = 0;
-    table = document.getElementById("scoreTable");
-    switching = true;
-    // Initial direction is ascending
-    dir = "asc"; 
-
-    // Loop until no switching is needed
     while (switching) {
-        // Start by saying: no switching is done
         switching = false;
-        rows = table.getElementsByTagName("TR");
-        
-        // Loop through all table rows (except the first, which is the header)
-        for (i = 1; i < (rows.length - 1); i++) {
+        var rowsArray = Array.from(rows).slice(1);
+
+        for (i = 0; i < (rowsArray.length - 1); i++) {
             shouldSwitch = false;
-            x = rows[i].getElementsByTagName("TD")[n];
-            y = rows[i + 1].getElementsByTagName("TD")[n];
-            
-            // Determine if we should switch the rows
+            var x = rowsArray[i].getElementsByTagName("TD")[columnIndex];
+            var y = rowsArray[i + 1].getElementsByTagName("TD")[columnIndex];
+
             if (dir === "asc") {
-                if (n === 1) { // If the column is "Score" (numeric)
-                    if (Number(x.innerHTML) < Number(y.innerHTML)) {
-                        shouldSwitch = true;
-                        break;
-                    }
-                } else { // If the column is "Name" (text)
-                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-                        shouldSwitch = true;
-                        break;
-                    }
+                if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                    shouldSwitch = true;
+                    break;
                 }
             } else if (dir === "desc") {
-                if (n === 1) { // If the column is "Score" (numeric)
-                    if (Number(x.innerHTML) > Number(y.innerHTML)) {
-                        shouldSwitch = true;
-                        break;
-                    }
-                } else { // If the column is "Name" (text)
-                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-                        shouldSwitch = true;
-                        break;
-                    }
+                if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                    shouldSwitch = true;
+                    break;
                 }
             }
         }
 
         if (shouldSwitch) {
-            // Perform the switch
-            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            rowsArray[i].parentNode.insertBefore(rowsArray[i + 1], rowsArray[i]);
             switching = true;
-            switchCount++;
+            switchcount++;
         } else {
-            // If no switching has been done and direction is "asc", set direction to "desc" and run the loop again
-            if (switchCount === 0 && dir === "asc") {
+            if (switchcount === 0 && dir === "asc") {
                 dir = "desc";
                 switching = true;
+            }
+        }
+    }
+}
+
+// 'type search'' tableau athletes
+function filterTable() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById('searchInput');
+    filter = input.value.toLowerCase();
+    table = document.getElementById('athletesTable');
+    tr = table.getElementsByTagName('tr');
+
+    // Loop through all table rows, and hide those who don't match the search query
+    for (i = 1; i < tr.length; i++) { // Start from 1 to skip the header row
+        td = tr[i].getElementsByTagName('td')[0, 1]; // We are filtering by the first column (Nom)
+        if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                tr[i].style.display = '';
+            } else {
+                tr[i].style.display = 'none';
+            }
+        }
+    }
+}
+
+// Select pays
+function sortByCountry() {
+    var select, filter, table, tr, td, i;
+    select = document.getElementById('countrySelect');
+    filter = select.value;
+    table = document.getElementById('athletesTable');
+    tr = table.getElementsByTagName('tr');
+
+    // Loop through all table rows, and show/hide based on selected country
+    for (i = 1; i < tr.length; i++) { // Start from 1 to skip the header row
+        td = tr[i].getElementsByTagName('td')[4]; // We are sorting by the fifth column (Pays)
+        if (td) {
+            if (filter === "" || td.textContent === filter) {
+                tr[i].style.display = '';
+            } else {
+                tr[i].style.display = 'none';
             }
         }
     }

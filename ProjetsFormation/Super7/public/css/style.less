@@ -30,26 +30,11 @@
 }
 
 :root {
-  //main navbar
-  --color1: #022366;
-  //second navbar
-  --color2: #FBA9CB;
-  //main background
-  --color3: #FFFFFF;
-  //second background
-  --color4: #DDDDDD;
-  //main text
-  --color5: #000;
-  //invalid
-  --color6: #EB3678;
-  //valid
-  --color7: #88D66C;
+  --colorPrincipale: #022366;
+  --colorSecondaire: #FBA9CB;
 
-  //main fontText
   --fontTitre: 'Paris2024';
-  //second fontText
   --fontButton: 'Roboto-Black';
-  //main paragraph
   --fontTexte: 'Roboto-Regular';
 }
 
@@ -141,45 +126,6 @@ header {
   }
 
 
-
-  .rotating-image {
-    height: 100px;
-    width: 100px;
-    object-fit: contain;
-    background-image: url('../images/all/Swheel.png');
-    background-size: cover;
-    background-color: var(--color3);
-    border: 5px solid var(--color3);
-    border-radius: 50%;
-    transition: transform 0s ease-out;
-    transform: rotate(0deg);
-
-    &:hover {
-      animation: spin 0.2s linear 3000;
-    }
-
-    @keyframes spin {
-      from {
-        transform: rotate(0deg);
-      }
-
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    .stop-spin {
-      animation: none;
-    }
-  }
-
-  a.actif {
-    box-shadow: 0 0 5px rgb(255, 255, 255);
-    margin-bottom: 10px;
-    background: var(--color3);
-    color: var(--color2);
-  }
-
   // =======================================
   // FOOTER
 }
@@ -215,7 +161,7 @@ footer {
     left: 50px;
     padding: 10px;
     color: var(--color3);
-
+    
     h1 {
       font-size: 3em;
       max-width: 750px;
@@ -378,15 +324,13 @@ footer {
   transform: translate(-110%, -80%);
   border-radius: 5px;
   width: 300px;
-
   p {
     font-family: var(--fontTitre);
   }
-
   .invalid {
     color: var(--color6);
   }
-
+  
   .valid {
     color: var(--color7);
   }
@@ -455,44 +399,7 @@ form:hover {
   color: var(--color1);
 }
 
-// Tables
-
-#sort-Buttons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  
-  .search-container {
-    padding-bottom: 10px;
-    input {
-      width: 400px;
-      padding: 12px 20px;
-      background: transparent;
-      border-radius: 40px;
-      font-size: 1.2em;
-      box-shadow: none;
-      outline: none;
-    }
-    input:focus {
-      border-color: var(--color2);
-    }
-  }
-//------------------------
-// CHANGER COULEUR DES LIGNES
-// -----------------------
-  .sort-container {
-    width: 400px;
-    select:focus {
-      border-color: var(--color2);
-      outline: none;
-    }
-
-    option:checked {
-      background-color: var(--color3);
-      color: var(--color2);
-    }
-  }
-}
+// Table
 
 table {
   width: 80%;
@@ -516,7 +423,6 @@ table {
 
   th {
     background-color: var(--color2);
-    text-align: center;
   }
 
   a {
@@ -537,48 +443,6 @@ table tr:nth-child(even) {
 table tr:nth-child(odd) {
   background-color: #ffffff;
 }
-
-#athletesTable {
-  .th0 {
-    width: 150px;
-  }
-  .th1 {
-    width: 110px;
-  }
-  .th2 {
-    width: 68px;
-  }
-  .th3 {
-    width: 180px;
-  }
-  .th4 {
-    width: 210px;
-  }
-  .th5 {
-    width: 60px;
-  }
-  .th6 {
-    width: 170px;
-  }
-  .th7 {
-    width: 170px;
-  }
-  .th8 {
-    width: 170px;
-  }
-
-  th {
-    cursor: pointer;
-    background-color: var(--color2);
-    transition: background-color 0.3s ease;
-
-    &:hover {
-      background-color: var(--color1);
-      color: var(--color3);
-    }
-  }
-}
-
 
 
 // =======================================
@@ -655,7 +519,7 @@ table tr:nth-child(odd) {
   button[type="button"]:hover {
     background: var(--color3);
     color: var(--color1);
-    border: 2px solid var(--color3);
+    border: 2px solid var(--color1);
   }
 
   .retourArrow {

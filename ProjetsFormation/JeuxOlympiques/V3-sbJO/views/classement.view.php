@@ -7,9 +7,10 @@
     <table id="scoreTable">
         <thead>
             <tr>
-                <th onclick="sortTable(0)">Nom</th>
+                <th>Nom</th>
+                <th>Prénom</th>
                 <th>CIO</th>
-                <th onclick="sortTable(1)">Score</th>
+                <th>Score</th>
             </tr>
         </thead>
         <tbody>
@@ -21,8 +22,8 @@
                 <?php foreach ($athletes as $athlete) : ?>
                     <tr>
                         <td><?= htmlspecialchars($athlete['athleteLastName'] ?? 'Nom inconnu', ENT_QUOTES, 'UTF-8'); ?></td>
+                        <td><?= htmlspecialchars($athlete['athleteFirsName'] ?? 'Nom inconnu', ENT_QUOTES, 'UTF-8'); ?></td>
                         <td><?= htmlspecialchars($athlete['countryShortName'] ?? "CIO inconnu", ENT_QUOTES, 'UTF-8'); ?></td>
-
                         <td><?= htmlspecialchars($athlete['score'] ?? 'Score inconnu', ENT_QUOTES, 'UTF-8'); ?></td>
                     </tr>
                 <?php endforeach; ?>

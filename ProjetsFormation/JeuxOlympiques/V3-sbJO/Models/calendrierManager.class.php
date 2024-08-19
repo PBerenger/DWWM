@@ -1,6 +1,5 @@
 <?php
 require_once './Models/MyDbConnection.php';
-// DATE_FORMAT(event.eventDate, "%d / %m / %Y")
 class CalendrierManager
 {
     private $pdo;
@@ -14,7 +13,7 @@ class CalendrierManager
     public function getEvents()
     {
         $sql = '
-                SELECT id_event, eventName, eventRegion, eventGender, DATE_FORMAT(eventDate, "%Y / %m / %d - à %H:%i") AS dateForm, phase
+                SELECT id_event, eventName, eventRegion, eventGender, DATE_FORMAT(eventDate, "%Y/%m/%d à %H:%i") AS dateForm, phase
                 FROM event
                 ORDER BY eventDate
             ';

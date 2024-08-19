@@ -9,10 +9,7 @@ require_once './Controllers/LoginController.class.php';
 require_once './Controllers/LogoutController.class.php';
 require_once './Models/AuthManager.class.php';
 $authManager = new AuthManager();
-//ATHLETES
-require_once './Controllers/calendrierController.class.php';
-require_once './Controllers/classementController.class.php';
-require_once './Controllers/athleteController.class.php';
+
 $authManager->startSession();
 
 try {
@@ -25,18 +22,7 @@ try {
             case "accueil":
                 require "views/accueil.view.php";
                 break;
-            case "calendrier":
-                $controller = new CalendrierController();
-                $controller->listEvents();
-                break;
-            case "classement":
-                $controller = new classementController();
-                $controller->listClassement();
-                break;
-            case "athletes":
-                $controller = new AthletesController();
-                $controller->listAthletes();
-                break;
+
 
             case "login":
                 $controller = new LoginController();

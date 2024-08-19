@@ -1,11 +1,5 @@
 <?php ob_start(); ?>
 
-
-<!-- <div class="readButtons">
-    <a class="validButton" href="<?= URL ?>add">Ajouter un utilisateur</a>
-    <a class="validButton" href="<?= URL ?>delete/1">Supprimer un utilisateur</a>
-</div> -->
-
 <h2 class="titrePage">CALENDRIER</h2>
 
 <table border="1">
