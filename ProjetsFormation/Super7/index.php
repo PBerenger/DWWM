@@ -22,7 +22,7 @@ try {
             case "accueil":
                 require "views/accueil.view.php";
                 break;
-
+                // INCORPORRER ROOTER POUR "informations et jeux"
 
             case "login":
                 $controller = new LoginController();

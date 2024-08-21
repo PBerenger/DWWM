@@ -1,25 +1,37 @@
-<?php ob_start(); ?>
+<div?php ob_start(); 
+// require_once "login.view.php";
+?>
 
 <div id="topContent">
     <div class="textTopContent">
         <h1>SUPER7</h1>
-        <h2></h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam fuga, adipisci rem praesentium dolorum nisi corporis incidunt quaerat quos, officia quidem quae ex, autem impedit quas distinctio eius inventore exercitationem?</p>
     </div>
-    <img class="imgAccueil" src="../public/images/Desktop/headerAccueilDesktop1.jpg" alt="topSkate">
 </div>
 
 <div id="midContent">
+    <h2>Les intelligences multiples</h2>
     <p class="principalText">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam voluptates voluptatum voluptatibus expedita fuga, odio temporibus animi at! Cupiditate dolorem necessitatibus dicta magnam amet eligendi tempora sapiente? Ipsam, officiis molestias.
-        Inventore quos rem at, laudantium aspernatur soluta quo facilis voluptatem atque magni! Inventore iusto, eum, possimus asperiores odit sapiente ea doloremque, amet excepturi consectetur quam accusamus animi sequi hic laborum?
-        Repellendus quo voluptatibus iure voluptatum minima iste architecto accusamus magni? Deleniti, voluptatem libero! Ea eum laboriosam consequuntur a amet cumque quis cupiditate! Harum veniam asperiores ab sunt nobis odio cumque.
-        Placeat fugit autem sed impedit quaerat reprehenderit facilis unde dicta? Voluptatem natus quibusdam cumque eligendi molestiae, atque iusto suscipit quis doloremque recusandae, maiores autem veniam at nesciunt rem sint aut.
-        Aliquam autem omnis, esse ullam itaque enim maxime tempora vel. Unde optio at eos reiciendis corporis eaque accusamus nesciunt. Placeat suscipit at ullam harum omnis amet ipsa libero voluptatem assumenda.
+        "Votre intelligence ne se limite pas aux seules capacités verbales et logiques évaluées par les tests de QI. Il existe d´autres formes d´intelligences qui sont tout aussi nécessaires à la réussite personnelle et Howard Gardner, professeur en sciences de l´éducation à Harvard et auteur de nombreux ouvrages, affirme que « l´intelligence est tout à la fois la capacité de résoudre des problèmes et celle de créer des produits qui enrichiront la culture et la communauté ». À partir d´études scientifiques, H.Gardner a identifié huit formes d´intelligence qui sont décrites dans sa théorie qu'il peaufine depuis 1983:
+        l´intelligence
+        <span class="spanImportant">interpersonnelle</span>,
+        <span class="spanImportant">intrapersonnelle</span>,
+        <span class="spanImportant">spatiale</span>,
+        <span class="spanImportant">musicale</span>,
+        <span class="spanImportant">écologique</span>,
+        <span class="spanImportant">kinesthésique</span>,
+        <span class="spanImportant">verbale</span> et
+        <span class="spanImportant">logique</span>.
+        Dans l’optique de vous aider à bien
+        préparer votre transition, nous avons mis au point un exercice librement inspiré de cette typologie. Il n’a bien sûr, aucune prétention scientifique, mais l’expérience nous a démontré qu’il était très représentatif et inspirant."
     </p>
-    <p class="asterisque">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ex unde et velit delectus amet, obcaecati aperiam voluptatem vero? Recusandae explicabo perspiciatis dolor cum delectus voluptatibus dolorum esse nostrum? Doloremque!
-    </p>
+
+    <div class="secondaryText">
+        <p>En cliquant sur le lien ci-dessous, vous pouvez-testez vos capacités rapidements et commencer.</p>
+        <p>Vous pouvez vous inscrire avant de commencer le questionnaire pour enregistrer vos compétences et débloquer des badges.</p>
+        <!-- lien par la suite -->
+    </div>
+
+    <!-- créer un lien si pas inscrit -->
 </div>
 
 <?php

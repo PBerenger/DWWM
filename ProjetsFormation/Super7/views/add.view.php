@@ -47,7 +47,7 @@ $userController = new UserController();
         <div class="inputBx">
             <input type="password" id="passwordSaisie" oninput="verifPassword()" name="password" placeholder="Mot de passe" required>
             <button type="button" id="togglePassword">
-                <img class="eyePSW" src="../public/images/all/eyesOpen.png" alt="Afficher le mot de passe">
+                <!-- <img class="eyePSW" src="../public/images/all/eyesOpen.png" alt="Afficher le mot de passe"> -->
             </button>
         </div>
 
