@@ -26,7 +26,7 @@ ob_start();
         <tr>
             <td><?= htmlspecialchars($user['id_user'], ENT_QUOTES, 'UTF-8'); ?></td>
             <td>
-                <?php $imagePath = '../public/images/' . htmlspecialchars($user['image_name'] ?? 'default.jpg', ENT_QUOTES, 'UTF-8'); ?>
+                <?php $imagePath = '../public/img/' . htmlspecialchars($user['image_name'] ?? 'default.jpg', ENT_QUOTES, 'UTF-8'); ?>
                 <img src="<?= $imagePath; ?>" alt="Image de <?= htmlspecialchars($user['nom'] ?? 'Nom inconnu', ENT_QUOTES, 'UTF-8'); ?>" width="40">
             </td>
             <td><?= htmlspecialchars($user['userLastName'] ?? 'Nom inconnu', ENT_QUOTES, 'UTF-8'); ?></td>

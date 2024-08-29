@@ -11,7 +11,7 @@ $userController = new UserController();
             <a class="validButton" href="<?= URL ?>read">RETOUR</a>
             <a class="validButton" href="<?= URL ?>delete">Supprimer un utilisateur</a>
         </div>
-        <h2 class="titrePage">Ajouter/Modifier un utilisateur</h2>
+        <h2 class="titrePage">Ajouter un utilisateur</h2>
     <?php endif; ?>
 <?php endif; ?>
 
@@ -47,7 +47,7 @@ $userController = new UserController();
         <div class="inputBx">
             <input type="password" id="passwordSaisie" oninput="verifPassword()" name="password" placeholder="Mot de passe" required>
             <button type="button" id="togglePassword">
-                <!-- <img class="eyePSW" src="../public/images/all/eyesOpen.png" alt="Afficher le mot de passe"> -->
+                <img class="eyePSW" src="../public/img/eyesNotSee.png" alt="Afficher le mot de passe">
             </button>
         </div>
 
@@ -76,7 +76,7 @@ $userController = new UserController();
             <?php endif; ?>
         <?php endif; ?>
 
-        
+
         <div class="inputBx">
             <label for="file-upload" class="parcourir">Téléchargez une image de profil</label>
             <input id="file-upload" type="file" name="image" /><br>
@@ -84,12 +84,9 @@ $userController = new UserController();
 
 
         <div class="inputBx">
-            <input type="submit" value="Ajouter">
+            <input type="submit" value="Ajouter" onclick="return validateForm();">
         </div>
     </form>
-
-
-    <p><?php echo $message ?? ''; ?></p>
 </div>
 
 <?php

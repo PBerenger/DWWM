@@ -39,6 +39,7 @@ class UserController
     public function isAdmin()
     {
         if (!isset($_SESSION['user_id'])) {
+            echo "il n'y a personne dans la base de donnée.";
             return false;
         }
         $user = $this->userManager->getUserById($_SESSION['user_id']);
@@ -78,7 +79,7 @@ class UserController
         if (isset($files['image']) && $files['image']['error'] === UPLOAD_ERR_OK) {
             $tmp_name = $files['image']['tmp_name'];
             $name = basename($files['image']['name']);
-            if (move_uploaded_file($tmp_name, "./public/images/$name")) {
+            if (move_uploaded_file($tmp_name, "./public/img/$name")) {
                 $nomImage = $name;
                 $message = 'Image uploadée avec succès.';
             } else {
@@ -122,7 +123,7 @@ class UserController
         $genre = $data['genre'];
         $telephone = $data['telephone'];
         $pwd = $data['password'];
-        $confirm_pwd = $_POST['confirm_password'];
+        $confirm_pwd = $data['confirm_password'];
         $role = $data['role'];
         $nomImage = 'default.jpg';
 
@@ -144,7 +145,7 @@ class UserController
             // récupère juste le nom de l'image
             $nomImage = basename($files['image']['name']);
             // déplace le téléchargement vers le répertoire cible
-            if (!move_uploaded_file($tmp_name, "./public/images/$nomImage")) {
+            if (!move_uploaded_file($tmp_name, "./public/img/$nomImage")) {
                 $message = "Erreur lors du téléchargement de l'image.";
                 echo $message;
                 return;

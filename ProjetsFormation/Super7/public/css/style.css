@@ -110,7 +110,6 @@ footer .foot {
   text-align: center;
 }
 #midContent {
-  text-indent: 10%;
   text-align: justify;
   background: var(--colorTertiaire);
   padding: 50px 50px;
@@ -122,6 +121,7 @@ footer .foot {
   padding-bottom: 20px;
 }
 .principalText {
+  text-indent: 10%;
   color: var(--colorBackground0);
 }
 .secondaryText {

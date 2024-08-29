@@ -1,0 +1,120 @@
+// Erreur si personne sélectionné DELETE
+function validateForm() {
+    var checkboxes = document.querySelectorAll('#deleteForm input[type="checkbox"]');
+    var checked = Array.from(checkboxes).some(checkbox => checkbox.checked);
+
+    if (!checked) {
+        alert('Veuillez sélectionner au moins un utilisateur.');
+        return false; // Empêche l'envoi du formulaire
+    }
+
+    return confirm('Voulez-vous vraiment supprimer les utilisateurs sélectionnés ?');
+}
+
+// Désélectionner toutes les cases DELETE
+function deselectAll() {
+    // Sélectionner toutes les cases à cocher dans le formulaire
+    const checkboxes = document.querySelectorAll('#deleteForm input[type="checkbox"]');
+    checkboxes.forEach(checkbox => {
+        checkbox.checked = false; // Désélectionner chaque case à cocher
+    });
+}
+
+//------------------------------------------------------------------------------------------------
+
+// Condition PSW
+document.addEventListener("DOMContentLoaded", function() {
+    let passwordInput = document.getElementById("passwordSaisie");
+    let mdpContainer = document.getElementById("mdpContainer");
+    let timeoutId;
+
+    passwordInput.addEventListener("blur", function() {
+        timeoutId = setTimeout(function() {
+            mdpContainer.classList.remove("visible");
+        }, 200);
+    });
+    
+    passwordInput.addEventListener("focus", function() {
+        clearTimeout(timeoutId);
+        mdpContainer.classList.add("visible");
+        verifPassword();
+    });
+    
+
+    passwordInput.addEventListener("input", verifPassword);
+
+    function verifPassword(){
+        let password = passwordInput.value;
+
+        let regexMajuscule = /[A-Z]/;
+        let regexMinuscule = /[a-z]/;
+        let regexNombre = /[0-9]/;
+        let regexSpecialChar = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/;
+
+        let longueurMDP = document.getElementById("longueurMDP");
+        let majusculeMDP = document.getElementById("majuscule");
+        let minusculeMDP = document.getElementById("minuscule");
+        let nombreMDP = document.getElementById("nombre");
+        let specialCharMDP = document.getElementById("specialChar");
+
+        longueurMDP.className = password.length >= 8 ? "valid" : "invalid";
+        majusculeMDP.className = regexMajuscule.test(password) ? "valid" : "invalid";
+        minusculeMDP.className = regexMinuscule.test(password) ? "valid" : "invalid";
+        nombreMDP.className = regexNombre.test(password) ? "valid" : "invalid";
+        specialCharMDP.className = regexSpecialChar.test(password) ? "valid" : "invalid";
+    }
+});
+
+
+
+
+// Afficher contenu
+document.getElementById('passwordSaisie').addEventListener('focus', function() {
+    document.getElementById('mdpContainer').style.display = 'block';
+});
+
+document.getElementById('passwordSaisie').addEventListener('blur', function() {
+    setTimeout(function() {
+        document.getElementById('mdpContainer').style.display = 'none';
+    }, 200);
+});
+function verifPassword() {
+}
+
+// Afficher le mot de passe
+document.addEventListener('DOMContentLoaded', (event) => {
+    const togglePassword = document.getElementById('togglePassword');
+    const passwordInput = document.querySelector('input[name="password"]'); // Cibler le bon champ de mot de passe
+
+    togglePassword.addEventListener('click', () => {
+        // Vérifier le type actuel du champ de mot de passe
+        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordInput.setAttribute('type', type);
+
+        // Mettre à jour l'image de l'icône
+        const img = togglePassword.querySelector('img');
+        if (type === 'password') {
+            img.src = '../public/images/all/eyesOpen.png';
+        } else {
+            img.src = '../public/images/all/eyesClose.png';
+        }
+    });
+});
+
+
+
+// Vérification des Password avant soumission
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('form');
+    const password = document.querySelector('input[name="password"]');
+    const confirmPassword = document.querySelector('input[name="confirm_password"]');
+    
+    form.addEventListener('submit', function (event) {
+        if (password.value !== confirmPassword.value) {
+            alert('Les mots de passe ne correspondent pas.');
+            event.preventDefault();
+        }
+    });
+});
+
+// confirmation 'submit'

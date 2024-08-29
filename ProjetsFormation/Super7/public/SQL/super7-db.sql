@@ -93,16 +93,3 @@ CREATE TABLE Obtient_les_comp(
 	,CONSTRAINT Obtient_les_comp_seven_FK FOREIGN KEY (id_seven) REFERENCES seven(id_seven)
 	,CONSTRAINT Obtient_les_comp_competences0_FK FOREIGN KEY (id_competences) REFERENCES competences(id_competences)
 )ENGINE=InnoDB;
-
-
-
-
--- Ajout rôle
-INSERT INTO userroles(roleDescription) VALUES ("Admin"), ("Non Admin");
--- Ajout admin
--- Password@1901
--- PasswordDev81021990
-INSERT INTO users (userLastName, userFirstName, userEmail, userPassword, userDateBirth, userGender, UserPhone, role_id) VALUES
-('Demeulenaere', 'François', 'demeulenaerefrancois7@yahoo.fr', '$2y$10$.y/WinQ0axOviAejle824.4jImAO.J0hEf8/es4AXEeD081BtUrmC', '20240718', 'M', '0123456789', 1),
-('Pommelet', 'Bérenger', 'b.pommelet@gmail.com', '$2y$10$RVJ8oPFYg9oOyG1oxXYwi.tGYGVw96DuFEmkYQ038aJhrhMV7uqYW', '20240718', 'M', '0123456789', 1);
-

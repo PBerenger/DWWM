@@ -16,7 +16,7 @@ $userController = new UserController();
 
 <body>
     <header>
-        <img class="logoS7" src="../public/img/logos/logoSuper7SF.png" alt="logo_Super7">
+        <img class="logoS7" src="../public/img/logos/logoSuper7SF_v2.png" alt="logo_Super7">
         <nav>
             <ul>
                 <li><a href="<?= URL ?>accueil">Accueil</a></li>
@@ -25,7 +25,7 @@ $userController = new UserController();
                 <!-- Login Butt -->
                 <?php if (isset($_SESSION['user_id'])) : ?>
                     <?php if ($userController->isAdmin()) : ?>
-                        <li class="userButt"><a href="<?= URL ?>read">Administration</a></li>
+                        <li class="userButt"><a href="<?= URL ?>read">Administrateur</a></li>
                     <?php else : ?>
                         <li class="userButt"><a href="<?= URL ?>update/<?= htmlspecialchars($_SESSION['user_id']) ?>">Profil</a></li>
                     <?php endif; ?>

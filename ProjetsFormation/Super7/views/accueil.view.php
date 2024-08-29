@@ -1,5 +1,4 @@
-<div?php ob_start(); 
-// require_once "login.view.php";
+<?php ob_start();
 ?>
 
 <div id="topContent">
@@ -26,8 +25,10 @@
     </p>
 
     <div class="secondaryText">
-        <p>En cliquant sur le lien ci-dessous, vous pouvez-testez vos capacités rapidements et commencer.</p>
         <p>Vous pouvez vous inscrire avant de commencer le questionnaire pour enregistrer vos compétences et débloquer des badges.</p>
+        <input type="submit">
+        <p>En cliquant sur le lien ci-dessous, vous pouvez-testez vos capacités rapidements et commencer.</p>
+        <input type="submit">
         <!-- lien par la suite -->
     </div>
 
