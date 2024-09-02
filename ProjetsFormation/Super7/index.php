@@ -2,11 +2,10 @@
 // Définit la constante URL
 define("URL", str_replace("index.php", "", (isset($_SERVER["HTTPS"]) ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF']));
 // echo var_dump($_SESSION);
-// Inclure les fichiers de contrôleurs nécessaires
-//USERS
 require_once './Controllers/UserController.class.php';
 require_once './Controllers/LoginController.class.php';
 require_once './Controllers/LogoutController.class.php';
+require_once './Controllers/questionsController.class.php';
 require_once './Models/AuthManager.class.php';
 $authManager = new AuthManager();
 
@@ -48,19 +47,20 @@ try {
                     }
                 }
                 break;
+
             case "delete":
                 $controller = new UserController();
                 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     if (isset($_POST['ids'])) {
                         $controller->deleteUsers($_POST['ids']);
                     } else {
-                        // Gérer le cas où aucun utilisateur n'a été sélectionné
                         $controller->listUsers();
                     }
                 } else {
                     $controller->deleteForm();
                 }
                 break;
+
             case "add":
                 $controller = new UserController();
                 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -69,6 +69,17 @@ try {
                     $controller->addForm();
                 }
                 break;
+
+                case "questions":
+                    $controller = new questionsController();
+                    if (!$authManager->isUserLoggedIn()) {
+                        // Rediriger vers la page de login s'il n'est pas connecté
+                        header("Location: " . URL . "login");
+                        exit();
+                    }
+                    $controller->addQuestions();
+                    break;
+
             default:
                 throw new Exception("La page n'existe pas");
         }

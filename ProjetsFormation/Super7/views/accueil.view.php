@@ -25,11 +25,8 @@
     </p>
 
     <div class="secondaryText">
-        <p>Vous pouvez vous inscrire avant de commencer le questionnaire pour enregistrer vos compétences et débloquer des badges.</p>
-        <input type="submit">
-        <p>En cliquant sur le lien ci-dessous, vous pouvez-testez vos capacités rapidements et commencer.</p>
-        <input type="submit">
-        <!-- lien par la suite -->
+        <a href="login">Vous pouvez vous inscrire avant de commencer le questionnaire pour enregistrer vos compétences et débloquer des badges.</a>
+        <a href="questions">En cliquant sur ce lien, vous pouvez-testez vos capacités rapidements et commencer.</a>
     </div>
 
     <!-- créer un lien si pas inscrit -->

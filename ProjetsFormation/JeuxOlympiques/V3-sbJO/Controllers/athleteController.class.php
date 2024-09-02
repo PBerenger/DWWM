@@ -23,7 +23,7 @@ class AthletesController
     }
 
     private function isAdmin() {
-        // Votre logique pour vérifier si l'utilisateur est administrateur
-        return true; // Pour l'exemple, on suppose que l'utilisateur est administrateur
+        // Vérifier si l'utilisateur est administrateur
+        return true;
     }
 }

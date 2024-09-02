@@ -46,6 +46,10 @@ class AuthManager {
         }
     }
 
+    public function isUserLoggedIn() {
+        return isset($_SESSION['user_id']);
+    }
+    
     public function logout() {
         $this->startSession();
         session_unset();

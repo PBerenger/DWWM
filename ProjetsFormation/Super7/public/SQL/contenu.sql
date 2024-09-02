@@ -75,3 +75,28 @@ INSERT INTO users (userLastName, userFirstName, userEmail, userPassword, userDat
 ('Chauvet', 'Amélie', 'amelie.chauvet@gmail.com', '$2y$10$QF5uS5.z/mNWtLwz1oJ6k.KaaJUsL5eMBSgK8ReV.x4IcI2l5o1Km', '19950501', 'F', '0123456838', 2),
 ('Vernier', 'Sébastien', 'sebastien.vernier@gmail.com', '$2y$10$y7H9./B5DDmz1Rt9VowNDe9P1GNGYY.vMZ2P4wEVh5QH39ACR3VGQ', '19821219', 'M', '0123456839', 2),
 ('Dubois', 'Claudine', 'claudine.dubois@gmail.com', '$2y$10$Ku5X1EJKOu/Y6Z8O5T2DDu8BW8Z8koy8GbD9Ck8Wj5h7/E3fHnOly', '19881003', 'F', '0123456840', 2);
+
+-- AJOUT QUESTIONNAIRE
+
+-- NULL :               Value = 0
+-- Interpersonnelle :   value = 1
+-- Intrapersonnlle :    value = 2
+-- Saptiale :           value = 3
+-- Musicale :           value = 4
+-- Ecologique :         value = 5
+-- Kinesthésique :      value = 6
+-- Verbale :            value = 7
+-- Logique :            value = 8
+
+CREATE TABLE questions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    question_text VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE options (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    question_id INT,
+    option_text VARCHAR(255),
+    value INT,
+    FOREIGN KEY (question_id) REFERENCES questions(id)
+);

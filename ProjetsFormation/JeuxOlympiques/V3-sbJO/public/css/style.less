@@ -141,7 +141,6 @@ header {
   }
 
 
-
   .rotating-image {
     height: 100px;
     width: 100px;
@@ -151,11 +150,12 @@ header {
     background-color: var(--color3);
     border: 5px solid var(--color3);
     border-radius: 50%;
-    transition: transform 0s ease-out;
+    transition: transform 0s ease-out, background-color 0.5s ease;
     transform: rotate(0deg);
 
     &:hover {
       animation: spin 0.2s linear 3000;
+      background-color: var(--color2);
     }
 
     @keyframes spin {
@@ -179,10 +179,10 @@ header {
     background: var(--color3);
     color: var(--color2);
   }
-
-  // =======================================
-  // FOOTER
 }
+
+// =======================================
+// FOOTER
 
 footer {
   display: flex;

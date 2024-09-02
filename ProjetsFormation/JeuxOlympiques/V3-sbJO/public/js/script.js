@@ -8,7 +8,7 @@ const rotatingImage = document.querySelector('.rotating-image');
     });
 
     rotatingImage.addEventListener('mouseleave', () => {
-        rotatingImage.style.transition = 'transform 5s ease-out';
+        rotatingImage.style.transition = 'transform 0s ease-out';
         const computedStyle = window.getComputedStyle(rotatingImage);
         const transform = computedStyle.transform;
         const matrix = new DOMMatrix(transform);
@@ -53,19 +53,20 @@ function deselectAll() {
 document.addEventListener("DOMContentLoaded", function() {
     let passwordInput = document.getElementById("passwordSaisie");
     let mdpContainer = document.getElementById("mdpContainer");
+    let timeoutId;
 
+    passwordInput.addEventListener("blur", function() {
+        timeoutId = setTimeout(function() {
+            mdpContainer.classList.remove("visible");
+        }, 200);
+    });
+    
     passwordInput.addEventListener("focus", function() {
+        clearTimeout(timeoutId);
         mdpContainer.classList.add("visible");
         verifPassword();
     });
     
-    passwordInput.addEventListener("blur", function() {
-        // Ajoute un délai pour que le conteneur reste visible
-        // un petit moment après avoir quitté le champ de saisie.
-        setTimeout(function() {
-            mdpContainer.classList.remove("visible");
-        }, 200);
-    });
 
     passwordInput.addEventListener("input", verifPassword);
 
