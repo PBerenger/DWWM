@@ -33,11 +33,11 @@
 :root {
   --colorPrincipale: #63b32f;
   --colorSecondaire: #387F39;
-  --colorTertiaire: #29442a;
+  --colorTertiaire: #00712D;
 
   --colorBackground0: #fff;
   --colorBackground1: #000000ec;
-  --colorBackground2: #D5ED9F;
+  --colorBackground2: #00993d;
 
   --fontTitre: 'arial_narrow_7';
   --fontTexteLight: 'Nexa-ExtraLight';
@@ -129,12 +129,12 @@ header {
 
   height: 100px;
   background: var(--colorBackground1);
-  margin-bottom: 50px;
 }
 
 // =======================================
 // FOOTER
 footer {
+  user-select: none;
   height: auto;
   line-height: normal;
   padding: 50px 0;
@@ -155,31 +155,80 @@ footer {
 
 #topContent {
   text-align: center;
+  h1{
+    font-size: 30em;
+    user-select: none;
+  }
 }
 
 #midContent {
   h2 {
     text-align: center;
     color: var(--colorBackground0);
-    padding-bottom: 20px;
+    padding:20px 0px;
+    user-select: none;
   }
+
   text-align: justify;
   background: var(--colorTertiaire);
-  padding: 50px 50px;
-  margin: 50px 0;
+  padding: 0px 50px;
 }
+
 .principalText {
   text-indent: 10%;
   color: var(--colorBackground0);
 }
+
 .secondaryText {
   text-align: center;
-  margin: 50px 0;
   padding: 50px 50px;
-  background: var(--colorPrincipale);
+  // background: var(--colorPrincipale);
   color: var(--colorBackground0);
   font-weight: bold;
 }
+
+// BUTTON QUESTIONNAIRE
+.secondaryText {
+  a {
+    font-family: var(--fontTexteHeavy);
+    border: 2px solid;
+    border-image-slice: 2;
+    border-image-source: conic-gradient(from var(--angle-to-the-dangle),
+        transparent 0deg,
+        var(--colorPrincipale) 20deg,
+        transparent 40deg);
+    animation: rotateColors 4s linear infinite;
+
+    background-color: var(--colorTertiaire);
+    color: white;
+    padding: 1rem 2rem;
+    display: inline-flex;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+
+    svg {
+      width: 1em;
+    }
+  }
+
+  @keyframes rotateColors {
+    0% {
+      --angle-to-the-dangle: 0deg;
+    }
+
+    100% {
+      --angle-to-the-dangle: 360deg;
+    }
+  }
+}
+
+@property --angle-to-the-dangle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: true;
+}
+
+
 
 
 // =======================================

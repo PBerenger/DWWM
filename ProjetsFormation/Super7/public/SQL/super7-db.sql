@@ -33,11 +33,22 @@ CREATE TABLE USERS(
 	,CONSTRAINT USERS_userroles_FK FOREIGN KEY (role_id) REFERENCES userroles(role_id)
 )ENGINE=InnoDB;
 
+
 -- Créer table 'questions'
 
 USE users_super7;
 
 CREATE TABLE questions (
+    question_id INT AUTO_INCREMENT PRIMARY KEY,
+    responsesQuestions TEXT NOT NULL
+);
+
+
+-- Créer table 'questions'
+
+USE users_super7;
+
+CREATE TABLE questions_games (
     question_id INT AUTO_INCREMENT PRIMARY KEY,
     responsesQuestions TEXT NOT NULL
 );
