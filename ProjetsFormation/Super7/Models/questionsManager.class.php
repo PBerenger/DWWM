@@ -13,8 +13,8 @@ class QuestionsManager
     public function getQuestions()
     {
         $sql = '
-                SELECT question_id, responsesQuestions
-                FROM questions
+                SELECT questions_id, responses_questions
+                FROM questionnaire
                 ORDER BY question_id
             ';
         $stmt = $this->pdo->prepare($sql);

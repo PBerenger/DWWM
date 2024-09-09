@@ -1,0 +1,22 @@
+1 - Je me connecte
+2 - Je vais sur la page 'jeux'
+3 - Je sélectionne un jeu
+3.5 - affichage du form' du jeu séléctionné
+4 - Je rentre les informations :
+	- Nom du jeux
+	- win/loose
+	- score
+	- date
+	- Nombre de joueurs
+	- j'aime le jeu (en général
+	- Appréciation de la partie
+
+5 - J'enregistre mes informations
+6 - je veux voir mes résultats :
+	- graphique évolutif
+	- classement par meilleurs jeux
+
+		admin :
+			possibilité d'ajouter un jeu
+7 - demande de contact
+8 - comparer avec d'autres joueurs inscrits
