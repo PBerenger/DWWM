@@ -13,7 +13,7 @@ class QuestionsManager
     public function getQuestions()
     {
         $sql = '
-                SELECT questions_id, responses_questions
+                SELECT questions_id, response_id
                 FROM questionnaire
                 ORDER BY question_id
             ';

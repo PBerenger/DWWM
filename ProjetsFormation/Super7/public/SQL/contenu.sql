@@ -5,18 +5,18 @@ ALTER TABLE users AUTO_INCREMENT = 1;
 
 
 -- Ajout rôle
-INSERT INTO userroles(roleDescription) VALUES ("Admin"), ("Non Admin");
+INSERT INTO user_roles(role_description) VALUES ("Admin"), ("Non Admin");
 -- Ajout admin
 -- PasswordAdm4321
 -- PasswordDev81021990
 -- NApassword12345
-INSERT INTO users (userLastName, userFirstName, userEmail, userPassword, userDateBirth, userGender, UserPhone, role_id) VALUES
+INSERT INTO users (u_lname, u_fname, u_email, u_password, u_date_birth, u_gender, u_phone, id_role) VALUES
 ('Demeulenaere', 'François', 'demeulenaerefrancois7@yahoo.fr', '$2y$10$48PnUkxXZV645D98noyCQOS5NLulzqaE25do5jGolp5NdbZ.tWptq', '20240718', 'M', '0123456789', 1),
 ('Pommelet', 'Bérenger', 'b.pommelet@gmail.com', '$2y$10$RVJ8oPFYg9oOyG1oxXYwi.tGYGVw96DuFEmkYQ038aJhrhMV7uqYW', '20240718', 'M', '0123456789', 1);
 ('nonAdmin', 'Lambda', 'nondmin@gmail.com', '$2y$10$tzJLvjSvZT5qvMMuV2da/.L0Ga2LTLiiWB7pLhpPdtFVoehVPY9yK', '20240718', 'F', '0123456789', 2);
 
 -- Utilisateurs random
-INSERT INTO users (userLastName, userFirstName, userEmail, userPassword, userDateBirth, userGender, UserPhone, role_id) VALUES
+INSERT INTO users (u_lname, u_fname, u_email, u_password, u_date_birth, u_gender, u_phone, id_role) VALUES
 ('Martin', 'Paul', 'paul.martin@gmail.com', '$2y$10$U8I.H7EckFmk0W4FzTXDKeAnvdsTlE5qVpOSvX/7bhZlo6nfiqgG2', '19850322', 'M', '0123456781', 2),
 ('Bernard', 'Marie', 'marie.bernard@gmail.com', '$2y$10$TxZ.jR5P6W/Jw4cD9Z6jUORvc2/xO5r6yGoSc4nB8mHSp1dZcRuQG', '19970711', 'F', '0123456782', 2),
 ('Dubois', 'Luc', 'luc.dubois@gmail.com', '$2y$10$Bn6Ae8.uUB0oWj5cI/HHBuIKXbgD1sCjDPT4npZLhmOW4rLqQuu7a', '19891230', 'M', '0123456783', 2),

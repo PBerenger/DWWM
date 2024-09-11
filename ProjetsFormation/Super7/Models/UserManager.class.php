@@ -14,9 +14,9 @@ class UserManager
     public function getAllUsers()
     {
         $sql = '
-            SELECT users.id_user, users.userLastName, users.userFirstName, users.userEmail, DATE_FORMAT(users.userDateBirth, "%d / %m / %Y") AS birthDay, users.userGender, users.UserPhone, userroles.role_id, userroles.roleDescription, users.image_name
+            SELECT users.id_user, users.u_lname, users.u_fname, users.u_email, DATE_FORMAT(users.u_date_birth, "%d / %m / %Y") AS birthDay, users.password, users.u_gender, users.u_Phone, users.u_profil_img, users.u_games_played, users.u_opponnent, users.u_win, users.u_looses, users.u_scores, users.u_skills, users.u_time, user_roles.id_role, user-roles.role_description
             FROM users
-            JOIN userroles ON users.role_id = userroles.role_id
+            JOIN user_roles ON users.id_role = userroles.id_role
             ORDER BY role_id, userLastName, userFirstName
         ';
         $stmt = $this->pdo->prepare($sql);
@@ -31,9 +31,9 @@ class UserManager
     public function getUserById($id)
     {
         $sql = '
-            SELECT users.id_user, users.userLastName, users.userFirstName, users.userEmail, DATE_FORMAT(users.userDateBirth, "%d / %m / %Y") AS birthDay, users.userGender, users.UserPhone, userroles.role_id, users.image_name
+            SELECT users.id_user, users.u_lname, users.u_fname, users.u_email, DATE_FORMAT(users.u_date_birth, "%d / %m / %Y") AS birthDay, users.password, users.u_gender, users.u_Phone, users.u_profil_img, users.u_games_played, users.u_opponnent, users.u_win, users.u_looses, users.u_scores, users.u_skills, users.u_time, user_roles.id_role, user-roles.role_description
             FROM users
-            JOIN userroles ON users.role_id = userroles.role_id
+            JOIN user_roles ON users.id_role = userroles.id_role
             WHERE users.id_user = ?
         ';
         $stmt = $this->pdo->prepare($sql);
@@ -50,7 +50,7 @@ class UserManager
             $stmt = $this->pdo->prepare('   UPDATE
                                                 users 
                                             SET 
-                                                userLastName = ?, userFirstName = ?, userEmail = ?, userPassword = ?, userDateBirth = ?, userGender = ?, UserPhone = ?, role_id = ?,    image_name = ?
+                                                u_lname = ?, u_fname = ?, u_email = ?, u_password = ?, u_date_birth = ?, u_gender = ?, u_phone = ?, id_role = ?, u_profil_img = ?
                                             WHERE 
                                                 id_user = ?');
             $stmt->execute([$nom, $prenom, $email, $pwd, $dateNaissance, $genre, $telephone, $role_id, $nomImage, $id]);
@@ -82,7 +82,7 @@ class UserManager
         $role_id = $role === 'admin' ? 1 : 2;
         try {
             $stmt = $this->pdo->prepare('INSERT INTO 
-                                            users (userLastName, userFirstName, userEmail, userPassword, userDateBirth, UserPhone, userGender, role_id, image_name)  
+                                            users (u_lname, u_fname, u_email, u_password, u_date_birth, u_phone, u_gender, id_role, u_profil_img)  
                                         VALUES 
                                             (:lastName,
                                             :firstName,

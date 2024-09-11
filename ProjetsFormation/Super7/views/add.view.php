@@ -15,6 +15,7 @@ $userController = new UserController();
     <?php endif; ?>
 <?php endif; ?>
 
+
 <div class="form-container">
     <form method="POST" action="<?= URL ?>add" enctype="multipart/form-data">
         <div class="inputBx">
@@ -31,16 +32,16 @@ $userController = new UserController();
         </div>
 
 
-        <select id="genre" name="genre" required>
+        <select id="genre" name="genre">
             <option class="disabled" value="" disabled selected>Genre</option>
             <option value="masculin">Masculin</option>
             <option value="féminin">Féminin</option>
-            <option value="autre">Autre</option>
+            <option value="nonDefinit">Non définit</option>
         </select>
 
 
         <div class="inputBx">
-            <input type="text" name="telephone" placeholder="telephone" required>
+            <input type="text" name="telephone" placeholder="telephone">
         </div>
 
 
