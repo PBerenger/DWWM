@@ -14,10 +14,10 @@ class UserManager
     public function getAllUsers()
     {
         $sql = '
-            SELECT users.id_user, users.u_lname, users.u_fname, users.u_email, DATE_FORMAT(users.u_date_birth, "%d / %m / %Y") AS birthDay, users.password, users.u_gender, users.u_Phone, users.u_profil_img, users.u_games_played, users.u_opponnent, users.u_win, users.u_looses, users.u_scores, users.u_skills, users.u_time, user_roles.id_role, user-roles.role_description
+            SELECT users.id_user, users.u_lname, users.u_fname, users.u_email, users.u_password, DATE_FORMAT(users.u_date_birth, "%d / %m / %Y") AS birthDay, users.u_gender, users.u_phone, users.u_profil_img, questionnaire.questionnaire_id, user_roles.id_role, user-roles.role_description
             FROM users
             JOIN user_roles ON users.id_role = userroles.id_role
-            ORDER BY role_id, userLastName, userFirstName
+            ORDER BY id_role, userLastName, userFirstName
         ';
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute();
@@ -31,7 +31,7 @@ class UserManager
     public function getUserById($id)
     {
         $sql = '
-            SELECT users.id_user, users.u_lname, users.u_fname, users.u_email, DATE_FORMAT(users.u_date_birth, "%d / %m / %Y") AS birthDay, users.password, users.u_gender, users.u_Phone, users.u_profil_img, users.u_games_played, users.u_opponnent, users.u_win, users.u_looses, users.u_scores, users.u_skills, users.u_time, user_roles.id_role, user-roles.role_description
+            SELECT users.id_user, users.u_lname, users.u_fname, users.u_email, users.u_password, DATE_FORMAT(users.u_date_birth, "%d / %m / %Y") AS birthDay, users.u_gender, users.u_phone, users.u_profil_img, questionnaire.questionnaire_id, user_roles.id_role, user-roles.role_description
             FROM users
             JOIN user_roles ON users.id_role = userroles.id_role
             WHERE users.id_user = ?

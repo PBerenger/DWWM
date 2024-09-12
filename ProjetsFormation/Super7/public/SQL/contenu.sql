@@ -11,9 +11,11 @@ INSERT INTO user_roles(role_description) VALUES ("Admin"), ("Non Admin");
 -- PasswordDev81021990
 -- NApassword12345
 INSERT INTO users (u_lname, u_fname, u_email, u_password, u_date_birth, u_gender, u_phone, id_role) VALUES
-('Demeulenaere', 'François', 'demeulenaerefrancois7@yahoo.fr', '$2y$10$48PnUkxXZV645D98noyCQOS5NLulzqaE25do5jGolp5NdbZ.tWptq', '20240718', 'M', '0123456789', 1),
-('Pommelet', 'Bérenger', 'b.pommelet@gmail.com', '$2y$10$RVJ8oPFYg9oOyG1oxXYwi.tGYGVw96DuFEmkYQ038aJhrhMV7uqYW', '20240718', 'M', '0123456789', 1);
-('nonAdmin', 'Lambda', 'nondmin@gmail.com', '$2y$10$tzJLvjSvZT5qvMMuV2da/.L0Ga2LTLiiWB7pLhpPdtFVoehVPY9yK', '20240718', 'F', '0123456789', 2);
+    ('Demeulenaere', 'François', 'demeulenaerefrancois7@yahoo.fr', '$2y$10$48PnUkxXZV645D98noyCQOS5NLulzqaE25do5jGolp5NdbZ.tWptq', '20240718', 'M', '0123456789', 1),
+    ('Pommelet', 'Bérenger', 'b.pommelet@gmail.com', '$2y$10$RVJ8oPFYg9oOyG1oxXYwi.tGYGVw96DuFEmkYQ038aJhrhMV7uqYW', '20240718', 'M', '0123456789', 1),
+    ('nonAdmin', 'Lambda', 'nondmin@gmail.com', '$2y$10$tzJLvjSvZT5qvMMuV2da/.L0Ga2LTLiiWB7pLhpPdtFVoehVPY9yK', '20240718', 'F', '0123456789', 2);
+
+
 
 -- Utilisateurs random
 INSERT INTO users (u_lname, u_fname, u_email, u_password, u_date_birth, u_gender, u_phone, id_role) VALUES
@@ -89,16 +91,3 @@ INSERT INTO users (u_lname, u_fname, u_email, u_password, u_date_birth, u_gender
 -- Kinesthésique :      value = 6
 -- Verbale :            value = 7
 -- Logique :            value = 8
-
-CREATE TABLE questions (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    question_text VARCHAR(255) NOT NULL
-);
-
-CREATE TABLE options (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    question_id INT,
-    option_text VARCHAR(255),
-    value INT,
-    FOREIGN KEY (question_id) REFERENCES questions(id)
-);

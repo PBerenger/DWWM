@@ -53,7 +53,7 @@ class UserController
     // Affiche la liste des utilisateurs mise à jour en appelant listUsers().
     public function updateUser($data, $files)
     {
-        $id = $data['id_user'];
+        $id = $data['user_id'];
         $nom = $data['nom'];
         $prenom = $data['prenom'];
         $email = $data['email'];

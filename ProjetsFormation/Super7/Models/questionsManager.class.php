@@ -13,9 +13,9 @@ class QuestionsManager
     public function getQuestions()
     {
         $sql = '
-                SELECT questions_id, response_id
+                SELECT questionnaire_id, responses_questionnaire
                 FROM questionnaire
-                ORDER BY question_id
+                ORDER BY questionnaire_id
             ';
         $stmt = $this->pdo->prepare($sql);
         

@@ -19,7 +19,7 @@ class AuthManager {
         $user = $stmt->fetch();
 
         if ($user && password_verify($password, $user['u_password'])) {
-            return $user['id_user'];
+            return $user['user_id'];
         } else {
             return false;
         }
@@ -34,11 +34,11 @@ class AuthManager {
 
     public function verifierAdmin() {
         $this->startSession();
-        if (!isset($_SESSION['id_role'])) {
+        if (!isset($_SESSION['role_id'])) {
             echo "Session utilisateur non définie.";
             exit();
         } else {
-            $userId = $_SESSION['id_role'];
+            $userId = $_SESSION['role_id'];
             if (!$this->estAdmin($userId)) {
                 echo "L'utilisateur avec l'ID $userId n'est pas un administrateur.";
                 exit();
@@ -47,7 +47,7 @@ class AuthManager {
     }
 
     public function isUserLoggedIn() {
-        return isset($_SESSION['id_user']);
+        return isset($_SESSION['user_id']);
     }
     
     public function logout() {

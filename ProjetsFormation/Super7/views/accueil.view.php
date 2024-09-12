@@ -27,8 +27,6 @@
     <div class="secondaryText">
         <a href="questions">En cliquant sur ce lien, vous pouvez-testez vos capacités rapidements et commencer.</a>
     </div>
-
-    <!-- créer un lien si pas inscrit -->
 </div>
 
 <?php

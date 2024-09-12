@@ -10,7 +10,7 @@ $userController = new UserController();
 <div class="form-container">
     <?php if ($utilisateur) : ?>
         <form method="POST" enctype="multipart/form-data" action="<?= URL ?>update">
-            <input type="hidden" name="id_user" value="<?php echo htmlspecialchars($utilisateur['id_user']); ?>">
+            <input type="hidden" name="user_id" value="<?php echo htmlspecialchars($utilisateur['user_id']); ?>">
             <input type="hidden" name="currentImage" value="<?php echo htmlspecialchars($utilisateur['image_name'] ?? 'default.jpg'); ?>">
             <div class="inputBx">
                 <input type="text" name="nom" value="<?php echo htmlspecialchars($utilisateur['userLastName'] ?? 'Entrez votre nom'); ?>" required><br>

@@ -24,7 +24,7 @@ ob_start();
     </tr>
     <?php foreach ($users as $user) : ?>
         <tr>
-            <td><?= htmlspecialchars($user['id_user'], ENT_QUOTES, 'UTF-8'); ?></td>
+            <td><?= htmlspecialchars($user['user_id'], ENT_QUOTES, 'UTF-8'); ?></td>
             <td>
                 <?php $imagePath = '../public/img/' . htmlspecialchars($user['image_name'] ?? 'default.jpg', ENT_QUOTES, 'UTF-8'); ?>
                 <img src="<?= $imagePath; ?>" alt="Image de <?= htmlspecialchars($user['nom'] ?? 'Nom inconnu', ENT_QUOTES, 'UTF-8'); ?>" width="40">
@@ -36,7 +36,7 @@ ob_start();
             <td><?= htmlspecialchars($user['userGender'], ENT_QUOTES, 'UTF-8'); ?></td>
             <td><?= htmlspecialchars($user['UserPhone'] ?? 'Téléphone inconnu', ENT_QUOTES, 'UTF-8'); ?></td>
             <td><?= htmlspecialchars($user['roleDescription'] ?? 'Rôle inconnu', ENT_QUOTES, 'UTF-8'); ?></td>
-            <td><a href="<?= URL ?>update/<?= htmlspecialchars($user['id_user'], ENT_QUOTES, 'UTF-8'); ?>">Modifier</a></td>
+            <td><a href="<?= URL ?>update/<?= htmlspecialchars($user['user_id'], ENT_QUOTES, 'UTF-8'); ?>">Modifier</a></td>
         </tr>
     <?php endforeach; ?>
 </table>

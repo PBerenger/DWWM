@@ -20,10 +20,10 @@ require_once "Controllers/functions.php";
         <h2>Sélectionnez un ou plusieurs utilisateurs:</h2>
         <div class="users-grid">
             <?php foreach ($users as $user) : ?>
-                <label class="user-checkbox-container" for="<?php echo htmlspecialchars($user['id_user']); ?>">
+                <label class="user-checkbox-container" for="<?php echo htmlspecialchars($user['user_id']); ?>">
                     <div class="user-row">
-                        <input type="checkbox" id="<?php echo htmlspecialchars($user['id_user']); ?>" name="ids[]" value="<?php echo htmlspecialchars($user['id_user']); ?>">
-                        <span><?php echo htmlspecialchars($user['userFirstName'] . ' ' . $user['userLastName']); ?></span>
+                        <input type="checkbox" id="<?php echo htmlspecialchars($user['user_id']); ?>" name="ids[]" value="<?php echo htmlspecialchars($user['user_id']); ?>">
+                        <span><?php echo htmlspecialchars($user['u_fname'] . ' ' . $user['u_lname']); ?></span>
                     </div>
                 </label>
             <?php endforeach; ?>
