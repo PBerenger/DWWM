@@ -10,7 +10,7 @@ $userController = new UserController();
 <div class="form-container">
     <?php if ($utilisateur) : ?>
         <form method="POST" enctype="multipart/form-data" action="<?= URL ?>update">
-            <input type="hidden" name="user_id" value="<?php echo htmlspecialchars($utilisateur['user_id']); ?>">
+            <input type="hidden" name="users.id_user" value="<?php echo htmlspecialchars($utilisateur['users.id_user']); ?>">
             <input type="hidden" name="currentImage" value="<?php echo htmlspecialchars($utilisateur['image_name'] ?? 'default.jpg'); ?>">
             <div class="inputBx">
                 <input type="text" name="nom" value="<?php echo htmlspecialchars($utilisateur['userLastName'] ?? 'Entrez votre nom'); ?>" required><br>
@@ -59,7 +59,7 @@ $userController = new UserController();
             </select>
 
 
-            <?php if (isset($_SESSION['user_id'])) : ?>
+            <?php if (isset($_SESSION['users.id_user'])) : ?>
                 <?php if ($userController->isAdmin()) : ?>
                     <select name="role" required>
                         <option class="disabled" value="" disabled selected>Rôle</option>

@@ -1,5 +1,5 @@
 <?php
-require_once './Models/questionsManager.class.php';
+require_once './Models/questionnairesManager.class.php';
 require_once './Models/MyDbConnection.php';
 
 
@@ -25,7 +25,7 @@ class questionsController
             $userId = $this->authManager->authenticate($email, $password);
 
             if ($userId) {
-                $_SESSION['user_id'] = $userId;
+                $_SESSION['users.id_user'] = $userId;
                 header('Location: ' . URL . 'accueil');
                 exit();
             } else {
@@ -36,14 +36,14 @@ class questionsController
         require './views/login.view.php';
     }
 
-    public function addQuestions()
+    public function addQuestionnaires()
     {
         if (!$this->authManager->isUserLoggedIn()) {
             header("Location: " . URL . "login");
             exit();
         }
 
-        $questions = $this->questionsManager->getQuestions();
+        $questions = $this->questionsManager->getAllQuestionnnaires();
         require './views/questions.view.php';
     }
 

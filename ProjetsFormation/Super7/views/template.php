@@ -23,11 +23,12 @@ $userController = new UserController();
                 <li><a href="<?= URL ?>Informations">Informations</a></li>
                 <li><a href="<?= URL ?>Games">Jeux</a></li>
                 <!-- Login Butt -->
-                <?php if (isset($_SESSION['user_id'])) : ?>
+                <?php if (isset($_SESSION['users.id_user'])) : ?>
+                    
                     <?php if ($userController->isAdmin()) : ?>
                         <li class="userButt"><a href="<?= URL ?>read">Administrateur</a></li>
                     <?php else : ?>
-                        <li class="userButt"><a href="<?= URL ?>update/<?= htmlspecialchars($_SESSION['user_id']) ?>">Profil</a></li>
+                        <li class="userButt"><a href="<?= URL ?>update/<?= htmlspecialchars($_SESSION['users.id_user']) ?>">Profil</a></li>
                     <?php endif; ?>
                     <li class="userButt"><a href="<?= URL ?>logout">Déconnexion</a></li>
                 <?php else : ?>

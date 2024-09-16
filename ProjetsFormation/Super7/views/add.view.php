@@ -5,7 +5,7 @@ $authManager->startSession();
 $userController = new UserController();
 ?>
 
-<?php if (isset($_SESSION['user_id'])) : ?>
+<?php if (isset($_SESSION['users.id_user'])) : ?>
     <?php if ($userController->isAdmin()) : ?>
         <div class="readButtons">
             <a class="validButton" href="<?= URL ?>read">RETOUR</a>
@@ -67,7 +67,7 @@ $userController = new UserController();
         </div>
 
 
-        <?php if (isset($_SESSION['user_id'])) : ?>
+        <?php if (isset($_SESSION['users.id_user'])) : ?>
             <?php if ($userController->isAdmin()) : ?>
                 <select name="role" required>
                     <option class="disabled" value="" disabled selected>Rôle</option>

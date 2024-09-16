@@ -38,12 +38,12 @@ class UserController
     // Si l'utilisateur est admin
     public function isAdmin()
     {
-        if (!isset($_SESSION['user_id'])) {
+        if (!isset($_SESSION['users.id_user'])) {
             echo "il n'y a personne dans la base de donnée.";
             return false;
         }
-        $user = $this->userManager->getUserById($_SESSION['user_id']);
-        return $user['role_id'] === 1;
+        $user = $this->userManager->getUserById($_SESSION['users.id_user']);
+        return $user['id_role'] === 1;
     }
 
     //----------------------------------------------------------------------------------------------------------------------------------------
@@ -53,7 +53,7 @@ class UserController
     // Affiche la liste des utilisateurs mise à jour en appelant listUsers().
     public function updateUser($data, $files)
     {
-        $id = $data['user_id'];
+        $id = $data['users.id_user'];
         $nom = $data['nom'];
         $prenom = $data['prenom'];
         $email = $data['email'];

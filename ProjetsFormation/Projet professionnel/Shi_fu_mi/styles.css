@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    text-align: center;
+}
+
+@font-face {
+    font-family: "HowdyLemon";
+    src: url("fonts/HowdyLemon.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Minecraft";
+    src: url("fonts/Minecraft.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --fontTitre: "HowdyLemon";
+    --fontTexte: "Minecraft";
+}
+
+body {
+    background: radial-gradient(circle, #ffffff, #604CC3);
+}
+
+/* =================================================================================== */
+
+h1 {
+    font-size: 2.5rem;
+    font-family: var(--fontTitre);
+    color: #ff6600;
+    margin: 20px;
+    padding: 10px 10px;
+    border: #ff6600 solid 5px;
+    display: inline-block;
+    background-color: #ffffff;
+}
+
+p {
+    font-family: var(--fontTexte);
+    margin: 10px 0px;
+}
+
+button.PFC_btn {
+    padding: 0;
+    cursor: pointer;
+    border: 5px solid lightgrey;
+    margin: 10px 0px;
+}
+button.PFC_btn:hover {
+    border-color: green;
+}
+button.PFC_btn img {
+    display: block;
+    width: 160px;
+    height: 160px;
+    border: 0;
+}
+button.PFC_btn_replay {
+    font-family: var(--fontTitre);
+    color: #ff6600;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #ffffff;
+}
+
+.equal {
+    font-family: var(--fontTexte);
+    color: blue;
+}
+.win {
+    font-family: var(--fontTexte);
+    color: green;
+    font-weight: bold;
+}
+.lose {
+    font-family: var(--fontTexte);
+    color: red;
+}
+
+#PFC_result h4 {
+    font-family: var(--fontTitre);
+    font-weight: normal;
+    padding-bottom: 20px;
+    margin: 20px;
+    padding: 10px 20px;
+    border: #ff6600 solid 5px;
+    display: inline-flex;
+    background-color: #ffffff;
+}
+#PFC_result img {
+    height: 30px;
+    width: 30px;
+    border: 2px solid lightgrey;
+}
+#PFC_result img.win {
+    border: 2px solid green;
+}
+#PFC_result img.lose {
+    border: 2px solid red;
+}
+
+#PFC_result {
+    width: 520px;
+    padding: 0px 5px;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    font-family: var(--fontTitre);
+    color: #ff6600;
+}
+
+
+/* =================================================================================== */
+/* =================================================================================== */
+/* RESPONSIVE */
+
+/* tablettes */
+@media (max-width: 1024px) and (min-width: 768px) {
+    h1 {
+        font-size: 2.5em;
+    }
+    
+    button.PFC_btn img {
+        width: 140px;
+        height: 140px;
+    }
+    
+    #PFC_result {
+        width: 70%;
+    }
+}
+
+/* téléphones */
+@media (max-width: 767px) {
+    h1 {
+        font-size: 2em;
+    }
+    
+    button.PFC_btn img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    #PFC_result {
+        width: 100%;
+    }
+
+    #PFC_result h4 {
+        font-size: 14px;
+    }
+}

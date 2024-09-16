@@ -24,19 +24,19 @@ ob_start();
     </tr>
     <?php foreach ($users as $user) : ?>
         <tr>
-            <td><?= htmlspecialchars($user['user_id'], ENT_QUOTES, 'UTF-8'); ?></td>
+            <td><?= htmlspecialchars($user['id_user'], ENT_QUOTES, 'UTF-8'); ?></td>
             <td>
                 <?php $imagePath = '../public/img/' . htmlspecialchars($user['image_name'] ?? 'default.jpg', ENT_QUOTES, 'UTF-8'); ?>
                 <img src="<?= $imagePath; ?>" alt="Image de <?= htmlspecialchars($user['nom'] ?? 'Nom inconnu', ENT_QUOTES, 'UTF-8'); ?>" width="40">
             </td>
-            <td><?= htmlspecialchars($user['userLastName'] ?? 'Nom inconnu', ENT_QUOTES, 'UTF-8'); ?></td>
-            <td><?= htmlspecialchars($user['userFirstName'] ?? 'Prénom inconnu', ENT_QUOTES, 'UTF-8'); ?></td>
-            <td><?= htmlspecialchars($user['userEmail'], ENT_QUOTES, 'UTF-8'); ?></td>
-            <td><?= htmlspecialchars($user['birthDay'] ?? 'Date de naissance inconnue', ENT_QUOTES, 'UTF-8'); ?></td>
-            <td><?= htmlspecialchars($user['userGender'], ENT_QUOTES, 'UTF-8'); ?></td>
-            <td><?= htmlspecialchars($user['UserPhone'] ?? 'Téléphone inconnu', ENT_QUOTES, 'UTF-8'); ?></td>
-            <td><?= htmlspecialchars($user['roleDescription'] ?? 'Rôle inconnu', ENT_QUOTES, 'UTF-8'); ?></td>
-            <td><a href="<?= URL ?>update/<?= htmlspecialchars($user['user_id'], ENT_QUOTES, 'UTF-8'); ?>">Modifier</a></td>
+            <td><?= htmlspecialchars($user['u_lname'] ?? 'Nom inconnu', ENT_QUOTES, 'UTF-8'); ?></td>
+            <td><?= htmlspecialchars($user['u_fname'] ?? 'Prénom inconnu', ENT_QUOTES, 'UTF-8'); ?></td>
+            <td><?= htmlspecialchars($user['u_email'], ENT_QUOTES, 'UTF-8'); ?></td>
+            <td><?= htmlspecialchars($user['u_birth_Day'] ?? 'Date de naissance inconnue', ENT_QUOTES, 'UTF-8'); ?></td>
+            <td><?= htmlspecialchars($user['u_gender'], ENT_QUOTES, 'UTF-8'); ?></td>
+            <td><?= htmlspecialchars($user['u_phone'] ?? 'Téléphone inconnu', ENT_QUOTES, 'UTF-8'); ?></td>
+            <td><?= htmlspecialchars($user['role_description'] ?? 'Rôle inconnu', ENT_QUOTES, 'UTF-8'); ?></td>
+            <td><a href="<?= URL ?>update/<?= htmlspecialchars($user['id_user'], ENT_QUOTES, 'UTF-8'); ?>">Modifier</a></td>
         </tr>
     <?php endforeach; ?>
 </table>

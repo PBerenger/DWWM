@@ -20,7 +20,7 @@ class LoginController {
             $userId = $this->authManager->authenticate($email, $password);
 
             if ($userId) {
-                $_SESSION['user_id'] = $userId;
+                $_SESSION['users.id_user'] = $userId;
                 header('Location: ' . URL . 'accueil');
                 exit();
             } else {

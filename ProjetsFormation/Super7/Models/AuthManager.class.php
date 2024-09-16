@@ -19,7 +19,7 @@ class AuthManager {
         $user = $stmt->fetch();
 
         if ($user && password_verify($password, $user['u_password'])) {
-            return $user['user_id'];
+            return $user['id_user'];
         } else {
             return false;
         }
@@ -34,7 +34,7 @@ class AuthManager {
 
     public function verifierAdmin() {
         $this->startSession();
-        if (!isset($_SESSION['role_id'])) {
+        if (!isset($_SESSION['users.role_id'])) {
             echo "Session utilisateur non définie.";
             exit();
         } else {
@@ -47,7 +47,7 @@ class AuthManager {
     }
 
     public function isUserLoggedIn() {
-        return isset($_SESSION['user_id']);
+        return isset($_SESSION['users.id_user']);
     }
     
     public function logout() {
@@ -55,4 +55,8 @@ class AuthManager {
         session_unset();
         session_destroy();
     }
+    
 }
+
+// echo var_dump($_SESSION['users.id_user']);
+// echo var_dump($user['id_user']);
