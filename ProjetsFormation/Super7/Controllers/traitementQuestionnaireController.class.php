@@ -36,5 +36,5 @@ arsort($reponses);
 $dominante = key($reponses);
 $score_dominant = current($reponses);
 
-require "../views/traitementQuestions.view.php";
+require "../views/traitementQuestionnaire.view.php";
 

@@ -5,7 +5,7 @@
 <p class="time">10 minutes</p>
 
 
-<form id="questions" action="./Controllers/traitementQuestionsController.class.php" method="POST">
+<form id="questionnaire" action="./Controllers/traitementQuestionnaireController.class.php" method="POST">
     <p>J'aime les livres parlant d'animaux.</p>
     <input type="radio" name="question01" id="oui01" value="1" required>
     <label for="oui01">Oui</label>

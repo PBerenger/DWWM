@@ -1,6 +1,5 @@
 <?php
 ob_start();
-require_once "Controllers/functions.php";
 ?>
 
 <div class="readButtons">

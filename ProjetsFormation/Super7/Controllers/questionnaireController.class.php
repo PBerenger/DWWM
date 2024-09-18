@@ -1,16 +1,16 @@
 <?php
-require_once './Models/questionnairesManager.class.php';
+require_once './Models/questionnaireManager.class.php';
 require_once './Models/MyDbConnection.php';
 
 
-class questionsController
+class questionnaireController
 {
-    private $questionsManager;
+    private $questionnaireManager;
     private $authManager;
 
     public function __construct()
     {
-        $this->questionsManager = new QuestionsManager();
+        $this->questionnaireManager = new questionnaireManager();
         $this->authManager = new AuthManager();
     }
 
@@ -43,11 +43,11 @@ class questionsController
             exit();
         }
 
-        $questions = $this->questionsManager->getAllQuestionnnaires();
-        require './views/questions.view.php';
+        $questionnaire = $this->questionnaireManager->getAllQuestionnnaires();
+        require './views/questionnaire.view.php';
     }
 
-    public function resultQuestions()
+    public function resultQuestionnaire()
     {
         $categories = [
             0 => 'NULL',

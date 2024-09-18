@@ -25,7 +25,7 @@
     </p>
 
     <div class="secondaryText">
-        <a href="questions">En cliquant sur ce lien, vous pouvez-testez vos capacités rapidements et commencer.</a>
+        <a href="questionnaire">En cliquant sur ce lien, vous pouvez-testez vos capacités rapidements et commencer.</a>
     </div>
 </div>
 

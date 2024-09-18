@@ -1,5 +1,5 @@
 <?php
-require_once './Models/MyDbConnection.php';
+require_once '../Models/MyDbConnection.php';
 class UserManager
 {
     private $pdo;

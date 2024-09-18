@@ -5,7 +5,7 @@ define("URL", str_replace("index.php", "", (isset($_SERVER["HTTPS"]) ? "https" :
 require_once './Controllers/UserController.class.php';
 require_once './Controllers/LoginController.class.php';
 require_once './Controllers/LogoutController.class.php';
-require_once './Controllers/questionnairesController.class.php';
+require_once './Controllers/questionnaireController.class.php';
 require_once './Models/AuthManager.class.php';
 $authManager = new AuthManager();
 
@@ -70,8 +70,8 @@ try {
                 }
                 break;
 
-                case "questions":
-                    $controller = new questionsController();
+                case "questionnaire":
+                    $controller = new questionnaireController();
                     if (!$authManager->isUserLoggedIn()) {
                         // Rediriger vers la page de login s'il n'est pas connecté
                         header("Location: " . URL . "login");
