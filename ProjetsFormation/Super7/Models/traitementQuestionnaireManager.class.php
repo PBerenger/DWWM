@@ -1,7 +1,7 @@
 <?php
 require_once './Models/MyDbConnection.php';
 
-class QuestionnaireManager
+class TraitementResponsesManager
 {
     private $pdo;
     
@@ -9,7 +9,7 @@ class QuestionnaireManager
     {
         $this->pdo = MyDbConnection::getInstance();
     }
-    public function getAllQuestionnnaires()
+    public function getAllResponses()
     {
         $sql = '
                 SELECT questionnaire_id, responses_questionnaire, id_user

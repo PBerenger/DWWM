@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/../Models/UserManager.class.php';
+require_once './Models/UserManager.class.php';
 
 class UserController
 {

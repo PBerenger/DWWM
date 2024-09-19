@@ -75,7 +75,7 @@ class questionnaireController
         $maxScore = max($scores);
         $mainCategory = array_search($maxScore, $scores);
         
-        echo "<h1>Résultat du Questionnaire</h1>";
-        echo "<p>Votre principale catégorie est : " . $categories[$mainCategory] . "</p>";
+        // echo "<h1>Résultat du Questionnaire</h1>";
+        // echo "<p>Votre principale catégorie est : " . $categories[$mainCategory] . "</p>";
     }
 }

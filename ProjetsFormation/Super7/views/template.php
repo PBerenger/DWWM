@@ -1,6 +1,6 @@
 <?php
-require_once '../Models/AuthManager.class.php';
-require_once '../Controllers/UserController.class.php';
+require_once './Models/AuthManager.class.php';
+require_once './Controllers/UserController.class.php';
 $authManager = new AuthManager();
 $authManager->startSession();
 $userController = new UserController();
