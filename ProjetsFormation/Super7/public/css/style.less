@@ -265,12 +265,20 @@ footer {
 // =======================================
 // =======================================
 // QUESTIONNAIRE
+#questionnaireContainer {
+  h1 {
+    text-align: center;
+  }
 
-input[type="radio"]:hover {
-  cursor: pointer;
-}
+  input[type="radio"]:hover {
+    cursor: pointer;
+    user-select: none; 
+  }
+  
+  
+  label:hover {
+    cursor: pointer;
+    user-select: none;
+  }
 
-
-label:hover {
-  cursor: pointer;
 }

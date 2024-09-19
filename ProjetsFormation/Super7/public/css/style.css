@@ -163,9 +163,14 @@ footer .foot {
   initial-value: 0deg;
   inherits: true;
 }
-input[type="radio"]:hover {
-  cursor: pointer;
+#questionnaireContainer h1 {
+  text-align: center;
 }
-label:hover {
+#questionnaireContainer input[type="radio"]:hover {
   cursor: pointer;
+  user-select: none;
+}
+#questionnaireContainer label:hover {
+  cursor: pointer;
+  user-select: none;
 }

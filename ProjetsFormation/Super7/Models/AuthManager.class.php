@@ -55,8 +55,4 @@ class AuthManager {
         session_unset();
         session_destroy();
     }
-    
 }
-
-// echo var_dump($_SESSION['users.id_user']);
-// echo var_dump($user['id_user']);

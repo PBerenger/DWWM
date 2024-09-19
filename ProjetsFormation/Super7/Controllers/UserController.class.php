@@ -31,7 +31,7 @@ class UserController
     public function UpdateForm($id)
     {
         $utilisateur = $this->userManager->getUserById($id);
-        require __DIR__ . '/../views/update.view.php';
+        require '../views/update.view.php';
     }
 
     //----------------------------------------------------------------------------------------------------------------------------------------

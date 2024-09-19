@@ -80,6 +80,8 @@ INSERT INTO users (u_lname, u_fname, u_email, u_password, u_date_birth, u_gender
 ('Vernier', 'Sébastien', 'sebastien.vernier@gmail.com', '$2y$10$y7H9./B5DDmz1Rt9VowNDe9P1GNGYY.vMZ2P4wEVh5QH39ACR3VGQ', '19821219', 'M', '0123456839', 2),
 ('Dubois', 'Claudine', 'claudine.dubois@gmail.com', '$2y$10$Ku5X1EJKOu/Y6Z8O5T2DDu8BW8Z8koy8GbD9Ck8Wj5h7/E3fHnOly', '19881003', 'F', '0123456840', 2);
 
+
+-- ======================================================
 -- AJOUT QUESTIONNAIRE
 
 -- NULL :               Value = 0
@@ -91,3 +93,14 @@ INSERT INTO users (u_lname, u_fname, u_email, u_password, u_date_birth, u_gender
 -- Kinesthésique :      value = 6
 -- Verbale :            value = 7
 -- Logique :            value = 8
+
+INSERT INTO questionnaire (responses_questionnaire) VALUES
+    ('Aucune donnée'),
+    ('Interpersonnelle'),
+    ('Intrapersonnlle'),
+    ('Saptiale'),
+    ('Musicale'),
+    ('Ecologique'),
+    ('Kinesthésique'),
+    ('Verbale'),
+    ('Logique');
