@@ -1,27 +1,27 @@
 // Ralentissement de rotating-image
 
 const rotatingImage = document.querySelector('.rotating-image');
-    let lastRotation = 0;
+let lastRotation = 0;
 
-    rotatingImage.addEventListener('mouseenter', () => {
-        rotatingImage.style.transition = 'none'; 
-    });
+rotatingImage.addEventListener('mouseenter', () => {
+    rotatingImage.style.transition = 'none';
+});
 
-    rotatingImage.addEventListener('mouseleave', () => {
-        rotatingImage.style.transition = 'transform 0s ease-out';
-        const computedStyle = window.getComputedStyle(rotatingImage);
-        const transform = computedStyle.transform;
-        const matrix = new DOMMatrix(transform);
-        rotatingImage.style.transform = `rotate(${360}deg)`;
-        rotatingImage.classList.add('stop-spin');
+rotatingImage.addEventListener('mouseleave', () => {
+    rotatingImage.style.transition = 'transform 0s ease-out';
+    const computedStyle = window.getComputedStyle(rotatingImage);
+    const transform = computedStyle.transform;
+    const matrix = new DOMMatrix(transform);
+    rotatingImage.style.transform = `rotate(${360}deg)`;
+    rotatingImage.classList.add('stop-spin');
+    setTimeout(() => {
+        rotatingImage.style.transition = 'none';
+        rotatingImage.style.transform = 'rotate(0deg)';
         setTimeout(() => {
-            rotatingImage.style.transition = 'none';
-            rotatingImage.style.transform = 'rotate(0deg)';
-            setTimeout(() => {
-                rotatingImage.classList.remove('stop-spin');
-            }, 5000);
+            rotatingImage.classList.remove('stop-spin');
         }, 5000);
-    });
+    }, 5000);
+});
 
 //------------------------------------------------------------------------------------------------
 
@@ -50,27 +50,27 @@ function deselectAll() {
 //------------------------------------------------------------------------------------------------
 
 // Condition PSW
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     let passwordInput = document.getElementById("passwordSaisie");
     let mdpContainer = document.getElementById("mdpContainer");
     let timeoutId;
 
-    passwordInput.addEventListener("blur", function() {
-        timeoutId = setTimeout(function() {
+    passwordInput.addEventListener("blur", function () {
+        timeoutId = setTimeout(function () {
             mdpContainer.classList.remove("visible");
         }, 200);
     });
-    
-    passwordInput.addEventListener("focus", function() {
+
+    passwordInput.addEventListener("focus", function () {
         clearTimeout(timeoutId);
         mdpContainer.classList.add("visible");
         verifPassword();
     });
-    
+
 
     passwordInput.addEventListener("input", verifPassword);
 
-    function verifPassword(){
+    function verifPassword() {
         let password = passwordInput.value;
 
         let regexMajuscule = /[A-Z]/;
@@ -96,12 +96,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 // Afficher contenu
-document.getElementById('passwordSaisie').addEventListener('focus', function() {
+document.getElementById('passwordSaisie').addEventListener('focus', function () {
     document.getElementById('mdpContainer').style.display = 'block';
 });
 
-document.getElementById('passwordSaisie').addEventListener('blur', function() {
-    setTimeout(function() {
+document.getElementById('passwordSaisie').addEventListener('blur', function () {
+    setTimeout(function () {
         document.getElementById('mdpContainer').style.display = 'none';
     }, 200);
 });
@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('form');
     const password = document.querySelector('input[name="password"]');
     const confirmPassword = document.querySelector('input[name="confirm_password"]');
-    
+
     form.addEventListener('submit', function (event) {
         if (password.value !== confirmPassword.value) {
             alert('Les mots de passe ne correspondent pas.');
@@ -150,7 +150,7 @@ function sortTable(columnIndex) {
     var rows = table.rows;
     var switching = true;
     var shouldSwitch, i;
-    var dir = "asc"; 
+    var dir = "asc";
     var switchcount = 0;
 
     while (switching) {

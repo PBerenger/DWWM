@@ -2,11 +2,12 @@
 // Définit la constante URL
 define("URL", str_replace("index.php", "", (isset($_SERVER["HTTPS"]) ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF']));
 // echo var_dump($_SESSION);
-require_once './Controllers/UserController.class.php';
-require_once './Controllers/LoginController.class.php';
-require_once './Controllers/LogoutController.class.php';
-require_once './Controllers/questionnaireController.class.php';
-require_once './Models/AuthManager.class.php';
+
+require_once __DIR__ . '/Controllers/UserController.class.php';
+require_once __DIR__ . '/Controllers/LoginController.class.php';
+require_once __DIR__ . '/Controllers/LogoutController.class.php';
+require_once __DIR__ . '/Controllers/questionnaireController.class.php';
+require_once __DIR__ . '/Models/AuthManager.class.php';
 $authManager = new AuthManager();
 
 $authManager->startSession();

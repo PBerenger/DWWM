@@ -1,5 +1,5 @@
 <?php
-require_once './Models/UserManager.class.php';
+require_once __DIR__ . '../../Models/UserManager.class.php';
 
 class UserController
 {
@@ -22,7 +22,7 @@ class UserController
         }
 
         $users = $this->userManager->getAllUsers();
-        require './views/read.view.php';
+        require_once __DIR__ . '../../views/read.view.php';
     }
 
     //----------------------------------------------------------------------------------------------------------------------------------------
@@ -31,18 +31,18 @@ class UserController
     public function UpdateForm($id)
     {
         $utilisateur = $this->userManager->getUserById($id);
-        require '../views/update.view.php';
+        require_once __DIR__ . '../../views/update.view.php';
     }
 
     //----------------------------------------------------------------------------------------------------------------------------------------
     // Si l'utilisateur est admin
     public function isAdmin()
     {
-        if (!isset($_SESSION['users.id_user'])) {
+        if (!isset($_SESSION['id_user'])) {
             echo "il n'y a personne dans la base de donnée.";
             return false;
         }
-        $user = $this->userManager->getUserById($_SESSION['users.id_user']);
+        $user = $this->userManager->getUserById($_SESSION['id_user']);
         return $user['id_role'] === 1;
     }
 
@@ -53,7 +53,7 @@ class UserController
     // Affiche la liste des utilisateurs mise à jour en appelant listUsers().
     public function updateUser($data, $files)
     {
-        $id = $data['users.id_user'];
+        $id = $data['id_user'];
         $nom = $data['nom'];
         $prenom = $data['prenom'];
         $email = $data['email'];
@@ -98,7 +98,7 @@ class UserController
     public function deleteForm()
     {
         $users =  $this->userManager->getAllUsers();
-        require './views/delete.view.php';
+        require_once __DIR__ . '../../views/delete.view.php';
     }
 
     public function deleteUsers(array $ids)
@@ -162,6 +162,6 @@ class UserController
     // Méthode pour afficher le formulaire d'ajout
     public function addForm()
     {
-        require './views/add.view.php';
+        require_once __DIR__ . '../../views/add.view.php';
     }
 }

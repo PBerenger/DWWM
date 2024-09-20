@@ -1,6 +1,6 @@
 <?php
-// require_once '../Models/traitementQuestionnaireManager.class.php';
-// require_once './Models/MyDbConnection.php';
+require_once __DIR__ . '../../Models/traitementQuestionnaireManager.class.php';
+require_once __DIR__ . '../../Models/MyDbConnection.php';
 
 function getPostValue($key, $default = 0) {
     return isset($_POST[$key]) && is_numeric($_POST[$key]) ? (int)$_POST[$key] : $default;

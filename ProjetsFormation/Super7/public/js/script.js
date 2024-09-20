@@ -65,22 +65,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-
-
-
-// Afficher contenu
-document.getElementById('passwordSaisie').addEventListener('focus', function() {
-    document.getElementById('mdpContainer').style.display = 'block';
-});
-
-document.getElementById('passwordSaisie').addEventListener('blur', function() {
-    setTimeout(function() {
-        document.getElementById('mdpContainer').style.display = 'none';
-    }, 200);
-});
-function verifPassword() {
-}
-
 // Afficher le mot de passe
 document.addEventListener('DOMContentLoaded', (event) => {
     const togglePassword = document.getElementById('togglePassword');
@@ -94,13 +78,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
         // Mettre à jour l'image de l'icône
         const img = togglePassword.querySelector('img');
         if (type === 'password') {
-            img.src = '../public/images/all/eyesOpen.png';
+            img.src = '../public/img/eyesSee.png';
+            console
         } else {
-            img.src = '../public/images/all/eyesClose.png';
+            img.src = '../public/img/eyesNotSee.png';
         }
     });
 });
-
 
 
 // Vérification des Password avant soumission
@@ -116,5 +100,16 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+
+// Button upload img
+
+const fileUpload = document.getElementById('file-upload');
+const fileName = document.getElementById('file-name');
+
+fileUpload.addEventListener('change', function() {
+    fileName.textContent = this.files[0].name; // Affiche le nom du fichier sélectionné
+});
+
 
 

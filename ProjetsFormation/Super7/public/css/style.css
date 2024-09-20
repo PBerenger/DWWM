@@ -30,6 +30,8 @@
   --colorBackground0: #fff;
   --colorBackground1: #000000ec;
   --colorBackground2: #00993d;
+  --colorValid: #8FD14F;
+  --colorInvalid: #fff;
   --fontTitre: 'arial_narrow_7';
   --fontTexteLight: 'Nexa-ExtraLight';
   --fontTexteHeavy: 'Nexa-Heavy';
@@ -82,7 +84,6 @@ header nav ul {
 }
 header nav ul li a {
   padding: 5px 10px;
-  /* Ajout de padding avec des espaces */
   margin: 10px;
   font-family: var(--fontTitre);
   color: var(--colorPrincipale);
@@ -136,11 +137,11 @@ footer .foot {
 }
 .secondaryText a {
   font-family: var(--fontTexteHeavy);
-  border: 2px solid;
+  border: 5px solid;
   border-image-slice: 2;
   border-image-source: conic-gradient(from var(--angle-to-the-dangle), transparent 0deg, var(--colorPrincipale) 20deg, transparent 40deg);
   animation: rotateColors 4s linear infinite;
-  background-color: var(--colorTertiaire);
+  background-color: var(--colorSecondaire);
   color: white;
   padding: 1rem 2rem;
   display: inline-flex;
@@ -162,6 +163,132 @@ footer .foot {
   syntax: "<angle>";
   initial-value: 0deg;
   inherits: true;
+}
+.titreAdd {
+  text-align: center;
+  font-size: 10em;
+  user-select: none;
+}
+.form-container {
+  background-color: var(--colorTertiaire);
+  display: flex;
+  justify-content: center;
+}
+.form-container form {
+  padding: 20px;
+  height: 340px;
+  display: grid;
+  text-align: center;
+  grid-template-columns: 300px 300px 300px 300px;
+  font-family: var(--fontTexteLight);
+  color: var(--colorBackground0);
+  font-size: 1em;
+}
+.form-container form .formPart1 {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.form-container form .formPart1 input::placeholder {
+  color: var(--colorBackground0);
+}
+.form-container form .formPart1 input:hover {
+  border: 2px solid var(--colorBackground0);
+}
+.form-container form .formPart2 {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.form-container form .formPart2 input[type='date'] {
+  cursor: pointer;
+}
+.form-container form .formPart2 input::placeholder {
+  color: var(--colorBackground0);
+}
+.form-container form .formPart2 input:hover {
+  border: 2px solid var(--colorBackground0);
+}
+.form-container form .formPart2 select {
+  width: 95%;
+  height: 40px;
+  background-color: var(--colorSecondaire);
+  color: var(--colorBackground0);
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+.form-container form .formPart2 select:hover {
+  border: 2px solid var(--colorBackground0);
+}
+.form-container form .formPart3 {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.form-container form .formPart3 input::placeholder {
+  color: var(--colorBackground0);
+}
+.form-container form .formPart3 input:hover {
+  border: 2px solid var(--colorBackground0);
+}
+.form-container form .formPart3 #togglePassword {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  outline: none;
+  box-shadow: none;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.form-container form .formPart3 .invalid {
+  color: var(--colorInvalid);
+}
+.form-container form .formPart3 .valid {
+  color: var(--colorValid);
+}
+.form-container form .formPart4 {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  background-color: rgba(0, 0, 0, 0.2);
+  align-items: center;
+}
+.form-container form .formPart4 .custom-file-upload {
+  padding: 12px 20px;
+  cursor: pointer;
+  background-color: var(--colorPrincipale);
+  color: white;
+  font-family: var(--fontTexteHeavy);
+  font-size: 1em;
+}
+.form-container form .formPart4 .custom-file-upload:hover {
+  border: 2px solid var(--colorBackground0);
+}
+.form-container form .formPart4 input[type="submit"] {
+  cursor: pointer;
+  font-family: var(--fontTexteHeavy);
+  background-color: var(--colorPrincipale);
+  font-size: 1em;
+}
+.form-container form .formPart4 input:hover {
+  border: 2px solid var(--colorBackground0);
+}
+.form-container form .eyePSW {
+  transform: translate(-25%, 15%);
+  width: 30px;
+  height: 20px;
+}
+.form-container form .inputBx {
+  position: relative;
+  width: 100%;
+  margin: 20px 0;
+}
+.form-container form .inputBx input {
+  border: 2px solid var(--colorBackground1);
+  text-align: center;
+  border: none;
+  width: 95%;
+  height: 40px;
+  padding: 12px 20px;
+  background-color: var(--colorSecondaire);
+  color: var(--colorBackground0);
 }
 #questionnaireContainer h1 {
   text-align: center;

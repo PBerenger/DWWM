@@ -39,6 +39,9 @@
   --colorBackground1: #000000ec;
   --colorBackground2: #00993d;
 
+  --colorValid: #8FD14F;
+  --colorInvalid: #fff;
+
   --fontTitre: 'arial_narrow_7';
   --fontTexteLight: 'Nexa-ExtraLight';
   --fontTexteHeavy: 'Nexa-Heavy';
@@ -109,7 +112,6 @@ header {
       li {
         a {
           padding: 5px 10px;
-          /* Ajout de padding avec des espaces */
           margin: 10px;
           font-family: var(--fontTitre);
           color: var(--colorPrincipale);
@@ -152,22 +154,12 @@ footer {
 
 // =======================================
 // =======================================
-// FORM
-
-// .form-container {
-  
-// }
-
-
-
-
-// =======================================
-// =======================================
 // ACCUEIL
 
 #topContent {
   text-align: center;
-  h1{
+
+  h1 {
     font-size: 30em;
     user-select: none;
   }
@@ -177,7 +169,7 @@ footer {
   h2 {
     text-align: center;
     color: var(--colorBackground0);
-    padding:20px 0px;
+    padding: 20px 0px;
     user-select: none;
   }
 
@@ -203,7 +195,7 @@ footer {
 .secondaryText {
   a {
     font-family: var(--fontTexteHeavy);
-    border: 2px solid;
+    border: 5px solid;
     border-image-slice: 2;
     border-image-source: conic-gradient(from var(--angle-to-the-dangle),
         transparent 0deg,
@@ -211,7 +203,7 @@ footer {
         transparent 40deg);
     animation: rotateColors 4s linear infinite;
 
-    background-color: var(--colorTertiaire);
+    background-color: var(--colorSecondaire);
     color: white;
     padding: 1rem 2rem;
     display: inline-flex;
@@ -245,8 +237,160 @@ footer {
 
 // =======================================
 // =======================================
-// FORMS : LOGIN/ADD
+// ADD
 
+.titreAdd {
+  text-align: center;
+  font-size: 10em;
+  user-select: none;
+}
+
+.form-container {
+  background-color: var(--colorTertiaire);
+  display: flex;
+  justify-content: center;
+
+  form {
+    padding: 20px;
+    height: 340px;
+    display: grid;
+    text-align: center;
+    grid-template-columns: 300px 300px 300px 300px;
+    font-family: var(--fontTexteLight);
+    color: var(--colorBackground0);
+    font-size: 1em;
+
+    .formPart1 {
+      background-color: rgba(0, 0, 0, 0.5);
+
+      input::placeholder {
+        color: var(--colorBackground0);
+      }
+
+      input:hover {
+        border: 2px solid var(--colorBackground0);
+      }
+    }
+
+    .formPart2 {
+      background-color: rgba(0, 0, 0, 0.4);
+
+      input[type='date'] {
+        cursor: pointer;
+      }
+
+      input::placeholder {
+        color: var(--colorBackground0);
+      }
+
+      input:hover {
+        border: 2px solid var(--colorBackground0);
+      }
+
+      select {
+        width: 95%;
+        height: 40px;
+        background-color: var(--colorSecondaire);
+        color: var(--colorBackground0);
+        text-align: center;
+        border: none;
+        cursor: pointer;
+      }
+
+      select:hover {
+        border: 2px solid var(--colorBackground0);
+      }
+    }
+
+    .formPart3 {
+      background-color: rgba(0, 0, 0, 0.3);
+
+      input::placeholder {
+        color: var(--colorBackground0);
+      }
+
+      input:hover {
+        border: 2px solid var(--colorBackground0);
+      }
+
+      #togglePassword {
+        background: none;
+        border: none;
+        color: inherit;
+        cursor: pointer;
+        outline: none;
+        box-shadow: none;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .invalid {
+        color: var(--colorInvalid);
+      }
+    
+      .valid {
+        color: var(--colorValid);
+      }
+    }
+
+    .formPart4 {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      background-color: rgba(0, 0, 0, 0.2);
+      align-items: center;
+      
+      .custom-file-upload {
+        padding: 12px 20px;
+        cursor: pointer;
+        background-color: var(--colorPrincipale);
+        color: white;
+        font-family: var(--fontTexteHeavy);
+        font-size: 1em;
+      }
+      
+      .custom-file-upload:hover {
+        border: 2px solid var(--colorBackground0);
+      }
+      
+      input[type="submit"] {
+        cursor: pointer;
+        font-family: var(--fontTexteHeavy);
+        background-color: var(--colorPrincipale);
+        font-size: 1em;
+      }
+
+      input:hover {
+        border: 2px solid var(--colorBackground0);
+      }
+
+    }
+    
+    .eyePSW {
+      transform: translate(-25%, 15%);
+      width: 30px;
+      height: 20px;
+    }
+
+    .inputBx {
+      position: relative;
+      width: 100%;
+      margin: 20px 0;
+
+      input {
+        border: 2px solid var(--colorBackground1);
+        text-align: center;
+        border: none;
+        width: 95%;
+        height: 40px;
+        padding: 12px 20px;
+        background-color: var(--colorSecondaire);
+        color: var(--colorBackground0);
+      }
+    }
+  }
+}
 
 
 // =======================================
@@ -272,10 +416,10 @@ footer {
 
   input[type="radio"]:hover {
     cursor: pointer;
-    user-select: none; 
+    user-select: none;
   }
-  
-  
+
+
   label:hover {
     cursor: pointer;
     user-select: none;

@@ -22,5 +22,5 @@
 <?php
 $content = ob_get_clean();
 $titre = "Identification Espace Administrateur";
-require "template.php";
+require_once __DIR__ . "/template.php";
 ?>

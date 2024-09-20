@@ -1,6 +1,6 @@
 <?php
-require_once './Models/AuthManager.class.php';
-require_once './Models/MyDbConnection.php';
+require_once __DIR__ . '../../Models/AuthManager.class.php';
+require_once __DIR__ . '../../Models/MyDbConnection.php';
 
 class LoginController {
     private $authManager;
@@ -13,14 +13,14 @@ class LoginController {
     public function login() {
         $error = null;
 
-        if (isset($_POST['email'], $_POST['password'])) {
-            $email = $_POST['email'];
-            $password = $_POST['password'];
+        if (isset($_POST['u_email'], $_POST['u_password'])) {
+            $email = $_POST['u_email'];
+            $password = $_POST['u_password'];
 
             $userId = $this->authManager->authenticate($email, $password);
 
             if ($userId) {
-                $_SESSION['users.id_user'] = $userId;
+                $_SESSION['id_user'] = $userId;
                 header('Location: ' . URL . 'accueil');
                 exit();
             } else {
@@ -28,6 +28,6 @@ class LoginController {
             }
         }
 
-        require './views/login.view.php';
+        require_once __DIR__ . '../../views/login.view.php';
     }
 }

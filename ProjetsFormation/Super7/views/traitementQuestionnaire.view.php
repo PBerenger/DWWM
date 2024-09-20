@@ -271,5 +271,5 @@ foreach ($reponses as $type => $score) {
 <!-- Pourquoi je n'arrive pas à afficher le template ici ??? -->
 <?php
 $content = ob_get_clean();
-require "template.php";
+require_once __DIR__ . "/template.php";
 ?>

@@ -4,7 +4,7 @@ ob_start();
 
 <div class="readButtons">
     <a class="validButton" href="<?= URL ?>read">RETOUR</a>
-    <a class="validButton" href="<?= URL ?>delete">Supprimer un utilisateur</a>
+    <a class="validButton" href="<?= URL ?>add">Ajouter un utilisateur</a>
 </div>
 <h2 class="titrePage">Supprimer un utilisateur</h2>
 
@@ -19,10 +19,10 @@ ob_start();
         <h2>Sélectionnez un ou plusieurs utilisateurs:</h2>
         <div class="users-grid">
             <?php foreach ($users as $user) : ?>
-                <label class="user-checkbox-container" for="<?php echo htmlspecialchars($user['users.id_user']); ?>">
+                <label class="user-checkbox-container" for="<?php echo htmlspecialchars($user['id_user']); ?>">
                     <div class="user-row">
-                        <input type="checkbox" id="<?php echo htmlspecialchars($user['users.id_user']); ?>" name="ids[]" value="<?php echo htmlspecialchars($user['users.id_user']); ?>">
-                        <span><?php echo htmlspecialchars($user['userFirstName'] . ' ' . $user['userLastName']); ?></span>
+                        <input type="checkbox" id="<?php echo htmlspecialchars($user['id_user']); ?>" name="ids[]" value="<?php echo htmlspecialchars($user['id_user']); ?>">
+                        <span><?php echo htmlspecialchars($user['u_fname'] . ' ' . $user['u_lname']); ?></span>
                     </div>
                 </label>
             <?php endforeach; ?>
@@ -34,4 +34,4 @@ ob_start();
 
 <?php
 $content = ob_get_clean();
-require "template.php";
+require_once __DIR__ . "/template.php";

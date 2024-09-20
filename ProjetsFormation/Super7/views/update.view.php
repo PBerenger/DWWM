@@ -10,23 +10,23 @@ $userController = new UserController();
 <div class="form-container">
     <?php if ($utilisateur) : ?>
         <form method="POST" enctype="multipart/form-data" action="<?= URL ?>update">
-            <input type="hidden" name="users.id_user" value="<?php echo htmlspecialchars($utilisateur['users.id_user']); ?>">
+            <input type="hidden" name="id_user" value="<?php echo htmlspecialchars($utilisateur['id_user']); ?>">
             <input type="hidden" name="currentImage" value="<?php echo htmlspecialchars($utilisateur['image_name'] ?? 'default.jpg'); ?>">
             <div class="inputBx">
-                <input type="text" name="nom" value="<?php echo htmlspecialchars($utilisateur['userLastName'] ?? 'Entrez votre nom'); ?>" required><br>
+                <input type="text" name="nom" value="<?php echo htmlspecialchars($utilisateur['u_lname'] ?? 'Entrez votre nom'); ?>" required><br>
             </div>
             <div class="inputBx">
-                <input type="text" name="prenom" value="<?php echo htmlspecialchars($utilisateur['userFirstName'] ?? 'Entrez votre Prénom'); ?>" required><br>
+                <input type="text" name="prenom" value="<?php echo htmlspecialchars($utilisateur['u_fname'] ?? 'Entrez votre Prénom'); ?>" required><br>
             </div>
             <div class="inputBx">
-                <input type="email" name="email" value="<?php echo htmlspecialchars($utilisateur['userEmail'] ?? 'Entrez votre Mail'); ?>" required><br>
+                <input type="email" name="email" value="<?php echo htmlspecialchars($utilisateur['u_email'] ?? 'Entrez votre Mail'); ?>" required><br>
             </div>
             <div class="inputBx">
-                <input type="text" name="telephone" value="<?php echo htmlspecialchars($utilisateur['userPhone'] ?? 'Votre numéro de téléphone'); ?>" required><br>
+                <input type="text" name="telephone" value="<?php echo htmlspecialchars($utilisateur['u_phone'] ?? 'Votre numéro de téléphone'); ?>" required><br>
             </div>
 
             <div class="inputBx">
-                <input type="date" name="dateNaissance" value="<?php echo htmlspecialchars($utilisateur['userDateBirth'] ?? ''); ?>"required>
+                <input type="date" name="dateNaissance" value="<?php echo htmlspecialchars($utilisateur['u_Date_Birth'] ?? ''); ?>"required>
             </div>
 
 
@@ -59,7 +59,7 @@ $userController = new UserController();
             </select>
 
 
-            <?php if (isset($_SESSION['users.id_user'])) : ?>
+            <?php if (isset($_SESSION['id_user'])) : ?>
                 <?php if ($userController->isAdmin()) : ?>
                     <select name="role" required>
                         <option class="disabled" value="" disabled selected>Rôle</option>
@@ -87,4 +87,4 @@ $userController = new UserController();
 <?php
 $content = ob_get_clean();
 $titre = "Modifier un utilisateur";
-require "template.php";
+require_once __DIR__ . "/template.php";

@@ -1,5 +1,5 @@
 <?php
-require_once './Models/AuthManager.class.php';
+require_once __DIR__ . '../../Models/AuthManager.class.php';
 
 class LogoutController {
     private $authManager;

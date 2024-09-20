@@ -43,4 +43,4 @@ ob_start();
 
 <?php
 $content = ob_get_clean();
-require "template.php";
+require_once __DIR__ . "/template.php";

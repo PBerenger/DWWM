@@ -15,83 +15,83 @@ $userController = new UserController();
     <?php endif; ?>
 <?php endif; ?>
 
+<div class="titreAdd">
+    <h1>INSCRIPTION</h1>
+</div>
 
 <div class="form-container">
     <form method="POST" action="<?= URL ?>add" enctype="multipart/form-data">
-        <div class="inputBx">
-            <input type="text" name="nom" placeholder="nom" required>
-        </div>
-        <div class="inputBx">
-            <input type="text" name="prenom" placeholder="prenom" required>
-        </div>
-        <div class="inputBx">
-            <input type="email" name="email" placeholder="Email" required>
-        </div>
-        <div class="inputBx">
-            <input type="date" name="dateNaissance" required>
-        </div>
-
-
-        <select id="genre" name="genre">
-            <option class="disabled" value="" disabled selected>Genre</option>
-            <option value="masculin">Masculin</option>
-            <option value="féminin">Féminin</option>
-            <option value="nonDefinit">Non définit</option>
-        </select>
-
-
-        <div class="inputBx">
-            <input type="text" name="telephone" placeholder="telephone">
+        <div class="formPart1">
+            <div class="inputBx">
+                <input type="text" name="nom" placeholder="Nom" required>
+            </div>
+            <div class="inputBx">
+                <input type="text" name="prenom" placeholder="Prenom" required>
+            </div>
+            <div class="inputBx">
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
         </div>
 
+        <div class="formPart2">
+            <div class="inputBx">
+                <input type="date" name="dateNaissance" required>
+            </div>
 
-        <div class="inputBx">
-            <input type="password" id="passwordSaisie" oninput="verifPassword()" name="password" placeholder="Mot de passe" required>
-            <button type="button" id="togglePassword">
-                <img class="eyePSW" src="../public/img/eyesNotSee.png" alt="Afficher le mot de passe">
-            </button>
+            <div class="inputBx">
+                <input type="text" name="telephone" placeholder="Telephone">
+            </div>
+
+            <select id="genre" name="genre">
+                <option class="disabled" value="" disabled selected>Genre</option>
+                <option value="masculin">Masculin</option>
+                <option value="féminin">Féminin</option>
+            </select>
         </div>
 
-        <div id="mdpContainer" class="mdpContainer">
-            <h4>Doit comporter au minimum:</h4>
-            <p id="longueurMDP" class="invalid">8 caractères</p>
-            <p id="majuscule" class="invalid">1 majuscule</p>
-            <p id="minuscule" class="invalid">1 minuscule</p>
-            <p id="nombre" class="invalid">1 chiffre</p>
-            <p id="specialChar" class="invalid">1 caractère spécial</p>
+        <div class="formPart3">
+            <div class="inputBx">
+                <input type="password" id="passwordSaisie" oninput="verifPassword()" name="password" placeholder="Mot de passe" required>
+                <button type="button" id="togglePassword">
+                    <img class="eyePSW" src="../public/img/eyesNotSee.png" alt="Afficher le mot de passe">
+                </button>
+            </div>
+
+            <div class="inputBx">
+                <input type="password" name="confirm_password" placeholder="Confirmer le mot de passe" required>
+            </div>
+
+            <div id="mdpContainer" class="mdpContainer">
+                <h4>Doit comporter au minimum:</h4>
+                <p id="longueurMDP" class="invalid">8 caractères</p>
+                <p id="majuscule" class="invalid">1 majuscule</p>
+                <p id="minuscule" class="invalid">1 minuscule</p>
+                <p id="nombre" class="invalid">1 chiffre</p>
+                <p id="specialChar" class="invalid">1 caractère spécial</p>
+            </div>
         </div>
 
+        <div class="formPart4">
+            <div class="formPart4.haut">
+                <label for="file-upload" class="custom-file-upload">
+                    Téléchargez une image de profil
+                </label>
+                <input id="file-upload" type="file" name="image" style="display: none;" />
+                <span id="file-name"></span> <!-- Pour afficher le nom du fichier choisi -->
+            </div>
 
-        <div class="inputBx">
-            <input type="password" name="confirm_password" placeholder="Confirmer le mot de passe" required>
+            <div class="formPart4.bas" >
+                <div class="inputBx">
+                    <input type="submit" value="Ajouter" onclick="return validateForm();">
+                </div>
+            </div>
         </div>
 
-
-        <?php if (isset($_SESSION['users.id_user'])) : ?>
-            <?php if ($userController->isAdmin()) : ?>
-                <select name="role" required>
-                    <option class="disabled" value="" disabled selected>Rôle</option>
-                    <option value='admin'>Admin</option>
-                    <option value='non-admin'>Non-Admin</option>
-                </select><br>
-            <?php endif; ?>
-        <?php endif; ?>
-
-
-        <div class="inputBx">
-            <label for="file-upload" class="parcourir">Téléchargez une image de profil</label>
-            <input id="file-upload" type="file" name="image" /><br>
-        </div>
-
-
-        <div class="inputBx">
-            <input type="submit" value="Ajouter" onclick="return validateForm();">
-        </div>
     </form>
 </div>
 
 <?php
 $content = ob_get_clean();
 $titre = "Ajouter un utilisateur";
-require "template.php";
+require_once __DIR__ . "/template.php";
 ?>

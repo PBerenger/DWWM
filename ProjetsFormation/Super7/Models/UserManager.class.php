@@ -1,5 +1,5 @@
 <?php
-require_once 'MyDbConnection.php';
+require __DIR__ . '/MyDbConnection.php';
 class UserManager
 {
     private $pdo;
