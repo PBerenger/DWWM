@@ -1,5 +1,15 @@
-<?php ob_start();
-?>
+<?php ob_start();?>
+
+<?php if (isset($_SESSION['success_message'])): ?>
+    <div class="alert alert-success">
+        <?php 
+        echo $_SESSION['success_message'];
+        // Supprimer le message après l'affichage
+        unset($_SESSION['success_message']); 
+        ?>
+    </div>
+<?php endif; ?>
+
 
 <div id="topContent">
     <div class="textTopContent">

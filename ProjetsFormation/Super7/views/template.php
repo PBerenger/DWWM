@@ -19,24 +19,34 @@ $userController = new UserController();
 <body>
     <header>
         <img class="logoS7" src="../public/img/logos/logoSuper7SF_v2.png" alt="logo_Super7">
+
         <nav>
             <ul>
-                <li><a href="<?= URL ?>accueil">Accueil</a></li>
-                <li><a href="<?= URL ?>Informations">Informations</a></li>
-                <li><a href="<?= URL ?>Games">Jeux</a></li>
+                <li><a href="./accueil">Accueil</a></li>
+                <li><a href="./Informations">Informations</a></li>
+                <li><a href="./Games">Jeux</a></li>
                 <!-- Login Butt -->
-                <?php if (isset($_SESSION['users.id_user'])) : ?>
-                    
+                <?php if (isset($_SESSION['id_user'])) : ?>
                     <?php if ($userController->isAdmin()) : ?>
-                        <li class="userButt"><a href="<?= URL ?>read">Administrateur</a></li>
-                    <?php else : ?>
-                        <li class="userButt"><a href="<?= URL ?>update/<?= htmlspecialchars($_SESSION['users.id_user']) ?>">Profil</a></li>
+                        <li class="userButt"><a href="./read">Administrateur</a></li>
                     <?php endif; ?>
-                    <li class="userButt"><a href="<?= URL ?>logout">Déconnexion</a></li>
+                    <div class="profil&con">
+                        <li class="userButt"><a href="./logout">Déconnexion</a></li>
+                        <li class="userStat">
+                            <a href="./update/<?= htmlspecialchars($_SESSION['id_user']) ?>">
+                                <?= htmlspecialchars($userController->getUserName()) ?> <!-- Afficher le nom -->
+                            </a>
+                        </li>
+                    </div>
                 <?php else : ?>
-                    <li class="userButt"><a href="<?= URL ?>add">Inscription</a></li>
-                    <li class="userButt"><a href="<?= URL ?>login">Connexion</a></li>
+                    <li class="userButt"><a href="./add">Inscription</a></li>
+                    <div class="profil&con">
+                        <li class="userButt"><a href="./login">Connexion</a></li>
+                        <li class="userStat">Non connecté</li>
+                    </div>
+
                 <?php endif; ?>
+
 
             </ul>
         </nav>

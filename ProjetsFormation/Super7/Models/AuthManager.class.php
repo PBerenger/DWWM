@@ -12,7 +12,7 @@ class AuthManager {
             session_start();
         }
     }
-
+    
     public function authenticate($email, $password) {
         $stmt = $this->pdo->prepare('SELECT id_user, u_password FROM users WHERE u_email = ?');
         $stmt->execute([$email]);
@@ -26,15 +26,21 @@ class AuthManager {
     }
 
     public function estAdmin($userId) {
-        $stmt = $this->pdo->prepare('SELECT role FROM user_roles WHERE id_role = ?');
+        $stmt = $this->pdo->prepare(
+            'SELECT 
+                        role_description 
+                    FROM 
+                        user_roles 
+                    WHERE 
+                        id_role = ?');
         $stmt->execute([$userId]);
         $userRole = $stmt->fetch();
-        return $userRole && $userRole['role'] === 'admin';
+        return $userRole && $userRole['role_description'] === 'admin';
     }
 
     public function verifierAdmin() {
         $this->startSession();
-        if (!isset($_SESSION['users.role_id'])) {
+        if (!isset($_SESSION['role_id'])) {
             echo "Session utilisateur non définie.";
             exit();
         } else {
@@ -47,7 +53,7 @@ class AuthManager {
     }
 
     public function isUserLoggedIn() {
-        return isset($_SESSION['users.id_user']);
+        return isset($_SESSION['id_user']);
     }
     
     public function logout() {

@@ -16,8 +16,6 @@ class questionnaireController
 
     public function login()
     {
-        $error = null;
-
         if (isset($_POST['u_email'], $_POST['u_password'])) {
             $email = $_POST['u_email'];
             $password = $_POST['u_password'];

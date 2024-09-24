@@ -128,9 +128,12 @@ header {
     }
 
   }
-
   height: 100px;
   background: var(--colorBackground1);
+}
+
+.userStat {
+    color: red;
 }
 
 // =======================================
@@ -329,7 +332,7 @@ footer {
       .invalid {
         color: var(--colorInvalid);
       }
-    
+
       .valid {
         color: var(--colorValid);
       }
@@ -340,7 +343,7 @@ footer {
       grid-template-rows: 1fr 1fr;
       background-color: rgba(0, 0, 0, 0.2);
       align-items: center;
-      
+
       .custom-file-upload {
         padding: 12px 20px;
         cursor: pointer;
@@ -349,16 +352,18 @@ footer {
         font-family: var(--fontTexteHeavy);
         font-size: 1em;
       }
-      
+
       .custom-file-upload:hover {
         border: 2px solid var(--colorBackground0);
       }
-      
+
       input[type="submit"] {
         cursor: pointer;
         font-family: var(--fontTexteHeavy);
         background-color: var(--colorPrincipale);
         font-size: 1em;
+        border: 2px solid var(--colorPrincipale);
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
       }
 
       input:hover {
@@ -366,11 +371,86 @@ footer {
       }
 
     }
-    
+
     .eyePSW {
       transform: translate(-25%, 15%);
       width: 30px;
       height: 20px;
+    }
+
+    .inputBx {
+      position: relative;
+      width: 100%;
+      margin: 20px 0;
+
+      input {
+        border: 2px solid var(--colorBackground1);
+        text-align: center;
+        border: none;
+        width: 95%;
+        height: 40px;
+        padding: 12px 20px;
+        background-color: var(--colorSecondaire);
+        color: var(--colorBackground0);
+      }
+    }
+  }
+}
+
+
+// =======================================
+// =======================================
+// LOGIN
+
+.form-container2 {
+  background-color: var(--colorTertiaire);
+  display: flex;
+  justify-content: center;
+
+  form {
+    padding: 20px;
+    height: 340px;
+    display: grid;
+    text-align: center;
+    grid-template-columns: 300px 300px 300px;
+    font-family: var(--fontTexteLight);
+    color: var(--colorBackground0);
+    font-size: 1em;
+
+    .formPart1 {
+      background-color: rgba(0, 0, 0, 0.5);
+
+      input::placeholder {
+        color: var(--colorBackground0);
+      }
+
+      input:hover {
+        border: 2px solid var(--colorBackground0);
+      }
+    }
+
+    .emptyGrid {
+      display: grid;
+      align-items: center;
+    }
+
+    .formPart2 {
+      background-color: rgba(0, 0, 0, 0.4);
+      display: grid;
+      align-items: center;
+
+      a {
+        margin: 0 auto;
+        background-color: var(--colorSecondaire);
+        color: var(--colorBackground0);
+        width: 95%;
+        height: 40px;
+        border: 2px solid var(--colorSecondaire);
+      }
+
+      a:hover {
+        border: 2px solid var(--colorBackground0);
+      }
     }
 
     .inputBx {
@@ -410,19 +490,103 @@ footer {
 // =======================================
 // QUESTIONNAIRE
 #questionnaireContainer {
-  h1 {
+  .titreQuestionnaire {
     text-align: center;
-  }
-
-  input[type="radio"]:hover {
-    cursor: pointer;
+    font-size: 2em;
     user-select: none;
   }
 
+  h1,
+  h2 {
+    text-align: center;
+    font-family: var(--fontTitre);
+    font-size: 8em;
+  }
 
+  h6 {
+    font-family: var(--fontTexteHeavy);
+    text-align: end;
+    margin: 8px 30px;
+  }
+
+  .time {
+    text-align: center;
+    padding: 30px;
+    color: var(--colorBackground0);
+    font-size: 2em;
+
+  }
+
+  .question {
+    margin: 10px 300px;
+    padding-left: 40px;
+    color: var(--colorBackground0);
+
+    p {
+      font-family: var(--fontTexteHeavy);
+      padding-bottom: 8px;
+    }
+  }
+
+  .question:nth-child(odd) {
+    background-color: var(--colorSecondaire);
+    border: var(--colorSecondaire) solid 6px;
+  }
+
+  .question:nth-child(even) {
+    background-color: var(--colorTertiaire);
+    border: var(--colorTertiaire) solid 6px;
+  }
+
+  .question:nth-child(odd):hover {
+    border: var(--colorPrincipale) solid 6px;
+  }
+
+  .question:nth-child(even):hover {
+    border: var(--colorPrincipale) solid 6px;
+  }
+
+  .oui,
+  .non {
+    color: var(--colorBackground0);
+    font-family: var(--fontTexteLight);
+    padding: 4px;
+    width: 70px;
+    margin: 8px 40px;
+  }
+
+  .oui:hover,
+  .non:hover {
+    background-color: var(--colorValid);
+    color: black;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+
+  input[type="radio"]:hover,
   label:hover {
     cursor: pointer;
     user-select: none;
+  }
+
+  .subQuest {
+    text-align: center;
+    margin: 50px 0;
+    input[type="submit"] {
+      background-color: var(--colorPrincipale);
+      color: var(--colorBackground0);
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border: var(--colorPrincipale) solid 4px;
+    }
+    
+    input[type="submit"]:hover {
+      background-color: var(--colorSecondaire);
+      border: var(--colorBackground0) solid 4px;
+
+    }
   }
 
 }

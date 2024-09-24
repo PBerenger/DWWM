@@ -1,4 +1,5 @@
 <?php
+// require_once __DIR__ . '../../views/traitementQuestionnaire.view.php';
 require_once __DIR__ . '/MyDbConnection.php';
 
 class TraitementResponsesManager

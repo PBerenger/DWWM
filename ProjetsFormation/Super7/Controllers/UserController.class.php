@@ -164,4 +164,21 @@ class UserController
     {
         require_once __DIR__ . '../../views/add.view.php';
     }
+
+    //----------------------------------------------------------------------------------------------------------------------------------------
+    // Méthode pour récupérer id et le nom
+    public function getUserById($id_user) {
+        // Méthode qui récupère les informations de l'utilisateur via l'ID
+        // Cette méthode dépend de la manière dont vous récupérez vos données utilisateur (base de données, etc.)
+        return $this->userModel->findUserById($id_user); // Exemple
+    }
+
+    public function getUserName() {
+        if (isset($_SESSION['id_user'])) {
+            $user = $this->getUserById($_SESSION['id_user']);
+            return $user['name']; // Assurez-vous que le champ 'name' existe dans vos données utilisateur
+        }
+        return null;
+    }
 }
+

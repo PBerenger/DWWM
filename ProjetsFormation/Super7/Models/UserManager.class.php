@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/MyDbConnection.php';
+require_once __DIR__ . '/MyDbConnection.php';
 class UserManager
 {
     private $pdo;
@@ -81,6 +81,7 @@ class UserManager
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
+
     // Cette fonction est conçue pour mettre à jour les informations d'un utilisateur dans une base de données.
     // implanter "changer de mot de passe"
     public function updateUser($id, $nom, $prenom, $email, $dateNaissance, $genre,  $telephone, $role, $nomImage, $pwd)
@@ -143,7 +144,16 @@ class UserManager
         $hashed_pwd = password_hash($pwd, PASSWORD_DEFAULT);
         try {
             $stmt = $this->pdo->prepare('INSERT INTO 
-                                            users (u_lname, u_fname, u_email, u_password, u_date_birth, u_phone, u_gender, id_role, u_profil_img)  
+                                            users (
+                                            u_lname, 
+                                            u_fname, 
+                                            u_email, 
+                                            u_password, 
+                                            u_date_birth, 
+                                            u_phone, 
+                                            u_gender, 
+                                            id_role, 
+                                            u_profil_img)  
                                         VALUES 
                                             (:lastName,
                                             :firstName,
@@ -172,9 +182,4 @@ class UserManager
             throw new Exception($e->getMessage());
         }
     }
-
-    // récupérer les informations du formulaire
-    // public function getQuestionnaireById() {
-
-    // }
 }

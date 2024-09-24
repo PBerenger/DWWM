@@ -5,7 +5,7 @@ $authManager->startSession();
 $userController = new UserController();
 ?>
 
-<?php if (isset($_SESSION['users.id_user'])) : ?>
+<?php if (isset($_SESSION['id_user'])) : ?>
     <?php if ($userController->isAdmin()) : ?>
         <div class="readButtons">
             <a class="validButton" href="<?= URL ?>read">RETOUR</a>
@@ -37,18 +37,22 @@ $userController = new UserController();
             <div class="inputBx">
                 <input type="date" name="dateNaissance" required>
             </div>
-
-            <div class="inputBx">
-                <input type="text" name="telephone" placeholder="Telephone">
-            </div>
-
+            
             <select id="genre" name="genre">
                 <option class="disabled" value="" disabled selected>Genre</option>
                 <option value="masculin">Masculin</option>
                 <option value="féminin">Féminin</option>
             </select>
-        </div>
 
+            <div class="inputBx">
+                <input type="text" name="telephone" placeholder="Telephone">
+            </div>
+
+            <div>
+                Le numéro de téléphone n'est pas obligatoire.
+            </div>
+        </div>
+        
         <div class="formPart3">
             <div class="inputBx">
                 <input type="password" id="passwordSaisie" oninput="verifPassword()" name="password" placeholder="Mot de passe" required>

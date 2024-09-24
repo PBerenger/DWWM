@@ -71,15 +71,15 @@ try {
                 }
                 break;
 
-                case "questionnaire":
-                    $controller = new questionnaireController();
-                    if (!$authManager->isUserLoggedIn()) {
-                        // Rediriger vers la page de login s'il n'est pas connecté
-                        header("Location: " . URL . "login");
-                        exit();
-                    }
-                    $controller->addQuestionnaires();
-                    break;
+            case "questionnaire":
+                $controller = new questionnaireController();
+                if (!$authManager->isUserLoggedIn()) {
+                    // Rediriger vers la page de login s'il n'est pas connecté
+                    header("Location: " . URL . "login");
+                    exit();
+                }
+                $controller->addQuestionnaires();
+                break;
 
             default:
                 throw new Exception("La page n'existe pas");
