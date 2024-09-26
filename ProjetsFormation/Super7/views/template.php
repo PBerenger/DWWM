@@ -1,9 +1,22 @@
 <?php
 require_once __DIR__ . '../../Models/AuthManager.class.php';
 require_once __DIR__ . '../../Controllers/UserController.class.php';
+
 $authManager = new AuthManager();
 $authManager->startSession();
 $userController = new UserController();
+
+// Récupère les informations de l'utilisateur connecté
+$user = $userController->getUserInfo();
+
+// Vérifie si l'utilisateur est connecté et si l'alerte a déjà été affichée
+if (isset($_SESSION['id_user']) && !isset($_SESSION['alert_show'])) {
+    // Stocke dans la session que l'alerte a été affichée
+    $_SESSION['alert_show'] = true;
+    $alertMessage = "Vous êtes bien connecté en tant que " . htmlspecialchars($user['u_fname'] . ' ' . htmlspecialchars($user['u_lname']));
+} else {
+    $alertMessage = null;
+}
 ?>
 
 <!DOCTYPE html>
@@ -25,29 +38,31 @@ $userController = new UserController();
                 <li><a href="./accueil">Accueil</a></li>
                 <li><a href="./Informations">Informations</a></li>
                 <li><a href="./Games">Jeux</a></li>
-                <!-- Login Butt -->
+
                 <?php if (isset($_SESSION['id_user'])) : ?>
+                    <?php if ($alertMessage): ?>
+                        <script>
+                            // Affiche une alerte lorsque l'utilisateur est connecté
+                            alert('<?= $alertMessage; ?>');
+                        </script>
+                    <?php endif; ?>
+
                     <?php if ($userController->isAdmin()) : ?>
                         <li class="userButt"><a href="./read">Administrateur</a></li>
                     <?php endif; ?>
-                    <div class="profil&con">
+                    <div class="profil-conn">
                         <li class="userButt"><a href="./logout">Déconnexion</a></li>
-                        <li class="userStat">
-                            <a href="./update/<?= htmlspecialchars($_SESSION['id_user']) ?>">
-                                <?= htmlspecialchars($userController->getUserName()) ?> <!-- Afficher le nom -->
-                            </a>
+                        <li class="userButt">
+                            <a href="./update">Mon profil : <?= htmlspecialchars($user['u_fname']); ?></a>
                         </li>
                     </div>
                 <?php else : ?>
                     <li class="userButt"><a href="./add">Inscription</a></li>
-                    <div class="profil&con">
+                    <div class="profil-conn">
                         <li class="userButt"><a href="./login">Connexion</a></li>
-                        <li class="userStat">Non connecté</li>
+                        <li class="noConn">Non connecté</li>
                     </div>
-
                 <?php endif; ?>
-
-
             </ul>
         </nav>
     </header>

@@ -1,4 +1,4 @@
-<?php ob_start(); ?>
+<?php ob_start();?>
 
 <div class="titreAdd">
     <h1>CONNEXION</h1>
@@ -8,10 +8,10 @@
     <form method="POST">
         <div class="formPart1">
             <div class="inputBx">
-                <input type="email" name="email" placeholder="Email" required>
+                <input type="email" name="u_email" placeholder="Email" required>
             </div>
             <div class="inputBx">
-                <input type="password" name="password" placeholder="Mot de passe" required>
+                <input type="password" name="u_password" placeholder="Mot de passe" required>
             </div>
             <div class="inputBx">
                 <input type="submit" value="Connexion">

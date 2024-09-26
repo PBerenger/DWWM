@@ -123,17 +123,34 @@ header {
             text-decoration: underline var(--colorBackground0);
           }
         }
+      }
 
+      .profil-conn {
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        text-align: center;
+
+        .noConn {
+          font-family: var(--fontTitre);
+          font-style: italic;
+          color: var(--colorPrincipale);
+          font-size: 1.3em;
+          background-color: transparent;
+          margin-left: 20px;
+        }
       }
     }
-
   }
+
   height: 100px;
   background: var(--colorBackground1);
 }
 
 .userStat {
-    color: red;
+  color: red;
 }
 
 // =======================================
@@ -573,6 +590,7 @@ footer {
   .subQuest {
     text-align: center;
     margin: 50px 0;
+
     input[type="submit"] {
       background-color: var(--colorPrincipale);
       color: var(--colorBackground0);
@@ -581,12 +599,155 @@ footer {
       cursor: pointer;
       border: var(--colorPrincipale) solid 4px;
     }
-    
+
     input[type="submit"]:hover {
       background-color: var(--colorSecondaire);
       border: var(--colorBackground0) solid 4px;
 
     }
+  }
+}
+
+
+// =======================================
+// =======================================
+// QUESTIONNAIRE RSULTS
+
+
+#traitementQuestionnaireContainer {
+
+  margin: 40px;
+
+  .souligner {
+    text-decoration: underline;
+  }
+
+  .titreResultQuest {
+    font-size: 4em;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .mainResult {
+    font-size: 1.7em;
+    text-align: center;
+    padding-bottom: 40px;
+  }
+
+  .resAll {
+    display: flex;
+    flex-direction: column;
+
+    .resTop {
+      border: var(--colorBackground2) solid 2px;
+      background-color: var(--colorTertiaire);
+      h3 {
+        text-align: center;
+        font-family: var(--fontTexteHeavy);
+        font-size: 1.5em;
+        color: var(--colorBackground0);
+      }
+      
+      h5 {
+        text-align: center;
+        font-family: var(--fontTexteHeavy);
+        font-size: 1.2em;
+        color: var(--colorBackground1);
+        background-color: var(--colorBackground2);
+      }
+
+      .resP {
+        text-align: center;
+        font-family: var(--fontTexteLight);
+        color: var(--colorBackground0);
+        padding: 20px 0;
+      }
+    }
+  
+    .resMid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      .caraMid {
+        border: var(--colorBackground2) solid 2px;
+        background-color: var(--colorSecondaire);
+        padding: 20px;
+
+        h5 {
+          font-family: var(--fontTexteHeavy);
+          text-align: center;
+          font-size: 1em;
+          margin-bottom: 20px;
+          width: 670px;
+          background-color: var(--colorBackground2);
+        }
+        
+        ul li {
+          font-family: var(--fontTexteLight);
+          color: var(--colorBackground0);
+          list-style-type: circle;
+          margin: 0 20px;
+        }
+      }
+      
+      .actMid {
+        border: var(--colorBackground2) solid 2px;
+        background-color: var(--colorSecondaire);
+        padding: 20px;
+        
+        h5 {
+          font-family: var(--fontTexteHeavy);
+          text-align: center;
+          font-size: 1em;
+          margin-bottom: 20px;
+          width: 670px;
+          background-color: var(--colorBackground2);
+        }
+        
+        ul li {
+          font-family: var(--fontTexteLight);
+          color: var(--colorBackground0);
+          list-style-type: circle;
+          margin: 0 20px;
+        }
+      }
+    }
+  
+    .resBot {
+      border: var(--colorBackground2) solid 2px;
+      background-color: var(--colorTertiaire);
+
+      h5 {
+        text-align: center;
+        font-family: var(--fontTexteHeavy);
+        font-size: 1.2em;
+        color: var(--colorBackground1);
+        background-color: var(--colorBackground2);
+      }
+
+      .resP {
+        text-align: center;
+        font-family: var(--fontTexteLight);
+        color: var(--colorBackground0);
+        padding: 20px 0;
+      }
+    }
+  }
+}
+
+.responsesAllCont {
+  text-align: center;
+  padding: 40px 0;
+  
+  .responsesAll {
+    display: flex;
+    padding: 20px 40px;
+    background-color: var(--colorTertiaire);
+  }
+  .response {
+    padding: 4px;
+    text-align: center;
+    color: var(--colorBackground0);
   }
 
 }

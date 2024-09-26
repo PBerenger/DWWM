@@ -94,6 +94,22 @@ header nav ul li a:hover {
   color: var(--colorBackground2);
   text-decoration: underline var(--colorBackground0);
 }
+header nav ul .profil-conn {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: center;
+}
+header nav ul .profil-conn .noConn {
+  font-family: var(--fontTitre);
+  font-style: italic;
+  color: var(--colorPrincipale);
+  font-size: 1.3em;
+  background-color: transparent;
+  margin-left: 20px;
+}
 .userStat {
   color: red;
 }
@@ -435,4 +451,120 @@ footer .foot {
 #questionnaireContainer .subQuest input[type="submit"]:hover {
   background-color: var(--colorSecondaire);
   border: var(--colorBackground0) solid 4px;
+}
+#traitementQuestionnaireContainer {
+  margin: 40px;
+}
+#traitementQuestionnaireContainer .souligner {
+  text-decoration: underline;
+}
+#traitementQuestionnaireContainer .titreResultQuest {
+  font-size: 4em;
+  text-align: center;
+  padding: 10px 0;
+}
+#traitementQuestionnaireContainer .mainResult {
+  font-size: 1.7em;
+  text-align: center;
+  padding-bottom: 40px;
+}
+#traitementQuestionnaireContainer .resAll {
+  display: flex;
+  flex-direction: column;
+}
+#traitementQuestionnaireContainer .resAll .resTop {
+  border: var(--colorBackground2) solid 2px;
+  background-color: var(--colorTertiaire);
+}
+#traitementQuestionnaireContainer .resAll .resTop h3 {
+  text-align: center;
+  font-family: var(--fontTexteHeavy);
+  font-size: 1.5em;
+  color: var(--colorBackground0);
+}
+#traitementQuestionnaireContainer .resAll .resTop h5 {
+  text-align: center;
+  font-family: var(--fontTexteHeavy);
+  font-size: 1.2em;
+  color: var(--colorBackground1);
+  background-color: var(--colorBackground2);
+}
+#traitementQuestionnaireContainer .resAll .resTop .resP {
+  text-align: center;
+  font-family: var(--fontTexteLight);
+  color: var(--colorBackground0);
+  padding: 20px 0;
+}
+#traitementQuestionnaireContainer .resAll .resMid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+#traitementQuestionnaireContainer .resAll .resMid .caraMid {
+  border: var(--colorBackground2) solid 2px;
+  background-color: var(--colorSecondaire);
+  padding: 20px;
+}
+#traitementQuestionnaireContainer .resAll .resMid .caraMid h5 {
+  font-family: var(--fontTexteHeavy);
+  text-align: center;
+  font-size: 1em;
+  margin-bottom: 20px;
+  width: 670px;
+  background-color: var(--colorBackground2);
+}
+#traitementQuestionnaireContainer .resAll .resMid .caraMid ul li {
+  font-family: var(--fontTexteLight);
+  color: var(--colorBackground0);
+  list-style-type: circle;
+  margin: 0 20px;
+}
+#traitementQuestionnaireContainer .resAll .resMid .actMid {
+  border: var(--colorBackground2) solid 2px;
+  background-color: var(--colorSecondaire);
+  padding: 20px;
+}
+#traitementQuestionnaireContainer .resAll .resMid .actMid h5 {
+  font-family: var(--fontTexteHeavy);
+  text-align: center;
+  font-size: 1em;
+  margin-bottom: 20px;
+  width: 670px;
+  background-color: var(--colorBackground2);
+}
+#traitementQuestionnaireContainer .resAll .resMid .actMid ul li {
+  font-family: var(--fontTexteLight);
+  color: var(--colorBackground0);
+  list-style-type: circle;
+  margin: 0 20px;
+}
+#traitementQuestionnaireContainer .resAll .resBot {
+  border: var(--colorBackground2) solid 2px;
+  background-color: var(--colorTertiaire);
+}
+#traitementQuestionnaireContainer .resAll .resBot h5 {
+  text-align: center;
+  font-family: var(--fontTexteHeavy);
+  font-size: 1.2em;
+  color: var(--colorBackground1);
+  background-color: var(--colorBackground2);
+}
+#traitementQuestionnaireContainer .resAll .resBot .resP {
+  text-align: center;
+  font-family: var(--fontTexteLight);
+  color: var(--colorBackground0);
+  padding: 20px 0;
+}
+.responsesAllCont {
+  text-align: center;
+  padding: 40px 0;
+}
+.responsesAllCont .responsesAll {
+  display: flex;
+  padding: 20px 40px;
+  background-color: var(--colorTertiaire);
+}
+.responsesAllCont .response {
+  padding: 4px;
+  text-align: center;
+  color: var(--colorBackground0);
 }

@@ -25,11 +25,9 @@ class LoginController
 
             if ($userId) {
                 $_SESSION['id_user'] = $userId;
-                $_SESSION['success_message'] = "Vous êtes connecté avec succès.";
                 header('Location: ' . URL . 'accueil');
                 exit();
             } else {
-                $_SESSION['error_message'] = "Email ou mot de passe incorrect.";
                 header('Location: ' . URL . 'login');
                 exit();
             }
