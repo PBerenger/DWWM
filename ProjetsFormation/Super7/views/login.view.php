@@ -1,4 +1,4 @@
-<?php ob_start();?>
+<?php ob_start(); ?>
 
 <div class="titreAdd">
     <h1>CONNEXION</h1>
@@ -7,6 +7,8 @@
 <div class="form-container2">
     <form method="POST">
         <div class="formPart1">
+            <p>CONNEXION</p>
+            <p>CONNEXION</p>
             <div class="inputBx">
                 <input type="email" name="u_email" placeholder="Email" required>
             </div>
@@ -16,13 +18,26 @@
             <div class="inputBx">
                 <input type="submit" value="Connexion">
             </div>
-            <h5>Merci de vous connecter pour accéder au reste des activités de SUPER 7</h5>
+            <p>CONNEXION</p>
+            <p>CONNEXION</p>
+
         </div>
 
         <div class="emptyGrid">ou</div>
 
+
         <div class="formPart2">
+            <p>INSCRIPTION</p>
+            <p>INSCRIPTION</p>
+            <p>INSCRIPTION</p>
+            <p>INSCRIPTION</p>
+            <p>INSCRIPTION</p>
             <a href="add">S'inscrire</a>
+            <p>INSCRIPTION</p>
+            <p>INSCRIPTION</p>
+            <p>INSCRIPTION</p>
+            <p>INSCRIPTION</p>
+            <p>INSCRIPTION</p>
         </div>
 
     </form>

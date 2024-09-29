@@ -212,47 +212,29 @@ footer {
 }
 
 // BUTTON QUESTIONNAIRE
+
 .secondaryText {
   a {
+    background-color: var(--colorPrincipale);
     font-family: var(--fontTexteHeavy);
-    border: 5px solid;
-    border-image-slice: 2;
-    border-image-source: conic-gradient(from var(--angle-to-the-dangle),
-        transparent 0deg,
-        var(--colorPrincipale) 20deg,
-        transparent 40deg);
-    animation: rotateColors 4s linear infinite;
-
-    background-color: var(--colorSecondaire);
     color: white;
-    padding: 1rem 2rem;
-    display: inline-flex;
-    gap: 0.5rem;
-    font-size: 1.5rem;
+    width: 220px;
+    text-align: center;
+    margin: 0 10px;
+    padding: 10px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 
     svg {
       width: 1em;
     }
   }
 
-  @keyframes rotateColors {
-    0% {
-      --angle-to-the-dangle: 0deg;
-    }
-
-    100% {
-      --angle-to-the-dangle: 360deg;
-    }
+  a:hover {
+    background-color: var(--colorSecondaire);
   }
 }
-
-@property --angle-to-the-dangle {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: true;
-}
-
-
 
 
 // =======================================
@@ -280,6 +262,7 @@ footer {
     color: var(--colorBackground0);
     font-size: 1em;
 
+//---------------------------------------------
     .formPart1 {
       background-color: rgba(0, 0, 0, 0.5);
 
@@ -292,6 +275,7 @@ footer {
       }
     }
 
+//---------------------------------------------
     .formPart2 {
       background-color: rgba(0, 0, 0, 0.4);
 
@@ -322,6 +306,7 @@ footer {
       }
     }
 
+//---------------------------------------------
     .formPart3 {
       background-color: rgba(0, 0, 0, 0.3);
 
@@ -355,6 +340,7 @@ footer {
       }
     }
 
+//---------------------------------------------
     .formPart4 {
       display: grid;
       grid-template-rows: 1fr 1fr;
@@ -375,18 +361,23 @@ footer {
       }
 
       input[type="submit"] {
-        cursor: pointer;
-        font-family: var(--fontTexteHeavy);
         background-color: var(--colorPrincipale);
-        font-size: 1em;
-        border: 2px solid var(--colorPrincipale);
-        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+        font-family: var(--fontTexteHeavy);
+        color: white;
+        width: 220px;
+        display: inline-block;
+        text-align: center;
+        margin: 0 10px;
+        padding: 10px 10px;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        cursor: pointer;
       }
 
-      input:hover {
-        border: 2px solid var(--colorBackground0);
+      input[type="submit"]:hover {
+        background-color: var(--colorSecondaire);
       }
-
     }
 
     .eyePSW {
@@ -436,13 +427,46 @@ footer {
 
     .formPart1 {
       background-color: rgba(0, 0, 0, 0.5);
+      
 
       input::placeholder {
         color: var(--colorBackground0);
       }
 
-      input:hover {
-        border: 2px solid var(--colorBackground0);
+      .inputBx {
+        position: relative;
+        width: 100%;
+        margin: 20px 0;
+  
+        input {
+          border: 2px solid var(--colorBackground1);
+          text-align: center;
+          border: none;
+          width: 95%;
+          height: 40px;
+          // padding: 0 20px;
+          background-color: var(--colorSecondaire);
+          color: var(--colorBackground0);
+        }
+  
+        input[type="submit"] {
+          background-color: var(--colorPrincipale);
+          font-family: var(--fontTexteHeavy);
+          color: white;
+          width: 220px;
+          display: inline-block;
+          text-align: center;
+          margin: 0 10px;
+          padding: 10px 10px;
+          text-decoration: none;
+          border-radius: 5px;
+          transition: background-color 0.3s ease;
+          cursor: pointer;
+        }
+  
+        input[type="submit"]:hover {
+          background-color: var(--colorSecondaire);
+        }
       }
     }
 
@@ -451,39 +475,38 @@ footer {
       align-items: center;
     }
 
+    p {
+      letter-spacing: 11px;
+    }
+
     .formPart2 {
       background-color: rgba(0, 0, 0, 0.4);
-      display: grid;
+      display: flex;
+      justify-content: center;
       align-items: center;
+      flex-direction: column;
+
+      p {
+        letter-spacing: 11px;
+      }
 
       a {
-        margin: 0 auto;
-        background-color: var(--colorSecondaire);
-        color: var(--colorBackground0);
-        width: 95%;
-        height: 40px;
-        border: 2px solid var(--colorSecondaire);
+        background-color: var(--colorPrincipale);
+        font-family: var(--fontTexteHeavy);
+        color: white;
+        width: 220px;
+        display: inline-block;
+        text-align: center;
+        margin: 0 10px;
+        padding: 10px 10px;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        cursor: pointer;
       }
 
       a:hover {
-        border: 2px solid var(--colorBackground0);
-      }
-    }
-
-    .inputBx {
-      position: relative;
-      width: 100%;
-      margin: 20px 0;
-
-      input {
-        border: 2px solid var(--colorBackground1);
-        text-align: center;
-        border: none;
-        width: 95%;
-        height: 40px;
-        padding: 12px 20px;
         background-color: var(--colorSecondaire);
-        color: var(--colorBackground0);
       }
     }
   }
@@ -494,6 +517,87 @@ footer {
 // =======================================
 // READ
 
+.readButtons {
+  margin: 20px 0;
+  text-align: center;
+
+  .validButton {
+    background-color: var(--colorPrincipale);
+    font-family: var(--fontTexteHeavy);
+    color: white;
+    width: 220px;
+    display: inline-block;
+    text-align: center;
+    margin: 0 10px;
+    padding: 10px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .validButton:hover {
+    background-color: var(--colorSecondaire);
+  }
+}
+
+.titreRead {
+  text-align: center;
+  font-size: 8.2em;
+  user-select: none;
+}
+
+
+/* Styles pour le tableau */
+.readContainer {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-family: var(--fontTexteLight);
+  text-align: left;
+
+  th,
+  td {
+    padding: 12px 15px;
+    border: 1px solid var(--colorTertiaire);
+  }
+
+  th {
+    background-color: var(--colorPrincipale);
+    font-weight: bold;
+    color: #333;
+  }
+}
+
+.readContainer tr:nth-child(even) {
+  background-color: var(--colorSecondaire);
+}
+
+.readContainer tr:hover {
+  background-color: var(--colorBackground0);
+}
+
+.readContainer img {
+  border-radius: 50%;
+}
+
+/* Lien d'action */
+.readContainer a {
+  color: #2196F3;
+  /* Bleu */
+  text-decoration: none;
+}
+
+.readContainer a:hover {
+  text-decoration: underline;
+}
+
+/* Titre */
+.titreRead {
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+  margin-top: 10px;
+}
 
 
 // =======================================
@@ -641,13 +745,14 @@ footer {
     .resTop {
       border: var(--colorBackground2) solid 2px;
       background-color: var(--colorTertiaire);
+
       h3 {
         text-align: center;
         font-family: var(--fontTexteHeavy);
         font-size: 1.5em;
         color: var(--colorBackground0);
       }
-      
+
       h5 {
         text-align: center;
         font-family: var(--fontTexteHeavy);
@@ -663,7 +768,7 @@ footer {
         padding: 20px 0;
       }
     }
-  
+
     .resMid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -681,7 +786,7 @@ footer {
           width: 670px;
           background-color: var(--colorBackground2);
         }
-        
+
         ul li {
           font-family: var(--fontTexteLight);
           color: var(--colorBackground0);
@@ -689,12 +794,12 @@ footer {
           margin: 0 20px;
         }
       }
-      
+
       .actMid {
         border: var(--colorBackground2) solid 2px;
         background-color: var(--colorSecondaire);
         padding: 20px;
-        
+
         h5 {
           font-family: var(--fontTexteHeavy);
           text-align: center;
@@ -703,7 +808,7 @@ footer {
           width: 670px;
           background-color: var(--colorBackground2);
         }
-        
+
         ul li {
           font-family: var(--fontTexteLight);
           color: var(--colorBackground0);
@@ -712,7 +817,7 @@ footer {
         }
       }
     }
-  
+
     .resBot {
       border: var(--colorBackground2) solid 2px;
       background-color: var(--colorTertiaire);
@@ -738,12 +843,13 @@ footer {
 .responsesAllCont {
   text-align: center;
   padding: 40px 0;
-  
+
   .responsesAll {
     display: flex;
     padding: 20px 40px;
     background-color: var(--colorTertiaire);
   }
+
   .response {
     padding: 4px;
     text-align: center;
