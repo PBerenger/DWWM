@@ -239,6 +239,26 @@ footer {
 
 // =======================================
 // =======================================
+// INFOS
+
+.titreInfos {
+  font-size: 8em;
+  text-align: center;
+  transition: font-size 0.3s ease;
+  user-select: none;
+}
+
+.selectInfos {
+  margin-bottom: 600px;
+}
+
+.resAll {
+  height: 600px;
+}
+
+
+// =======================================
+// =======================================
 // ADD
 
 .titreAdd {
@@ -262,7 +282,7 @@ footer {
     color: var(--colorBackground0);
     font-size: 1em;
 
-//---------------------------------------------
+    //---------------------------------------------
     .formPart1 {
       background-color: rgba(0, 0, 0, 0.5);
 
@@ -275,7 +295,7 @@ footer {
       }
     }
 
-//---------------------------------------------
+    //---------------------------------------------
     .formPart2 {
       background-color: rgba(0, 0, 0, 0.4);
 
@@ -306,7 +326,7 @@ footer {
       }
     }
 
-//---------------------------------------------
+    //---------------------------------------------
     .formPart3 {
       background-color: rgba(0, 0, 0, 0.3);
 
@@ -340,7 +360,7 @@ footer {
       }
     }
 
-//---------------------------------------------
+    //---------------------------------------------
     .formPart4 {
       display: grid;
       grid-template-rows: 1fr 1fr;
@@ -427,7 +447,7 @@ footer {
 
     .formPart1 {
       background-color: rgba(0, 0, 0, 0.5);
-      
+
 
       input::placeholder {
         color: var(--colorBackground0);
@@ -437,7 +457,7 @@ footer {
         position: relative;
         width: 100%;
         margin: 20px 0;
-  
+
         input {
           border: 2px solid var(--colorBackground1);
           text-align: center;
@@ -448,7 +468,7 @@ footer {
           background-color: var(--colorSecondaire);
           color: var(--colorBackground0);
         }
-  
+
         input[type="submit"] {
           background-color: var(--colorPrincipale);
           font-family: var(--fontTexteHeavy);
@@ -463,7 +483,7 @@ footer {
           transition: background-color 0.3s ease;
           cursor: pointer;
         }
-  
+
         input[type="submit"]:hover {
           background-color: var(--colorSecondaire);
         }
@@ -715,7 +735,7 @@ footer {
 
 // =======================================
 // =======================================
-// QUESTIONNAIRE RSULTS
+// QUESTIONNAIRE RESULTS
 
 
 #traitementQuestionnaireContainer {
@@ -856,4 +876,85 @@ footer {
     color: var(--colorBackground0);
   }
 
+}
+
+.recQuest {
+  background-color: var(--colorBackground0);
+  text-align: center;
+  font-family: var(--fontTexteHeavy);
+}
+
+
+// =======================================
+// =======================================
+// traitementQUESTIONNAIRE RESULTS
+
+#profilPage {
+
+  display: flex;
+  justify-content: space-around;
+
+  .profilContainer-left {
+    text-align: center;
+    margin: 20px auto;
+    padding: 10px;
+    width: 600px;
+    background-color: var(--colorBackground0);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    h2 {
+      font-size: 24px;
+      color: var(--colorBackground1);
+      margin-bottom: 10px;
+    }
+
+    .profil-img {
+      margin: 20px 0;
+
+      img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 2px solid #ddd;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    p {
+      font-size: 16px;
+      color: #555;
+      margin: 5px 0;
+    }
+  }
+
+  .profilContainer-right {
+    text-align: center;
+    margin: 20px auto;
+    padding: 10px;
+    width: 800px;
+    background-color: var(--colorBackground0);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+    .rightBox{
+      display: flex;
+      justify-content: space-between;
+      .resultsComp, .graphRad {
+        width: 48%;
+        text-align: justify;
+      }
+    }
+
+    h2 {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+      .resultsComp {
+        font-family: var(--fontTexteLight);
+    }
+  }
 }

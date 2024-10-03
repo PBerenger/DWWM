@@ -136,7 +136,7 @@ require_once __DIR__ . '../../Controllers/traitementQuestionnaireController.clas
     <div class="resAll">
     <?php elseif ($dominante === 'spatial') : ?>
         <div class="resTop">
-            <h3>Intelligence Spatial</h3>
+            <h3>Intelligence Spatiale</h3>
             <h5>Définition</h5>
             <p class="resP">
                 Cette forme d’intelligence se définit par une excellente perception des choses et de son environnement. L’aptitude à se repérer dans l’espace apparaît généralement dès la petite enfance. Un peu plus tard s’ajoute «l’esprit de géométrie » et le sens de l’esthétisme.
@@ -405,7 +405,7 @@ require_once __DIR__ . '../../Controllers/traitementQuestionnaireController.clas
     <div class="resAll">
     <?php elseif ($dominante === 'logique') : ?>
         <div class="resTop">
-            <h3>Intelligence logique</h3>
+            <h3>Intelligence Logique</h3>
             <h5>Définition</h5>
             <p class="resP">
                 Les personnes chez qui cette forme d’intelligence prédomine présentent une grande sensibilité aux modèles logiques que l’on retrouve par exemple dans les sciences, les mathématiques, l’économie, le droit, etc. Elles excellent également à soutenir des raisonnements solides et à analyser l’information qu’elles reçoivent.
@@ -472,20 +472,7 @@ require_once __DIR__ . '../../Controllers/traitementQuestionnaireController.clas
         }
         ?>
     </div>
-
-    <!-- Formulaire pour enregistrer les scores -->
-    <form action="traitementQuestionnaireManager.class.php" method="POST">
-        <?php
-        // Sérialiser les scores dans un format JSON pour les envoyer dans un seul champ
-        $json_reponses = json_encode($reponses);
-        ?>
-        <input type="hidden" name="responses_questionnaire" value='<?php echo htmlspecialchars($json_reponses, ENT_QUOTES, 'UTF-8'); ?>'>
-
-        <button type="submit">Enregistrer les scores</button>
-    </form>
 </div>
-
-
 
 
 <?php

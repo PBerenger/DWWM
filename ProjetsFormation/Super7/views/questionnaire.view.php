@@ -8,7 +8,7 @@
     <h2>Intelligences multiples</h2>
     <p class="time">10 minutes</p>
 
-    <form id="questionnaire" action="./views/traitementQuestionnaire.view.php" method="POST">
+    <form id="questionnaire" action="traitementQuestionnaire" method="POST">
         <div class="question">
             <h6>Question n° 1</h6>
             <p>J'aime les livres parlant d'animaux.</p>

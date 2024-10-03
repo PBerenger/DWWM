@@ -96,6 +96,5 @@ $userController = new UserController();
 
 <?php
 $content = ob_get_clean();
-$titre = "Ajouter un utilisateur";
 require_once __DIR__ . "/template.php";
 ?>

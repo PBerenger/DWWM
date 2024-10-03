@@ -34,6 +34,12 @@ class UserController
         require_once __DIR__ . '../../views/update.view.php';
     }
 
+    public function profilDisplay($id)
+    {
+        $utilisateur = $this->userManager->getUserById($id);
+        require_once __DIR__ . '../../views/profil.view.php';
+    }
+
     //----------------------------------------------------------------------------------------------------------------------------------------
     // Si l'utilisateur est admin
     public function isAdmin()

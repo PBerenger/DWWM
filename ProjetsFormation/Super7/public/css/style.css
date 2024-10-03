@@ -172,6 +172,18 @@ footer .foot {
 .secondaryText a:hover {
   background-color: var(--colorSecondaire);
 }
+.titreInfos {
+  font-size: 8em;
+  text-align: center;
+  transition: font-size 0.3s ease;
+  user-select: none;
+}
+.selectInfos {
+  margin-bottom: 600px;
+}
+.resAll {
+  height: 600px;
+}
 .titreAdd {
   text-align: center;
   font-size: 10em;
@@ -657,4 +669,69 @@ footer .foot {
   padding: 4px;
   text-align: center;
   color: var(--colorBackground0);
+}
+.recQuest {
+  background-color: var(--colorBackground0);
+  text-align: center;
+  font-family: var(--fontTexteHeavy);
+}
+#profilPage {
+  display: flex;
+  justify-content: space-around;
+}
+#profilPage .profilContainer-left {
+  text-align: center;
+  margin: 20px auto;
+  padding: 10px;
+  width: 600px;
+  background-color: var(--colorBackground0);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+#profilPage .profilContainer-left h2 {
+  font-size: 24px;
+  color: var(--colorBackground1);
+  margin-bottom: 10px;
+}
+#profilPage .profilContainer-left .profil-img {
+  margin: 20px 0;
+}
+#profilPage .profilContainer-left .profil-img img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+#profilPage .profilContainer-left p {
+  font-size: 16px;
+  color: #555;
+  margin: 5px 0;
+}
+#profilPage .profilContainer-right {
+  text-align: center;
+  margin: 20px auto;
+  padding: 10px;
+  width: 800px;
+  background-color: var(--colorBackground0);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+#profilPage .profilContainer-right .rightBox {
+  display: flex;
+  justify-content: space-between;
+}
+#profilPage .profilContainer-right .rightBox .resultsComp,
+#profilPage .profilContainer-right .rightBox .graphRad {
+  width: 48%;
+  text-align: justify;
+}
+#profilPage .profilContainer-right h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+#profilPage .profilContainer-right .resultsComp {
+  font-family: var(--fontTexteLight);
 }

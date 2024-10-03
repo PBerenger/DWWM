@@ -23,40 +23,40 @@ function deselectAll() {
 //------------------------------------------------------------------------------------------------
 
 // Condition PSW
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     let passwordInput = document.getElementById("passwordSaisie");
     let mdpContainer = document.getElementById("mdpContainer");
     let timeoutId;
-
-    passwordInput.addEventListener("blur", function() {
-        timeoutId = setTimeout(function() {
+    
+    passwordInput.addEventListener("blur", function () {
+        timeoutId = setTimeout(function () {
             mdpContainer.classList.remove("visible");
         }, 200);
     });
     
-    passwordInput.addEventListener("focus", function() {
+    passwordInput.addEventListener("focus", function () {
         clearTimeout(timeoutId);
         mdpContainer.classList.add("visible");
         verifPassword();
     });
     
-
+    
     passwordInput.addEventListener("input", verifPassword);
-
-    function verifPassword(){
+    
+    function verifPassword() {
         let password = passwordInput.value;
-
+        
         let regexMajuscule = /[A-Z]/;
         let regexMinuscule = /[a-z]/;
         let regexNombre = /[0-9]/;
         let regexSpecialChar = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/;
-
+        
         let longueurMDP = document.getElementById("longueurMDP");
         let majusculeMDP = document.getElementById("majuscule");
         let minusculeMDP = document.getElementById("minuscule");
         let nombreMDP = document.getElementById("nombre");
         let specialCharMDP = document.getElementById("specialChar");
-
+        
         longueurMDP.className = password.length >= 8 ? "valid" : "invalid";
         majusculeMDP.className = regexMajuscule.test(password) ? "valid" : "invalid";
         minusculeMDP.className = regexMinuscule.test(password) ? "valid" : "invalid";
@@ -69,12 +69,12 @@ document.addEventListener("DOMContentLoaded", function() {
 document.addEventListener('DOMContentLoaded', (event) => {
     const togglePassword = document.getElementById('togglePassword');
     const passwordInput = document.querySelector('input[name="password"]'); // Cibler le bon champ de mot de passe
-
+    
     togglePassword.addEventListener('click', () => {
         // Vérifier le type actuel du champ de mot de passe
         const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
         passwordInput.setAttribute('type', type);
-
+        
         // Mettre à jour l'image de l'icône
         const img = togglePassword.querySelector('img');
         if (type === 'password') {
@@ -102,14 +102,44 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+//------------------------------------------------------------------------------------------------
 // Button upload img
 
 const fileUpload = document.getElementById('file-upload');
 const fileName = document.getElementById('file-name');
 
-fileUpload.addEventListener('change', function() {
+fileUpload.addEventListener('change', function () {
     fileName.textContent = this.files[0].name; // Affiche le nom du fichier sélectionné
 });
 
 
+//------------------------------------------------------------------------------------------------
+// Afficher les informations
 
+// Masquer toutes les sections
+function showResult(section) {
+    // Masquer toutes les sections
+    const sections = document.querySelectorAll('.resAll');
+    sections.forEach((sec) => {
+        sec.style.display = 'none';
+    });
+    
+    // Afficher la section sélectionnée
+    const selectedSection = document.querySelector('.' + section);
+    if (selectedSection) {
+        selectedSection.style.display = 'block';
+    }
+}
+
+// Afficher la première section par défaut (ou aucune si vous ne le souhaitez)
+showResult('interpersonnelle'); // Changez 'interpersonnelle' par 'intrapersonnelle' pour afficher la seconde section par défaut
+
+
+//------------------------------------------------------------------------------------------------
+// redimentionner titre
+function resizeTitle() {
+    const title = document.querySelector('.titreInfos');
+    title.style.fontSize = '2em';
+    const para = document.querySelector('.selectInfos');
+    para.style.marginBottom = '50px';
+}

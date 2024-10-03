@@ -60,14 +60,12 @@ CREATE TABLE users(
 #------------------------------------------------------------
 
 CREATE TABLE questionnaire(
-        questionnaire_id        Int  Auto_increment  NOT NULL ,
-        responses_questionnaire Varchar (256) NOT NULL ,
-        id_user                 Int NOT NULL
-	,CONSTRAINT questionnaire_PK PRIMARY KEY (questionnaire_id)
-
-	,CONSTRAINT questionnaire_users_FK FOREIGN KEY (id_user) REFERENCES users(id_user)
-	,CONSTRAINT questionnaire_users_AK UNIQUE (id_user)
-)ENGINE=InnoDB;
+    questionnaire_id        INT AUTO_INCREMENT NOT NULL,
+    responses_questionnaire TEXT NOT NULL,
+    id_user                 INT NOT NULL,
+    CONSTRAINT questionnaire_PK PRIMARY KEY (questionnaire_id),
+    CONSTRAINT questionnaire_users_FK FOREIGN KEY (id_user) REFERENCES users(id_user)
+) ENGINE=InnoDB;
 
 
 #------------------------------------------------------------

@@ -15,7 +15,7 @@ class LoginController
     public function login()
     {
         if (isset($_POST['u_email'], $_POST['u_password'])) {
-            // Validation/sanitation des entrées
+            // Validation des entrées
             $email = filter_var($_POST['u_email'], FILTER_SANITIZE_EMAIL);
             $password = $_POST['u_password'];
             echo $email;

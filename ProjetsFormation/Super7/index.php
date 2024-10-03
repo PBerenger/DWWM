@@ -22,20 +22,26 @@ try {
             case "accueil":
                 require "views/accueil.view.php";
                 break;
-                // INCORPORRER ROOTER POUR "informations et jeux"
+
+            case "informations":
+                require "views/informations.view.php";
+                break;
 
             case "login":
                 $controller = new LoginController();
                 $controller->login();
                 break;
+
             case "logout":
                 $controller = new LogoutController();
                 $controller->logout();
                 break;
+
             case "read":
                 $controller = new UserController();
                 $controller->listUsers();
                 break;
+
             case "update":
                 $controller = new UserController();
                 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -71,6 +77,15 @@ try {
                 }
                 break;
 
+            case "profil":
+                $controller = new UserController();
+                if (isset($_SESSION['id_user'])) {
+                    $controller->profilDisplay($_SESSION['id_user']);
+                } else {
+                    throw new Exception("Vous devez être connecté pour accéder à cette page.");
+                }
+                break;
+
             case "questionnaire":
                 $controller = new questionnaireController();
                 if (!$authManager->isUserLoggedIn()) {
@@ -79,6 +94,10 @@ try {
                     exit();
                 }
                 $controller->addQuestionnaires();
+                break;
+
+            case "traitementQuestionnaire":
+                require 'views/traitementQuestionnaire.view.php';
                 break;
 
             default:

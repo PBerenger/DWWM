@@ -36,7 +36,7 @@ if (isset($_SESSION['id_user']) && !isset($_SESSION['alert_show'])) {
         <nav>
             <ul>
                 <li><a href="./accueil">Accueil</a></li>
-                <li><a href="./Informations">Informations</a></li>
+                <li><a href="./informations">Informations</a></li>
                 <li><a href="./Games">Jeux</a></li>
 
                 <?php if (isset($_SESSION['id_user'])) : ?>
@@ -53,7 +53,7 @@ if (isset($_SESSION['id_user']) && !isset($_SESSION['alert_show'])) {
                     <div class="profil-conn">
                         <li class="userButt"><a href="./logout">Déconnexion</a></li>
                         <li class="userButt">
-                            <a href="./update">Mon profil : <?= htmlspecialchars($user['u_fname']); ?></a>
+                            <a href="./profil">Mon profil : <?= htmlspecialchars($user['u_fname']); ?></a>
                         </li>
                     </div>
                 <?php else : ?>
@@ -76,6 +76,7 @@ if (isset($_SESSION['id_user']) && !isset($_SESSION['alert_show'])) {
     </footer>
 
     <script src="<?= URL ?>public/js/script.js"></script>
+    
 </body>
 
 </html>
