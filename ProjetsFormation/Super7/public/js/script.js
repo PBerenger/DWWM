@@ -131,9 +131,6 @@ function showResult(section) {
     }
 }
 
-// Afficher la première section par défaut (ou aucune si vous ne le souhaitez)
-showResult('interpersonnelle'); // Changez 'interpersonnelle' par 'intrapersonnelle' pour afficher la seconde section par défaut
-
 
 //------------------------------------------------------------------------------------------------
 // redimentionner titre
@@ -142,4 +139,9 @@ function resizeTitle() {
     title.style.fontSize = '2em';
     const para = document.querySelector('.selectInfos');
     para.style.marginBottom = '50px';
+}
+
+// Confirmation pour refaire le questionnaire
+function confirmRefaireQuestionnaire() {
+    return confirm("Êtes-vous sûr de vouloir refaire le questionnaire ?\nToutes vos réponses précédentes seront effacées.");
 }

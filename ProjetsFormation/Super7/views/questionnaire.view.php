@@ -6,7 +6,7 @@
         <h1>Questionnaire</h1>
     </div>
     <h2>Intelligences multiples</h2>
-    <p class="time">10 minutes</p>
+    <p class="time">Durée : 10 minutes</p>
 
     <form id="questionnaire" action="traitementQuestionnaire" method="POST">
         <div class="question">
@@ -39,11 +39,11 @@
             <h6>Question n° 3</h6>
             <p>Je bouge constamment et je préfère être en action que de rester assis.</p>
             <div class="oui">
-                <input type="radio" name="question03" id="oui03" value="1" required checked>
+                <input type="radio" name="question03" id="oui03" value="1" required>
                 <label for="oui03">Oui</label>
             </div>
             <div class="non">
-                <input type="radio" name="question03" id="non03" value="0" required>
+                <input type="radio" name="question03" id="non03" value="0" required checked>
                 <label for="non03">Non</label>
             </div>
         </div>
@@ -52,11 +52,11 @@
             <h6>Question n° 4</h6>
             <p>J'aime écrire mes pensées dans un journal personnel.</p>
             <div class="oui">
-                <input type="radio" name="question04" id="oui04" value="1" required checked>
+                <input type="radio" name="question04" id="oui04" value="1" required>
                 <label for="oui04">Oui</label>
             </div>
             <div class="non">
-                <input type="radio" name="question04" id="non04" value="0" required>
+                <input type="radio" name="question04" id="non04" value="0" required checked>
                 <label for="non04">Non</label>
             </div>
         </div>
@@ -65,11 +65,11 @@
             <h6>Question n° 5</h6>
             <p>J'aime organiser des activités sociales.</p>
             <div class="oui">
-                <input type="radio" name="question05" id="oui05" value="1" required checked>
+                <input type="radio" name="question05" id="oui05" value="1" required>
                 <label for="oui05">Oui</label>
             </div>
             <div class="non">
-                <input type="radio" name="question05" id="non05" value="0" required>
+                <input type="radio" name="question05" id="non05" value="0" required checked>
                 <label for="non05">Non</label>
             </div>
         </div>
@@ -104,11 +104,11 @@
             <h6>Question n° 8</h6>
             <p>Je reproduis facilement des rythmes avec des objets.</p>
             <div class="oui">
-                <input type="radio" name="question08" id="oui08" value="1" required checked>
+                <input type="radio" name="question08" id="oui08" value="1" required>
                 <label for="oui08">Oui</label>
             </div>
             <div class="non">
-                <input type="radio" name="question08" id="non08" value="0" required>
+                <input type="radio" name="question08" id="non08" value="0" required checked>
                 <label for="non08">Non</label>
             </div>
         </div>
@@ -130,11 +130,11 @@
             <h6>Question n° 10</h6>
             <p>J'ai du rythme quand je danse.</p>
             <div class="oui">
-                <input type="radio" name="question10" id="oui10" value="1" required checked>
+                <input type="radio" name="question10" id="oui10" value="1" required>
                 <label for="oui10">Oui</label>
             </div>
             <div class="non">
-                <input type="radio" name="question10" id="non10" value="0" required>
+                <input type="radio" name="question10" id="non10" value="0" required checked>
                 <label for="non10">Non</label>
             </div>
         </div>
@@ -143,11 +143,11 @@
             <h6>Question n° 11</h6>
             <p>J'aime faire de la décoration.</p>
             <div class="oui">
-                <input type="radio" name="question11" id="oui11" value="1" required checked>
+                <input type="radio" name="question11" id="oui11" value="1" required>
                 <label for="oui11">Oui</label>
             </div>
             <div class="non">
-                <input type="radio" name="question11" id="non11" value="0" required>
+                <input type="radio" name="question11" id="non11" value="0" required checked>
                 <label for="non11">Non</label>
             </div>
         </div>
@@ -195,11 +195,11 @@
             <h6>Question n° 15</h6>
             <p>J'aime me retrouver seul(e) pour travailler.</p>
             <div class="oui">
-                <input type="radio" name="question15" id="oui15" value="1" required checked>
+                <input type="radio" name="question15" id="oui15" value="1" required>
                 <label for="oui15">Oui</label>
             </div>
             <div class="non">
-                <input type="radio" name="question15" id="non15" value="0" required>
+                <input type="radio" name="question15" id="non15" value="0" required checked>
                 <label for="non15">Non</label>
             </div>
         </div>
@@ -247,11 +247,11 @@
             <h6>Question n° 19</h6>
             <p>J'adore écrire des lettres.</p>
             <div class="oui">
-                <input type="radio" name="question19" id="oui19" value="1" required checked>
+                <input type="radio" name="question19" id="oui19" value="1" required>
                 <label for="oui19">Oui</label>
             </div>
             <div class="non">
-                <input type="radio" name="question19" id="non19" value="0" required>
+                <input type="radio" name="question19" id="non19" value="0" required checked>
                 <label for="non19">Non</label>
             </div>
         </div>
@@ -275,11 +275,11 @@
             <h6>Question n° 21</h6>
             <p>J'aime observer les oiseaux.</p>
             <div class="oui">
-                <input type="radio" name="question21" id="oui21" value="1" required checked>
+                <input type="radio" name="question21" id="oui21" value="1" required>
                 <label for="oui21">Oui</label>
             </div>
             <div class="non">
-                <input type="radio" name="question21" id="non21" value="0" required>
+                <input type="radio" name="question21" id="non21" value="0" required checked>
                 <label for="non21">Non</label>
             </div>
         </div>
@@ -312,13 +312,13 @@
 
         <div class="question">
             <h6>Question n° 24</h6>
-            <p>Les gens qui m'entourent me perçoivent une personne sage et me consultent pour avoir mon avis.</p>
+            <p>Les gens qui m'entourent me perçoivent comme une personne sage et me consultent pour avoir mon avis.</p>
             <div class="oui">
-                <input type="radio" name="question24" id="oui24" value="1" required checked>
+                <input type="radio" name="question24" id="oui24" value="1" required>
                 <label for="oui24">Oui</label>
             </div>
             <div class="non">
-                <input type="radio" name="question24" id="non24" value="0" required>
+                <input type="radio" name="question24" id="non24" value="0" required checked>
                 <label for="non24">Non</label>
             </div>
         </div>
@@ -327,11 +327,11 @@
             <h6>Question n° 25</h6>
             <p>J'aime rencontrer de nouvelles personnes.</p>
             <div class="oui">
-                <input type="radio" name="question25" id="oui25" value="1" required checked>
+                <input type="radio" name="question25" id="oui25" value="1" required>
                 <label for="oui25">Oui</label>
             </div>
             <div class="non">
-                <input type="radio" name="question25" id="non25" value="0" required>
+                <input type="radio" name="question25" id="non25" value="0" required checked>
                 <label for="non25">Non</label>
             </div>
         </div>
@@ -340,11 +340,11 @@
             <h6>Question n° 26</h6>
             <p>Je visite le zoo avec intérêt.</p>
             <div class="oui">
-                <input type="radio" name="question26" id="oui26" value="1" required checked>
+                <input type="radio" name="question26" id="oui26" value="1" required>
                 <label for="oui26">Oui</label>
             </div>
             <div class="non">
-                <input type="radio" name="question26" id="non26" value="0" required>
+                <input type="radio" name="question26" id="non26" value="0" required checked>
                 <label for="non26">Non</label>
             </div>
         </div>
@@ -379,11 +379,11 @@
             <h6>Question n° 29</h6>
             <p>J'ai de la facilité en orthographe.</p>
             <div class="oui">
-                <input type="radio" name="question29" id="oui29" value="1" required checked>
+                <input type="radio" name="question29" id="oui29" value="1" required>
                 <label for="oui29">Oui</label>
             </div>
             <div class="non">
-                <input type="radio" name="question29" id="non29" value="0" required>
+                <input type="radio" name="question29" id="non29" value="0" required checked>
                 <label for="non29">Non</label>
             </div>
         </div>
@@ -431,11 +431,11 @@
             <h6>Question n° 33</h6>
             <p>J’aime faire du calcul mental (jogging mathématique).</p>
             <div class="oui">
-                <input type="radio" name="question33" id="oui33" value="1" required checked>
+                <input type="radio" name="question33" id="oui33" value="1" required>
                 <label for="oui33">Oui</label>
             </div>
             <div class="non">
-                <input type="radio" name="question33" id="non33" value="0" required>
+                <input type="radio" name="question33" id="non33" value="0" required checked>
                 <label for="non33">Non</label>
             </div>
         </div>
@@ -483,11 +483,11 @@
             <h6>Question n° 37</h6>
             <p>J'aime les photographies de paysages illustrant la faune et la flore.</p>
             <div class="oui">
-                <input type="radio" name="question37" id="oui37" value="1" required checked>
+                <input type="radio" name="question37" id="oui37" value="1" required>
                 <label for="oui37">Oui</label>
             </div>
             <div class="non">
-                <input type="radio" name="question37" id="non37" value="0" required>
+                <input type="radio" name="question37" id="non37" value="0" required checked>
                 <label for="non37">Non</label>
             </div>
         </div>
@@ -496,11 +496,11 @@
             <h6>Question n° 38</h6>
             <p>J'aime les arts plastiques.</p>
             <div class="oui">
-                <input type="radio" name="question38" id="oui38" value="1" required checked>
+                <input type="radio" name="question38" id="oui38" value="1" required>
                 <label for="oui38">Oui</label>
             </div>
             <div class="non">
-                <input type="radio" name="question38" id="non38" value="0" required>
+                <input type="radio" name="question38" id="non38" value="0" required checked>
                 <label for="non38">Non</label>
             </div>
         </div>
@@ -509,11 +509,11 @@
             <h6>Question n° 39</h6>
             <p>J'aime les jeux impliquant des mots (scrabble, mots croisés, mots mystères...).</p>
             <div class="oui">
-                <input type="radio" name="question39" id="oui39" value="1" required checked>
+                <input type="radio" name="question39" id="oui39" value="1" required>
                 <label for="oui39">Oui</label>
             </div>
             <div class="non">
-                <input type="radio" name="question39" id="non39" value="0" required>
+                <input type="radio" name="question39" id="non39" value="0" required checked>
                 <label for="non39">Non</label>
             </div>
         </div>
@@ -522,11 +522,11 @@
             <h6>Question n° 40</h6>
             <p>Je suis ouvert aux opinions des autres.</p>
             <div class="oui">
-                <input type="radio" name="question40" id="oui40" value="1" required checked>
+                <input type="radio" name="question40" id="oui40" value="1" required>
                 <label for="oui40">Oui</label>
             </div>
             <div class="non">
-                <input type="radio" name="question40" id="non40" value="0" required>
+                <input type="radio" name="question40" id="non40" value="0" required checked>
                 <label for="non40">Non</label>
             </div>
         </div>
@@ -550,11 +550,11 @@
             <h6>Question n° 42</h6>
             <p>Je m'adapte facilement aux différentes personnes (âge, culture, valeurs...) et y trouve de l’intérêt.</p>
             <div class="oui">
-                <input type="radio" name="question42" id="oui42" value="1" required checked>
+                <input type="radio" name="question42" id="oui42" value="1" required>
                 <label for="oui42">Oui</label>
             </div>
             <div class="non">
-                <input type="radio" name="question42" id="non42" value="0" required>
+                <input type="radio" name="question42" id="non42" value="0" required checked>
                 <label for="non42">Non</label>
             </div>
         </div>
@@ -563,11 +563,11 @@
             <h6>Question n° 43</h6>
             <p>J'aime regarder des événements sportifs et en parler.</p>
             <div class="oui">
-                <input type="radio" name="question43" id="oui43" value="1" required checked>
+                <input type="radio" name="question43" id="oui43" value="1" required>
                 <label for="oui43">Oui</label>
             </div>
             <div class="non">
-                <input type="radio" name="question43" id="non43" value="0" required>
+                <input type="radio" name="question43" id="non43" value="0" required checked>
                 <label for="non43">Non</label>
             </div>
         </div>
@@ -628,11 +628,11 @@
             <h6>Question n° 48</h6>
             <p>J'aime connaître la signification des mots.</p>
             <div class="oui">
-                <input type="radio" name="question48" id="oui48" value="1" required checked>
+                <input type="radio" name="question48" id="oui48" value="1" required>
                 <label for="oui48">Oui</label>
             </div>
             <div class="non">
-                <input type="radio" name="question48" id="non48" value="0" required>
+                <input type="radio" name="question48" id="non48" value="0" required checked>
                 <label for="non48">Non</label>
             </div>
         </div>
@@ -641,11 +641,11 @@
             <h6>Question n° 49</h6>
             <p>J'aime expliquer aux autres ce que j'ai appris.</p>
             <div class="oui">
-                <input type="radio" name="question49" id="oui49" value="1" required checked>
+                <input type="radio" name="question49" id="oui49" value="1" required>
                 <label for="oui49">Oui</label>
             </div>
             <div class="non">
-                <input type="radio" name="question49" id="non49" value="0" required>
+                <input type="radio" name="question49" id="non49" value="0" required checked>
                 <label for="non49">Non</label>
             </div>
         </div>
@@ -680,11 +680,11 @@
             <h6>Question n° 52</h6>
             <p>Quand j'ai les mains libres, j'aime jouer avec les objets qui sont à ma portée.</p>
             <div class="oui">
-                <input type="radio" name="question52" id="oui52" value="1" required checked>
+                <input type="radio" name="question52" id="oui52" value="1" required>
                 <label for="oui52">Oui</label>
             </div>
             <div class="non">
-                <input type="radio" name="question52" id="non52" value="0" required>
+                <input type="radio" name="question52" id="non52" value="0" required checked>
                 <label for="non52">Non</label>
             </div>
         </div>
@@ -693,11 +693,11 @@
             <h6>Question n° 53</h6>
             <p>J'ai de la facilité à organiser mentalement mes idées.</p>
             <div class="oui">
-                <input type="radio" name="question53" id="oui53" value="1" required checked>
+                <input type="radio" name="question53" id="oui53" value="1" required>
                 <label for="oui53">Oui</label>
             </div>
             <div class="non">
-                <input type="radio" name="question53" id="non53" value="0" required>
+                <input type="radio" name="question53" id="non53" value="0" required checked>
                 <label for="non53">Non</label>
             </div>
         </div>
@@ -706,11 +706,11 @@
             <h6>Question n° 54</h6>
             <p>J'ai toujours eu ou voulu avoir des animaux domestiques.</p>
             <div class="oui">
-                <input type="radio" name="question54" id="oui54" value="1" required checked>
+                <input type="radio" name="question54" id="oui54" value="1" required>
                 <label for="oui54">Oui</label>
             </div>
             <div class="non">
-                <input type="radio" name="question54" id="non54" value="0" required>
+                <input type="radio" name="question54" id="non54" value="0" required checked>
                 <label for="non54">Non</label>
             </div>
         </div>
@@ -732,24 +732,24 @@
             <h6>Question n° 56</h6>
             <p>J'adore dessiner.</p>
             <div class="oui">
-                <input type="radio" name="question56" id="oui56" value="1" required checked>
+                <input type="radio" name="question56" id="oui56" value="1" required>
                 <label for="oui56">Oui</label>
             </div>
             <div class="non">
-                <input type="radio" name="question56" id="non56" value="0" required>
+                <input type="radio" name="question56" id="non56" value="0" required checked>
                 <label for="non56">Non</label>
             </div>
         </div>
 
         <div class="question">
             <h6>Question n° 57</h6>
-            <p>J'aime rassembler des casse-tête.</p>
+            <p>J'aime les casse-têtes.</p>
             <div class="oui">
-                <input type="radio" name="question57" id="oui57" value="1" required checked>
+                <input type="radio" name="question57" id="oui57" value="1" required>
                 <label for="oui57">Oui</label>
             </div>
             <div class="non">
-                <input type="radio" name="question57" id="non57" value="0" required>
+                <input type="radio" name="question57" id="non57" value="0" required checked>
                 <label for="non57">Non</label>
             </div>
         </div>
@@ -825,11 +825,11 @@
             <h6>Question n° 63</h6>
             <p>J'aime les énigmes, les jeux d'enquête et de stratégies.</p>
             <div class="oui">
-                <input type="radio" name="question63" id="oui63" value="1" required checked>
+                <input type="radio" name="question63" id="oui63" value="1" required>
                 <label for="oui63">Oui</label>
             </div>
             <div class="non">
-                <input type="radio" name="question63" id="non63" value="0" required>
+                <input type="radio" name="question63" id="non63" value="0" required checked>
                 <label for="non63">Non</label>
             </div>
         </div>
@@ -838,11 +838,11 @@
             <h6>Question n° 64</h6>
             <p>J'aime les arts parce que je peux travailler avec mes mains (dessin, couture...).</p>
             <div class="oui">
-                <input type="radio" name="question64" id="oui64" value="1" required checked>
+                <input type="radio" name="question64" id="oui64" value="1" required>
                 <label for="oui64">Oui</label>
             </div>
             <div class="non">
-                <input type="radio" name="question64" id="non64" value="0" required>
+                <input type="radio" name="question64" id="non64" value="0" required checked>
                 <label for="non64">Non</label>
             </div>
         </div>
@@ -864,11 +864,11 @@
             <h6>Question n° 66</h6>
             <p>Je suis sensible aux bruits de mon environnement (la pluie, la photocopieuse, l’horloge...).</p>
             <div class="oui">
-                <input type="radio" name="question66" id="oui66" value="1" required checked>
+                <input type="radio" name="question66" id="oui66" value="1" required>
                 <label for="oui66">Oui</label>
             </div>
             <div class="non">
-                <input type="radio" name="question66" id="non66" value="0" required>
+                <input type="radio" name="question66" id="non66" value="0" required checked>
                 <label for="non66">Non</label>
             </div>
         </div>
@@ -916,11 +916,11 @@
             <h6>Question n° 70</h6>
             <p>Presque toutes les questions m’inspirent une opinion précise et assurée.</p>
             <div class="oui">
-                <input type="radio" name="question70" id="oui70" value="1" required checked>
+                <input type="radio" name="question70" id="oui70" value="1" required>
                 <label for="oui70">Oui</label>
             </div>
             <div class="non">
-                <input type="radio" name="question70" id="non70" value="0" required>
+                <input type="radio" name="question70" id="non70" value="0" required checked>
                 <label for="non70">Non</label>
             </div>
         </div>
@@ -929,11 +929,11 @@
             <h6>Question n° 71</h6>
             <p>J'aide les gens à résoudre leurs problèmes et leurs conflits.</p>
             <div class="oui">
-                <input type="radio" name="question71" id="oui71" value="1" required checked>
+                <input type="radio" name="question71" id="oui71" value="1" required>
                 <label for="oui71">Oui</label>
             </div>
             <div class="non">
-                <input type="radio" name="question71" id="non71" value="0" required>
+                <input type="radio" name="question71" id="non71" value="0" required checked>
                 <label for="non71">Non</label>
             </div>
         </div>
@@ -942,11 +942,11 @@
             <h6>Question n° 72</h6>
             <p>J'ai un bon sens de l'observation.</p>
             <div class="oui">
-                <input type="radio" name="question72" id="oui72" value="1" required checked>
+                <input type="radio" name="question72" id="oui72" value="1" required>
                 <label for="oui72">Oui</label>
             </div>
             <div class="non">
-                <input type="radio" name="question72" id="non72" value="0" required>
+                <input type="radio" name="question72" id="non72" value="0" required checked>
                 <label for="non72">Non</label>
             </div>
         </div>
@@ -981,11 +981,11 @@
             <h6>Question n° 75</h6>
             <p>Je me sens bien lorsque je suis dans la forêt.</p>
             <div class="oui">
-                <input type="radio" name="question75" id="oui75" value="1" required checked>
+                <input type="radio" name="question75" id="oui75" value="1" required>
                 <label for="oui75">Oui</label>
             </div>
             <div class="non">
-                <input type="radio" name="question75" id="non75" value="0" required>
+                <input type="radio" name="question75" id="non75" value="0" required checked>
                 <label for="non75">Non</label>
             </div>
         </div>
@@ -994,11 +994,11 @@
             <h6>Question n° 76</h6>
             <p>Je trouve facilement des ressemblances entre des mélodies.</p>
             <div class="oui">
-                <input type="radio" name="question76" id="oui76" value="1" required checked>
+                <input type="radio" name="question76" id="oui76" value="1" required>
                 <label for="oui76">Oui</label>
             </div>
             <div class="non">
-                <input type="radio" name="question76" id="non76" value="0" required>
+                <input type="radio" name="question76" id="non76" value="0" required checked>
                 <label for="non76">Non</label>
             </div>
         </div>
@@ -1007,11 +1007,11 @@
             <h6>Question n° 77</h6>
             <p>J'aime imiter les gestes des autres.</p>
             <div class="oui">
-                <input type="radio" name="question77" id="oui77" value="1" required checked>
+                <input type="radio" name="question77" id="oui77" value="1" required>
                 <label for="oui77">Oui</label>
             </div>
             <div class="non">
-                <input type="radio" name="question77" id="non77" value="0" required>
+                <input type="radio" name="question77" id="non77" value="0" required checked>
                 <label for="non77">Non</label>
             </div>
         </div>
@@ -1046,11 +1046,11 @@
             <h6>Question n° 80</h6>
             <p>J'ai un grand intérêt pour les langues étrangères.</p>
             <div class="oui">
-                <input type="radio" name="question80" id="oui80" value="1" required checked>
+                <input type="radio" name="question80" id="oui80" value="1" required>
                 <label for="oui80">Oui</label>
             </div>
             <div class="non">
-                <input type="radio" name="question80" id="non80" value="0" required>
+                <input type="radio" name="question80" id="non80" value="0" required checked>
                 <label for="non80">Non</label>
             </div>
         </div>

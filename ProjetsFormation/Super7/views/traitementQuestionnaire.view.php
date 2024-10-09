@@ -3,18 +3,21 @@ require_once __DIR__ . '../../Controllers/traitementQuestionnaireController.clas
 ?>
 
 <div id="traitementQuestionnaireContainer">
+
+    
     <!-- Affichage du résultat -->
     <h1 class="titreResultQuest">Résultats du Questionnaire d'intelligences multiples</h1>
     <p class="mainResult">Votre type d'intelligence dominant est : <span class="souligner"><strong><?= htmlspecialchars($dominante, ENT_QUOTES, 'UTF-8') ?></strong></span> avec un score de <strong><?= htmlspecialchars($score_dominant, ENT_QUOTES, 'UTF-8') ?></strong>.</p>
-
-
+    
+    
+    
     <!-- ============= -->
     <!-- ===== 1 ===== -->
     <!-- ============= -->
-
-
-
-    <div class="resAll">
+    
+    
+    
+    <div class="resAllTQ">
         <?php if ($dominante === 'interpersonnelle') : ?>
             <div class="resTop">
                 <h3>Intelligence Interpersonnelle</h3>
@@ -23,7 +26,7 @@ require_once __DIR__ . '../../Controllers/traitementQuestionnaireController.clas
                     Il s’agit de l’aptitude à discerner l’humeur, le tempérament, la motivation et le désir des autres personnes et à y répondre correctement. Cette intelligence permet l’attachement et la création de liens. Elle assoit ses bases au cours des premières années de la vie, de façon parallèle à l’intelligence intrapersonnelle dont elle est partiellement issue.
                 </p>
             </div>
-
+    
             <div class="resMid">
                 <div class="caraMid">
                     <h5>
@@ -43,7 +46,7 @@ require_once __DIR__ . '../../Controllers/traitementQuestionnaireController.clas
                         <li>favorise la résolution de problèmes par un esprit de coopération.</li>
                     </ul>
                 </div>
-
+    
                 <div class="actMid">
                     <h5>Activités :</h5>
                     <ul>
@@ -57,7 +60,7 @@ require_once __DIR__ . '../../Controllers/traitementQuestionnaireController.clas
                     </ul>
                 </div>
             </div>
-
+    
             <div class="resBot">
                 <h5>Professions :</h5>
                 <p class="resP">
@@ -65,14 +68,14 @@ require_once __DIR__ . '../../Controllers/traitementQuestionnaireController.clas
                 </p>
             </div>
     </div>
-
-
+    
+    
     <!-- ============= -->
     <!-- ===== 2 ===== -->
     <!-- ============= -->
-
-
-    <div class="resAll">
+    
+    
+    <div class="resAllTQ">
     <?php elseif ($dominante === 'intrapersonnelle') : ?>
         <div class="resTop">
             <h3>Intelligence Intrapersonnelle</h3>
@@ -81,7 +84,7 @@ require_once __DIR__ . '../../Controllers/traitementQuestionnaireController.clas
                 Cette intelligence se décrit comme l’aptitude à accéder à ses propres sentiments et à reconnaître ses émotions, ses forces, ses faiblesses. C’est la connaissance de soi-même. Les éléments de base de cette forme d’intelligence s’installent avant l’âge de trois ans. L’intelligence intrapersonnelle se traduit au départ par l’établissement d’une limite entre soi et les autres. La logique se mêle à l’intuition, à la compréhension de soi. C’est aussi une capacité d’adaptation aux épreuves, aux souvenirs, aux événements, aux passions. Son expression requiert la participation d’autres formes d’intelligence.
             </p>
         </div>
-
+    
         <div class="resMid">
             <div class="caraMid">
                 <h5>
@@ -101,7 +104,7 @@ require_once __DIR__ . '../../Controllers/traitementQuestionnaireController.clas
                     <li>grande intuition et auto motivation.</li>
                 </ul>
             </div>
-
+    
             <div class="actMid">
                 <h5>Activités :</h5>
                 <ul>
@@ -118,7 +121,7 @@ require_once __DIR__ . '../../Controllers/traitementQuestionnaireController.clas
                 </ul>
             </div>
         </div>
-
+    
         <div class="resBot">
             <h5>Professions :</h5>
             <p class="resP">
@@ -126,14 +129,14 @@ require_once __DIR__ . '../../Controllers/traitementQuestionnaireController.clas
             </p>
         </div>
     </div>
-
-
+    
+    
     <!-- ============= -->
     <!-- ===== 3 ===== -->
     <!-- ============= -->
-
-
-    <div class="resAll">
+    
+    
+    <div class="resAllTQ">
     <?php elseif ($dominante === 'spatial') : ?>
         <div class="resTop">
             <h3>Intelligence Spatiale</h3>
@@ -142,7 +145,7 @@ require_once __DIR__ . '../../Controllers/traitementQuestionnaireController.clas
                 Cette forme d’intelligence se définit par une excellente perception des choses et de son environnement. L’aptitude à se repérer dans l’espace apparaît généralement dès la petite enfance. Un peu plus tard s’ajoute «l’esprit de géométrie » et le sens de l’esthétisme.
             </p>
         </div>
-
+    
         <div class="resMid">
             <div class="caraMid">
                 <h5>
@@ -160,7 +163,7 @@ require_once __DIR__ . '../../Controllers/traitementQuestionnaireController.clas
                     <li>sens aigu de l’observation, de l’ensemble comme du détail.</li>
                 </ul>
             </div>
-
+    
             <div class="actMid">
                 <h5>Activités :</h5>
                 <ul>
@@ -173,7 +176,7 @@ require_once __DIR__ . '../../Controllers/traitementQuestionnaireController.clas
                 </ul>
             </div>
         </div>
-
+    
         <div class="resBot">
             <h5>Professions :</h5>
             <p class="resP">
@@ -181,23 +184,23 @@ require_once __DIR__ . '../../Controllers/traitementQuestionnaireController.clas
             </p>
         </div>
     </div>
-
-
+    
+    
     <!-- ============= -->
     <!-- ===== 4 ===== -->
     <!-- ============= -->
-
-
-    <div class="resAll">
+    
+    
+    <div class="resAllTQ">
     <?php elseif ($dominante === 'musicale') : ?>
         <div class="resTop">
             <h3>Intelligence Musicale</h3>
             <h5>Définition</h5>
-            </p>
+            <p class="resP">
             Cette forme d’intelligence se définit par une excellente perception des choses et de son environnement. L’aptitude à se repérer dans l’espace apparaît généralement dès la petite enfance. Un peu plus tard s’ajoute «l’esprit de géométrie » et le sens de l’esthétisme.
             </p>
         </div>
-
+    
         <div class="resMid">
             <div class="caraMid">
                 <h5>
@@ -213,7 +216,7 @@ require_once __DIR__ . '../../Controllers/traitementQuestionnaireController.clas
                     <li>capacité de mémoriser en utilisant les rythmes ou les sons.</li>
                 </ul>
             </div>
-
+    
             <div class="actMid">
                 <h5>Activités :</h5>
                 <ul>
@@ -225,7 +228,7 @@ require_once __DIR__ . '../../Controllers/traitementQuestionnaireController.clas
                 </ul>
             </div>
         </div>
-
+    
         <div class="resBot">
             <h5>Professions :</h5>
             <p class="resP">
@@ -233,15 +236,15 @@ require_once __DIR__ . '../../Controllers/traitementQuestionnaireController.clas
             </p>
         </div>
     </div>
-
-
+    
+    
     <!-- ============= -->
     <!-- ===== 5 ===== -->
     <!-- ============= -->
-
-
-    <div class="resAll">
-    <?php elseif ($dominante === 'Ecologique') : ?>
+    
+    
+    <div class="resAllTQ">
+    <?php elseif ($dominante === 'ecologique') : ?>
         <div class="resTop">
             <h3>Intelligence Ecologique</h3>
             <h5>Définition</h5>
@@ -249,7 +252,7 @@ require_once __DIR__ . '../../Controllers/traitementQuestionnaireController.clas
                 L’intelligence écologique est l’intelligence de base de l’être humain, celle qui lui a permis de survivre depuis toujours. On la définit par l’aptitude à discerner l’organisation du vivant. Selon sa culture et son environnement, elle se traduira par la faculté de l’individu à composer avec les conditions dans lesquelles il vit, dans le but de les améliorer.
             </p>
         </div>
-
+    
         <div class="resMid">
             <div class="caraMid">
                 <h5>
@@ -265,7 +268,7 @@ require_once __DIR__ . '../../Controllers/traitementQuestionnaireController.clas
                     <li>respect des autres « créatures » du monde ; l’écologie l’intéresse vraiment.</li>
                 </ul>
             </div>
-
+    
             <div class="actMid">
                 <h5>Activités :</h5>
                 <ul>
@@ -278,7 +281,7 @@ require_once __DIR__ . '../../Controllers/traitementQuestionnaireController.clas
                 </ul>
             </div>
         </div>
-
+    
         <div class="resBot">
             <h5>Professions :</h5>
             <p class="resP">
@@ -286,14 +289,14 @@ require_once __DIR__ . '../../Controllers/traitementQuestionnaireController.clas
             </p>
         </div>
     </div>
-
-
+    
+    
     <!-- ============= -->
     <!-- ===== 6 ===== -->
     <!-- ============= -->
-
-
-    <div class="resAll">
+    
+    
+    <div class="resAllTQ">
     <?php elseif ($dominante === 'kinesthesique') : ?>
         <div class="resTop">
             <h3>Intelligence Kinesthésique</h3>
@@ -302,7 +305,7 @@ require_once __DIR__ . '../../Controllers/traitementQuestionnaireController.clas
                 L’intelligence kinesthésique, c’est la faculté d’apprendre et de penser à partir de toutes les perceptions de son corps. Chez les personnes pour qui cette forme d’intelligence domine, on note un bon équilibre entre le corps et l’esprit. Elles aiment le mouvement, utilisent tous leurs sens pour se sentir dans l’action, savent soigner êtres humains, animaux.
             </p>
         </div>
-
+    
         <div class="resMid">
             <div class="caraMid">
                 <h5>
@@ -319,7 +322,7 @@ require_once __DIR__ . '../../Controllers/traitementQuestionnaireController.clas
                     <li>apprend très rapidement, capacité d’observation et d’imitation.</li>
                 </ul>
             </div>
-
+    
             <div class="actMid">
                 <h5>Activités :</h5>
                 <ul>
@@ -331,7 +334,7 @@ require_once __DIR__ . '../../Controllers/traitementQuestionnaireController.clas
                 </ul>
             </div>
         </div>
-
+    
         <div class="resBot">
             <h5>Professions :</h5>
             <p class="resP">
@@ -339,14 +342,14 @@ require_once __DIR__ . '../../Controllers/traitementQuestionnaireController.clas
             </p>
         </div>
     </div>
-
-
+    
+    
     <!-- ============= -->
     <!-- ===== 7 ===== -->
     <!-- ============= -->
-
-
-    <div class="resAll">
+    
+    
+    <div class="resAllTQ">
     <?php elseif ($dominante === 'verbale') : ?>
         <div class="resTop">
             <h3>Intelligence Verbale</h3>
@@ -355,7 +358,7 @@ require_once __DIR__ . '../../Controllers/traitementQuestionnaireController.clas
                 Les personnes chez qui elle domine présentent une grande sensibilité aux sons, à la signification des mots et aux fonctions du langage. Ces individus sont souvent des amoureux de la langue et de grands lecteurs.
             </p>
         </div>
-
+    
         <div class="resMid">
             <div class="caraMid">
                 <h5>
@@ -371,7 +374,7 @@ require_once __DIR__ . '../../Controllers/traitementQuestionnaireController.clas
                     <li>a de la répartie.</li>
                 </ul>
             </div>
-
+    
             <div class="actMid">
                 <h5>Activités :</h5>
                 <ul>
@@ -387,7 +390,7 @@ require_once __DIR__ . '../../Controllers/traitementQuestionnaireController.clas
                 </ul>
             </div>
         </div>
-
+    
         <div class="resBot">
             <h5>Professions :</h5>
             <p class="resP">
@@ -395,14 +398,14 @@ require_once __DIR__ . '../../Controllers/traitementQuestionnaireController.clas
             </p>
         </div>
     </div>
-
-
+    
+    
     <!-- ============= -->
     <!-- ===== 8 ===== -->
     <!-- ============= -->
-
-
-    <div class="resAll">
+    
+    
+    <div class="resAllTQ">
     <?php elseif ($dominante === 'logique') : ?>
         <div class="resTop">
             <h3>Intelligence Logique</h3>
@@ -411,7 +414,7 @@ require_once __DIR__ . '../../Controllers/traitementQuestionnaireController.clas
                 Les personnes chez qui cette forme d’intelligence prédomine présentent une grande sensibilité aux modèles logiques que l’on retrouve par exemple dans les sciences, les mathématiques, l’économie, le droit, etc. Elles excellent également à soutenir des raisonnements solides et à analyser l’information qu’elles reçoivent.
             </p>
         </div>
-
+    
         <div class="resMid">
             <div class="caraMid">
                 <h5>
@@ -428,7 +431,7 @@ require_once __DIR__ . '../../Controllers/traitementQuestionnaireController.clas
                     <li>aime trouver sa propre solution ou élaborer ses propres conclusions.</li>
                 </ul>
             </div>
-
+    
             <div class="actMid">
                 <h5>Activités</h5>
                 <ul>
@@ -442,7 +445,7 @@ require_once __DIR__ . '../../Controllers/traitementQuestionnaireController.clas
                 </ul>
             </div>
         </div>
-
+    
         <div class="resBot">
             <h5>Professions</h5>
             <p class="resP">
@@ -450,28 +453,34 @@ require_once __DIR__ . '../../Controllers/traitementQuestionnaireController.clas
             </p>
         </div>
     </div>
-
+    
     <!-- ================= -->
     <!-- ===== error ===== -->
     <!-- ================= -->
-
-
-<?php else : ?>
-    <p>Type d'intelligence non reconnu.</p>
-<?php endif; ?>
-
+    
+    
+    <?php else : ?>
+        <p>Type d'intelligence non reconnu.</p>
+    <?php endif; ?>
+</div>
 
 <div class="responsesAllCont">
     <h2>Voici vos scores pour chaque type d'intelligence :</h2>
 
     <div class="responsesAll">
         <?php
-        // Affichage des scores
+        // Affichage des scores en pourcentage
         foreach ($reponses as $type => $score) {
-            echo "<p class='response'><strong>" . ucfirst(htmlspecialchars($type, ENT_QUOTES, 'UTF-8')) . "</strong> : " . htmlspecialchars($score, ENT_QUOTES, 'UTF-8') . "</p>";
+            // Calcul du pourcentage
+            $pourcentage = $score * 10; // Multiplie le score par 10 pour obtenir le pourcentage
+            echo "<p class='response'><strong>" . ucfirst(htmlspecialchars($type, ENT_QUOTES, 'UTF-8')) . "</strong><br>" . htmlspecialchars($pourcentage, ENT_QUOTES, 'UTF-8') . "%</p>";
         }
         ?>
     </div>
+</div>
+
+<div class="buttProfil" >
+    <a href="./profil">Voir mon profil</a>
 </div>
 
 

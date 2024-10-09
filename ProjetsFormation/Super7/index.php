@@ -27,6 +27,10 @@ try {
                 require "views/informations.view.php";
                 break;
 
+            case "games":
+                require "views/games.view.php";
+                break;
+
             case "login":
                 $controller = new LoginController();
                 $controller->login();

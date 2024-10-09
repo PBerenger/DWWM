@@ -1,0 +1,154 @@
+@import 'style.css';
+.titreAddNonAdmin {
+  text-align: center;
+  font-size: 10em;
+  user-select: none;
+}
+.titreAddAdmin {
+  text-align: center;
+  font-size: 4em;
+  user-select: none;
+}
+.form-container {
+  background-color: var(--colorTertiaire);
+  display: flex;
+  justify-content: center;
+}
+.form-container form {
+  padding: 20px;
+  height: 340px;
+  display: grid;
+  text-align: center;
+  grid-template-columns: 300px 300px 300px 300px;
+  font-family: var(--fontTexteLight);
+  color: var(--colorBackground0);
+  font-size: 1em;
+}
+.form-container form .formPart1 {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.form-container form .formPart1 input::placeholder {
+  color: var(--colorBackground0);
+}
+.form-container form .formPart1 input:hover {
+  border: 2px solid var(--colorBackground0);
+}
+.form-container form .formPart1 select[name="role"] {
+  width: 95%;
+  height: 40px;
+  background-color: var(--colorSecondaire);
+  color: var(--colorBackground0);
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+.form-container form .formPart1 select:hover {
+  border: 2px solid var(--colorBackground0);
+}
+.form-container form .formPart2 {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.form-container form .formPart2 input[type='date'] {
+  cursor: pointer;
+}
+.form-container form .formPart2 input::placeholder {
+  color: var(--colorBackground0);
+}
+.form-container form .formPart2 input:hover {
+  border: 2px solid var(--colorBackground0);
+}
+.form-container form .formPart2 select[id="genre"] {
+  width: 95%;
+  height: 40px;
+  background-color: var(--colorSecondaire);
+  color: var(--colorBackground0);
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+.form-container form .formPart2 select:hover {
+  border: 2px solid var(--colorBackground0);
+}
+.form-container form .formPart3 {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.form-container form .formPart3 input::placeholder {
+  color: var(--colorBackground0);
+}
+.form-container form .formPart3 input:hover {
+  border: 2px solid var(--colorBackground0);
+}
+.form-container form .formPart3 #togglePassword {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  outline: none;
+  box-shadow: none;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.form-container form .formPart3 .invalid {
+  color: var(--colorInvalid);
+}
+.form-container form .formPart3 .valid {
+  color: var(--colorValid);
+}
+.form-container form .formPart4 {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  background-color: rgba(0, 0, 0, 0.2);
+  align-items: center;
+}
+.form-container form .formPart4 .custom-file-upload {
+  padding: 12px 20px;
+  cursor: pointer;
+  background-color: var(--colorPrincipale);
+  color: white;
+  font-family: var(--fontTexteHeavy);
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+}
+.form-container form .formPart4 .custom-file-upload:hover {
+  background-color: var(--colorSecondaire);
+}
+.form-container form .formPart4 input[type="submit"] {
+  background-color: var(--colorPrincipale);
+  font-family: var(--fontTexteHeavy);
+  color: white;
+  width: 220px;
+  display: inline-block;
+  text-align: center;
+  margin: 0 10px;
+  padding: 10px 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+.form-container form .formPart4 input[type="submit"]:hover {
+  background-color: var(--colorSecondaire);
+}
+.form-container form .eyePSW {
+  transform: translate(-25%, 15%);
+  width: 30px;
+  height: 20px;
+}
+.form-container form .inputBx {
+  position: relative;
+  width: 100%;
+  margin: 20px 0;
+}
+.form-container form .inputBx input {
+  border: 2px solid var(--colorBackground1);
+  text-align: center;
+  border: none;
+  width: 95%;
+  height: 40px;
+  padding: 12px 20px;
+  background-color: var(--colorSecondaire);
+  color: var(--colorBackground0);
+}

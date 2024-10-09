@@ -82,9 +82,22 @@ git reset 'numéro du cat'
 - git branch : savoir combien il y a de branche
 - git branch nombranch : créer branche
 - git checkout nom-de-la-branche : changer de branche
-- git push git push --set-upstream origin nombranche : push la branche sur github
+- git push -u origin nombranche : push la branche sur github
 - git branch -d nomdebranche : supprimer branche
 
 
-	*fusionner :
+	* fusionner :
 - git merge nom branche : pour amener un fichier d'une autre branche
+
+	* créer un repository :
+- créé repository sur GitHub
+- ouvrir bash dans le dossier
+- git init
+- get status (vérifier le statut : les fichiers présents dans le dossier)
+- git add .
+- git commit -m "..."
+- git branch -M main
+- git remote add origine https://github.com/...
+- git push -u origine main
+
+

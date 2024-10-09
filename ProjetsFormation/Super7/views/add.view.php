@@ -11,13 +11,15 @@ $userController = new UserController();
             <a class="validButton" href="<?= URL ?>read">RETOUR</a>
             <a class="validButton" href="<?= URL ?>delete">Supprimer un utilisateur</a>
         </div>
-        <h2 class="titrePage">Ajouter un utilisateur</h2>
+        <h2 class="titreAddAdmin">AJOUTER UN UTILISATEUR</h2>
     <?php endif; ?>
 <?php endif; ?>
 
-<div class="titreAdd">
-    <h1>INSCRIPTION</h1>
-</div>
+<?php if (!$userController->isAdmin()) :?>
+    <div class="titreAddNonAdmin">
+        <h1>INSCRIPTION</h1>
+    </div>
+<?php endif; ?>
 
 <div class="form-container">
     <form method="POST" action="<?= URL ?>add" enctype="multipart/form-data">
@@ -31,6 +33,14 @@ $userController = new UserController();
             <div class="inputBx">
                 <input type="email" name="email" placeholder="Email" required>
             </div>
+            <?php if ($userController->isAdmin()) : ?>
+                <select name="role" required>
+                    <option class="disabled" value="" disabled selected>Rôle</option>
+                    <option value='admin'>Admin</option>
+                    <option value='non-admin'>Non-Admin</option>
+                    <option value='admin'>Enseignant</option> <!-- ajouter le numéro '3' dans la base de donnée -->
+                </select><br>
+            <?php endif; ?>
         </div>
 
         <div class="formPart2">
@@ -86,7 +96,7 @@ $userController = new UserController();
 
             <div class="formPart4.bas" >
                 <div class="inputBx">
-                    <input type="submit" value="Ajouter" onclick="return validateForm();">
+                    <input type="submit" value="Ajouter">
                 </div>
             </div>
         </div>

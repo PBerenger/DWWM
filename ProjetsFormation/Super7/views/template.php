@@ -25,7 +25,16 @@ if (isset($_SESSION['id_user']) && !isset($_SESSION['alert_show'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="../public/css/general.css">
+    <link rel="stylesheet" href="../public/css/accueil.css">
+    <link rel="stylesheet" href="../public/css/informations.css">
+    <link rel="stylesheet" href="../public/css/add.css">
+    <link rel="stylesheet" href="../public/css/login.css">
+    <link rel="stylesheet" href="../public/css/read.css">
+    <link rel="stylesheet" href="../public/css/delete.css">
+    <link rel="stylesheet" href="../public/css/questionnaire.css">
+    <link rel="stylesheet" href="../public/css/traitementQuestionnaire.css">
+    <link rel="stylesheet" href="../public/css/profil.css">
     <title>Super 7 V0.2</title>
 </head>
 
@@ -37,7 +46,7 @@ if (isset($_SESSION['id_user']) && !isset($_SESSION['alert_show'])) {
             <ul>
                 <li><a href="./accueil">Accueil</a></li>
                 <li><a href="./informations">Informations</a></li>
-                <li><a href="./Games">Jeux</a></li>
+                <li><a href="./games">Jeux</a></li>
 
                 <?php if (isset($_SESSION['id_user'])) : ?>
                     <?php if ($alertMessage): ?>

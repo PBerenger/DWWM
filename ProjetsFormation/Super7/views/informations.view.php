@@ -2,18 +2,20 @@
 
 <h1 class="titreInfos">INFORMATIONS</h1>
 <!-- Boutons pour changer de section -->
-<div>
-    <button onclick="showResult('interpersonnelle'); resizeTitle()">Intelligence Interpersonnelle</button>
-    <button onclick="showResult('intrapersonnelle'); resizeTitle()">Intelligence Intrapersonnelle</button>
-    <button onclick="showResult('spatiale'); resizeTitle()">Intelligence Spatiale</button>
-    <button onclick="showResult('musicale'); resizeTitle()">Intelligence Musicale</button>
-    <button onclick="showResult('ecologique'); resizeTitle()">Intelligence Ecologique</button>
-    <button onclick="showResult('kinesthésique'); resizeTitle()">Intelligence Kinesthésique</button>
-    <button onclick="showResult('verbale'); resizeTitle()">Intelligence Verbale</button>
-    <button onclick="showResult('logique'); resizeTitle()">Intelligence Logique</button>
-</div>
-
-<p class="selectInfos">Sélectionnez une intelligence pour en savoir plus</p>
+ <div id="buttTop">
+     <div class="showButt">
+         <button class="showResult" onclick="showResult('interpersonnelle'); resizeTitle()">Intelligence Interpersonnelle</button>
+         <button class="showResult" onclick="showResult('intrapersonnelle'); resizeTitle()">Intelligence Intrapersonnelle</button>
+         <button class="showResult" onclick="showResult('spatiale'); resizeTitle()">Intelligence Spatiale</button>
+         <button class="showResult" onclick="showResult('musicale'); resizeTitle()">Intelligence Musicale</button>
+         <button class="showResult" onclick="showResult('ecologique'); resizeTitle()">Intelligence Ecologique</button>
+         <button class="showResult" onclick="showResult('kinesthésique'); resizeTitle()">Intelligence Kinesthésique</button>
+         <button class="showResult" onclick="showResult('verbale'); resizeTitle()">Intelligence Verbale</button>
+         <button class="showResult" onclick="showResult('logique'); resizeTitle()">Intelligence Logique</button>
+     </div>
+     
+     <p class="selectInfos">Sélectionnez une intelligence pour en savoir plus</p>
+ </div>
 
 <!-- ============= -->
 <!-- ===== 1 ===== -->
