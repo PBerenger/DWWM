@@ -1,0 +1,82 @@
+Structure du dossier pour le volume OS
+Le numÚro de sÚrie du volume est AE56-713A
+C:.
+|   .htaccess
+|   EXEMPLE DE CHEMIN.txt
+|   index.php
+|   INFOS - Structure.txt
+|   readMe.md
+|   
++---Controllers
+|       loginController.class.php
+|       LogoutController.class.php
+|       UserController.class.php
+|       
++---Models
+|       AuthManager.class.php
+|       dbConnect.php
+|       MyDbConnection.php
+|       UserManager.class.php
+|       
++---public
+|   +---css
+|   |       style.css
+|   |       style.less
+|   |       
+|   +---Font
+|   |       Paris2024-Variable.woff2
+|   |       Roboto-Black.ttf
+|   |       Roboto-Regular.ttf
+|   |       
+|   +---images
+|   |   |   bart.png
+|   |   |   bob.jpg
+|   |   |   boy.jpg
+|   |   |   default.jpg
+|   |   |   donald.png
+|   |   |   dupont.png
+|   |   |   titi.jpg
+|   |   |   
+|   |   +---all
+|   |   |       logo2.jpg
+|   |   |       logo3.jpg
+|   |   |       logo4.jpg
+|   |   |       Paris2024_Olywhiteleft.png
+|   |   |       skateboard-trick.jpg
+|   |   |       Swheel.ai
+|   |   |       Swheel.png
+|   |   |       
+|   |   +---Desktop
+|   |   |       addDesktop2.jpg
+|   |   |       headerAccueilDesktop1.jpg
+|   |   |       imgCalendrier.jpg
+|   |   |       imgConnexion.jpg
+|   |   |       
+|   |   +---phone
+|   |           phoneAccueil.jpg
+|   |           phoneAthletes1.png
+|   |           phoneAthletes2.png
+|   |           phoneAthletes3.png
+|   |           phoneAthlÞtes 4.JPG
+|   |           phoneCalendrier.jpg
+|   |           phoneConnection.jpg
+|   |           
+|   +---js
+|   |       script.js
+|   |       
+|   +---SQL
+|           contenu.sql
+|           jo_skateboard.sql
+|           
++---views
+        accueil.view.php
+        add.view.php
+        athletes.view.php
+        calendrier.view.php
+        classement.view.php
+        delete.view.php
+        login.view.php
+        read.view.php
+        template.php
+        update.view.php
+        

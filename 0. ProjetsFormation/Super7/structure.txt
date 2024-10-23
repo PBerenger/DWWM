@@ -1,0 +1,87 @@
+Structure du dossier pour le volume OS
+Le numÚro de sÚrie du volume est AE56-713A
+C:.
+ª   .htaccess
+ª   EXEMPLE DE CHEMIN.txt
+ª   index.php
+ª   readMe.md
+ª   structure.txt
+ª   
++---Controllers
+ª       loginController.class.php
+ª       LogoutController.class.php
+ª       questionsController.class.php
+ª       traitementQuestionsController.class.php
+ª       UserController.class.php
+ª       
++---Models
+ª       AuthManager.class.php
+ª       dbConnect.php
+ª       MyDbConnection.php
+ª       questionsManager.class.php
+ª       UserManager.class.php
+ª       
++---public
+ª   +---css
+ª   ª       style.css
+ª   ª       style.less
+ª   ª       
+ª   +---Font
+ª   ª       arial_narrow_7.ttf
+ª   ª       Nexa-ExtraLight.ttf
+ª   ª       Nexa-Heavy.ttf
+ª   ª       pf_tempesta_seven_bold.ttf
+ª   ª       
+ª   +---img
+ª   ª   ª   Admin_default.png
+ª   ª   ª   CompteFemme.png
+ª   ª   ª   CompteHomme.png
+ª   ª   ª   connexion.png
+ª   ª   ª   default.jpg
+ª   ª   ª   delBadges.png
+ª   ª   ª   eyesNotSee.png
+ª   ª   ª   eyesSee.png
+ª   ª   ª   inscription.ai
+ª   ª   ª   inscription.png
+ª   ª   ª   
+ª   ª   +---logos
+ª   ª   ª       logoSuper7SF_v2.png
+ª   ª   ª       logoSuper7_v2.png
+ª   ª   ª       
+ª   ª   +---res
+ª   ª           Admin_default.ai
+ª   ª           CompteFemme.ai
+ª   ª           CompteHomme.ai
+ª   ª           connexion.ai
+ª   ª           default.ai
+ª   ª           delBadges.ai
+ª   ª           eyes.ai
+ª   ª           inscription.ai
+ª   ª           
+ª   +---js
+ª   ª       script.js
+ª   ª       
+ª   +---SQL
+ª       ª   contenu.sql
+ª       ª   super_main_bdd.sql
+ª       ª   
+ª       +---Ress
+ª               candidature - SUPER 7 games - incubation Plaine immages.docx
+ª               Etapes-consult-site.txt
+ª               exemple utilisation du tableau.txt
+ª               Fichier Intelligence.pdf
+ª               SUPER5.ods
+ª               super7_main_bdd.mcd
+ª               tables_Jeux.ods
+ª               
++---views
+        accueil.view.php
+        add.view.php
+        delete.view.php
+        login.view.php
+        questions.view.php
+        read.view.php
+        template.php
+        traitementQuestions.view.php
+        update.view.php
+        

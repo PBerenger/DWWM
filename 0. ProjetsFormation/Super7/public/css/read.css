@@ -1,0 +1,69 @@
+@import 'style.css';
+.readButtons {
+  margin: 20px 0;
+  text-align: center;
+}
+.readButtons .validButton {
+  background-color: var(--colorPrincipale);
+  font-family: var(--fontTexteHeavy);
+  color: white;
+  width: 220px;
+  display: inline-block;
+  text-align: center;
+  margin: 0 10px;
+  padding: 10px 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+.readButtons .validButton:hover {
+  background-color: var(--colorSecondaire);
+}
+.titreRead {
+  text-align: center;
+  font-size: 8.2em;
+  user-select: none;
+}
+/* Styles pour le tableau */
+.readContainer {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-family: var(--fontTexteLight);
+  text-align: left;
+}
+.readContainer th,
+.readContainer td {
+  padding: 12px 15px;
+  border: 1px solid var(--colorTertiaire);
+}
+.readContainer th {
+  background-color: var(--colorPrincipale);
+  font-weight: bold;
+  color: #333;
+}
+.readContainer tr:nth-child(even) {
+  background-color: var(--colorSecondaire);
+}
+.readContainer tr:hover {
+  background-color: var(--colorBackground0);
+}
+.readContainer img {
+  border-radius: 50%;
+}
+/* Lien d'action */
+.readContainer a {
+  color: #2196F3;
+  /* Bleu */
+  text-decoration: none;
+}
+.readContainer a:hover {
+  text-decoration: underline;
+}
+/* Titre */
+.titreRead {
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+  margin-top: 10px;
+}

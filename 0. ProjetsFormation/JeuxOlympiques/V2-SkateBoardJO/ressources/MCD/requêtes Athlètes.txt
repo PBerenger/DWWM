@@ -1,0 +1,23 @@
+source : https://olympics.com/en/search/athletes/skateboard
+
+INSERT INTO athlete (athleteLastName, athleteFirstName, athleteGender, AthleteDateBirth, id_country) VALUES
+('BROWN', 'Sky', 'F', '2008', '10'),
+('HYM', 'Charlotte', 'F', '1992', '11'),
+('MARCHIEVA', 'Ksenia', 'F', '2001', '12'),
+('NISHIMURA', 'Aori', 'F', '2001', ''),
+('BERTACCINI', 'Valeria', 'F', '1993', '5'),
+('OKAMOTO', 'Misugu', 'F', '2006', '4'),
+('NAKAYAMA', 'Funa', 'F', '2005', '4'),
+('YOSOZUMI', 'Sakura', 'F', '2002', '4'),
+('LARCHERON', 'Madeleine', 'F', '2006', '2'),
+('LEAL', 'Rayssa', 'F', '2008', '6'),
+('HUSTON', 'Nyjah', 'H', '1994', ),
+('WOOLLEY', 'Kieran', 'H', '2003'),
+('ROZENBERG', 'Oskar', 'H', '1996'),
+('LEON', 'Danny', 'H', '1994'),
+('KALDIKOV', 'Egor', 'H', '1994'),
+('HOEFLER', 'Kelvin', 'H', '1993'),
+('MAZZARA', 'Alessandro', 'H', '2004'),
+('OLDENBEUVING', 'Keet', 'H', '2004'),
+('GUSEV', 'Alexander', 'H', '2009'),
+('GLIFBERG', 'Rune', 'H', '1974');

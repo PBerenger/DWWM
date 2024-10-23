@@ -1,0 +1,108 @@
+@import 'style.css';
+
+// =======================================
+// =======================================
+// QUESTIONNAIRE
+
+#questionnaireContainer {
+  .titreQuestionnaire {
+    text-align: center;
+    font-size: 2em;
+    user-select: none;
+  }
+
+  h1,
+  h2 {
+    text-align: center;
+    font-family: var(--fontTitre);
+    font-size: 8em;
+  }
+
+  h6 {
+    font-family: var(--fontTexteHeavy);
+    text-align: end;
+    margin: 8px 30px;
+  }
+
+  .time {
+    text-align: center;
+    padding: 30px;
+    color: var(--colorBackground0);
+    font-size: 2em;
+
+  }
+
+  .question {
+    margin: 10px 300px;
+    padding-left: 40px;
+    color: var(--colorBackground0);
+
+    p {
+      font-family: var(--fontTexteHeavy);
+      padding-bottom: 8px;
+    }
+  }
+
+  .question:nth-child(odd) {
+    background-color: var(--colorSecondaire);
+    border: var(--colorSecondaire) solid 6px;
+  }
+
+  .question:nth-child(even) {
+    background-color: var(--colorTertiaire);
+    border: var(--colorTertiaire) solid 6px;
+  }
+
+  .question:nth-child(odd):hover {
+    border: var(--colorPrincipale) solid 6px;
+  }
+
+  .question:nth-child(even):hover {
+    border: var(--colorPrincipale) solid 6px;
+  }
+
+  .oui,
+  .non {
+    display: inline-block;
+    user-select: none;
+    color: var(--colorBackground0);
+    font-family: var(--fontTexteLight);
+    width: 70px;
+    margin: 8px 10%;
+  }
+
+  .oui:hover,
+  .non:hover {
+    background-color: var(--colorValid);
+    color: black;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+
+  input[type="radio"]:hover,
+  label:hover {
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .subQuest {
+    text-align: center;
+    margin: 50px 0;
+
+    input[type="submit"] {
+      background-color: var(--colorPrincipale);
+      color: var(--colorBackground0);
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border: var(--colorPrincipale) solid 4px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: var(--colorSecondaire);
+      border: var(--colorBackground0) solid 4px;
+
+    }
+  }
+}

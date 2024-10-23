@@ -1,0 +1,7 @@
+ table importée dans wamp server
+
+- clic gauche sur virtualHost - "gestion des virtualHost"
+- entrer le nom du répertoire
+- copier sur visual studio le chemin du repertoire - coller dans "virtualHost"
+- ok
+

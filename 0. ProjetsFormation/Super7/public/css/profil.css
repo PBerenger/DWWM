@@ -1,0 +1,106 @@
+@import 'style.css';
+#profilPage {
+  display: flex;
+  justify-content: space-around;
+}
+#profilPage .profilContainer-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  margin: 20px auto;
+  padding: 10px;
+  width: 600px;
+  background-color: var(--colorBackground0);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+#profilPage .profilContainer-left h2 {
+  font-size: 24px;
+  color: var(--colorBackground1);
+  margin-bottom: 10px;
+}
+#profilPage .profilContainer-left .profil-img {
+  margin: 20px 0;
+}
+#profilPage .profilContainer-left .profil-img img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+#profilPage .profilContainer-left p {
+  font-size: 16px;
+  color: #555;
+  margin: 5px 0;
+}
+#profilPage .profilContainer-left .modifBT {
+  margin-top: 60px;
+  text-align: center;
+}
+#profilPage .profilContainer-left .modifBT a {
+  background-color: var(--colorPrincipale);
+  font-family: var(--fontTexteHeavy);
+  color: white;
+  width: 220px;
+  text-align: center;
+  margin: 0 10px;
+  padding: 10px 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+#profilPage .profilContainer-left .modifBT a:hover {
+  background-color: var(--colorSecondaire);
+}
+#profilPage .profilContainer-right {
+  text-align: center;
+  margin: 20px auto;
+  padding: 10px;
+  width: 800px;
+  background-color: var(--colorBackground0);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+#profilPage .profilContainer-right .rightBox {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+#profilPage .profilContainer-right .rightBox .resultsComp,
+#profilPage .profilContainer-right .rightBox .graphRad {
+  text-align: justify;
+}
+#profilPage .profilContainer-right h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+#profilPage .profilContainer-right .resultsComp {
+  font-family: var(--fontTexteLight);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#profilPage .profilContainer-right .radarChart {
+  width: 600px;
+}
+#profilPage .profilContainer-right .retourTQ {
+  text-align: center;
+}
+#profilPage .profilContainer-right .retourTQ a {
+  background-color: var(--colorPrincipale);
+  font-family: var(--fontTexteHeavy);
+  color: white;
+  width: 220px;
+  text-align: center;
+  margin: 0 10px;
+  padding: 10px 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+#profilPage .profilContainer-right .retourTQ a:hover {
+  background-color: var(--colorSecondaire);
+}

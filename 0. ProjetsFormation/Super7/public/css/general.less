@@ -1,0 +1,123 @@
+@import 'style.css';
+
+// =======================================
+// =======================================
+// =======================================
+
+//GENERAL
+body {
+  background-color: var(--colorBackground2);
+}
+
+
+h1 {
+  font-family: var(--fontTitre);
+}
+
+h2 {
+  font-family: var(--fontTexteHeavy);
+}
+
+p {
+  font-family: var(--fontTexteLight);
+  letter-spacing: 4px;
+}
+
+.spanImportant {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+
+
+// =======================================
+// TEMPLATE
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+
+  img {
+    height: 50px;
+    background-color: var(--colorBackground0);
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 50px;
+    margin-left: 50px;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    ul {
+      display: flex;
+      align-items: center;
+      margin-right: 50px;
+
+      li {
+        a {
+          padding: 5px 10px;
+          margin: 10px;
+          font-family: var(--fontTitre);
+          color: var(--colorPrincipale);
+          font-size: 1.3em;
+          background-color: transparent;
+
+          &:hover {
+            color: var(--colorBackground2);
+            text-decoration: underline var(--colorBackground0);
+          }
+        }
+      }
+
+      .profil-conn {
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        text-align: center;
+
+        .noConn {
+          font-family: var(--fontTitre);
+          font-style: italic;
+          color: var(--colorPrincipale);
+          font-size: 1.3em;
+          background-color: transparent;
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+
+  height: 100px;
+  background: var(--colorBackground1);
+}
+
+.userStat {
+  color: red;
+}
+
+// =======================================
+// FOOTER
+
+footer {
+  user-select: none;
+  height: auto;
+  line-height: normal;
+  padding: 50px 0;
+  background: var(--colorBackground1);
+  margin-top: 100px;
+  color: var(--colorPrincipale);
+  text-align: center;
+
+  .foot {
+    font-family: var(--fontTexteHeavy);
+  }
+}

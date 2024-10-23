@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+@font-face {
+  font-family: 'arial_narrow_7';
+  src: url("/public/Font/arial_narrow_7.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Nexa-ExtraLight';
+  src: url("/public/Font/Nexa-ExtraLight.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Nexa-Heavy';
+  src: url("/public/Font/Nexa-Heavy.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+:root {
+  --colorPrincipale: #63b32f;
+  --colorSecondaire: #387F39;
+  --colorTertiaire: #00712D;
+  --colorBackground0: #fff;
+  --colorBackground1: #000000ec;
+  --colorBackground2: #00993d;
+  --colorValid: #8FD14F;
+  --colorInvalid: #C7253E;
+  --fontTitre: 'arial_narrow_7';
+  --fontTexteLight: 'Nexa-ExtraLight';
+  --fontTexteHeavy: 'Nexa-Heavy';
+}

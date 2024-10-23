@@ -1,0 +1,53 @@
+@import 'style.css';
+.titreInfos {
+  font-size: 8em;
+  text-align: center;
+  transition: font-size 0.3s ease;
+  user-select: none;
+}
+.selectInfos {
+  margin-bottom: 600px;
+}
+.resAll {
+  height: 600px;
+}
+#buttTop {
+  background-color: var(--colorBackground0);
+  transition: background-color 0.3s ease;
+}
+#buttTop .showButt {
+  width: 100vw;
+  text-align: center;
+}
+#buttTop .showButt .showResult {
+  background-color: var(--colorPrincipale);
+  font-family: var(--fontTexteHeavy);
+  color: white;
+  width: 220px;
+  text-align: center;
+  margin: 10px 60px;
+  padding: 10px 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+#buttTop .showResult:hover {
+  background-color: var(--colorSecondaire);
+}
+#buttTop:hover {
+  background-color: var(--colorBackground1);
+}
+#buttTop:hover .selectInfos {
+  text-align: center;
+  font-family: var(--fontTexteHeavy);
+  color: var(--colorBackground0);
+  background-color: var(--colorBackground1);
+}
+.selectInfos {
+  text-align: center;
+  font-family: var(--fontTexteHeavy);
+  background-color: var(--colorBackground0);
+  transition: background-color 0.3s ease;
+}

@@ -1,0 +1,65 @@
+@import 'style.css';
+
+// =======================================
+// =======================================
+// ACCUEIL
+
+#topContent {
+    text-align: center;
+  
+    h1 {
+      font-size: 30em;
+      user-select: none;
+    }
+  }
+  
+  #midContent {
+    h2 {
+      text-align: center;
+      color: var(--colorBackground0);
+      padding: 20px 0px;
+    }
+  
+    text-align: justify;
+    background: var(--colorTertiaire);
+    padding: 0px 50px;
+  }
+  
+  .principalText {
+    text-indent: 10%;
+    color: var(--colorBackground0);
+  }
+  
+  .secondaryText {
+    text-align: center;
+    padding: 50px 50px;
+    // background: var(--colorPrincipale);
+    color: var(--colorBackground0);
+    font-weight: bold;
+  }
+
+  
+  // BUTTON QUESTIONNAIRE
+
+.secondaryText {
+  a {
+    background-color: var(--colorPrincipale);
+    font-family: var(--fontTexteHeavy);
+    color: white;
+    width: 220px;
+    text-align: center;
+    margin: 0 10px;
+    padding: 10px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+
+    svg {
+      width: 1em;
+    }
+  }
+
+  a:hover {
+    background-color: var(--colorSecondaire);
+  }
+}
