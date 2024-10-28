@@ -10,10 +10,16 @@
   font-family: var(--fontTitre);
   font-size: 8em;
 }
+@media (max-width: 768px) {
+  #questionnaireContainer h1,
+  #questionnaireContainer h2 {
+    font-size: 1.5em;
+  }
+}
 #questionnaireContainer h6 {
   font-family: var(--fontTexteHeavy);
   text-align: end;
-  margin: 8px 30px;
+  margin: 8px 5%;
 }
 #questionnaireContainer .time {
   text-align: center;
@@ -21,9 +27,14 @@
   color: var(--colorBackground0);
   font-size: 2em;
 }
+@media (max-width: 768px) {
+  #questionnaireContainer .time {
+    font-size: 1.5em;
+  }
+}
 #questionnaireContainer .question {
-  margin: 10px 300px;
-  padding-left: 40px;
+  margin: 10px 5%;
+  padding-left: 5%;
   color: var(--colorBackground0);
 }
 #questionnaireContainer .question p {
@@ -38,9 +49,7 @@
   background-color: var(--colorTertiaire);
   border: var(--colorTertiaire) solid 6px;
 }
-#questionnaireContainer .question:nth-child(odd):hover {
-  border: var(--colorPrincipale) solid 6px;
-}
+#questionnaireContainer .question:nth-child(odd):hover,
 #questionnaireContainer .question:nth-child(even):hover {
   border: var(--colorPrincipale) solid 6px;
 }
@@ -50,8 +59,16 @@
   user-select: none;
   color: var(--colorBackground0);
   font-family: var(--fontTexteLight);
-  width: 70px;
-  margin: 8px 10%;
+  width: auto;
+  margin: 8px 5%;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  #questionnaireContainer .oui,
+  #questionnaireContainer .non {
+    width: auto;
+    margin: 8px 2%;
+  }
 }
 #questionnaireContainer .oui:hover,
 #questionnaireContainer .non:hover {
@@ -77,6 +94,12 @@
   padding: 10px 20px;
   cursor: pointer;
   border: var(--colorPrincipale) solid 4px;
+}
+@media (max-width: 768px) {
+  #questionnaireContainer .subQuest input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+  }
 }
 #questionnaireContainer .subQuest input[type="submit"]:hover {
   background-color: var(--colorSecondaire);

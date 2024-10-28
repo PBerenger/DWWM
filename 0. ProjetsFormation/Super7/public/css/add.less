@@ -4,32 +4,47 @@
 // =======================================
 // ADD
 
-.titreAddNonAdmin {
+.titreAddNonAdmin, .titreAddAdmin {
   text-align: center;
-  font-size: 10em;
   user-select: none;
-}
 
-.titreAddAdmin {
-  text-align: center;
+  // Responsive sizes
   font-size: 4em;
-  user-select: none;
+
+  @media (max-width: 768px) {
+    font-size: 4em;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 2em;
+  }
 }
 
 .form-container {
   background-color: var(--colorTertiaire);
   display: flex;
   justify-content: center;
+  margin-bottom: 80px;
+  
+  @media (max-width: 768px) {
+    height: 100vh;
+    height: 910px;
+  }
+
 
   form {
     padding: 20px;
     height: 340px;
     display: grid;
     text-align: center;
-    grid-template-columns: 300px 300px 300px 300px;
+    grid-template-columns: repeat(4, 1fr);
     font-family: var(--fontTexteLight);
     color: var(--colorBackground0);
     font-size: 1em;
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
 
     //---------------------------------------------
     .formPart1 {
@@ -70,6 +85,7 @@
 
       input::placeholder {
         color: var(--colorBackground0);
+
       }
 
       input:hover {
@@ -119,10 +135,16 @@
       .invalid {
         color: var(--colorInvalid);
       }
-
+      
       .valid {
         color: var(--colorValid);
       }
+    }
+
+    .eyePSW {
+      transform: translate(-25%, 15%);
+      width: 30px;
+      height: 20px;
     }
 
     //---------------------------------------------
@@ -167,11 +189,6 @@
       }
     }
 
-    .eyePSW {
-      transform: translate(-25%, 15%);
-      width: 30px;
-      height: 20px;
-    }
 
     .inputBx {
       position: relative;

@@ -31,8 +31,17 @@ class UserController
     public function UpdateForm($id)
     {
         $utilisateur = $this->userManager->getUserById($id);
+
+        // Vérifie si l'utilisateur existe avant de charger la vue
+        if (!$utilisateur) {
+            echo "Utilisateur non trouvé.";
+            header('Location: ' . URL . 'read');
+            return; // ou redirige vers une autre page
+        }
+
         require_once __DIR__ . '../../views/update.view.php';
     }
+
 
     public function profilDisplay($id)
     {
@@ -45,7 +54,6 @@ class UserController
     public function isAdmin()
     {
         if (!isset($_SESSION['id_user'])) {
-            echo "il n'y a personne dans la base de donnée.";
             return false;
         }
         $user = $this->userManager->getUserById($_SESSION['id_user']);
@@ -59,6 +67,7 @@ class UserController
     // Affiche la liste des utilisateurs mise à jour en appelant listUsers().
     public function updateUser($data, $files)
     {
+        // Récupération des données du formulaire
         $id = $data['id_user'];
         $nom = $data['nom'];
         $prenom = $data['prenom'];
@@ -66,38 +75,68 @@ class UserController
         $dateNaissance = $data['dateNaissance'];
         $genre = $data['genre'];
         $telephone = $data['telephone'];
-        $role = $data['role'];
+        $role = isset($data['role']) ? $data['role'] : 'non-admin'; // Assigner le rôle ou par défaut non-admin
         $pwd = $data['password'];
-        $confirm_pwd = $_POST['confirm_password'];
-        $nomImage = 'default.jpg';
+        $confirm_pwd = $data['confirm_password'];
+        $nomImage = $data['currentImage']; // Image actuelle par défaut
 
-        if ($pwd !== $confirm_pwd) {
+        // Validation des mots de passe (si remplis)
+        if (!empty($pwd) && $pwd !== $confirm_pwd) {
             $message = "Les mots de passe ne correspondent pas.";
-            header('Location: /add');
+            header('Location: /update');
             echo $message;
             return;
         }
 
-        // Hachage du mot de passe
-        $hashedPwd = password_hash($pwd, PASSWORD_BCRYPT);
+        // Hachage du mot de passe uniquement si un nouveau mot de passe est fourni
+        if (!empty($pwd)) {
+            $hashedPwd = password_hash($pwd, PASSWORD_BCRYPT);
+        } else {
+            $hashedPwd = $data['currentPassword']; // Utiliser le mot de passe actuel
+        }
 
         // Gestion de l'upload de l'image
         if (isset($files['image']) && $files['image']['error'] === UPLOAD_ERR_OK) {
             $tmp_name = $files['image']['tmp_name'];
             $name = basename($files['image']['name']);
-            if (move_uploaded_file($tmp_name, "./public/img/$name")) {
-                $nomImage = $name;
-                $message = 'Image uploadée avec succès.';
+            $uploadFile = "./public/img/$name";
+
+            // Vérifie le type MIME
+            $allowedMimeTypes = ['image/jpeg', 'image/png', 'image/gif'];
+            $fileInfo = getimagesize($tmp_name);
+
+            if (in_array($fileInfo['mime'], $allowedMimeTypes)) {
+                if (move_uploaded_file($tmp_name, $uploadFile)) {
+                    $nomImage = $name;
+                    $message = 'Image uploadée avec succès.';
+                } else {
+                    $message = 'Erreur lors de l\'upload de l\'image.';
+                }
             } else {
-                $message = 'Erreur lors de l\'upload de l\'image.';
+                $message = 'Type de fichier non autorisé.';
             }
-        } else if (isset($files['image']) && $files['image']['error'] !== UPLOAD_ERR_NO_FILE) {
+        } else if (isset($files['image'])) {
             $message = 'Erreur lors de l\'upload de l\'image.';
         }
 
+        // Mise à jour de l'utilisateur dans la base de données
         $message = $this->userManager->updateUser($id, $nom, $prenom, $email, $dateNaissance, $genre, $telephone, $role, $nomImage, $hashedPwd);
-        $this->listUsers();
+
+        // Si succès
+        if ($message === true) {
+            echo "  <script>
+        alert('Utilisateur mis à jour avec succès.');
+        window.location.href='/read';
+                    </script>";
+        } else {
+        // Sinon affiche le message d'erreur
+            echo "  <script>
+        alert('$message');
+        window.location.href='/update';
+                    </script>";
+        }
     }
+
 
     //----------------------------------------------------------------------------------------------------------------------------------------
     // // Supprime un utilisateur par id
@@ -146,17 +185,28 @@ class UserController
 
         // Gestion de l'upload de l'image
         if (isset($files['image']) && $files['image']['error'] === UPLOAD_ERR_OK) {
-            // récupère le chemin de l'image
             $tmp_name = $files['image']['tmp_name'];
-            // récupère juste le nom de l'image
-            $nomImage = basename($files['image']['name']);
-            // déplace le téléchargement vers le répertoire cible
-            if (!move_uploaded_file($tmp_name, "./public/img/$nomImage")) {
-                $message = "Erreur lors du téléchargement de l'image.";
-                echo $message;
-                return;
+            $name = basename($files['image']['name']);
+            $uploadFile = "./public/img/$name";
+
+            // Vérifie le type MIME
+            $allowedMimeTypes = ['image/jpeg', 'image/png', 'image/gif'];
+            $fileInfo = getimagesize($tmp_name);
+
+            if (in_array($fileInfo['mime'], $allowedMimeTypes)) {
+                if (move_uploaded_file($tmp_name, $uploadFile)) {
+                    $nomImage = $name;
+                    $message = 'Image uploadée avec succès.';
+                } else {
+                    $message = 'Erreur lors de l\'upload de l\'image.';
+                }
+            } else {
+                $message = 'Type de fichier non autorisé.';
             }
+        } else if (isset($files['image'])) {
+            $message = 'Erreur lors de l\'upload de l\'image.';
         }
+
 
         $message = $this->userManager->addUser($nom, $prenom, $email, $dateNaissance, $genre, $telephone, $role, $nomImage, $hashedPwd);
         // Ajoutez une vérification pour $message si nécessaire

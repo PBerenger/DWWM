@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/MyDbConnection.php';
+
 class UserManager
 {
     private $pdo;
@@ -9,11 +10,10 @@ class UserManager
         $this->pdo = MyDbConnection::getInstance();
     }
 
-
     // Cette fonction est conçue pour récupérer des informations sur tous les utilisateurs présents dans la base de données.
     public function getAllUsers()
     {
-        $sql = '    SELECT
+        $sql = 'SELECT
                 users.id_user,
                 users.u_lname,
                 users.u_fname,
@@ -46,11 +46,10 @@ class UserManager
         return $users;
     }
 
-
     // Cette fonction est conçue pour récupérer les informations d'un utilisateur spécifique, identifié par son id.
     public function getUserById($id)
     {
-        $sql = '    SELECT 
+        $sql = 'SELECT 
                 users.id_user,
                 users.u_lname,
                 users.u_fname,
@@ -74,51 +73,54 @@ class UserManager
                     ON
                 questionnaire.id_user = users.id_user
             WHERE
-                users.id_user = ?
+                users.id_user = :id_user
         ';
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute([$id]);
+        $stmt->bindValue(':id_user', $id, PDO::PARAM_INT);
+        $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-
     // Cette fonction est conçue pour mettre à jour les informations d'un utilisateur dans une base de données.
-    // implanter "changer de mot de passe"
-    public function updateUser($id, $nom, $prenom, $email, $dateNaissance, $genre,  $telephone, $role, $nomImage, $pwd)
+    public function updateUser($id, $nom, $prenom, $email, $dateNaissance, $genre, $telephone, $role, $nomImage, $pwd)
     {
         $role_id = $role === 'admin' ? 1 : 2;
-        $hashed_pwd = password_hash($pwd, PASSWORD_DEFAULT);
         try {
-            $stmt = $this->pdo->prepare('   UPDATE
-                                                users 
-                                            SET 
-                                                u_lname = ?,
-                                                u_fname = ?,
-                                                u_email = ?,
-                                                u_password = ?,
-                                                u_date_birth = ?,
-                                                u_gender = ?,
-                                                u_phone = ?,
-                                                id_role = ?,
-                                                u_profil_img = ?
-                                            WHERE 
-                                                id_user = ?');
-            $stmt->execute([
-                $nom,
-                $prenom,
-                $email,
-                $pwd,
-                $dateNaissance,
-                $genre,
-                $telephone,
-                $role_id,
-                $nomImage,
-                $id
-            ]);
+            $stmt = $this->pdo->prepare('
+            UPDATE users 
+            SET 
+                u_lname = :lname,
+                u_fname = :fname,
+                u_email = :email,
+                u_password = :password,
+                u_date_birth = :date_birth,
+                u_gender = :gender,
+                u_phone = :phone,
+                id_role = :role,
+                u_profil_img = :profil_img
+            WHERE 
+                id_user = :id_user');
 
-            return "Utilisateur mis à jour avec succès.";
+            $stmt->bindValue(':lname', $nom, PDO::PARAM_STR);
+            $stmt->bindValue(':fname', $prenom, PDO::PARAM_STR);
+            $stmt->bindValue(':email', $email, PDO::PARAM_STR);
+            $stmt->bindValue(':password', $pwd, PDO::PARAM_STR);
+            $stmt->bindValue(':date_birth', $dateNaissance, PDO::PARAM_STR);
+            $stmt->bindValue(':gender', $genre, PDO::PARAM_STR);
+            $stmt->bindValue(':phone', $telephone, PDO::PARAM_STR);
+            $stmt->bindValue(':role', $role_id, PDO::PARAM_INT);
+            $stmt->bindValue(':profil_img', $nomImage, PDO::PARAM_STR);
+            $stmt->bindValue(':id_user', $id, PDO::PARAM_INT);
+
+            $stmt->execute();
+
+            if ($stmt->rowCount() > 0) {
+                return true;
+            } else {
+                return "Aucune mise à jour effectuée.";
+            }
         } catch (PDOException $e) {
-            $_SESSION['error'] = "Erreur : " . $e->getMessage();
+            return "Erreur lors de la mise à jour de l'utilisateur : " . $e->getMessage();
         }
     }
 
@@ -126,18 +128,16 @@ class UserManager
     public function deleteUser($id)
     {
         try {
-            $stmt = $this->pdo->prepare('DELETE FROM users WHERE id_user = ?');
-            $stmt->execute([$id]);
+            $stmt = $this->pdo->prepare('DELETE FROM users WHERE id_user = :id_user');
+            $stmt->bindValue(':id_user', $id, PDO::PARAM_INT);
+            $stmt->execute();
             return "Utilisateur supprimé avec succès.";
         } catch (PDOException $e) {
             return "Erreur : " . $e->getMessage();
         }
     }
 
-
-
     // Cette fonction est conçue créer les informations d'un utilisateur dans une base de données.
-
     public function addUser($nom, $prenom, $email, $dateNaissance, $genre, $telephone, $role, $nomImage, $pwd)
     {
         $role_id = $role === 'admin' ? 1 : 2;
@@ -164,21 +164,20 @@ class UserManager
                                             :gender,
                                             :role,
                                             :img)');
-            $stmt->execute([
-                'lastName' => $nom,
-                'firstName' => $prenom,
-                'email' => $email,
-                'pwd' => $pwd,
-                'dateNaissance' => $dateNaissance,
-                'phone' => $telephone,
-                'gender' => $genre,
-                'role' => $role_id,
-                'img' => $nomImage
-            ]);
+            $stmt->bindValue(':lastName', $nom, PDO::PARAM_STR);
+            $stmt->bindValue(':firstName', $prenom, PDO::PARAM_STR);
+            $stmt->bindValue(':email', $email, PDO::PARAM_STR);
+            $stmt->bindValue(':pwd', $hashed_pwd, PDO::PARAM_STR);
+            $stmt->bindValue(':dateNaissance', $dateNaissance, PDO::PARAM_STR);
+            $stmt->bindValue(':phone', $telephone, PDO::PARAM_STR);
+            $stmt->bindValue(':gender', $genre, PDO::PARAM_STR);
+            $stmt->bindValue(':role', $role_id, PDO::PARAM_INT);
+            $stmt->bindValue(':img', $nomImage, PDO::PARAM_STR);
+
+            $stmt->execute();
 
             return "Utilisateur ajouté avec succès.";
         } catch (PDOException $e) {
-            // return "Erreur : " . $e->getMessage();
             throw new Exception($e->getMessage());
         }
     }

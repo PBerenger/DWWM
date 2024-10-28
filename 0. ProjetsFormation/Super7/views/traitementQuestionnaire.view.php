@@ -244,7 +244,7 @@ require_once __DIR__ . '../../Controllers/traitementQuestionnaireController.clas
     
     
     <div class="resAllTQ">
-    <?php elseif ($dominante === 'ecologique') : ?>
+    <?php elseif ($dominante === 'écologique') : ?>
         <div class="resTop">
             <h3>Intelligence Ecologique</h3>
             <h5>Définition</h5>
@@ -297,7 +297,7 @@ require_once __DIR__ . '../../Controllers/traitementQuestionnaireController.clas
     
     
     <div class="resAllTQ">
-    <?php elseif ($dominante === 'kinesthesique') : ?>
+    <?php elseif ($dominante === 'kinesthésique') : ?>
         <div class="resTop">
             <h3>Intelligence Kinesthésique</h3>
             <h5>Définition</h5>

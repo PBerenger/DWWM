@@ -1,7 +1,7 @@
 <?php
 // Définit la constante URL
 define("URL", str_replace("index.php", "", (isset($_SERVER["HTTPS"]) ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF']));
-// echo var_dump($_SESSION);
+
 
 require_once __DIR__ . '/Controllers/UserController.class.php';
 require_once __DIR__ . '/Controllers/LoginController.class.php';
@@ -54,6 +54,7 @@ try {
                     if (isset($url[1])) {
                         $controller->UpdateForm($url[1]);
                     } else {
+                        header('Location: ' . URL . 'accueil');
                         throw new Exception("ID utilisateur non spécifié");
                     }
                 }

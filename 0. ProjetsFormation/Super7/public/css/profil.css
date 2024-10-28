@@ -2,6 +2,13 @@
 #profilPage {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
+}
+@media (max-width: 768px) {
+  #profilPage {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 #profilPage .profilContainer-left {
   display: flex;
@@ -10,10 +17,21 @@
   text-align: center;
   margin: 20px auto;
   padding: 10px;
-  width: 600px;
+  width: 45%;
+  max-width: 600px;
   background-color: var(--colorBackground0);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 768px) {
+  #profilPage .profilContainer-left {
+    width: 75%;
+  }
+}
+@media (max-width: 425px) {
+  #profilPage .profilContainer-left {
+    width: 90%;
+  }
 }
 #profilPage .profilContainer-left h2 {
   font-size: 24px;
@@ -24,16 +42,17 @@
   margin: 20px 0;
 }
 #profilPage .profilContainer-left .profil-img img {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
   border-radius: 50%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-#profilPage .profilContainer-left p {
-  font-size: 16px;
-  color: #555;
-  margin: 5px 0;
+@media (min-width: 768px) {
+  #profilPage .profilContainer-left .profil-img img {
+    width: 150px;
+    height: 150px;
+  }
 }
 #profilPage .profilContainer-left .modifBT {
   margin-top: 60px;
@@ -42,7 +61,7 @@
 #profilPage .profilContainer-left .modifBT a {
   background-color: var(--colorPrincipale);
   font-family: var(--fontTexteHeavy);
-  color: white;
+  color: var(--colorBackground0);
   width: 220px;
   text-align: center;
   margin: 0 10px;
@@ -58,41 +77,71 @@
   text-align: center;
   margin: 20px auto;
   padding: 10px;
-  width: 800px;
+  width: 45%;
+  max-width: 800px;
   background-color: var(--colorBackground0);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+@media (max-width: 768px) {
+  #profilPage .profilContainer-right {
+    width: 75%;
+  }
+}
+@media (max-width: 425px) {
+  #profilPage .profilContainer-right {
+    width: 90%;
+  }
+}
 #profilPage .profilContainer-right .rightBox {
   display: grid;
   grid-template-columns: 1fr 3fr;
+  gap: 10px;
 }
-#profilPage .profilContainer-right .rightBox .resultsComp,
+@media (max-width: 768px) {
+  #profilPage .profilContainer-right .rightBox {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 425px) {
+  #profilPage .profilContainer-right .rightBox {
+    width: 310px;
+  }
+}
 #profilPage .profilContainer-right .rightBox .graphRad {
-  text-align: justify;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
 }
-#profilPage .profilContainer-right h2 {
-  font-size: 24px;
-  color: #333;
-  margin-bottom: 10px;
-}
-#profilPage .profilContainer-right .resultsComp {
+#profilPage .profilContainer-right .rightBox .resultsComp {
+  background-color: var(--colorTertiaire);
+  border-radius: 25px;
   font-family: var(--fontTexteLight);
+  color: var(--colorBackground0);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  width: 100%;
 }
-#profilPage .profilContainer-right .radarChart {
-  width: 600px;
+#profilPage .profilContainer-right .rightBox .resultsComp ul {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+#profilPage .profilContainer-right .graphP {
+  font-size: 14px;
+  line-height: 20px;
 }
 #profilPage .profilContainer-right .retourTQ {
+  margin-top: 60px;
   text-align: center;
 }
 #profilPage .profilContainer-right .retourTQ a {
   background-color: var(--colorPrincipale);
   font-family: var(--fontTexteHeavy);
-  color: white;
+  color: var(--colorBackground0);
   width: 220px;
   text-align: center;
   margin: 0 10px;
@@ -103,4 +152,7 @@
 }
 #profilPage .profilContainer-right .retourTQ a:hover {
   background-color: var(--colorSecondaire);
+}
+.hidden {
+  display: none;
 }

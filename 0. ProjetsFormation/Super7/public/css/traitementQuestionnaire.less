@@ -4,7 +4,6 @@
 // =======================================
 // traitementQUESTIONNAIRE RESULTS
 
-
 #traitementQuestionnaireContainer {
   
     .souligner {
@@ -15,22 +14,32 @@
       font-size: 4em;
       text-align: center;
       padding: 10px 0;
+
+      // Responsive font size
+      @media (max-width: 768px) {
+        font-size: 3em; // Diminue la taille sur écrans plus petits
+      }
     }
   
     .mainResult {
       font-size: 1.7em;
       text-align: center;
       padding-bottom: 40px;
+
+      // Responsive font size
+      @media (max-width: 768px) {
+        font-size: 1.5em; // Diminue la taille sur écrans plus petits
+      }
     }
   
     .resAllTQ {
       display: flex;
       flex-direction: column;
-  
+
       .resTop {
         border: var(--colorBackground2) solid 2px;
         background-color: var(--colorTertiaire);
-  
+
         h3 {
           text-align: center;
           font-family: var(--fontTexteHeavy);
@@ -58,20 +67,20 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
   
-        .caraMid {
+        .caraMid, .actMid {
           border: var(--colorBackground2) solid 2px;
           background-color: var(--colorSecondaire);
           padding: 20px;
-  
+
           h5 {
             font-family: var(--fontTexteHeavy);
             text-align: center;
             font-size: 1em;
             margin-bottom: 20px;
-            width: 670px;
+            width: auto; // Auto pour prendre toute la largeur
             background-color: var(--colorBackground2);
           }
-  
+
           ul li {
             font-family: var(--fontTexteLight);
             color: var(--colorBackground0);
@@ -79,27 +88,10 @@
             margin: 0 20px;
           }
         }
-  
-        .actMid {
-          border: var(--colorBackground2) solid 2px;
-          background-color: var(--colorSecondaire);
-          padding: 20px;
-  
-          h5 {
-            font-family: var(--fontTexteHeavy);
-            text-align: center;
-            font-size: 1em;
-            margin-bottom: 20px;
-            width: 670px;
-            background-color: var(--colorBackground2);
-          }
-  
-          ul li {
-            font-family: var(--fontTexteLight);
-            color: var(--colorBackground0);
-            list-style-type: circle;
-            margin: 0 20px;
-          }
+
+        // Responsive grid for smaller screens
+        @media (max-width: 768px) {
+          grid-template-columns: 1fr; // Un seul colonne sur mobile
         }
       }
   
@@ -123,52 +115,63 @@
         }
       }
     }
-  }
+}
   
-  .responsesAllCont {
-    text-align: center;
-    padding: 10px 0;
-  
-    .responsesAll {
-      display: flex;
-      justify-content: space-around;
-      padding: 20px 40px;
-      background-color: var(--colorTertiaire);
-      margin-top: 10px;
+.responsesAllCont {
+  text-align: center;
+  padding: 10px 0;
+
+  .responsesAll {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 40px;
+    background-color: var(--colorTertiaire);
+    margin-top: 10px;
+
+    // Responsive styles
+    @media (max-width: 768px) {
+      flex-direction: column; // Colonne sur mobile
+      padding: 20px; // Réduire le padding
     }
-  
-    .response {
-      padding: 4px;
-      text-align: center;
-      color: var(--colorBackground0);
-    }
-  
   }
-  
-  .recQuest {
-    background-color: var(--colorBackground0);
+
+  .response {
+    padding: 4px;
     text-align: center;
+    color: var(--colorBackground0);
+  }
+}
+
+.recQuest {
+  background-color: var(--colorBackground0);
+  text-align: center;
+  font-family: var(--fontTexteHeavy);
+}
+
+.buttProfil {
+  margin: 20px 0;
+  text-align: center;
+
+  a {
+    background-color: var(--colorPrincipale);
     font-family: var(--fontTexteHeavy);
-  }
-
-  .buttProfil {
-    margin: 20px 0;
+    color: white;
+    width: 220px; // Largeur par défaut
     text-align: center;
+    margin: 0 10px;
+    padding: 10px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 
-    a {
-      background-color: var(--colorPrincipale);
-      font-family: var(--fontTexteHeavy);
-      color: white;
-      width: 220px;
-      text-align: center;
-      margin: 0 10px;
-      padding: 10px 10px;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-    }
-  
-    a:hover {
-      background-color: var(--colorSecondaire);
+    // Responsive styles
+    @media (max-width: 768px) {
+      width: 100%; // Prendre toute la largeur sur mobile
+      margin: 10px 0; // Réduire les marges
     }
   }
+  
+  a:hover {
+    background-color: var(--colorSecondaire);
+  }
+}

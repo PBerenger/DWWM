@@ -16,12 +16,16 @@
     text-align: center;
     font-family: var(--fontTitre);
     font-size: 8em;
+
+    @media (max-width: 768px) {
+      font-size: 1.5em;
+    }
   }
 
   h6 {
     font-family: var(--fontTexteHeavy);
     text-align: end;
-    margin: 8px 30px;
+    margin: 8px 5%;
   }
 
   .time {
@@ -30,11 +34,14 @@
     color: var(--colorBackground0);
     font-size: 2em;
 
+    @media (max-width: 768px) {
+      font-size: 1.5em;
+    }
   }
 
   .question {
-    margin: 10px 300px;
-    padding-left: 40px;
+    margin: 10px 5%;
+    padding-left: 5%;
     color: var(--colorBackground0);
 
     p {
@@ -53,10 +60,7 @@
     border: var(--colorTertiaire) solid 6px;
   }
 
-  .question:nth-child(odd):hover {
-    border: var(--colorPrincipale) solid 6px;
-  }
-
+  .question:nth-child(odd):hover,
   .question:nth-child(even):hover {
     border: var(--colorPrincipale) solid 6px;
   }
@@ -67,8 +71,14 @@
     user-select: none;
     color: var(--colorBackground0);
     font-family: var(--fontTexteLight);
-    width: 70px;
-    margin: 8px 10%;
+    width: auto;
+    margin: 8px 5%;
+    cursor: pointer;
+
+    @media (max-width: 768px) {
+      width: auto;
+      margin: 8px 2%;
+    }
   }
 
   .oui:hover,
@@ -97,12 +107,16 @@
       padding: 10px 20px;
       cursor: pointer;
       border: var(--colorPrincipale) solid 4px;
+
+      @media (max-width: 768px) {
+        width: 100%;
+        padding: 10px;
+      }
     }
 
     input[type="submit"]:hover {
       background-color: var(--colorSecondaire);
       border: var(--colorBackground0) solid 4px;
-
     }
   }
 }

@@ -21,9 +21,8 @@ abstract class DbConnect {
         try {
             $this->pdo = new PDO($dsn, $user, $pass, $options);
         } catch (PDOException $e) {
-            error_log($e->getMessage());
-            die('Erreur de connexion à la base de données : ' . $e->getMessage());
-
+            error_log('Erreur de connexion : ' . $e->getMessage());
+            die('Une erreur est survenue lors de la connexion à la base de données.');
         }
     }
 
@@ -32,5 +31,9 @@ abstract class DbConnect {
             self::$instance = new static();
         }
         return self::$instance->pdo;
+    }
+
+    public static function closeConnection() {
+        self::$instance = null;
     }
 }

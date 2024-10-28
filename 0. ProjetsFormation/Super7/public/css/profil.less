@@ -1,133 +1,171 @@
 @import 'style.css';
 
 // =======================================
-// =======================================
 // PROFIL
 
 #profilPage {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profilContainer-left {
     display: flex;
-    justify-content: space-around;
-  
-    .profilContainer-left {
-      display: flex;
     flex-direction: column;
     justify-content: space-between;
+    text-align: center;
+    margin: 20px auto;
+    padding: 10px;
+    width: 45%;
+    max-width: 600px;
+    background-color: var(--colorBackground0);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
-      text-align: center;
-      margin: 20px auto;
-      padding: 10px;
-      width: 600px;
-      background-color: var(--colorBackground0);
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  
-      h2 {
-        font-size: 24px;
-        color: var(--colorBackground1);
-        margin-bottom: 10px;
-      }
-  
-      .profil-img {
-        margin: 20px 0;
-  
-        img {
+    @media (max-width: 768px) {
+      width: 75%;
+    }
+
+    @media (max-width: 425px) {
+      width: 90%;
+    }
+
+    h2 {
+      font-size: 24px;
+      color: var(--colorBackground1);
+      margin-bottom: 10px;
+    }
+
+    .profil-img {
+      margin: 20px 0;
+
+      img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 50%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+        @media (min-width: 768px) {
           width: 150px;
           height: 150px;
-          object-fit: cover;
-          border-radius: 50%;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-      }
-  
-      p {
-        font-size: 16px;
-        color: #555;
-        margin: 5px 0;
-      }
-
-      .modifBT{
-        margin-top: 60px;
-        text-align: center;
-        
-        a {
-          background-color: var(--colorPrincipale);
-          font-family: var(--fontTexteHeavy);
-          color: white;
-          width: 220px;
-          text-align: center;
-          margin: 0 10px;
-          padding: 10px 10px;
-          text-decoration: none;
-          border-radius: 5px;
-          transition: background-color 0.3s ease;
-        }
-      
-        a:hover {
-          background-color: var(--colorSecondaire);
         }
       }
     }
-  
-    .profilContainer-right {
+
+    .modifBT {
+      margin-top: 60px;
       text-align: center;
-      margin: 20px auto;
-      padding: 10px;
-      width: 800px;
-      background-color: var(--colorBackground0);
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  
-      .rightBox {
-        display: grid;
-        grid-template-columns: 1fr 3fr;
-        // justify-content: space-between;
-  
-        .resultsComp,
-        .graphRad {
-          // width: 48%;
-          text-align: justify;
-        }
-      }
-  
-      h2 {
-        font-size: 24px;
-        color: #333;
-        margin-bottom: 10px;
-      }
-  
-      .resultsComp {
-        // width: 200px;
-        font-family: var(--fontTexteLight);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
 
-      .radarChart {
-        width: 600px;
-      }
-
-      .retourTQ {
+      a {
+        background-color: var(--colorPrincipale);
+        font-family: var(--fontTexteHeavy);
+        color: var(--colorBackground0);
+        width: 220px;
         text-align: center;
-        
-        a {
-          background-color: var(--colorPrincipale);
-          font-family: var(--fontTexteHeavy);
-          color: white;
-          width: 220px;
-          text-align: center;
-          margin: 0 10px;
-          padding: 10px 10px;
-          text-decoration: none;
-          border-radius: 5px;
-          transition: background-color 0.3s ease;
-        }
-      
-        a:hover {
+        margin: 0 10px;
+        padding: 10px 10px;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+
+        &:hover {
           background-color: var(--colorSecondaire);
         }
       }
     }
   }
+
+  .profilContainer-right {
+    text-align: center;
+    margin: 20px auto;
+    padding: 10px;
+    width: 45%;
+    max-width: 800px;
+    background-color: var(--colorBackground0);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    @media (max-width: 768px) {
+      width: 75%;
+    }
+
+    @media (max-width: 425px) {
+      width: 90%;
+    }
+
+    .rightBox {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      gap: 10px;
+
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
+
+      @media (max-width: 425px) {
+        width: 310px;
+      }
+
+      .graphRad {
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+      }
+
+      .resultsComp {
+        background-color: var(--colorTertiaire);
+        border-radius: 25px;
+        font-family: var(--fontTexteLight);
+        color: var(--colorBackground0);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+
+        ul {
+          width: 100%;
+          padding: 0;
+          margin: 0;
+          list-style-type: none;
+        }
+      }
+    }
+
+    .graphP {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    .retourTQ {
+      margin-top: 60px;
+      text-align: center;
+
+      a {
+        background-color: var(--colorPrincipale);
+        font-family: var(--fontTexteHeavy);
+        color: var(--colorBackground0);
+        width: 220px;
+        text-align: center;
+        margin: 0 10px;
+        padding: 10px 10px;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: var(--colorSecondaire);
+        }
+      }
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}

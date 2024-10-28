@@ -25,7 +25,7 @@ if (isset($_SESSION['id_user']) && !isset($_SESSION['alert_show'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../public/css/general.css">
+    <link rel="stylesheet" href="../public/css/template.css">
     <link rel="stylesheet" href="../public/css/accueil.css">
     <link rel="stylesheet" href="../public/css/informations.css">
     <link rel="stylesheet" href="../public/css/add.css">
@@ -35,15 +35,28 @@ if (isset($_SESSION['id_user']) && !isset($_SESSION['alert_show'])) {
     <link rel="stylesheet" href="../public/css/questionnaire.css">
     <link rel="stylesheet" href="../public/css/traitementQuestionnaire.css">
     <link rel="stylesheet" href="../public/css/profil.css">
-    <title>Super 7 V0.2</title>
+    <link rel="stylesheet" href="../public/css/update.css">
+
+    <title>Super 7 V1</title>
 </head>
 
+<!-- ============================================================================================== -->
+<!-- ============================================================================================== -->
+
+
 <body>
+
     <header>
+
         <img class="logoS7" src="../public/img/logos/logoSuper7SF_v2.png" alt="logo_Super7">
 
         <nav>
-            <ul>
+            <div class="menu-burger" id="menuBurger" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul id="navLinks">
                 <li><a href="./accueil">Accueil</a></li>
                 <li><a href="./informations">Informations</a></li>
                 <li><a href="./games">Jeux</a></li>
@@ -74,7 +87,9 @@ if (isset($_SESSION['id_user']) && !isset($_SESSION['alert_show'])) {
                 <?php endif; ?>
             </ul>
         </nav>
+
     </header>
+
 
     <?= $content ?>
 
@@ -85,7 +100,7 @@ if (isset($_SESSION['id_user']) && !isset($_SESSION['alert_show'])) {
     </footer>
 
     <script src="<?= URL ?>public/js/script.js"></script>
-    
+
 </body>
 
 </html>

@@ -1,48 +1,53 @@
 @import 'style.css';
 
 // =======================================
-// =======================================
 // ACCUEIL
 
-#topContent {
+#accueilTopContent {
+  text-align: center;
+
+  h1 {
+    font-size: 30em;
+    user-select: none;
+  }
+}
+
+#accueilMidContent {
+  color: var(--colorBackground0);
+  text-align: justify;
+  background-color: var(--colorSecondaire);
+  padding: 30px 50px;
+  margin: 20px;
+}
+
+#accueilBotContent {
+  h2 {
     text-align: center;
-  
-    h1 {
-      font-size: 30em;
-      user-select: none;
-    }
-  }
-  
-  #midContent {
-    h2 {
-      text-align: center;
-      color: var(--colorBackground0);
-      padding: 20px 0px;
-    }
-  
-    text-align: justify;
-    background: var(--colorTertiaire);
-    padding: 0px 50px;
-  }
-  
-  .principalText {
-    text-indent: 10%;
     color: var(--colorBackground0);
-  }
-  
-  .secondaryText {
-    text-align: center;
-    padding: 50px 50px;
-    // background: var(--colorPrincipale);
-    color: var(--colorBackground0);
-    font-weight: bold;
+    padding: 20px 0px;
   }
 
-  
-  // BUTTON QUESTIONNAIRE
+  text-align: justify;
+  background-color: var(--colorTertiaire);
+  padding: 0px 50px;
+}
+
+.principalText {
+  text-indent: 10%;
+  color: var(--colorBackground0);
+}
 
 .secondaryText {
-  a {
+  text-align: center;
+  padding: 50px 50px;
+  color: var(--colorBackground0);
+  font-weight: bold;
+}
+
+// BUTTON QUESTIONNAIRE
+
+.secondaryText {
+  .linkST {
     background-color: var(--colorPrincipale);
     font-family: var(--fontTexteHeavy);
     color: white;
@@ -59,7 +64,72 @@
     }
   }
 
-  a:hover {
+  .linkST:hover {
     background-color: var(--colorSecondaire);
+  }
+}
+
+//====================================================//
+//=================RESPONSIVE=========================//
+//====================================================//
+
+// Pour les écrans de moins de 768px (tablettes et mobiles)
+@media (max-width: 768px) {
+  #accueilTopContent {
+    h1 {
+      font-size: 10em;
+    }
+  }
+
+  #accueilMidContent,
+  #accueilBotContent {
+    padding: 20px;
+    margin: 10px;
+  }
+
+  .principalText {
+    text-indent: 5%;
+  }
+
+  .secondaryText {
+    padding: 30px;
+  }
+
+  .secondaryText a {
+    width: 100%;
+    font-size: 0.9em;
+    padding: 15px;
+    margin: 10px 0;
+  }
+}
+
+// Pour les écrans de moins de 480px (mobiles)
+@media (max-width: 480px) {
+  #accueilTopContent {
+    h1 {
+      font-size: 6em;
+    }
+  }
+
+  #accueilMidContent,
+  #accueilBotContent {
+    padding: 15px;
+    margin: 5px;
+  }
+
+  .principalText {
+    text-indent: 0;
+    text-align: center;
+  }
+
+  .secondaryText {
+    padding: 20px;
+    font-size: 0.8em;
+  }
+
+  .secondaryText .linkST {
+    width: 100%;
+    font-size: 10px;
+    padding: 10px;
   }
 }

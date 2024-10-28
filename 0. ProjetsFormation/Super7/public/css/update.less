@@ -1,0 +1,203 @@
+@import 'style.css';
+
+// =======================================
+// =======================================
+// MODIFIER
+
+.titreUpdate {
+    text-align: center;
+    font-size: 2.5em;
+    user-select: none;
+    margin-bottom: 20px;
+}
+
+.form-container-update {
+    background-color: var(--colorTertiaire);
+    display: flex;
+    justify-content: center;
+
+    form {
+        width: 60%;
+        padding: 30px;
+        margin: 30px;
+        text-align: center;
+        gap: 20px;
+        font-family: var(--fontTexteLight);
+        color: var(--colorBackground1);
+        font-size: 1em;
+        background-color: var(--colorBackground0);
+        border-radius: 5px;
+
+        // =======================================
+        .inputBx {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px 10px;
+            width: 300px;
+
+            .updateRetour {
+                width: 100%;
+                max-width: 300px;
+                padding: 5px;
+                border-radius: 5px;
+                background-color: var(--colorValid);
+                color: var(--colorBackground0);
+                font-size: 1em;
+
+                &:hover {
+                    background-color: var(--colorInvalid);
+                }
+            }
+
+            input[type='text'],
+            input[type='email'],
+            input[type='date'],
+            input[type='password'] {
+                width: 100%;
+                max-width: 300px;
+                padding: 10px;
+                border: none;
+                background-color: var(--colorSecondaire);
+                border: 2px solid var(--colorSecondaire);
+                color: var(--colorBackground0);
+                font-size: 1em;
+
+                &::placeholder {
+                    color: var(--colorBackground0);
+                }
+
+                &:hover {
+                    border: 2px solid var(--colorPrincipale);
+                }
+            }
+
+            input[type='file'] {
+                display: none;
+            }
+
+            label {
+                cursor: pointer;
+                background-color: var(--colorSecondaire);
+                color: var(--colorBackground0);
+                padding: 10px;
+                border-radius: 5px;
+                transition: background-color 0.3s;
+
+                &:hover {
+                    background-color: var(--colorTertiaire);
+                }
+            }
+        }
+
+        // =======================================
+        select[id="genre"],
+        select[id="role"] {
+            width: 300px;
+            height: 40px;
+            background-color: var(--colorSecondaire);
+            color: var(--colorBackground0);
+            text-align: center;
+            border: none;
+            cursor: pointer;
+
+            &:hover {
+                border: 2px solid var(--colorBackground0);
+            }
+        }
+
+        // =======================================
+        input[type='submit'] {
+            width: 100%;
+            padding: 10px;
+            background-color: var(--colorSecondaire);
+            color: var(--colorBackground0);
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+
+            &:hover {
+                background-color: var(--colorTertiaire);
+            }
+        }
+    }
+
+    .infosContainer {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap; // Ajout de flex-wrap pour permettre aux éléments de passer à la ligne
+    }
+
+    .endBox {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .password-container {
+        position: relative;
+        width: 100%;
+        max-width: 300px;
+
+        input[type="password"] {
+            width: 100%;
+            padding-right: 40px;
+        }
+
+        #togglePassword {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+
+            .eyePSW {
+                width: 30px;
+                height: 20px;
+            }
+        }
+    }
+}
+
+// =======================================
+// Responsive Styles
+@media (max-width: 768px) {
+    .form-container-update {
+        form {
+            width: 90%; // Réduire la largeur du formulaire
+            padding: 20px;
+            margin: 10px;
+
+        }
+
+        .updateLeftBow {
+            display: block;
+            margin: 10px auto 10px auto;
+        }
+
+        .updateRightBox {
+            display: block;
+            margin: 10px auto 10px auto;
+        }
+
+        .infosContainer {
+            flex-direction: column; // Passer à une colonne sur les petits écrans
+            align-items: stretch; // Étirer les éléments pour remplir la largeur
+        }
+
+        .inputBx {
+            width: 100%; // Les champs de saisie prennent toute la largeur
+        }
+
+        .updateRetour {
+            max-width: 100%; // Mettre à jour la largeur maximale
+        }
+    }
+}

@@ -10,21 +10,45 @@ C:.
 +---Controllers
 ª       loginController.class.php
 ª       LogoutController.class.php
-ª       questionsController.class.php
-ª       traitementQuestionsController.class.php
+ª       profilController.class.php
+ª       questionnaireController.class.php
+ª       traitementQuestionnaireController.class.php
 ª       UserController.class.php
 ª       
 +---Models
 ª       AuthManager.class.php
 ª       dbConnect.php
 ª       MyDbConnection.php
-ª       questionsManager.class.php
+ª       profilManager.class.php
+ª       questionnaireManager.class.php
 ª       UserManager.class.php
 ª       
 +---public
 ª   +---css
+ª   ª       accueil.css
+ª   ª       accueil.less
+ª   ª       add.css
+ª   ª       add.less
+ª   ª       delete.css
+ª   ª       delete.less
+ª   ª       general.css
+ª   ª       general.less
+ª   ª       informations.css
+ª   ª       informations.less
+ª   ª       login.css
+ª   ª       login.less
+ª   ª       profil.css
+ª   ª       profil.less
+ª   ª       questionnaire.css
+ª   ª       questionnaire.less
+ª   ª       read.css
+ª   ª       read.less
 ª   ª       style.css
 ª   ª       style.less
+ª   ª       traitementQuestionnaire.css
+ª   ª       traitementQuestionnaire.less
+ª   ª       update.css
+ª   ª       update.less
 ª   ª       
 ª   +---Font
 ª   ª       arial_narrow_7.ttf
@@ -59,11 +83,13 @@ C:.
 ª   ª           inscription.ai
 ª   ª           
 ª   +---js
+ª   ª       graph.js
 ª   ª       script.js
 ª   ª       
 ª   +---SQL
+ª       ª   colonnes Ó suprimer.txt
 ª       ª   contenu.sql
-ª       ª   super_main_bdd.sql
+ª       ª   super7_main_bdd.sql
 ª       ª   
 ª       +---Ress
 ª               candidature - SUPER 7 games - incubation Plaine immages.docx
@@ -78,10 +104,13 @@ C:.
         accueil.view.php
         add.view.php
         delete.view.php
+        games.view.php
+        informations.view.php
         login.view.php
-        questions.view.php
+        profil.view.php
+        questionnaire.view.php
         read.view.php
         template.php
-        traitementQuestions.view.php
+        traitementQuestionnaire.view.php
         update.view.php
         

@@ -27,36 +27,36 @@ document.addEventListener("DOMContentLoaded", function () {
     let passwordInput = document.getElementById("passwordSaisie");
     let mdpContainer = document.getElementById("mdpContainer");
     let timeoutId;
-    
+
     passwordInput.addEventListener("blur", function () {
         timeoutId = setTimeout(function () {
             mdpContainer.classList.remove("visible");
         }, 200);
     });
-    
+
     passwordInput.addEventListener("focus", function () {
         clearTimeout(timeoutId);
         mdpContainer.classList.add("visible");
         verifPassword();
     });
-    
-    
+
+
     passwordInput.addEventListener("input", verifPassword);
-    
+
     function verifPassword() {
         let password = passwordInput.value;
-        
+
         let regexMajuscule = /[A-Z]/;
         let regexMinuscule = /[a-z]/;
         let regexNombre = /[0-9]/;
         let regexSpecialChar = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/;
-        
+
         let longueurMDP = document.getElementById("longueurMDP");
         let majusculeMDP = document.getElementById("majuscule");
         let minusculeMDP = document.getElementById("minuscule");
         let nombreMDP = document.getElementById("nombre");
         let specialCharMDP = document.getElementById("specialChar");
-        
+
         longueurMDP.className = password.length >= 8 ? "valid" : "invalid";
         majusculeMDP.className = regexMajuscule.test(password) ? "valid" : "invalid";
         minusculeMDP.className = regexMinuscule.test(password) ? "valid" : "invalid";
@@ -69,19 +69,19 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener('DOMContentLoaded', (event) => {
     const togglePassword = document.getElementById('togglePassword');
     const passwordInput = document.querySelector('input[name="password"]'); // Cibler le bon champ de mot de passe
-    
+
     togglePassword.addEventListener('click', () => {
         // Vérifier le type actuel du champ de mot de passe
         const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
         passwordInput.setAttribute('type', type);
-        
+
         // Mettre à jour l'image de l'icône
         const img = togglePassword.querySelector('img');
         if (type === 'password') {
-            img.src = '../public/img/eyesSee.png';
+            img.src = '../public/img/eyesNotSee.png';
             console
         } else {
-            img.src = '../public/img/eyesNotSee.png';
+            img.src = '../public/img/eyesSee.png';
         }
     });
 });
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('form');
     const password = document.querySelector('input[name="password"]');
     const confirmPassword = document.querySelector('input[name="confirm_password"]');
-    
+
     form.addEventListener('submit', function (event) {
         if (password.value !== confirmPassword.value) {
             alert('Les mots de passe ne correspondent pas.');
@@ -123,7 +123,7 @@ function showResult(section) {
     sections.forEach((sec) => {
         sec.style.display = 'none';
     });
-    
+
     // Afficher la section sélectionnée
     const selectedSection = document.querySelector('.' + section);
     if (selectedSection) {
@@ -133,15 +133,23 @@ function showResult(section) {
 
 
 //------------------------------------------------------------------------------------------------
-// redimentionner titre
-function resizeTitle() {
-    const title = document.querySelector('.titreInfos');
-    title.style.fontSize = '2em';
-    const para = document.querySelector('.selectInfos');
-    para.style.marginBottom = '50px';
-}
+// PROFIL
 
 // Confirmation pour refaire le questionnaire
 function confirmRefaireQuestionnaire() {
     return confirm("Êtes-vous sûr de vouloir refaire le questionnaire ?\nToutes vos réponses précédentes seront effacées.");
+}
+
+
+//=======================================//
+//============RESPONSIVE=================//
+//=======================================//
+
+function toggleMenu() {
+    const navLinks = document.getElementById("navLinks");
+    if (navLinks.style.display === "flex") {
+        navLinks.style.display = "none";
+    } else {
+        navLinks.style.display = "flex";
+    }
 }

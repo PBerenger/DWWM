@@ -12,10 +12,15 @@ $userController = new UserController();
             <a class="validButton" href="<?= URL ?>delete">Supprimer un utilisateur</a>
         </div>
         <h2 class="titreAddAdmin">AJOUTER UN UTILISATEUR</h2>
+    <?php else : ?>
+        <div class="titreAddNonAdmin">
+            <h1>INSCRIPTION</h1>
+        </div>
     <?php endif; ?>
 <?php endif; ?>
 
-<?php if (!$userController->isAdmin()) :?>
+
+<?php if (!$userController->isAdmin()) : ?>
     <div class="titreAddNonAdmin">
         <h1>INSCRIPTION</h1>
     </div>
@@ -35,7 +40,7 @@ $userController = new UserController();
             </div>
             <?php if ($userController->isAdmin()) : ?>
                 <select name="role" required>
-                    <option class="disabled" value="" disabled selected>Rôle</option>
+                    <option class="disabled" value="" disabled selected hidden>Rôle</option>
                     <option value='admin'>Admin</option>
                     <option value='non-admin'>Non-Admin</option>
                     <option value='admin'>Enseignant</option> <!-- ajouter le numéro '3' dans la base de donnée -->
@@ -47,9 +52,9 @@ $userController = new UserController();
             <div class="inputBx">
                 <input type="date" name="dateNaissance" required>
             </div>
-            
-            <select id="genre" name="genre">
-                <option class="disabled" value="" disabled selected>Genre</option>
+
+            <select id="genre" name="genre" required>
+                <option value="" disabled selected hidden>Genre</option>
                 <option value="masculin">Masculin</option>
                 <option value="féminin">Féminin</option>
             </select>
@@ -62,7 +67,7 @@ $userController = new UserController();
                 Le numéro de téléphone n'est pas obligatoire.
             </div>
         </div>
-        
+
         <div class="formPart3">
             <div class="inputBx">
                 <input type="password" id="passwordSaisie" oninput="verifPassword()" name="password" placeholder="Mot de passe" required>
@@ -94,7 +99,7 @@ $userController = new UserController();
                 <span id="file-name"></span> <!-- Pour afficher le nom du fichier choisi -->
             </div>
 
-            <div class="formPart4.bas" >
+            <div class="formPart4.bas">
                 <div class="inputBx">
                     <input type="submit" value="Ajouter">
                 </div>

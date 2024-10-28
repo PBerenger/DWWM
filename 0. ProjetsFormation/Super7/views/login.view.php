@@ -1,7 +1,7 @@
 <?php ob_start(); ?>
 
 <div class="titreAdd">
-    <h1>CONNEXION</h1>
+    <h1 class="titreConn">CONNEXION</h1>
 </div>
 
 <div class="form-container2">

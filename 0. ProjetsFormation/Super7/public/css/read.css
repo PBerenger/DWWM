@@ -16,6 +16,12 @@
   border-radius: 5px;
   transition: background-color 0.3s ease;
 }
+@media (max-width: 768px) {
+  .readButtons .validButton {
+    width: 40%;
+    margin: 10px 0;
+  }
+}
 .readButtons .validButton:hover {
   background-color: var(--colorSecondaire);
 }
@@ -24,7 +30,11 @@
   font-size: 8.2em;
   user-select: none;
 }
-/* Styles pour le tableau */
+@media (max-width: 768px) {
+  .titreRead {
+    font-size: 5em;
+  }
+}
 .readContainer {
   width: 100%;
   border-collapse: collapse;
@@ -36,25 +46,53 @@
 .readContainer td {
   padding: 12px 15px;
   border: 1px solid var(--colorTertiaire);
+  width: 100vw;
+}
+.readContainer th a,
+.readContainer td a {
+  text-decoration: none;
+  color: var(--colorBackground0);
+}
+.readContainer th a:hover,
+.readContainer td a:hover {
+  text-decoration: none;
 }
 .readContainer th {
   background-color: var(--colorPrincipale);
   font-weight: bold;
-  color: #333;
+}
+.readContainer td {
+  color: var(--colorBackground0);
+}
+@media (max-width: 768px) {
+  .readContainer {
+    display: block;
+    overflow-x: auto;
+  }
+  .readContainer th {
+    display: none;
+  }
+  .readContainer td {
+    display: block;
+    text-align: center;
+  }
+  .readContainer td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    text-align: left;
+  }
 }
 .readContainer tr:nth-child(even) {
   background-color: var(--colorSecondaire);
 }
 .readContainer tr:hover {
-  background-color: var(--colorBackground0);
+  background-color: var(--colorTertiaire);
 }
 .readContainer img {
   border-radius: 50%;
 }
 /* Lien d'action */
 .readContainer a {
-  color: #2196F3;
-  /* Bleu */
   text-decoration: none;
 }
 .readContainer a:hover {
@@ -64,6 +102,17 @@
 .titreRead {
   text-align: center;
   font-size: 24px;
-  color: #333;
   margin-top: 10px;
+}
+.btn-modifier {
+  background-color: var(--colorPrincipale);
+  color: var(--colorBackground0);
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+.btn-modifier:hover {
+  background-color: var(--colorSecondaire);
+  color: var(--colorBackground0);
+  text-decoration: none;
 }

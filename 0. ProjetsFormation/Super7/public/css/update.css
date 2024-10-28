@@ -1,0 +1,170 @@
+@import 'style.css';
+.titreUpdate {
+  text-align: center;
+  font-size: 2.5em;
+  user-select: none;
+  margin-bottom: 20px;
+}
+.form-container-update {
+  background-color: var(--colorTertiaire);
+  display: flex;
+  justify-content: center;
+}
+.form-container-update form {
+  width: 60%;
+  padding: 30px;
+  margin: 30px;
+  text-align: center;
+  gap: 20px;
+  font-family: var(--fontTexteLight);
+  color: var(--colorBackground1);
+  font-size: 1em;
+  background-color: var(--colorBackground0);
+  border-radius: 5px;
+}
+.form-container-update form .inputBx {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 10px;
+  width: 300px;
+}
+.form-container-update form .inputBx .updateRetour {
+  width: 100%;
+  max-width: 300px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: var(--colorValid);
+  color: var(--colorBackground0);
+  font-size: 1em;
+}
+.form-container-update form .inputBx .updateRetour:hover {
+  background-color: var(--colorInvalid);
+}
+.form-container-update form .inputBx input[type='text'],
+.form-container-update form .inputBx input[type='email'],
+.form-container-update form .inputBx input[type='date'],
+.form-container-update form .inputBx input[type='password'] {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  border: none;
+  background-color: var(--colorSecondaire);
+  border: 2px solid var(--colorSecondaire);
+  color: var(--colorBackground0);
+  font-size: 1em;
+}
+.form-container-update form .inputBx input[type='text']::placeholder,
+.form-container-update form .inputBx input[type='email']::placeholder,
+.form-container-update form .inputBx input[type='date']::placeholder,
+.form-container-update form .inputBx input[type='password']::placeholder {
+  color: var(--colorBackground0);
+}
+.form-container-update form .inputBx input[type='text']:hover,
+.form-container-update form .inputBx input[type='email']:hover,
+.form-container-update form .inputBx input[type='date']:hover,
+.form-container-update form .inputBx input[type='password']:hover {
+  border: 2px solid var(--colorPrincipale);
+}
+.form-container-update form .inputBx input[type='file'] {
+  display: none;
+}
+.form-container-update form .inputBx label {
+  cursor: pointer;
+  background-color: var(--colorSecondaire);
+  color: var(--colorBackground0);
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+.form-container-update form .inputBx label:hover {
+  background-color: var(--colorTertiaire);
+}
+.form-container-update form select[id="genre"],
+.form-container-update form select[id="role"] {
+  width: 300px;
+  height: 40px;
+  background-color: var(--colorSecondaire);
+  color: var(--colorBackground0);
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+.form-container-update form select[id="genre"]:hover,
+.form-container-update form select[id="role"]:hover {
+  border: 2px solid var(--colorBackground0);
+}
+.form-container-update form input[type='submit'] {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--colorSecondaire);
+  color: var(--colorBackground0);
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.form-container-update form input[type='submit']:hover {
+  background-color: var(--colorTertiaire);
+}
+.form-container-update .infosContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.form-container-update .endBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.form-container-update .password-container {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+}
+.form-container-update .password-container input[type="password"] {
+  width: 100%;
+  padding-right: 40px;
+}
+.form-container-update .password-container #togglePassword {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.form-container-update .password-container #togglePassword .eyePSW {
+  width: 30px;
+  height: 20px;
+}
+@media (max-width: 768px) {
+  .form-container-update form {
+    width: 90%;
+    padding: 20px;
+    margin: 10px;
+  }
+  .form-container-update .updateLeftBow {
+    display: block;
+    margin: 10px auto 10px auto;
+  }
+  .form-container-update .updateRightBox {
+    display: block;
+    margin: 10px auto 10px auto;
+  }
+  .form-container-update .infosContainer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .form-container-update .inputBx {
+    width: 100%;
+  }
+  .form-container-update .updateRetour {
+    max-width: 100%;
+  }
+}

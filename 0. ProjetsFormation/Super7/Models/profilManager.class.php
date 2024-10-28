@@ -20,7 +20,13 @@ class ProfilManager {
         $stmt->bindParam(':userId', $userId);
         $stmt->execute();
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        return json_decode($result['responses_questionnaire'], true);
-    }
+    
+        // Vérifiez si le résultat n'est pas false avant d'accéder à l'indice
+        if ($result !== false && isset($result['responses_questionnaire'])) {
+            return json_decode($result['responses_questionnaire'], true);
+        }
+    
+        // Retourner un tableau vide ou null si aucune réponse n'est trouvée
+        return null; // ou return []; selon votre préférence
+    }    
 }
