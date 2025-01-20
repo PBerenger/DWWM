@@ -1,0 +1,29 @@
+cmd :
+
+- lister images : docker image ls
+- lister contener : docker ps -a
+- supprimer image : image rm (nomIDImage)
+- supprimer contener : docker rm (nomIDContener)
+
+
+- docker run 'nomImage' : copier un projet sans créer de nouvelle image
+- docker init (dans le dossier où l'on veut créer un projet docker) : créer tout un projet docker
+
+- docker build -t welcome-to-docker . : créer une image
+- docker compose up -d : ouvre un yaml
+- docker compose watch : log en temps réel
+
+
+
+lancer bind mouts : 
+dans la yaml :     volumes: 
+     			- ./app:/usr/src/app
+    			- /usr/src/app/node_modules
+et lancer l'ouverture du yaml : docker compose up -d
+
+
+créer un dossier complet par commande :
+- docker init : cmd dans le répertoire
+- docker compose up --build
+
+
