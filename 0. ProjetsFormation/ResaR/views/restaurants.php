@@ -1,5 +1,6 @@
 <?php
-require_once './mydbConnection/Database.php';
+$pageTitle = "listeRestaurants - ResaR";
+require_once './Managers/Connection.php';
 
 $pdo = MyDbConnection::getInstance();
 $stmt = $pdo->query('SELECT * FROM restaurants');
@@ -17,8 +18,3 @@ $restaurants = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </li>
     <?php endforeach; ?>
 </ul>
-
-<?php
-$content = ob_get_clean();
-// require_once __DIR__ . "/template.php";
-?>

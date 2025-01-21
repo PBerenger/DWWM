@@ -1,5 +1,6 @@
 <?php
-require_once './mydbConnection/Database.php';
+$pageTitle = "Inscription - ResaR";
+require_once './Managers/Connection.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = htmlspecialchars($_POST['name']);
@@ -27,8 +28,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <input type="password" name="password" placeholder="Mot de passe" required>
     <button type="submit">S'inscrire</button>
 </form>
-
-<?php
-$content = ob_get_clean();
-// require_once __DIR__ . "/template.php";
-?>

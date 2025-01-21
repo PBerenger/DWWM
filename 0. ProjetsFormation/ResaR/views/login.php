@@ -1,5 +1,7 @@
 <?php
-require_once './mydbConnection/Database.php';
+$pageTitle = "Connection - ResaR";
+require_once './Managers/Connection.php';
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = htmlspecialchars($_POST['email']);
@@ -37,8 +39,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <input type="password" name="password" placeholder="Mot de passe" required>
     <button type="submit">Connexion</button>
 </form>
-
-<?php
-$content = ob_get_clean();
-// require_once __DIR__ . "/template.php";
-?>

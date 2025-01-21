@@ -1,0 +1,128 @@
+/* Styles généraux */
+body {
+    font-family: 'Inter', sans-serif; /* Typographie moderne */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f4f4f9; /* Couleur de fond claire */
+    color: #333; /* Texte principal */
+    transition: background-color 0.3s, color 0.3s; /* Transition douce */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* En-tête */
+header {
+    background-color: #1a1a2e; /* Couleur sombre moderne */
+    color: #fff;
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espacement moderne */
+}
+
+header nav ul li a {
+    color: #f4f4f9;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 20px; /* Coins arrondis */
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+header nav ul li a:hover {
+    background-color: #e94560; /* Couleur vive au survol */
+    color: #fff;
+    transform: scale(1.1); /* Effet zoom */
+}
+
+/* Contenu principal */
+main {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre moderne */
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Pied de page */
+footer {
+    background-color: #1a1a2e;
+    color: #f4f4f9;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Boutons */
+button {
+    background-color: #e94560;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.2s;
+}
+
+button:hover {
+    background-color: #d72342;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.5);
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+}
