@@ -10,6 +10,9 @@ switch ($page) {
     case 'register':
         require './views/register.php';
         break;
+    case 'restaurant_registration':
+        require './views/restaurant_registration.php';
+        break;
     case 'login':
         require './views/login.php';
         break;

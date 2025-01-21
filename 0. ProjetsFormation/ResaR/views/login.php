@@ -2,13 +2,20 @@
 $pageTitle = "Connection - ResaR";
 require_once './Managers/Connection.php';
 
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = htmlspecialchars($_POST['email']);
+    $login = htmlspecialchars($_POST['login']);  // Le champ email ou nom
     $password = $_POST['password'];
 
-    $stmt = $pdo->prepare('SELECT * FROM users WHERE email = :email');
-    $stmt->bindValue(':email', $email);
+    // On vérifie d'abord si c'est un email ou un nom
+    if (filter_var($login, FILTER_VALIDATE_EMAIL)) {
+        // Si c'est un email
+        $stmt = $pdo->prepare('SELECT * FROM users WHERE email = :login');
+    } else {
+        // Si ce n'est pas un email, on suppose que c'est un nom
+        $stmt = $pdo->prepare('SELECT * FROM users WHERE lastName = :login');
+    }
+    
+    $stmt->bindValue(':login', $login);
     $stmt->execute();
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -25,17 +32,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         exit();
     } else {
-        $error = "Email ou mot de passe incorrect.";
+        $error = "Nom/email ou mot de passe incorrect.";
     }
 }
 ?>
+
 
 <h2>Se connecter :</h2>
 <?php if (isset($error)): ?>
     <p style="color: red;"><?= $error; ?></p>
 <?php endif; ?>
 <form method="POST">
-    <input type="email" name="email" placeholder="Email" required>
+    <input type="email" name="email" placeholder="Email ou Nom" required>
     <input type="password" name="password" placeholder="Mot de passe" required>
     <button type="submit">Connexion</button>
 </form>
