@@ -1,8 +1,3 @@
-<?php
-// Définir un titre par défaut pour la page si aucune variable n'est définie
-$pageTitle = $pageTitle ?? 'Bienvenue sur ResaR';
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -10,8 +5,7 @@ $pageTitle = $pageTitle ?? 'Bienvenue sur ResaR';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= htmlspecialchars($pageTitle) ?></title>
-    <!-- <link rel="stylesheet" href="../Public/css/generalStyle.css"> -->
-    <link rel="stylesheet" href="../Public/css/template.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
