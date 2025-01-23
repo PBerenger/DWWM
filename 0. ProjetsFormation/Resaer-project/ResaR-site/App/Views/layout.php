@@ -18,7 +18,7 @@
                 <li class="dropdown">
                     <a href="#">S'inscrire</a>
                     <div class="dropdown-content">
-                        <a href="?page=register">Je suis client</a>
+                        <a href="?page=/register">Je suis client</a>
                         <a href="?page=restaurant_registration">Je suis restaurateur</a> <!-- Option pour restaurants -->
                     </div>
                 </li>

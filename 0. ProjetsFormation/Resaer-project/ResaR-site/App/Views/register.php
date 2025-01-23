@@ -1,38 +1,43 @@
+<?php ob_start(); ?>
+
+<main>
+    <!-- Formulaire HTML -->
+    <form action="registerProcess.php" method="POST">
+        <h2>Inscription</h2>
+
+        <div class="form-group">
+            <label for="firstName">Prénom :</label>
+            <input type="text" id="firstName" name="firstName" required>
+        </div>
+
+        <div class="form-group">
+            <label for="lastName">Nom :</label>
+            <input type="text" id="lastName" name="lastName" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Adresse email :</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+
+        <div class="form-group">
+            <label for="passwordRepeat">Répéter le mot de passe :</label>
+            <input type="password" id="passwordRepeat" name="passwordRepeat" required>
+        </div>
+
+        <button type="submit">S'inscrire</button>
+    </form>
+
+</main>
+
 <?php
-$pageTitle = "Inscription Utilisateur- ResaR";
-require_once './Managers/Connection.php';
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Récupération des données du formulaire
-    $firstName = htmlspecialchars($_POST['firstName']);
-    $lastName = htmlspecialchars($_POST['lastName']);
-    $email = htmlspecialchars($_POST['email']);
-    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-
-    // Préparation de la requête SQL pour insérer un nouvel utilisateur
-    $stmt = $pdo->prepare('INSERT INTO users (firstName, lastName, email, password) VALUES (:firstName, :lastName, :email, :password)');
-    $stmt->bindValue(':firstName', $firstName);
-    $stmt->bindValue(':lastName', $lastName);
-    $stmt->bindValue(':email', $email);
-    $stmt->bindValue(':password', $password);
-
-    try {
-        // Exécution de la requête
-        $stmt->execute();
-        echo "Inscription réussie !";
-    } catch (PDOException $e) {
-        // Gestion des erreurs
-        echo "Erreur : " . $e->getMessage();
-    }
-}
+$content = ob_get_clean();
+$pageTitle = "Inscription - ResaR";
+// $wrapperName = "wrapperAccueil";
+require "layout.php";
 ?>
-
-<!-- Formulaire HTML -->
-<h2>S'inscrire :</h2>
-<form method="POST">
-    <input type="text" name="firstName" placeholder="Prénom" required>
-    <input type="text" name="lastName" placeholder="Nom" required>
-    <input type="email" name="email" placeholder="Email" required>
-    <input type="password" name="password" placeholder="Mot de passe" required>
-    <button type="submit">S'inscrire</button>
-</form>

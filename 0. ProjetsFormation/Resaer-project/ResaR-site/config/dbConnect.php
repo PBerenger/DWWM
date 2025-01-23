@@ -1,46 +1,44 @@
 <?php
+
+namespace App\Config;
+
 abstract class DbConnect
 {
-    private static $instance = null;
-    protected $pdo;
+    private static ?\PDO $pdo = null; // Singleton pour la connexion PDO
 
-    protected function __construct()
+    // Méthode pour obtenir une instance PDO
+    public static function getPDO(): \PDO
     {
-        $host = getenv('DB_HOST') ?: 'localhost';
-        if (!$host) {
-            die('Erreur : la variable d\'environnement DB_HOST est manquante.');
-        }
-        $port = getenv('DB_PORT') ?: '3306';
-        $db = getenv('DB_NAME') ?: 'resar_bdd';
-        $user = getenv('DB_USER') ?: 'root';
-        $pass = getenv('DB_PASS') ?: '';
-        $charset = 'utf8mb4';
+        if (self::$pdo === null) {
+            $host = getenv('DB_HOST') ?: 'localhost';
+            $port = getenv('DB_PORT') ?: '3306';
+            $db = getenv('DB_NAME') ?: 'resar_bdd';
+            $user = getenv('DB_USER') ?: 'root';
+            $pass = getenv('DB_PASS') ?: '';
+            $charset = 'utf8mb4';
 
-        $dsn = "mysql:host=$host;port=$port;dbname=$db;charset=$charset";
-        $options = [
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-            PDO::ATTR_EMULATE_PREPARES => false,
-        ];
+            $dsn = "mysql:host=$host;port=$port;dbname=$db;charset=$charset";
+            $options = [
+                \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
+                \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC,
+                \PDO::ATTR_EMULATE_PREPARES => false,
+            ];
 
-        try {
-            $this->pdo = new PDO($dsn, $user, $pass, $options);
-        } catch (PDOException $e) {
-            error_log('Erreur de connexion : ' . $e->getMessage());
-            die('Une erreur est survenue lors de la connexion à la base de données.');
+            try {
+                self::$pdo = new \PDO($dsn, $user, $pass, $options);
+            } catch (\PDOException $e) {
+                error_log('Erreur de connexion : ' . $e->getMessage());
+                die('Une erreur est survenue lors de la connexion à la base de données.');
+            }
         }
+
+        return self::$pdo;
     }
 
-    public static function getInstance()
+    // Méthode pour fermer la connexion PDO
+    public static function closeConnection(): void
     {
-        if (!self::$instance) {
-            self::$instance = new static();
-        }
-        return self::$instance->pdo;
-    }
-
-    public static function closeConnection()
-    {
-        self::$instance = null;
+        self::$pdo = null;
     }
 }
+

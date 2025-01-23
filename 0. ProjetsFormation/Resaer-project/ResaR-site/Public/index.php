@@ -15,8 +15,7 @@ spl_autoload_register(function ($class) {
 
 require_once "../config/dbConnect.php";
 
-// A REVOIR SELON LES CONTROLLERS
-// use App\Controllers\{Player, Classement, Login, Inscription, Country, User};
+use App\Controllers\{Login, Register, User};
 
 try {
     $url = parse_url($_SERVER["REQUEST_URI"]);
@@ -25,8 +24,8 @@ try {
         case '/':
             require '../App/Views/home.php';
             break;
-        case 'register':
-            require './views/register.php';
+        case '/register':
+            (new Register())->execute($_POST);
             break;
         case 'restaurant_registration':
             require './views/restaurant_registration.php';
@@ -35,7 +34,7 @@ try {
             require './views/login.php';
             break;
         case 'restaurants':
-            require './views/restaurants.php';
+            require '../App/views/restaurants/restaurants.php';
             break;
         case 'admin_restaurant':
             if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
