@@ -10,6 +10,7 @@ CREATE TABLE users (
     email VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
     role ENUM('user', 'admin') DEFAULT 'user',
+    photo VARCHAR(255) NOT NULL DEFAULT 'u_default.jpg',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -22,18 +23,21 @@ CREATE TABLE restaurants (
     phone VARCHAR(20),
     description TEXT,
     location VARCHAR(255),
+    photo VARCHAR(255) NOT NULL DEFAULT 'r_default.jpg',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (owner_id) REFERENCES users(id) ON DELETE CASCADE
+    FOREIGN KEY (owner_id) REFERENCES users(idUsers) ON DELETE CASCADE
 );
 
--- Table pour les menus
-CREATE TABLE menus (
-    idMenus INT AUTO_INCREMENT PRIMARY KEY,
+-- Table pour les menus (plats)
+CREATE TABLE dishes (
+    idDishes INT AUTO_INCREMENT PRIMARY KEY,
     restaurant_id INT NOT NULL,
     name VARCHAR(255) NOT NULL,
     price DECIMAL(10, 2) NOT NULL,
     description TEXT,
-    FOREIGN KEY (restaurant_id) REFERENCES restaurants(id) ON DELETE CASCADE
+    photo VARCHAR(255) NOT NULL DEFAULT 'd_default.jpg',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (restaurant_id) REFERENCES restaurants(idRestaurants) ON DELETE CASCADE
 );
 
 -- Table pour les réservations
@@ -44,6 +48,6 @@ CREATE TABLE reservations (
     reservation_time DATETIME NOT NULL,
     guests INT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
-    FOREIGN KEY (restaurant_id) REFERENCES restaurants(id) ON DELETE CASCADE
+    FOREIGN KEY (user_id) REFERENCES users(idUsers) ON DELETE CASCADE,
+    FOREIGN KEY (restaurant_id) REFERENCES restaurants(idRestaurants) ON DELETE CASCADE
 );
