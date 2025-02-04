@@ -108,7 +108,7 @@ class Restaurant
 
     public function setPhoto(?string $photo): void
     {
-        $this->photo = $photo ?? 'default.jpg';
+        $this->photo = $photo ?? 'r_default.jpg';
     }
 
     public function setCreatedAt(string $created_at): void
@@ -146,11 +146,11 @@ class Restaurant
     public static function getAllRestaurants(\PDO $pdo): array
     {
         $query = "SELECT idRestaurants, owner_id, name, address, phone, description, location, photo, created_at 
-                  FROM Restaurants 
-                  ORDER BY name ASC";
+              FROM Restaurants 
+              ORDER BY name ASC";
 
         $stmt = $pdo->query($query);
-        $restaurantsInfo = $stmt->fetchAll();
+        $restaurantsInfo = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 
         $restaurants = [];
         foreach ($restaurantsInfo as $restaurant) {
@@ -170,6 +170,7 @@ class Restaurant
 
         return $restaurants;
     }
+
 
     // Créer un nouveau restaurant
     public static function createRestaurant(\PDO $pdo, string $owner_id, string $name, string $address, string $phone, string $description, string $location, string $photo): ?Restaurant
