@@ -109,6 +109,7 @@ header nav ul li a:hover {
 /* Contenu principal */
 main {
   padding: 30px;
+  max-width: 1300px;
   margin: 20px auto;
   background-color: var(--tertiary-background);
   border-radius: 10px;
@@ -116,8 +117,8 @@ main {
   animation: fadeIn 0.6s ease-in-out;
 }
 .btn-more-info {
-  background-color: var(--primary-background);
-  color: var(--secondary-fonts);
+  background-color: var(--primary-hover);
+  color: var(--secondary-title);
   min-width: 146px;
   margin: 10px 0;
   padding: 10px 20px;
@@ -129,12 +130,12 @@ main {
   transition: background-color 0.3s, transform 0.2s;
 }
 .btn-more-info:hover {
-  background-color: var(--primary-hover);
-  color: var(--secondary-title);
+  background-color: var(--primary-background);
+  color: var(--secondary-fonts);
 }
 .btn-more-resa {
-  background-color: var(--secondary-fonts);
-  color: var(--primary-background);
+  background-color: var(--button-resa);
+  color: var(--secondary-title);
   min-width: 146px;
   margin: 10px 0;
   padding: 10px 20px;
@@ -146,8 +147,29 @@ main {
   transition: background-color 0.3s, transform 0.2s;
 }
 .btn-more-resa:hover {
-  background-color: var(--button-resa);
-  color: var(--secondary-title);
+  background-color: var(--primary-background);
+  color: var(--secondary-fonts);
+}
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-3px);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+  75% {
+    transform: translateX(-3px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.btn-more-info:hover,
+.btn-more-resa:hover {
+  animation: shake 0.3s ease-in-out;
 }
 /* Animation d'apparition */
 @keyframes fadeIn {

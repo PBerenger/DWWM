@@ -31,6 +31,16 @@ try {
         case 'restaurants':
             (new Restaurants\Read())->execute($_POST);
             break;
+        case 'restaurant-details':
+            $id = $_GET['id'] ?? null;
+            if ($id === null) {
+                header("HTTP/1.1 400 Bad Request");
+                echo "Identifiant du restaurant manquant.";
+                exit;
+            }
+            (new Restaurants\Details())->execute($id);
+            break;
+
         case 'register':
             (new Register())->execute($_POST);
             break;

@@ -117,29 +117,31 @@ class Restaurant
     }
 
     // Récupérer les informations d'un restaurant par ID
-    public function setRestaurantInfoById(int $id): void
+    public static function getRestaurantFindById(\PDO $pdo, int $id): ?restaurant
     {
         $query = "SELECT idRestaurants, owner_id, name, address, phone, description, location, photo, created_at 
-                  FROM Restaurants 
-                  WHERE idRestaurants = ?";
-
-        $stmt = $this->pdo->prepare($query);
+              FROM Restaurants 
+              WHERE idRestaurants = ?";
+        $stmt = $pdo->prepare($query);
         $stmt->execute([$id]);
-        $restaurantInfo = $stmt->fetch();
+        $restaurantInfo = $stmt->fetch(\PDO::FETCH_ASSOC);
 
         if (!$restaurantInfo) {
-            throw new Exception("Le restaurant avec cet ID n'a pas été trouvé");
+            return null; // Aucun restaurant trouvé
         }
 
-        $this->idRestaurants = $restaurantInfo["idRestaurants"];
-        $this->owner_id = $restaurantInfo["owner_id"];
-        $this->name = $restaurantInfo["name"];
-        $this->address = $restaurantInfo["address"];
-        $this->phone = $restaurantInfo["phone"];
-        $this->description = $restaurantInfo["description"];
-        $this->location = $restaurantInfo["location"];
-        $this->photo = $restaurantInfo["photo"];
-        $this->created_at = $restaurantInfo["created_at"];
+        $restaurant = new Restaurant();
+        $restaurant->setId((int)$restaurantInfo['idRestaurants']);
+        $restaurant->setOwner($restaurantInfo['owner_id']);
+        $restaurant->setName($restaurantInfo['name']);
+        $restaurant->setAddress($restaurantInfo['address']);
+        $restaurant->setPhone($restaurantInfo['phone']);
+        $restaurant->setDescription($restaurantInfo['description']);
+        $restaurant->setLocation($restaurantInfo['location']);
+        $restaurant->setPhoto($restaurantInfo['photo'] ?? 'r_default.jpg');
+        $restaurant->setCreatedAt($restaurantInfo['created_at']);
+
+        return $restaurant;
     }
 
     // Récupérer tous les restaurants
