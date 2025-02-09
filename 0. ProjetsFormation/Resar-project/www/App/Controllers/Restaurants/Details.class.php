@@ -5,8 +5,10 @@ namespace App\Controllers\Restaurants;
 use App\Config\DbConnect;
 use App\Models\Restaurant;
 
-class Details {
-    public function execute(int $id) {
+class Details
+{
+    public function execute(int $id)
+    {
         $pdo = DbConnect::getPDO();
         $restaurant = Restaurant::getRestaurantFindById($pdo, $id);
 
@@ -15,8 +17,30 @@ class Details {
             echo "Restaurant non trouvé.";
             exit;
         }
+        
+        $photo = $restaurant->getPhoto();
 
-        // La vue doit s'attendre à une variable $restaurant contenant les infos du restaurant.
+        $dishes = $this->getDishes($id);
+
         require __DIR__ . "/../../Views/Restaurants/restaurant-details.php";
     }
+
+    public function getDishes(int $id): array
+    {
+        $pdo = DbConnect::getPDO();
+        $query = "SELECT idDishes, name, description, price FROM dishes WHERE restaurant_id = ?";
+        $stmt = $pdo->prepare($query);
+        
+        if (!$stmt->execute([$id])) {
+            throw new \Exception('Erreur lors de la récupération des plats.');
+        }
+
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+    public function getPhoto(): string
+    {
+        return $this->photo ?? 'd_default.jpg';
+    }
 }
+

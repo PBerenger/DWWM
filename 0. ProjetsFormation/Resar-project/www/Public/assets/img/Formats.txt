@@ -1,3 +1,3 @@
-u_default : min 150 x 150 pixel
-r_default : min 2048 x 1200 px (6mo)
-d_default : min 200 x 200 px (4mo)
+u_default (Photo profil) : min 150 x 150 pixel
+r_default (restaurants cover) : min 2048 x 1200 px (6mo)
+d_default (plat): min 200 x 200 px (4mo)

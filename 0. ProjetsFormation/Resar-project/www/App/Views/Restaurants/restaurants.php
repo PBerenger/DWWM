@@ -9,15 +9,17 @@
         <?php foreach ($restaurants as $restaurant): ?>
             <div class="restaurant-card">
                 <h3><?= htmlspecialchars($restaurant->getName()); ?></h3>
-                
+
                 <?php
-                $photoPath = !empty($restaurant->getPhoto()) && file_exists('assets/img/' . $restaurant->getPhoto())
-                    ? 'assets/img/' . htmlspecialchars($restaurant->getPhoto())
-                    : 'assets/img/r_default.jpg';
+                if (!empty($userProfilePhoto) && file_exists('assets/img/' . $userProfilePhoto)) {
+                    $photoPath = 'assets/img/' . htmlspecialchars($userProfilePhoto);
+                } else {
+                    $photoPath = 'assets/img/u_default.jpg';
+                }
                 ?>
                 <img src="<?= htmlspecialchars($photoPath) ?>"
-                    alt="Photo du restaurant"
-                    class="restaurant-photo">
+                     alt="Photo de profil"
+                     class="restaurant-photo">
 
                 <p><strong>Localisation :</strong> <?= htmlspecialchars($restaurant->getLocation()); ?></p>
                 <p><strong>Téléphone :</strong> <?= htmlspecialchars($restaurant->getPhone()); ?></p>
@@ -31,9 +33,9 @@
     <?php endif; ?>
 </div>
 
-<!-- <script src="./scripts/restaurants.js"></script> -->
 
 <?php
 $content = ob_get_clean();
 $pageTitle = "Liste des Restaurants - ResaR";
 require "../App/Views/layout.php";
+

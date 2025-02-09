@@ -27,18 +27,20 @@
 
 :root {
     --primary-background: #f4f4f9;
-    --primary-title: #2c3e50;
+    --primary-title: #273940;
     --primary-fonts: #333;
-    --primary-button: #e94560;
-    --primary-hover: #d72342;
+    --primary-button: #ED3A1F;
     --button-resa: #E1A624;
 
-    --secondary-background: #1a1a2e;
+    --secondary-background: #273940;
     --secondary-title: #fff;
     --secondary-fonts: #000;
     --secondary-hover: #fff;
 
     --tertiary-background: #fff;
+
+    --font-title: 'poppins';
+    --font-text: 'inter';
 }
 
 
@@ -54,16 +56,16 @@
 }
 
 
-@primary-fonts-grey: var(--primary-fonts);
-@primary-title-blue: var(--primary-title);
+// @primary-fonts-grey: var(--primary-fonts);
+// @primary-title-blue: var(--primary-title);
 
 body {
-    font-family: "Inter", sans-serif;
+    font-family: var(--font-text);
     margin: 0;
     padding: 0;
     line-height: 1.6;
     background-color: var(--primary-background);
-    color: @primary-fonts-grey;
+    color: var(--primary-title);
     transition: background-color 0.3s, color 0.3s;
 
     h1,
@@ -72,8 +74,8 @@ body {
     h4,
     h5,
     h6 {
-        font-family: "Poppins", sans-serif;
-        color: @primary-title-blue;
+        font-family: var(--font-title);
+        color: var(--primary-title);
         margin-bottom: 10px;
     }
 
@@ -83,6 +85,11 @@ body {
     }
 }
 
+
+//==================================================|
+// NAV-BAR------------------------------------------|
+//==================================================|
+
 /* En-tête */
 header {
     background-color: var(--secondary-background);
@@ -90,28 +97,54 @@ header {
     padding: 15px 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
-    nav ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        gap: 20px;
+    nav {
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            gap: 10px;
+            display: flex;
+            // A DROITE !
 
-        li a {
-            color: var(--secondary-title);
-            font-weight: 500;
-            padding: 8px 15px;
-            border-radius: 20px;
-            transition: background-color 0.3s, transform 0.2s;
+        }
 
-            &:hover {
-                background-color: var(--primary-hover);
+        li {
+            align-items: center;
+
+            a {
                 color: var(--secondary-title);
-                transform: scale(1.1);
+                font-weight: 500;
+                padding: 8px 15px;
+                border-radius: 20px;
+                transition: background-color 0.3s, transform 0.2s;
+
+                &:hover {
+                    background-color: var(--primary-button);
+                    color: var(--secondary-title);
+                }
             }
         }
     }
+}
+
+
+/* Pour le logo */
+.logo1 {
+    border: none;
+    background: transparent;
+    outline: none;
+    padding: 0;
+    cursor: pointer;
+    position: absolute;
+    left: 20px;
+}
+
+
+/* Centrer les liens */
+nav ul>li:not(.logo1) {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Menu déroulant */
@@ -139,12 +172,18 @@ header {
             display: block;
 
             &:hover {
-                background-color: var(--primary-hover);
+                background-color: var(--primary-button);
                 color: var(--secondary-title);
             }
         }
     }
 }
+
+
+
+//==================================================|
+// MAIN---------------------------------------------|
+//==================================================|
 
 /* Contenu principal */
 main {
@@ -157,8 +196,10 @@ main {
     animation: fadeIn 0.6s ease-in-out;
 }
 
+// BOUTONS
+
 .btn-more-info {
-    background-color: var(--primary-hover);
+    background-color: var(--primary-button);
     color: var(--secondary-title);
     min-width: 146px;
     margin: 10px 0;
@@ -169,6 +210,29 @@ main {
     text-align: center;
     display: inline-block;
     transition: background-color 0.3s, transform 0.2s;
+
+    &:hover {
+        background-color: var(--primary-background);
+        color: var(--secondary-fonts);
+    }
+}
+
+.btn-view-dishes {
+    cursor: pointer;
+    outline: none;
+    background-color: var(--primary-button);
+    color: var(--secondary-title);
+    min-width: 146px;
+    margin: 10px 0;
+    padding: 13.2px 20px; // ?????
+    border-radius: 30px;
+    font-family: var(--font-text);
+    font-size: 16px; // ?????
+    font-weight: 500;
+    text-align: center;
+    display: inline-block;
+    transition: background-color 0.3s, transform 0.2s;
+    border: none;
 
     &:hover {
         background-color: var(--primary-background);
@@ -196,15 +260,30 @@ main {
 }
 
 @keyframes shake {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-3px); }
-    50% { transform: translateX(3px); }
-    75% { transform: translateX(-3px); }
-    100% { transform: translateX(0); }
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-3px);
+    }
+
+    50% {
+        transform: translateX(3px);
+    }
+
+    75% {
+        transform: translateX(-3px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
 
 .btn-more-info:hover,
-.btn-more-resa:hover {
+.btn-more-resa:hover,
+.btn-view-dishes:hover {
     animation: shake 0.3s ease-in-out;
 }
 
@@ -223,6 +302,11 @@ main {
     }
 }
 
+
+//==================================================|
+// FOOTER-------------------------------------------|
+//==================================================|
+
 /* Pied de page */
 footer {
     background-color: var(--secondary-background);
@@ -237,30 +321,10 @@ footer {
     }
 }
 
-/* Boutons */
-button {
-    background-color: var(--primary-button);
-    color: var(--secondary-title);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 30px;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.3s, box-shadow 0.2s;
+//==================================================|
+// RESPONSIVES--------------------------------------|
+//==================================================|
 
-    &:hover {
-        background-color: var(--primary-hover);
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    }
-
-    &:focus {
-        outline: none;
-        box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.5);
-    }
-}
-
-/* Responsiveness */
 @media (max-width: 768px) {
     header nav ul {
         flex-direction: column;
