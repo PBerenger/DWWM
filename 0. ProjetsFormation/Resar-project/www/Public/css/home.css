@@ -1,41 +1,133 @@
-.restaurants {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-.restaurant-card-home {
-  background-color: var(--tertiary-background);
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  width: calc(33.33% - 20px);
-  text-align: center;
-}
-.restaurant-card-home img {
+.home-container .home-img-background {
+  margin-top: 20px;
+  background-image: url('/assets/img/restau1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   width: 100%;
-  height: 200px;
-  object-fit: cover;
+  height: 50vh;
+  border: 5px solid var(--secondary-background);
+  border-radius: 5px;
+  background-position: 0 70%;
+}
+.home-container .home-top {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  position: relative;
+  z-index: 1;
+}
+.home-container .home-top.hidden {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+.home-container .search-bar {
+  position: fixed;
+  top: -50px;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 1000;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: top 0.5s ease, opacity 0.5s ease;
+  background-color: var(--secondary-background);
+  opacity: 0;
+  transform: translateY(-50px);
+}
+.home-container .search-bar.active {
+  top: 0;
+  opacity: 1;
+  transform: translateY(0);
+  display: flex;
+}
+.home-container .search-bar input {
+  min-width: 1300px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+.home-container .home-mid1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 20px;
+}
+.home-container .home-mid1 .home-restaurants-slider {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+.home-container .home-mid1 .home-restaurants-slider .slider-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+.home-container .home-mid1 .home-restaurants-slider .slider-container .restaurant-link {
+  display: block;
+  text-decoration: none;
+  /* Enlève le souligné du lien */
+}
+.home-container .home-mid1 .home-restaurants-slider .slider-container .home-restaurant-slide {
+  cursor: pointer;
+  /* Change le curseur pour montrer qu'il est cliquable */
+}
+.home-container .home-mid1 .home-restaurants-slider .home-restaurant-slide {
+  flex: 0 0 100%;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+  margin: 0 0px;
+  background-color: var(--secondary-background);
   border-radius: 10px;
 }
-.restaurant-card-home h3 {
-  font-size: 1.5rem;
-  margin: 10px 0;
+.home-container .home-mid1 .home-restaurants-slider .home-restaurant-slide .restaurant-photo {
+  width: 100%;
+  height: auto;
+  max-height: 330px;
+  object-fit: cover;
+  border-radius: 8px;
 }
-.restaurant-card-home p {
-  font-size: 1rem;
-  color: var(--primary-fonts);
-}
-.btn-more-info {
-  background-color: var(--primary-button);
+.home-container .home-mid1 .home-restaurants-slider .home-restaurant-slide h3,
+.home-container .home-mid1 .home-restaurants-slider .home-restaurant-slide p {
+  margin: 5px 0;
   color: var(--secondary-title);
-  padding: 10px 20px;
-  border-radius: 30px;
-  text-align: center;
-  display: inline-block;
-  transition: background-color 0.3s;
 }
-.btn-more-info:hover {
-  background-color: var(--primary-background);
-  color: var(--secondary-fonts);
+.home-container .home-mid1 .home-restaurants-slider .home-restaurant-slide .restaurant-info {
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  border-radius: 8px;
+}
+.home-container .home-mid1 .home-restaurants-slider .slider-prev,
+.home-container .home-mid1 .home-restaurants-slider .slider-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--secondary-title);
+  color: var(--secondary-background);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 500;
+  border-radius: 5px;
+}
+.home-container .home-mid1 .home-restaurants-slider .slider-prev:hover,
+.home-container .home-mid1 .home-restaurants-slider .slider-next:hover {
+  background-color: var(--primary-button);
+  color: var(--secondary-hover);
+}
+.home-container .home-mid1 .home-restaurants-slider .slider-prev {
+  left: 10px;
+}
+.home-container .home-mid1 .home-restaurants-slider .slider-next {
+  right: 10px;
 }

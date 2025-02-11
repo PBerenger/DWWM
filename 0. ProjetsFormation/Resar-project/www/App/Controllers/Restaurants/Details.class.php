@@ -22,7 +22,7 @@ class Details
 
         $dishes = $this->getDishes($id);
 
-        require __DIR__ . "/../../Views/Restaurants/restaurant-details.php";
+        require __DIR__ . "/../../Views/Restaurants/restaurant-details_view.php";
     }
 
     public function getDishes(int $id): array

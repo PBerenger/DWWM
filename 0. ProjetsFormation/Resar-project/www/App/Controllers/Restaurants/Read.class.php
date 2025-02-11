@@ -16,7 +16,8 @@ class Read {
         }
         $userAdmin = $user->isAdmin();
 
-        require __DIR__ . "/../../Views/Restaurants/restaurants.php";
+        require __DIR__ . "/../../Views/Restaurants/restaurants_view.php";
+        // require __DIR__ . "/../../Views/home_view.php";
     }
 }
 ?>

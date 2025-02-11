@@ -8,16 +8,17 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/restaurants.css">
     <link rel="stylesheet" href="/css/restaurant-details.css">
+    <link rel="stylesheet" href="/css/home.css">
 </head>
 
 <body>
     <!-- En-tête -->
     <header>
         <nav>
+            <button class="logo1" onclick="window.location.href='?page=home'">
+                <img src="assets/logo/logo1.png" alt="Logo Accueil">
+            </button>
             <ul>
-                <button class="logo1" onclick="window.location.href='?page=home'">
-                    <img src="assets/logo/logo1.png" alt="Logo Accueil" style="height: 40px;">
-                </button>
                 <li><a href="?page=restaurants">Restaurants</a></li>
                 <li><a href="?page=login">Connexion</a></li>
                 <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
@@ -30,12 +31,21 @@
                     <a href="#">S'inscrire</a>
                     <div class="dropdown-content">
                         <a href="?page=/register">Je suis client</a>
-                        <a href="?page=restaurant_registration">Je suis restaurateur</a> <!-- Option pour restaurants -->
+                        <a href="?page=restaurant_registration">Je suis restaurateur</a>
                     </div>
+                </li>
+                <li class="search-bar-nav">
+                    <form method="GET" action="index.php?page=search">
+                        <input type="text" name="search" placeholder="Rechercher un restaurant..." id="search-input" value="<?= htmlspecialchars($_GET['search'] ?? '') ?>">
+                    </form>
+                </li>
+                <li>
+                    <button id="dark-mode-toggle">☀️</button>
                 </li>
             </ul>
         </nav>
     </header>
+
 
     <!-- Contenu principal -->
     <main>
@@ -46,6 +56,8 @@
     <footer>
         <p>&copy; <?= date('Y') ?> ResaR. Tous droits réservés.</p>
     </footer>
+
+    <script src="./scripts/layout.js"></script>
 </body>
 
 </html>

@@ -10,27 +10,37 @@ if (session_status() !== PHP_SESSION_ACTIVE)
 spl_autoload_register(function ($class) {
     $class = str_replace("\\", DIRECTORY_SEPARATOR, $class);
     $path = "../$class.class.php";
+    // echo $path;
     if (file_exists($path)) {
         include $path;
     }
 });
 
-require_once "../config/dbConnect.php";
+require_once "../Config/DbConnect.php";
 
-use App\Controllers\{User, Login, Register, Restaurants};
+use App\Controllers\{User, Login, Register, Restaurants, Home, Search};
+use App\Config\DbConnect;
+
+$pdo = DbConnect::getPDO();
 
 try {
     $url = parse_url($_SERVER["REQUEST_URI"]);
     parse_str($url["query"] ?? '', $query);
-    $page = $query['page'] ?? 'home'; // Si 'page' n'est pas défini, on affiche home
+    $page = $query['page'] ?? 'home';
 
     switch ($page) {
         case 'home':
-            require '../App/Views/home.php';
+            $restaurantModel = new Home();
+            $restaurants = Home::getRandomRestaurants($pdo);
+            require '../App/Views/home_view.php';
             break;
+
+            //case search
+
         case 'restaurants':
             (new Restaurants\Read())->execute($_POST);
             break;
+
         case 'restaurant-details':
             $id = $_GET['id'] ?? null;
             if ($id === null) {
@@ -44,12 +54,15 @@ try {
         case 'register':
             (new Register())->execute($_POST);
             break;
+
         case 'restaurant_registration':
             require '../App/Views/restaurant_registration.php';
             break;
+
         case 'login':
             require '../App/Views/login.php';
             break;
+
         case 'admin_restaurant':
             if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
                 require '../App/Views/admin_restaurant.php';
@@ -58,6 +71,7 @@ try {
                 echo "Accès refusé.";
             }
             break;
+
         default:
             header("HTTP/1.1 404 Not Found");
             echo "Page non trouvée.";
@@ -65,6 +79,5 @@ try {
     }
 } catch (Exception $e) {
     $errorMessage = $e->getMessage();
-
     require "../App/Views/error.php";
 }

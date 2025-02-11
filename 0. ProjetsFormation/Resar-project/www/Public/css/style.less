@@ -33,6 +33,7 @@
     --button-resa: #E1A624;
 
     --secondary-background: #273940;
+    --secondary-color: #ED3A1F;
     --secondary-title: #fff;
     --secondary-fonts: #000;
     --secondary-hover: #fff;
@@ -41,8 +42,14 @@
 
     --font-title: 'poppins';
     --font-text: 'inter';
-}
 
+    /* Mode sombre */
+    --dark-background: #121212;
+    --dark-title: #f4f4f9;
+    --dark-fonts: #fff;
+    --dark-secondary-background: #333;
+    --dark-button: #E1A624;
+}
 
 //==================================================|
 // GENERAL STYLES-----------------------------------|
@@ -54,10 +61,6 @@
     box-sizing: border-box;
     text-decoration: none;
 }
-
-
-// @primary-fonts-grey: var(--primary-fonts);
-// @primary-title-blue: var(--primary-title);
 
 body {
     font-family: var(--font-text);
@@ -85,6 +88,47 @@ body {
     }
 }
 
+/* Mode sombre */
+body.dark-mode {
+    background-color: var(--dark-background);
+    color: var(--dark-title);
+}
+
+body.dark-mode main {
+    background-color: var(--dark-secondary-background);
+}
+
+/* Option pour le bouton dans la barre de navigation */
+#dark-mode-toggle {
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: transparent;
+        color: var(--secondary-title);
+    }
+}
+
+body.dark-mode footer {
+    background-color: var(--dark-secondary-background);
+    color: var(--dark-fonts);
+}
+
+body.dark-mode h2 {
+    color: var(--dark-title); /* Couleur pour le mode sombre */
+}
+
+body.dark-mode .restaurant-card {
+    background-color: var(--dark-secondary-background); /* Changer la couleur de fond en mode sombre */
+    color: var(--dark-fonts);
+
+    h3 {
+        color: var(--dark-title);
+    }
+}
+
 
 //==================================================|
 // NAV-BAR------------------------------------------|
@@ -98,18 +142,25 @@ header {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
     nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+
         ul {
+            justify-content: flex-end;
             list-style: none;
             margin: 0;
             padding: 0;
-            width: 100%;
-            gap: 10px;
             display: flex;
-            // A DROITE !
+            align-items: center;
+            gap: 15px;
+            width: 100%;
 
         }
 
         li {
+            display: flex;
             align-items: center;
 
             a {
@@ -125,6 +176,25 @@ header {
                 }
             }
         }
+
+        .search-bar-nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+
+            input {
+                background-color: var(--secondary-background);
+                color: var(--secondary-title);
+                border: none;
+                outline: none;
+                padding: 10px;
+                font-size: 16px;
+                width: 300px;
+                border-bottom: 2px solid var(--primary-background);
+            }
+        }
+
     }
 }
 
@@ -136,16 +206,14 @@ header {
     outline: none;
     padding: 0;
     cursor: pointer;
-    position: absolute;
-    left: 20px;
+    display: flex;
+    align-items: center;
+
+    img {
+        height: 40px;
+    }
 }
 
-
-/* Centrer les liens */
-nav ul>li:not(.logo1) {
-    margin-left: auto;
-    margin-right: auto;
-}
 
 /* Menu déroulant */
 .dropdown {
@@ -163,7 +231,9 @@ nav ul>li:not(.logo1) {
         border-radius: 20px;
         min-width: 160px;
         box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-        z-index: 1;
+        z-index: 10;
+        top: 0;
+        left: 0;
 
         a {
             color: var(--primary-fonts);

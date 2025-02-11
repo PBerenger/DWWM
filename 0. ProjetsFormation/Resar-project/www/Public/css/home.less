@@ -1,47 +1,153 @@
-.restaurants {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
-}
+.home-container {
+    
+    .home-img-background {
+        margin-top: 20px;
+        background-image: url('/assets/img/restau1.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        width: 100%;
+        height: 50vh;
+        border: 5px solid var(--secondary-background);
+        border-radius: 5px;
+        background-position: 0 70%;
+    }
 
-.restaurant-card-home {
-    background-color: var(--tertiary-background);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: calc(33.33% - 20px);
-    text-align: center;
-}
+    .home-top {
+        transition: opacity 0.5s ease, transform 0.5s ease;
+        position: relative;
+        z-index: 1;
+    }
 
-.restaurant-card-home img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-}
+    .home-top.hidden {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
 
-.restaurant-card-home h3 {
-    font-size: 1.5rem;
-    margin: 10px 0;
-}
+    .search-bar {
+        position: fixed;
+        top: -50px;
+        left: 0;
+        right: 0;
+        padding: 10px;
+        background-color: rgba(255, 255, 255, 0.8);
+        z-index: 1000;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        transition: top 0.5s ease, opacity 0.5s ease;
+        background-color: var(--secondary-background);
+        opacity: 0;
+        transform: translateY(-50px);
+    }
 
-.restaurant-card-home p {
-    font-size: 1rem;
-    color: var(--primary-fonts);
-}
+    .search-bar.active {
+        top: 0;
+        opacity: 1;
+        transform: translateY(0);
+        display: flex;
+    }
 
-.btn-more-info {
-    background-color: var(--primary-button);
-    color: var(--secondary-title);
-    padding: 10px 20px;
-    border-radius: 30px;
-    text-align: center;
-    display: inline-block;
-    transition: background-color 0.3s;
+    .search-bar input {
+        min-width: 1300px;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+    }
 
-    &:hover {
-        background-color: var(--primary-background);
-        color: var(--secondary-fonts);
+    .home-mid1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 20px;
+
+        .home-restaurants-slider {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;  // Largeur maximale pour le slider
+            overflow: hidden;  // Cache les restaurants hors de la vue
+            margin-top: 20px;
+
+            .slider-container {
+                display: flex;
+                transition: transform 0.5s ease-in-out;  // Animation de défilement
+
+                .restaurant-link {
+                    display: block;
+                    text-decoration: none; /* Enlève le souligné du lien */
+                }
+                
+                .home-restaurant-slide {
+                    cursor: pointer; /* Change le curseur pour montrer qu'il est cliquable */
+                }
+                
+            }
+
+            .home-restaurant-slide {
+                flex: 0 0 100%;
+                text-align: center;
+                padding: 10px;
+                box-sizing: border-box;
+                margin: 0 0px;
+                background-color: var(--secondary-background);
+                border-radius: 10px;
+            
+                .restaurant-photo {
+                    width: 100%;
+                    height: auto;
+                    max-height: 330px;
+                    object-fit: cover;
+                    border-radius: 8px;
+                }
+
+                h3, p {
+                    margin: 5px 0;
+                    color: var(--secondary-title);
+                }
+
+                .restaurant-info {
+                    top: 20px;  // Ajuste la position du texte
+                    left: 20px;
+                    right: 20px;
+                    color: white;  // Assure-toi que le texte soit lisible sur l'image
+                    background-color: rgba(0, 0, 0, 0.6);  // Légère transparence pour rendre le texte plus visible
+                    padding: 10px;
+                    border-radius: 8px;
+                }
+            }
+
+            .slider-prev, .slider-next {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: var(--secondary-title);
+                color: var(--secondary-background);
+                // background-color: var(--secondary-background);
+                // color: var(--secondary-title);
+                border: none;
+                padding: 10px;
+                cursor: pointer;
+                font-size: 20px;
+                z-index: 500;
+                border-radius: 5px;
+
+                &:hover{
+                    background-color: var(--primary-button);
+                    color: var(--secondary-hover);
+                }
+            }
+
+
+            .slider-prev {
+                left: 10px;
+            }
+
+            .slider-next {
+                right: 10px;
+            }
+        }
     }
 }
