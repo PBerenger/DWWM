@@ -24,8 +24,8 @@ ob_start(); ?>
                             <h3><?= htmlspecialchars($restaurant->getName()); ?></h3>
 
                             <?php
-                            if (!empty($userProfilePhoto) && file_exists('assets/img/' . $userProfilePhoto)) {
-                                $photoPath = 'assets/img/' . htmlspecialchars($userProfilePhoto);
+                            if (!empty($restaurantPhoto) && file_exists('assets/img/' . $restaurantPhoto)) {
+                                $photoPath = 'assets/img/' . htmlspecialchars($restaurantPhoto);
                             } else {
                                 $photoPath = 'assets/img/r_default.jpg';
                             }
@@ -66,17 +66,58 @@ ob_start(); ?>
     <div class="home-bot">
         <h2>Vos avis</h2>
         <div class="home-reviews">
-            <?php foreach ($reviews as $review) : ?>
-                <div class="home-review">
-                    <a href="index.php?page=restaurant&id=<?= $review->getRestaurantId() ?>">
-                        <img src="<?= $review->getRestaurantPicture() ?>" alt="Photo du restaurant <?= $review->getRestaurantName() ?>">
-                        <h3><?= $review->getRestaurantName() ?></h3>
-                    </a>
-                    <p><?= $review->getContent() ?></p>
-                </div>
-            <?php endforeach; ?>
+            <?php if (!empty($reviews)) : ?>
+                <?php foreach ($reviews as $review) : ?>
+                    <div class="review-box">
+                        <div class="review-header">
+
+                            <?php
+                            if (!empty($userProfilePhoto) && file_exists('assets/img/' . $userProfilePhoto)) {
+                                $photoPath = 'assets/img/' . htmlspecialchars($userProfilePhoto);
+                            } else {
+                                $photoPath = 'assets/img/u_default.jpg';
+                            }
+                            ?>
+                            <img src="<?= htmlspecialchars($photoPath) ?>"
+                                alt="Photo du profil"
+                                class="review-user-photo">
+
+                            <div class="review-user-info">
+                                <h4><?= htmlspecialchars($review->userName) ?></h4>
+                                <p><?= date('d M Y', strtotime($review->created_at)) ?></p>
+                            </div>
+                        </div>
+                        <div class="review-body">
+                            <p class="review-comment"><?= nl2br(htmlspecialchars($review->content)) ?></p>
+                        </div>
+                        <div class="review-footer">
+                            <span class="review-rating"><?= \App\Controllers\Home::getStars($review->rating) ?></span>
+                        </div>
+                        <div class="review-restaurant">
+                            <a href="index.php?page=restaurant&id=<?= htmlspecialchars($review->restaurantId) ?>">
+
+                                <?php
+                                if (!empty($restaurantPhoto) && file_exists('assets/img/' . $restaurantPhoto)) {
+                                    $photoPath = 'assets/img/' . htmlspecialchars($restaurantPhoto);
+                                } else {
+                                    $photoPath = 'assets/img/r_default.jpg';
+                                }
+                                ?>
+                                <img src="<?= htmlspecialchars($photoPath) ?>"
+                                    alt="Photo du restaurant"
+                                    class="restaurant-photo">
+
+                                <h3><?= htmlspecialchars($review->restaurantName) ?></h3>
+                            </a>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p>Aucun avis disponible.</p>
+            <?php endif; ?>
         </div>
     </div>
+
 </div>
 
 <script src="./scripts/home.js"></script>

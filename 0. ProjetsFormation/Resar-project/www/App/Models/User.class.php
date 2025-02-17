@@ -5,9 +5,10 @@ use PDO;
 
 class User
 {
-    private int $id;
+    private int $idUsers;
     private string $email;
-    private string $name;
+    private string $firstName;
+    private string $lastName;
     private string $password;
     private string $inscriptionDate;
     private int $roleID;
@@ -23,15 +24,19 @@ class User
 
     public function getId(): int
     {
-        return $this->id;
+        return $this->idUsers;
     }
     public function getEmail(): string
     {
         return $this->email;
     }
-    public function getName(): string
+    public function getfirstName(): string
     {
-        return $this->name;
+        return $this->firstName;
+    }
+    public function getlastName(): string
+    {
+        return $this->lastName;
     }
     public function getPassword(): string
     {
@@ -62,9 +67,9 @@ class User
         $user = $stmt->fetch();
 
         if ($user) {
-            $this->id = $user["idUsers"];
-            $this->name = $user["firstName"];
-            $this->name = $user["lastName"];
+            $this->idUsers = $user["idUsers"];
+            $this->firstName = $user["firstName"];
+            $this->lastName = $user["lastName"];
             $this->email = $user["email"];
             $this->password = $user["password"];
             $this->roleID = $user["role"];
@@ -83,9 +88,9 @@ class User
 
         // Populate the user properties if found
         if ($user) {
-            $this->id = $user["idUsers"];
-            $this->name = $user["firstName"];
-            $this->name = $user["lastName"];
+            $this->idUsers = $user["idUsers"];
+            $this->firstName = $user["firstName"];
+            $this->lastName = $user["lastName"];
             $this->email = $user["email"];
             $this->password = $user["password"];
             $this->roleID = $user["role"];
@@ -104,11 +109,11 @@ class User
 
     public function setSession(): void
     {
-        $_SESSION["USER_ID"] = $this->id;
+        $_SESSION["USER_ID"] = $this->idUsers;
 
         // update the lastseen date in the database
-        $stmt = $this->pdo->prepare("UPDATE users = NOW() WHERE idUsers = ?");
-        $stmt->execute([$this->id]);
+        $stmt = $this->pdo->prepare("UPDATE users SET lastConnection = NOW() WHERE idUsers = ?");
+        $stmt->execute([$this->idUsers]);
     }
 
     public function isAdmin(): bool
@@ -119,7 +124,8 @@ class User
     public function checkAdmin(): void
     {
         if (!$this->isAdmin()) {
-            header("Location: /");
+            header("HTTP/1.1 403 Forbidden");
+            echo "Accès refusé.";
             exit;
         }
     }
@@ -174,9 +180,10 @@ class User
         foreach ($results as $user) {
             $newUser = new User($pdo);
 
-            $newUser->id = $user["idUsers"];
+            $newUser->idUsers = $user["idUsers"];
             $newUser->email = $user["email"];
-            $newUser->name = $user["name"];
+            $newUser->firstName = $user["firstName"];
+            $newUser->lastName = $user["lastName"];
             $newUser->password = $user["password"];
             $newUser->roleID = $user["roleID"];
             $newUser->inscriptionDate = $user["created_at"];

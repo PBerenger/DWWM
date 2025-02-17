@@ -18,7 +18,7 @@ spl_autoload_register(function ($class) {
 
 require_once "../Config/DbConnect.php";
 
-use App\Controllers\{User, Login, Register, Restaurants, Home, Search};
+use App\Controllers\{User, Login, Restaurants, Home, RegisterUserAdmin, RegisterOwnerAdmin, Search};
 use App\Config\DbConnect;
 
 $pdo = DbConnect::getPDO();
@@ -32,6 +32,7 @@ try {
         case 'home':
             $restaurantModel = new Home();
             $restaurants = Home::getRandomRestaurants($pdo);
+            $reviews = Home::getRandomReviews($pdo);
             require '../App/Views/home_view.php';
             break;
 
@@ -51,8 +52,8 @@ try {
             (new Restaurants\Details())->execute($id);
             break;
 
-        case 'register':
-            (new Register())->execute($_POST);
+        case 'RegisterUserAdmin':
+            (new RegisterUserAdmin())->execute($_POST);
             break;
 
         case 'restaurant_registration':

@@ -5,7 +5,7 @@ namespace App\Controllers;
 use App\Config\DbConnect;
 use PDOException;
 
-class Register
+class RegisterUserAdmin
 {
     public function execute(array $postData): void
     {
@@ -31,6 +31,11 @@ class Register
                 return;
             }
 
+            if ($password !== $postData['passwordRepeat']) {
+                echo "Les mots de passe ne correspondent pas.";
+                return;
+            }            
+
             // Hachage du mot de passe
             $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
@@ -55,7 +60,8 @@ class Register
                 }
             }
         }
-
-        require __DIR__ . '/../Views/register.php';
+      
+        // require __DIR__ . '/../Views/registerUserAdmin.php';
+        // PAS BESOIN AVEC "header("Location: success.php");" dans registerUserAdmin_view.php ?
     }
 }

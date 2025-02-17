@@ -191,40 +191,23 @@ class Restaurant
 
 
     // Créer un nouveau restaurant
-    public static function createRestaurant(\PDO $pdo, string $owner_id, string $name, string $address, string $phone, string $description, string $location, string $photo): ?Restaurant
+    public static function createRestaurant(\PDO $pdo, string $owner_id, string $name, string $address, string $phone, string $description, string $location, string $photo): bool
     {
         $query = "INSERT INTO Restaurants 
-                            (
-                            owner_id, 
+                            (owner_id, 
                             name, 
                             address, 
                             phone, 
                             description, 
                             location, 
                             photo, 
-                            created_at
-                            ) 
+                            created_at) 
                   VALUES (?, ?, ?, ?, ?, ?, ?, NOW())";
 
         $stmt = $pdo->prepare($query);
         $success = $stmt->execute([$owner_id, $name, $address, $phone, $description, $location, $photo]);
 
-        if ($success) {
-            $newRestaurant = new Restaurant();
-            $newRestaurant->setId($pdo->lastInsertId());
-            $newRestaurant->setOwner($owner_id);
-            $newRestaurant->setName($name);
-            $newRestaurant->setAddress($address);
-            $newRestaurant->setPhone($phone);
-            $newRestaurant->setDescription($description);
-            $newRestaurant->setLocation($location);
-            $newRestaurant->setPhoto($photo);
-            $newRestaurant->setCreatedAt(date("Y-m-d H:i:s"));
-
-            return $newRestaurant;
-        }
-
-        return null;
+        return $success;
     }
 
     // Supprimer un restaurant
@@ -255,42 +238,5 @@ class Restaurant
                                      WHERE idRestaurants = ?");
 
         return $stmt->execute([$this->name, $this->address, $this->phone, $this->description, $this->location, $this->photo, $this->idRestaurants]);
-    }
-
-    // Récupérer trois restaurants aléatoires
-    public static function getRandomRestaurants(\PDO $pdo): array
-    {
-        $query = "SELECT idRestaurants, 
-                        owner_id, 
-                        name, 
-                        address, 
-                        phone, 
-                        description, 
-                        location, 
-                        photo, 
-                        created_at 
-                  FROM Restaurants 
-                  ORDER BY RAND() LIMIT 3";
-
-        $stmt = $pdo->query($query);
-        $restaurantsInfo = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-
-        $restaurants = [];
-        foreach ($restaurantsInfo as $restaurant) {
-            $newRestaurant = new Restaurant();
-            $newRestaurant->setId($restaurant["idRestaurants"]);
-            $newRestaurant->setOwner($restaurant["owner_id"]);
-            $newRestaurant->setName($restaurant["name"]);
-            $newRestaurant->setAddress($restaurant["address"]);
-            $newRestaurant->setPhone($restaurant["phone"]);
-            $newRestaurant->setDescription($restaurant["description"]);
-            $newRestaurant->setLocation($restaurant["location"]);
-            $newRestaurant->setPhoto($restaurant["photo"] ?? 'r_default.jpg');
-            $newRestaurant->setCreatedAt($restaurant["created_at"]);
-
-            $restaurants[] = $newRestaurant;
-        }
-
-        return $restaurants;
     }
 }

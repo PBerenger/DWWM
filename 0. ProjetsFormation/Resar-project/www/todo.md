@@ -1,16 +1,29 @@
 Prochainement :
 - barre de recherche a lier avec la bdd
 - créer des 'reviews' dans la bdd
+- créer un fichier main.css, rassembler les css dedans et l'importer dans le doctype
+- push tous les fichiers sauf 'setting.ini' avec un getignore
+
+En dernier :
+- Vérifier le fichiers des messages d'erreur
+
 
 AFCI :
 - vérifier si les photos doivent avoir une colonne spécifique pour profil - restau - dishes
-- pourquoi la taille de font du 'btn-dview-dishes' ne fonctionne pas de la même manière que les autre boutons ?
-- dois je avoir différentes colones dans ma bdd pour les différentes images (profil, restau et plats) ?
+- comment trouver une API de restaurant ?
+
+
+Renseignement :
+- csrf token
 
 
 optionnel :
 - fichier.conf dans main
 - settings.ini dans config
 - faut il renommer les fichiers controlers et models ?
+- map de l'adresse
+- mails d'informations
 
 
+examen objectifs :
+- 

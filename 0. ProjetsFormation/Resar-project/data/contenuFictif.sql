@@ -104,3 +104,17 @@ INSERT INTO reservations (user_id, restaurant_id, reservation_time, guests) VALU
 (8, 8, "2025-02-12 20:15:00", 2),
 (9, 4, "2025-02-13 18:45:00", 4),
 (10, 9, "2025-02-14 21:30:00", 3);
+
+
+-- insertion des avis
+INSERT INTO reviews (user_id, restaurant_id, rating, comment) VALUES
+(1, 2, 5, "Excellent restaurant ! Service impeccable et plats délicieux."),
+(2, 3, 4, "Très bon repas, ambiance agréable, mais un peu cher."),
+(3, 1, 3, "Correct mais sans plus, les portions sont un peu petites."),
+(4, 2, 5, "Une vraie pépite ! J'y retournerai sans hésitation."),
+(5, 3, 2, "Déçu... Attente trop longue et plats tièdes."),
+(6, 1, 4, "Super découverte, le chef est un vrai artiste culinaire !"),
+(7, 2, 3, "Le cadre est joli, mais le service manque de professionnalisme."),
+(8, 3, 5, "Meilleur restaurant du coin, je recommande vivement !"),
+(9, 1, 1, "Très mauvaise expérience, nourriture insipide et service désagréable."),
+(10, 2, 4, "Très bon mais manque un peu d’originalité dans le menu.");
