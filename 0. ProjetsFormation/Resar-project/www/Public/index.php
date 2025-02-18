@@ -43,41 +43,41 @@ try {
             break;
 
         case 'restaurant-details':
+            $id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
             (new Restaurants\Details())->execute($id);
             break;
 
-        case 'registerUser':
-            (new RegisterUser())->execute($_POST);
-            break;
+        // case 'registerUser':
+        //     (new RegisterUser())->execute($_POST);
+        //     break;
             //----------------------------------------------------------------------------------
-        // case 'RegisterRestaurant':
-        //     require '../App/Views/registerRestaurant.php';
+
+            // case 'RegisterRestaurant':
+            //     require '../App/Views/registerRestaurant.php';
+            //     break;
+
+        // case 'login':
+        //     require '../App/Views/login.php';
         //     break;
 
-        case 'login':
-            require '../App/Views/login.php';
-            break;
+        // case 'admin_restaurant':
+        //     if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
+        //         require '../App/Views/admin_restaurant.php';
+        //     } else {
+        //         header("HTTP/1.1 403 Forbidden");
+        //         echo "Accès refusé.";
+        //     }
+        //     break;
 
-        case 'admin_restaurant':
-            if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
-                require '../App/Views/admin_restaurant.php';
-            } else {
-                header("HTTP/1.1 403 Forbidden");
-                echo "Accès refusé.";
-            }
-            break;
+        // case 'error':
+        //     // Inclure la page d'erreur
+        //     require '../App/Views/error.php';
+        //     break;
 
-        case 'error':
-            // Inclure la page d'erreur
-            require '../App/Views/error.php';
-            break;
-
-        case 'success':
-            // Inclure la page de succès
-            require '../App/Views/success.php';
-            break;
-
-            // ... (autres cas)
+        // case 'success':
+        //     // Inclure la page de succès
+        //     require '../App/Views/success.php';
+        //     break;
 
         default:
             header("HTTP/1.1 404 Not Found");
