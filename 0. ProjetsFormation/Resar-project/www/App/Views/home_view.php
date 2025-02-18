@@ -1,6 +1,11 @@
 <?php
 require_once __DIR__ . '/../../Config/config.php';
-ob_start(); ?>
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+ob_start();
+?>
 
 <div class="home-container">
     <div class="home-top">

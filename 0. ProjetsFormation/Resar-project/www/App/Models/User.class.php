@@ -11,7 +11,7 @@ class User
     private string $lastName;
     private string $password;
     private string $inscriptionDate;
-    private int $roleID;
+    private int $role;
     private string $lastConnection;
     private PDO $pdo;
 
@@ -46,9 +46,9 @@ class User
     {
         return $this->inscriptionDate;
     }
-    public function getRoleId(): int
+    public function getRole(): int
     {
-        return $this->roleID;
+        return $this->role;
     }
     public function getLastConnection(): string
     {
@@ -72,34 +72,33 @@ class User
             $this->lastName = $user["lastName"];
             $this->email = $user["email"];
             $this->password = $user["password"];
-            $this->roleID = $user["role"];
+            $this->role = $user["role"];
             $this->inscriptionDate = $user["created_at"];
         }
 
         return $user !== false;
     }
 
-    public function findUserByEmail(string $email): bool
-    {
-        // Search a user in the db with their email
-        $stmt = $this->pdo->prepare("SELECT * FROM users WHERE email = ?");
-        $stmt->execute([$email]);
-        $user = $stmt->fetch();
+    public function findUserByEmail(string $email): ?User
+{
+    $stmt = $this->pdo->prepare("SELECT * FROM users WHERE email = ?");
+    $stmt->execute([$email]);
+    $user = $stmt->fetch();
 
-        // Populate the user properties if found
-        if ($user) {
-            $this->idUsers = $user["idUsers"];
-            $this->firstName = $user["firstName"];
-            $this->lastName = $user["lastName"];
-            $this->email = $user["email"];
-            $this->password = $user["password"];
-            $this->roleID = $user["role"];
-            $this->inscriptionDate = $user["created_at"];
-        }
-
-        // Return if we found the user
-        return (bool) $user;
+    if ($user) {
+        $this->idUsers = $user["idUsers"];
+        $this->firstName = $user["firstName"];
+        $this->lastName = $user["lastName"];
+        $this->email = $user["email"];
+        $this->password = $user["password"];
+        $this->role = $user["role"];
+        $this->inscriptionDate = $user["created_at"];
+        return $this;
     }
+
+    return null;
+}
+
 
     public function checkPass($passToCheck): bool
     {
@@ -118,7 +117,7 @@ class User
 
     public function isAdmin(): bool
     {
-        return isset($this->roleID) ? $this->roleID === 1 : false;
+        return isset($this->role) ? $this->role === 1 : false;
     }
 
     public function checkAdmin(): void
@@ -146,10 +145,21 @@ class User
 
     public static function create(PDO $pdo, string $firstName, string $lastName, string $email, string $password): bool
     {
-        $stmt = $pdo->prepare(" INSERT INTO
-                                    users (firstName, lastName, email, password, role, created_at)
-                                VALUES
-                                    (:email, :firstName, :lastName, :password, NOW(), 2)");
+        $stmt = $pdo->prepare("INSERT INTO users (
+                                        firstName, 
+                                        lastName, 
+                                        email, 
+                                        password, 
+                                        role, 
+                                        created_at)
+                        VALUES (
+                        :firstName, 
+                        :lastName, 
+                        :email, 
+                        :password, 
+                        ?, 
+                        NOW())");
+
         $success = $stmt->execute([
             "email" => $email,
             "firstName" => $firstName,
@@ -168,7 +178,7 @@ class User
                                     firstName,
                                     lastName,
                                     password,
-                                    RoleID,
+                                    Role,
                                     created_at
                                 FROM 
                                     users");
@@ -185,7 +195,7 @@ class User
             $newUser->firstName = $user["firstName"];
             $newUser->lastName = $user["lastName"];
             $newUser->password = $user["password"];
-            $newUser->roleID = $user["roleID"];
+            $newUser->role = $user["role"];
             $newUser->inscriptionDate = $user["created_at"];
 
             $users[] = $newUser;

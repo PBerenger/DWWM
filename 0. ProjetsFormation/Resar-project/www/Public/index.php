@@ -18,7 +18,7 @@ spl_autoload_register(function ($class) {
 
 require_once "../Config/DbConnect.php";
 
-use App\Controllers\{User, Login, Restaurants, Home, RegisterUserAdmin, RegisterOwnerAdmin, Search};
+use App\Controllers\{User, Login, Restaurants, Home, RegisterUser, RegisterRestaurant, Search};
 use App\Config\DbConnect;
 
 $pdo = DbConnect::getPDO();
@@ -43,22 +43,16 @@ try {
             break;
 
         case 'restaurant-details':
-            $id = $_GET['id'] ?? null;
-            if ($id === null) {
-                header("HTTP/1.1 400 Bad Request");
-                echo "Identifiant du restaurant manquant.";
-                exit;
-            }
             (new Restaurants\Details())->execute($id);
             break;
 
-        case 'RegisterUserAdmin':
-            (new RegisterUserAdmin())->execute($_POST);
+        case 'registerUser':
+            (new RegisterUser())->execute($_POST);
             break;
-
-        case 'restaurant_registration':
-            require '../App/Views/restaurant_registration.php';
-            break;
+            //----------------------------------------------------------------------------------
+        // case 'RegisterRestaurant':
+        //     require '../App/Views/registerRestaurant.php';
+        //     break;
 
         case 'login':
             require '../App/Views/login.php';
@@ -72,6 +66,18 @@ try {
                 echo "Accès refusé.";
             }
             break;
+
+        case 'error':
+            // Inclure la page d'erreur
+            require '../App/Views/error.php';
+            break;
+
+        case 'success':
+            // Inclure la page de succès
+            require '../App/Views/success.php';
+            break;
+
+            // ... (autres cas)
 
         default:
             header("HTTP/1.1 404 Not Found");
