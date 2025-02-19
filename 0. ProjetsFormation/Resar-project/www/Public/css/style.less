@@ -115,11 +115,13 @@ body.dark-mode footer {
 }
 
 body.dark-mode h2 {
-    color: var(--dark-title); /* Couleur pour le mode sombre */
+    color: var(--dark-title);
+    /* Couleur pour le mode sombre */
 }
 
 body.dark-mode .restaurant-card {
-    background-color: var(--dark-secondary-background); /* Changer la couleur de fond en mode sombre */
+    background-color: var(--dark-secondary-background);
+    /* Changer la couleur de fond en mode sombre */
     color: var(--dark-fonts);
 
     h3 {
@@ -189,7 +191,7 @@ header {
     right: -100%;
     width: 300px;
     height: 100%;
-    background: white;
+    background: var(--third-color);
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
     transition: right 0.3s ease;
     padding: 20px;
@@ -204,6 +206,29 @@ header {
         cursor: pointer;
         align-self: flex-end;
     }
+
+    // .password-strength {
+    //     width: 100%;
+    //     height: 10px;
+    //     background: #ddd;
+    //     margin: 5px 0;
+    //     position: relative;
+    //     border-radius: 5px;
+    // }
+    
+    // #strength-bar {
+    //     height: 100%;
+    //     width: 0%;
+    //     transition: width 0.3s;
+    //     border-radius: 5px;
+    // }
+    
+    // #strength-text {
+    //     display: block;
+    //     margin-top: 5px;
+    //     font-size: 14px;
+    // }
+    
 }
 
 .register-menu.active {
@@ -230,6 +255,10 @@ header {
     img {
         height: 40px;
     }
+}
+
+.logo2 {
+    width: 100px;
 }
 
 
@@ -270,9 +299,13 @@ main {
 }
 
 #close-register {
-    color: var(--primary-color);
+    padding: 4px 10px;
+    background-color: var(--primary-color);
+    color: var(--third-color);
+
     &:hover {
-        color: var(--secondary-color);
+        background-color: var(--secondary-color);
+        color: var(--third-color);
     }
 }
 

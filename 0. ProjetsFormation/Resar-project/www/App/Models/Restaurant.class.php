@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use App\Config\DbConnect;
-use Exception;
 
 class Restaurant
 {

@@ -41,3 +41,41 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// // Barre de force
+// document.addEventListener("DOMContentLoaded", function () {
+//     const passwordInput = document.getElementById("password");
+//     const strengthBar = document.getElementById("strength-bar");
+//     const strengthText = document.getElementById("strength-text");
+//     const registerBtn = document.getElementById("register-btn");
+
+//     passwordInput.addEventListener("input", function () {
+//         let password = passwordInput.value;
+//         let strength = checkPasswordStrength(password);
+
+//         strengthBar.style.width = strength.percentage;
+//         strengthBar.style.background = strength.color;
+//         strengthText.textContent = strength.label;
+
+//         // Activer/désactiver le bouton d'inscription
+//         registerBtn.disabled = (strength.label === "Faible");
+//     });
+
+//     function checkPasswordStrength(password) {
+//         let strength = 0;
+
+//         if (password.length >= 6) strength++;
+//         if (password.match(/[A-Z]/)) strength++;
+//         if (password.match(/[0-9]/)) strength++;
+//         if (password.match(/[\W]/)) strength++;
+
+//         if (strength === 0) {
+//             return { label: "Faible", percentage: "10%", color: "red" };
+//         } else if (strength <= 2) {
+//             return { label: "Moyen", percentage: "50%", color: "orange" };
+//         } else {
+//             return { label: "Fort", percentage: "100%", color: "green" };
+//         }
+//     }
+// });
+
+

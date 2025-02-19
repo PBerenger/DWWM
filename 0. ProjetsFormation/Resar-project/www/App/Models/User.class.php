@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models;
 
 use PDO;
@@ -80,30 +81,29 @@ class User
     }
 
     public function findUserByEmail(string $email): ?User
-{
-    $stmt = $this->pdo->prepare("SELECT * FROM users WHERE email = ?");
-    $stmt->execute([$email]);
-    $user = $stmt->fetch();
+    {
+        $stmt = $this->pdo->prepare("SELECT * FROM users WHERE email = ?");
+        $stmt->execute([$email]);
+        $user = $stmt->fetch();
 
-    if ($user) {
-        $this->idUsers = $user["idUsers"];
-        $this->firstName = $user["firstName"];
-        $this->lastName = $user["lastName"];
-        $this->email = $user["email"];
-        $this->password = $user["password"];
-        $this->role = $user["role"];
-        $this->inscriptionDate = $user["created_at"];
-        return $this;
+        if ($user) {
+            $this->idUsers = $user["idUsers"];
+            $this->firstName = $user["firstName"];
+            $this->lastName = $user["lastName"];
+            $this->email = $user["email"];
+            $this->password = $user["password"];
+            $this->role = $user["role"];
+            $this->inscriptionDate = $user["created_at"];
+            return $this;
+        }
+
+        return null;
     }
-
-    return null;
-}
 
 
     public function checkPass($passToCheck): bool
     {
         return !empty($this->password) && password_verify($passToCheck, $this->password);
-
     }
 
     public function setSession(): void
@@ -146,26 +146,28 @@ class User
     public static function create(PDO $pdo, string $firstName, string $lastName, string $email, string $password): bool
     {
         $stmt = $pdo->prepare("INSERT INTO users (
-                                        firstName, 
-                                        lastName, 
-                                        email, 
-                                        password, 
-                                        role, 
-                                        created_at)
-                        VALUES (
-                        :firstName, 
-                        :lastName, 
-                        :email, 
-                        :password, 
-                        ?, 
-                        NOW())");
+                                            firstName, 
+                                            lastName, 
+                                            email, 
+                                            password, 
+                                            role, 
+                                            created_at)
+                                VALUES (
+                                    :firstName, 
+                                    :lastName, 
+                                    :email, 
+                                    :password, 
+                                    ?, 
+                                NOW())");
 
         $success = $stmt->execute([
-            "email" => $email,
             "firstName" => $firstName,
             "lastName" => $lastName,
-            "password" => password_hash($password, PASSWORD_DEFAULT)
+            "email" => $email,
+            "password" => password_hash($password, PASSWORD_DEFAULT),
+            "role" => 0 // Vous pouvez ajuster cela selon le rôle par défaut
         ]);
+
 
         return $success;
     }

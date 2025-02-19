@@ -6,17 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= htmlspecialchars($pageTitle ?? 'ResaR') ?></title>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/error-success.css">
     <link rel="stylesheet" href="/css/restaurants.css">
     <link rel="stylesheet" href="/css/restaurant-details.css">
     <link rel="stylesheet" href="/css/home.css">
+
 </head>
 
 <body>
     <header>
         <nav>
             <button class="logo1" onclick="window.location.href='?page=home'">
-                <img src="assets/logo/logo1.png" alt="Logo Accueil">
-                <img src="assets/logo/logo2.1.png" alt="Logo Accueil">
+                <img src="assets/logo/logo1.png" alt="Logo-txt Accueil">
+                <img src="assets/logo/logo2.1.png" alt="Logo-img Accueil">
             </button>
             <ul>
                 <li>
@@ -52,17 +54,41 @@
 
     <div id="register-menu" class="register-menu">
         <button id="close-register" class="close-btn">&times;</button>
+        <img class="logo2" src="assets/logo/logo2.2.png" alt="Logo-img Accueil">
         <h2>Inscription</h2>
-        <form method="POST" action="register.php">
-            <input type="text" name="prenom" placeholder="Prénom" required>
-            <input type="text" name="nom" placeholder="Nom" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="password" name="password" placeholder="Mot de passe" required>
+        <!-- Affichage des erreurs -->
+        <?php if (!empty($validationError)): ?>
+            <div class="error-message"><?= htmlspecialchars($validationError) ?></div>
+        <?php endif; ?>
+
+        <!-- stockage des erreurs -->
+        <?php if (!empty($_SESSION['error_message'])): ?>
+            <div class="error-message"><?= htmlspecialchars($_SESSION['error_message']) ?></div>
+            <?php unset($_SESSION['error_message']); ?>
+        <?php endif; ?>
+
+        <form method="POST" action="?page=register-user">
+            <input type="text" name="prenom" placeholder="Prénom" value="Bou" required>
+            <input type="text" name="nom" placeholder="Nom" value="Ba" required>
+            <input type="email" name="email" placeholder="Email" value="bou.ba@gmail.com" required>
+            <input type="password" name="password" placeholder="Votre mot de passe" value="Password@123" required>
+            <input type="password" name="passwordRepeat" placeholder="Confirmation mot de passe" value="Password@123" required>
             <button type="submit">S'inscrire</button>
         </form>
         <p>ou</p>
         <button class="google-signin">Se connecter avec Google</button>
+
+        <!-- <input type="password" id="password" name="password" placeholder="Votre mot de passe" required>
+        <div class="password-strength">
+            <div id="strength-bar"></div>
+            <span id="strength-text">Faible</span>
+        </div>
+        <input type="password" id="passwordRepeat" name="passwordRepeat" placeholder="Confirmation mot de passe" required>
+        <button type="submit" id="register-btn" disabled>S'inscrire</button> -->
+
     </div>
+
+
 
     <main>
         <?= $content ?? '<p>Contenu introuvable. Veuillez sélectionner une page valide.</p>' ?>
