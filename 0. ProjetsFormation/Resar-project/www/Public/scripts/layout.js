@@ -1,36 +1,43 @@
-const darkModeToggle = document.getElementById('dark-mode-toggle');
-const body = document.body;
+console.log("layout.js chargé !");
 
-// Attendre que le DOM soit complètement chargé
 document.addEventListener('DOMContentLoaded', () => {
-    // Vérifier si le mode sombre est déjà activé dans le localStorage
-    if (localStorage.getItem('darkMode') === 'enabled') {
-        body.classList.add('dark-mode');
-    }
+    const body = document.body;
+    const darkModeToggle = document.getElementById("dark-mode-toggle");
+    const openRegister = document.querySelector(".open-register");
+    const closeRegister = document.getElementById("close-register");
+    const registerMenu = document.getElementById("register-menu");
 
-    // Ajouter l'événement pour basculer entre les modes clair/sombre
-    darkModeToggle.addEventListener('click', () => {
-        // Toggle de la classe 'dark-mode' sur le body
-        body.classList.toggle('dark-mode');
-
-        // Sauvegarder l'état dans le localStorage pour conserver le mode entre les sessions
-        if (body.classList.contains('dark-mode')) {
-            localStorage.setItem('darkMode', 'enabled');
-        } else {
-            localStorage.removeItem('darkMode');
+    // Mode sombre
+    if (darkModeToggle) {
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+            darkModeToggle.textContent = "🌙";
         }
-    });
-});
 
-//---------------------------------------------------------------------------
+        darkModeToggle.addEventListener("click", () => {
+            body.classList.toggle('dark-mode');
 
-const button = document.getElementById("dark-mode-toggle");
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+                darkModeToggle.textContent = "🌙";
+            } else {
+                localStorage.removeItem('darkMode');
+                darkModeToggle.textContent = "☀️";
+            }
+        });
+    }
 
-button.addEventListener("click", () => {
-    // Vérifie si l'icône actuelle est la lune
-    if (button.textContent === "☀️") {
-        button.textContent = "🌙"; // Change pour le soleil
-    } else {
-        button.textContent = "☀️"; // Sinon, remets la lune
+    // Menu latéral
+    if (openRegister && registerMenu) {
+        openRegister.addEventListener("click", () => {
+            registerMenu.classList.add("active");
+        });
+    }    
+
+    if (closeRegister && registerMenu) {
+        closeRegister.addEventListener("click", () => {
+            registerMenu.classList.remove("active");
+        });
     }
 });
+

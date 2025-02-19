@@ -82,7 +82,7 @@
   padding: 10px;
   box-sizing: border-box;
   margin: 0 0px;
-  background-color: var(--secondary-background);
+  background-color: var(--primary-color);
   border-radius: 10px;
 }
 .home-container .home-mid1 .home-restaurants-slider .home-restaurant-slide .restaurant-photo {
@@ -95,7 +95,7 @@
 .home-container .home-mid1 .home-restaurants-slider .home-restaurant-slide h3,
 .home-container .home-mid1 .home-restaurants-slider .home-restaurant-slide p {
   margin: 5px 0;
-  color: var(--secondary-title);
+  color: var(--third-color);
 }
 .home-container .home-mid1 .home-restaurants-slider .home-restaurant-slide .restaurant-info {
   top: 20px;
