@@ -21,6 +21,7 @@ function showAlertInHTML(): string
  * @param string $key which message of the array to show
  * @return string|null returns null if the array or key doesn't exists, otherwise return a div.class containing the error message
  */
+
 function showError(?array &$errors, string $key) : ?string {
 
     $message = $errors[$key] ?? null;

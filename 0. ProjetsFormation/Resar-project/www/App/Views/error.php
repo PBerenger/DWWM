@@ -8,11 +8,15 @@
             <p>Nous sommes désolés, mais une erreur s'est produite. Nous travaillons pour résoudre ce problème.</p>
 
             <h3>Détails de l'erreur :</h3>
-            <p><?php echo htmlspecialchars($errorMessage, ENT_QUOTES, 'UTF-8'); ?></p> <!-- Affiche le message d'erreur -->
 
-            <?php foreach ($_SESSION["errorInscription"] as $error): ?>
-                <p><?= htmlspecialchars($error) ?></p>
-            <?php endforeach; ?>
+            <p><?= isset($errorMessage) ? htmlspecialchars($errorMessage, ENT_QUOTES, 'UTF-8') : "Aucun message d'erreur disponible."; ?></p>
+
+            <?php if (!empty($_SESSION["errorInscription"])): ?>
+                <?php foreach ($_SESSION["errorInscription"] as $error): ?>
+                    <p><?= htmlspecialchars($error) ?></p>
+                <?php endforeach; ?>
+            <?php endif; ?>
+
 
             <!-- <p>Si vous avez besoin d'aide, veuillez contacter notre support technique.</p> -->
 

@@ -7,9 +7,10 @@ use PDO;
 class User
 {
     private int $idUsers;
-    private string $email;
     private string $firstName;
     private string $lastName;
+    private string $email;
+    private string $phone;
     private string $password;
     private string $inscriptionDate;
     private int $role;
@@ -27,10 +28,6 @@ class User
     {
         return $this->idUsers;
     }
-    public function getEmail(): string
-    {
-        return $this->email;
-    }
     public function getfirstName(): string
     {
         return $this->firstName;
@@ -38,6 +35,10 @@ class User
     public function getlastName(): string
     {
         return $this->lastName;
+    }
+    public function getEmail(): string
+    {
+        return $this->email;
     }
     public function getPassword(): string
     {
@@ -62,19 +63,25 @@ class User
             return false;
         }
 
-
-        $stmt = $this->pdo->prepare("SELECT * FROM users WHERE idUsers = ?");
+        $stmt = $this->pdo->prepare("SELECT u.*, GROUP_CONCAT(r.role_name) AS roles 
+                                    FROM users u 
+                                    LEFT JOIN user_roles ur ON u.idUsers = ur.user_id 
+                                    LEFT JOIN roles r ON ur.role_id = r.id
+                                    WHERE u.idUsers = ?
+                                    ");
         $stmt->execute([$id]);
-        $user = $stmt->fetch();
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($user) {
             $this->idUsers = $user["idUsers"];
             $this->firstName = $user["firstName"];
             $this->lastName = $user["lastName"];
             $this->email = $user["email"];
+            $this->phone = $user["phone"];
             $this->password = $user["password"];
-            $this->role = $user["role"];
             $this->inscriptionDate = $user["created_at"];
+            $this->lastConnection = $user["lastConnection"] ?? null;
+            $this->role = $user["roles"] ? explode(",", $user["roles"]) : [];
         }
 
         return $user !== false;
@@ -82,18 +89,25 @@ class User
 
     public function findUserByEmail(string $email): ?User
     {
-        $stmt = $this->pdo->prepare("SELECT * FROM users WHERE email = ?");
+        $stmt = $this->pdo->prepare("SELECT u.*, GROUP_CONCAT(r.role_name) AS roles 
+                                    FROM users u 
+                                    LEFT JOIN user_roles ur ON u.idUsers = ur.user_id 
+                                    LEFT JOIN roles r ON ur.role_id = r.id
+                                    WHERE u.email = ?
+                                    ");
         $stmt->execute([$email]);
-        $user = $stmt->fetch();
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($user) {
             $this->idUsers = $user["idUsers"];
             $this->firstName = $user["firstName"];
             $this->lastName = $user["lastName"];
             $this->email = $user["email"];
+            $this->phone = $user["phone"];
             $this->password = $user["password"];
-            $this->role = $user["role"];
             $this->inscriptionDate = $user["created_at"];
+            $this->lastConnection = $user["lastConnection"] ?? null;
+            $this->role = $user["roles"] ? explode(",", $user["roles"]) : [];
             return $this;
         }
 
@@ -143,63 +157,81 @@ class User
         return $user;
     }
 
-    public static function create(PDO $pdo, string $firstName, string $lastName, string $email, string $password): bool
+    public static function create(PDO $pdo, string $firstName, string $lastName, string $email, string $phone, string $password, int $roleId = 2): bool
     {
-        $stmt = $pdo->prepare("INSERT INTO users (
-                                            firstName, 
-                                            lastName, 
-                                            email, 
-                                            password, 
-                                            role, 
-                                            created_at)
+        $pdo->beginTransaction();
+
+        try {
+            $stmt = $pdo->prepare("INSERT INTO users (
+                                firstName, 
+                                lastName, 
+                                email, 
+                                phone, 
+                                password, 
+                                created_at) 
                                 VALUES (
-                                    :firstName, 
-                                    :lastName, 
-                                    :email, 
-                                    :password, 
-                                    ?, 
+                                :firstName, 
+                                :lastName, 
+                                :email, 
+                                :phone, 
+                                :password, 
                                 NOW())");
 
-        $success = $stmt->execute([
-            "firstName" => $firstName,
-            "lastName" => $lastName,
-            "email" => $email,
-            "password" => password_hash($password, PASSWORD_DEFAULT),
-            "role" => 0 // Vous pouvez ajuster cela selon le rôle par défaut
-        ]);
+            $success = $stmt->execute([
+                "firstName" => $firstName,
+                "lastName" => $lastName,
+                "email" => $email,
+                "phone" => $phone,
+                "password" => password_hash($password, PASSWORD_DEFAULT)
+            ]);
 
+            if (!$success) {
+                throw new \Exception("L'insertion de l'utilisateur a échoué.");
+            }
 
-        return $success;
+            $userId = $pdo->lastInsertId();
+
+            $stmt = $pdo->prepare("INSERT INTO user_roles (
+                                user_id, 
+                                role_id) 
+                                VALUES (
+                                ?, 
+                                ?)");
+
+            $stmt->execute([$userId, $roleId]);
+
+            $pdo->commit();
+            return true;
+        } catch (\Exception $e) {
+            $pdo->rollBack();
+            return false;
+        }
     }
 
     public static function getAllUsers(PDO $pdo): array
     {
-        $stmt = $pdo->prepare(" SELECT 
-                                    idUsers,
-                                    email,
-                                    firstName,
-                                    lastName,
-                                    password,
-                                    Role,
-                                    created_at
-                                FROM 
-                                    users");
+        $stmt = $pdo->prepare("SELECT u.*, GROUP_CONCAT(r.role_name) AS roles 
+                            FROM users u 
+                            LEFT JOIN user_roles ur ON u.idUsers = ur.user_id 
+                            LEFT JOIN roles r ON ur.role_id = r.id
+                            GROUP BY u.idUsers
+                            ");
         $stmt->execute();
-        $results = $stmt->fetchAll();
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         $users = [];
 
         foreach ($results as $user) {
             $newUser = new User($pdo);
-
             $newUser->idUsers = $user["idUsers"];
-            $newUser->email = $user["email"];
             $newUser->firstName = $user["firstName"];
             $newUser->lastName = $user["lastName"];
+            $newUser->email = $user["email"];
+            $newUser->phone = $user["phone"];
             $newUser->password = $user["password"];
-            $newUser->role = $user["role"];
             $newUser->inscriptionDate = $user["created_at"];
-
+            $newUser->lastConnection = $user["lastConnection"] ?? null;
+            $newUser->role = $user["roles"] ? explode(",", $user["roles"]) : [];
             $users[] = $newUser;
         }
 

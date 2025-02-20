@@ -40,7 +40,10 @@ try {
             //case search
 
         case 'restaurants':
-            (new Restaurants\Read())->execute($_POST);
+            echo 'one';
+            require '../App/Views/Restaurants/restaurants_view.php';
+            // (new Restaurants\Read())->execute($_POST);
+            echo 'two';
             break;
 
         case 'restaurant-details':

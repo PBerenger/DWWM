@@ -67,6 +67,7 @@
             <?php unset($_SESSION['error_message']); ?>
         <?php endif; ?>
 
+        <!-- insérer une div form1 et une div form2 -->
         <form method="POST" action="?page=register-user">
             <input type="text" name="prenom" placeholder="Prénom" value="Bou" required>
             <input type="text" name="nom" placeholder="Nom" value="Ba" required>

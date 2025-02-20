@@ -1,10 +1,4 @@
-<?php
-// if (session_status() === PHP_SESSION_NONE) {
-//     session_start();
-// }
-
-ob_start();
-?>
+<?php ob_start(); ?>
 
 <main>
     <div class="home-container">
@@ -30,18 +24,15 @@ ob_start();
                                 <h3><?= htmlspecialchars($restaurant->getName()); ?></h3>
 
                                 <?php
-                                if (!empty($restaurantPhoto) && file_exists('assets/img/' . $restaurantPhoto)) {
-                                    $photoPath = 'assets/img/' . htmlspecialchars($restaurantPhoto);
-                                } else {
-                                    $photoPath = 'assets/img/r_default.jpg';
+                                $photoPath = 'assets/img/r_default.jpg';
+                                if (!empty($restaurant->getPhoto()) && file_exists('assets/img/' . $restaurant->getPhoto())) {
+                                    $photoPath = 'assets/img/' . htmlspecialchars($restaurant->getPhoto());
                                 }
                                 ?>
-                                <img src="<?= htmlspecialchars($photoPath) ?>"
-                                    alt="Photo du restaurant"
-                                    class="restaurant-photo">
+                                <img src="<?= $photoPath ?>" alt="Photo du restaurant" class="restaurant-photo">
 
-                                <div class="reestaurant-info">
-                                    <p><strong>Localisation :</strong> <?= htmlspecialchars($restaurant->getLocation()); ?></p>
+                                <div class="restaurant-info">
+                                    <p><strong>adresse :</strong> <?= htmlspecialchars($restaurant->getAddress()); ?></p>
                                     <p><strong>Téléphone :</strong> <?= htmlspecialchars($restaurant->getPhone()); ?></p>
                                 </div>
                             </div>
@@ -78,15 +69,12 @@ ob_start();
                             <div class="review-header">
 
                                 <?php
-                                if (!empty($userProfilePhoto) && file_exists('assets/img/' . $userProfilePhoto)) {
-                                    $photoPath = 'assets/img/' . htmlspecialchars($userProfilePhoto);
-                                } else {
-                                    $photoPath = 'assets/img/u_default.jpg';
+                                $photoPath = 'assets/img/u_default.jpg';
+                                if (!empty($review->userPhoto) && file_exists('assets/img/' . $review->userPhoto)) {
+                                    $photoPath = 'assets/img/' . htmlspecialchars($review->userPhoto);
                                 }
                                 ?>
-                                <img src="<?= htmlspecialchars($photoPath) ?>"
-                                    alt="Photo du profil"
-                                    class="review-user-photo">
+                                <img src="<?= $photoPath ?>" alt="Photo du profil" class="review-user-photo">
 
                                 <div class="review-user-info">
                                     <h4><?= htmlspecialchars($review->userName) ?></h4>
