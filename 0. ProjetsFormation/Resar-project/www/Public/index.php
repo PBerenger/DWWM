@@ -19,7 +19,7 @@ spl_autoload_register(function ($class) {
 require_once "../Config/DbConnect.php";
 
 use App\Controllers\{User, Login, Restaurants, Home, Search};
-use App\Controllers\Register\RegisterUser;
+use App\Controllers\Register\{RegisterUser, RegisterOwner};
 use App\Config\DbConnect;
 
 $pdo = DbConnect::getPDO();
@@ -53,11 +53,11 @@ try {
             break;
 
 
+        case 'Register-restaurant':
+            // (new RegisterOwner())->execute($_POST);
+            require '../App/Views/Register/registerRestaurant_view.php';
+            break;
             //----------------------------------------------------------------------------------
-
-            // case 'Register-restaurant':
-            //     require '../App/Views/registerRestaurant.php';
-            //     break;
 
             // case 'login':
             //     require '../App/Views/login.php';
@@ -72,15 +72,13 @@ try {
             //     }
             //     break;
 
-            case 'error':
-                // Inclure la page d'erreur
-                require '../App/Views/error.php';
-                break;
+        case 'error':
+            require '../App/Views/error.php';
+            break;
 
-            case 'success':
-                // Inclure la page de succès
-                require '../App/Views/success.php';
-                break;
+        case 'success':
+            require '../App/Views/success.php';
+            break;
 
         default:
             header("HTTP/1.1 404 Not Found");

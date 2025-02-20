@@ -23,7 +23,3 @@ optionnel :
 - faut il renommer les fichiers controlers et models ?
 - map de l'adresse
 - mails d'informations
-
-
-examen objectifs :
-- 

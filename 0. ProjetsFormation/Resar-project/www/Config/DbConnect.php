@@ -1,10 +1,6 @@
 <?php
 
 namespace App\Config;
-
-// use PDO;
-// use PDOException;
-
 abstract class DbConnect
 {
     private static ?\PDO $pdo = null;

@@ -25,7 +25,7 @@
                     <button id="btn-general" onclick="window.location.href='?page=restaurants'">Restaurants</button>
                 </li>
                 <li>
-                    <button id="btn-general" onclick="window.location.href='?page=login'">Je suis restaurateur</button>
+                    <button id="btn-general" onclick="window.location.href='?page=Register-restaurant'">Je suis restaurateur</button>
                 </li>
                 <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
                     <li>
@@ -72,7 +72,7 @@
             <input type="text" name="nom" placeholder="Nom" value="Ba" required>
             <input type="email" name="email" placeholder="Email" value="bou.ba@gmail.com" required>
             <input type="password" name="password" placeholder="Votre mot de passe" value="Password@123" required>
-            <input type="password" name="passwordRepeat" placeholder="Confirmation mot de passe" value="Password@123" required>
+            <input type="password" name="passwordRepeat" placeholder="Confirmation du mot de passe" value="Password@123" required>
             <button type="submit">S'inscrire</button>
         </form>
         <p>ou</p>
