@@ -34,12 +34,12 @@ require_once __DIR__ . '/../../../Config/config.php';
             </div>
 
             <div class="restaurant-infos">
-                <p>Localisation : <?= htmlspecialchars($restaurant->getLocation()); ?></p>
+                <p>Propriétaire : <?= htmlspecialchars($restaurant->getOwnerId()); ?></p>
                 <p>Téléphone : <?= htmlspecialchars($restaurant->getPhone()); ?></p>
                 <p>Adresse : <?= htmlspecialchars($restaurant->getAddress()); ?></p>
+                <p>Code postal : <?= htmlspecialchars($restaurant->getZipCode()); ?> | Ville : <?= htmlspecialchars($restaurant->getCity()); ?></p>
                 <p>Description : <?= htmlspecialchars($restaurant->getDescription()); ?></p>
                 <p>Date de création : <?= htmlspecialchars($restaurant->getCreatedAt()); ?></p>
-                <p>Propriétaire : <?= htmlspecialchars($restaurant->getOwner()); ?></p>
 
                 <button class="btn-view-dishes">Voir le menu</button>
                 <a href="restaurant_resa.php?id=<?= urlencode($restaurant->getId()); ?>" class="btn-more-resa">Réserver</a>

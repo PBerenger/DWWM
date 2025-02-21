@@ -1,4 +1,5 @@
 Prochainement :
+- revoir affichage des infos restaurant et restaurant détails
 - barre de recherche a lier avec la bdd
 - créer des 'reviews' dans la bdd
 - créer un fichier main.css, rassembler les css dedans et l'importer dans le doctype
@@ -12,6 +13,8 @@ AFCI :
 - vérifier si les photos doivent avoir une colonne spécifique pour profil - restau - dishes
 - comment trouver une API de restaurant ?
 
+- SESSION CENTRALISE DANS UN SEUL FICHIER ???
+- $validationError créer un log
 
 Renseignement :
 - csrf token

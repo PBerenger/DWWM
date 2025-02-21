@@ -13,7 +13,7 @@ class User
     private string $phone;
     private string $password;
     private string $inscriptionDate;
-    private int $role;
+    private array|string $role;
     private string $lastConnection;
     private PDO $pdo;
 
@@ -22,23 +22,28 @@ class User
         $this->pdo = $pdo;
     }
 
+
     // GETTERS
 
     public function getId(): int
     {
         return $this->idUsers;
     }
-    public function getfirstName(): string
+    public function getFirstName(): string
     {
         return $this->firstName;
     }
-    public function getlastName(): string
+    public function getLastName(): string
     {
         return $this->lastName;
     }
     public function getEmail(): string
     {
         return $this->email;
+    }
+    public function getPhonel(): string
+    {
+        return $this->phone;
     }
     public function getPassword(): string
     {
@@ -56,6 +61,48 @@ class User
     {
         return $this->lastConnection;
     }
+
+    // SETTERS
+
+    public function setId(): int
+    {
+        return $this->idUsers;
+    }
+    public function setfirstName(): string
+    {
+        return $this->firstName;
+    }
+    public function setlastName(): string
+    {
+        return $this->lastName;
+    }
+    public function setEmail(): string
+    {
+        return $this->email;
+    }
+    public function setPhonel(): string
+    {
+        return $this->phone;
+    }
+    public function setPassword(): string
+    {
+        return $this->password;
+    }
+    public function setInscriptionDate(): string
+    {
+        return $this->inscriptionDate;
+    }
+    public function setRole(): int
+    {
+        return $this->role;
+    }
+    public function setLastConnection(): string
+    {
+        return $this->lastConnection;
+    }
+
+    //----------------------------------------------------------------
+
 
     public function findUserById(?int $id): bool
     {
@@ -111,7 +158,7 @@ class User
             return $this;
         }
 
-        return null;
+        return $user !== false;
     }
 
 
@@ -122,6 +169,10 @@ class User
 
     public function setSession(): void
     {
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+
         $_SESSION["USER_ID"] = $this->idUsers;
 
         // update the lastseen date in the database
@@ -131,7 +182,7 @@ class User
 
     public function isAdmin(): bool
     {
-        return isset($this->role) ? $this->role === 1 : false;
+        return is_array($this->role) ? in_array("admin", $this->role) : $this->role === 1;
     }
 
     public function checkAdmin(): void

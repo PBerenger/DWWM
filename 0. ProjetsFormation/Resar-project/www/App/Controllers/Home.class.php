@@ -14,28 +14,29 @@ class Home
                          r.address, 
                          r.phone, 
                          r.description, 
-                         p.photo_path AS photo, 
+                         COALESCE(p.photo_path, 'r_default.jpg') AS photo, 
                          r.created_at 
-          FROM restaurants r
-          LEFT JOIN restaurant_photos rp ON r.idRestaurants = rp.restaurant_id
-          LEFT JOIN photos p ON rp.photo_id = p.idPhoto
-          ORDER BY RAND() 
-          LIMIT 5";
+                  FROM restaurants r
+                  LEFT JOIN restaurant_photos rp ON r.idRestaurants = rp.restaurant_id
+                  LEFT JOIN photos p ON rp.photo_id = p.idPhoto
+                  GROUP BY r.idRestaurants
+                  ORDER BY RAND() 
+                  LIMIT 5";
 
-
-        $stmt = $pdo->query($query);
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
         $restaurantsInfo = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 
         $restaurants = [];
         foreach ($restaurantsInfo as $restaurant) {
-            $newRestaurant = new Restaurant($pdo);
+            $newRestaurant = new Restaurant();
             $newRestaurant->setId($restaurant["idRestaurants"]);
             $newRestaurant->setOwner($restaurant["owner_id"]);
             $newRestaurant->setName($restaurant["name"]);
             $newRestaurant->setAddress($restaurant["address"]);
             $newRestaurant->setPhone($restaurant["phone"]);
             $newRestaurant->setDescription($restaurant["description"]);
-            $newRestaurant->setPhoto($restaurant["photo"] ?? 'r_default.jpg');
+            $newRestaurant->setPhoto($restaurant["photo"]);
             $newRestaurant->setCreatedAt($restaurant["created_at"]);
 
             $restaurants[] = $newRestaurant;
@@ -51,24 +52,23 @@ class Home
                          r.comment, 
                          r.created_at, 
                          u.firstName, u.lastName, 
-                         uph.photo_path AS userPhoto, 
+                         COALESCE(uph.photo_path, 'u_default.jpg') AS userPhoto, 
                          res.idRestaurants, res.name AS restaurantName, 
-                         rph.photo_path AS restaurantPhoto
-          FROM reviews r
-          JOIN users u ON r.user_id = u.idUsers
-          LEFT JOIN user_photos up ON u.idUsers = up.user_id
-          LEFT JOIN photos uph ON up.photo_id = uph.idPhoto
-          JOIN restaurants res ON r.restaurant_id = res.idRestaurants
-          LEFT JOIN restaurant_photos rp ON res.idRestaurants = rp.restaurant_id
-          LEFT JOIN photos rph ON rp.photo_id = rph.idPhoto
-          ORDER BY RAND()
-          LIMIT :limit";
-
+                         COALESCE(rph.photo_path, 'r_default.jpg') AS restaurantPhoto
+                  FROM reviews r
+                  JOIN users u ON r.user_id = u.idUsers
+                  LEFT JOIN user_photos up ON u.idUsers = up.user_id
+                  LEFT JOIN photos uph ON up.photo_id = uph.idPhoto
+                  JOIN restaurants res ON r.restaurant_id = res.idRestaurants
+                  LEFT JOIN restaurant_photos rp ON res.idRestaurants = rp.restaurant_id
+                  LEFT JOIN photos rph ON rp.photo_id = rph.idPhoto
+                  WHERE r.idReviews >= (SELECT FLOOR(MAX(idReviews) * RAND()) FROM reviews)
+                  LIMIT :limit";
 
         $stmt = $pdo->prepare($query);
         $stmt->bindValue(':limit', $limit, \PDO::PARAM_INT);
         $stmt->execute();
-        
+
         $reviewsData = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 
         $reviews = [];
@@ -79,10 +79,10 @@ class Home
                 'content' => $review['comment'],
                 'created_at' => $review['created_at'],
                 'userName' => $review['firstName'] . ' ' . $review['lastName'],
-                'userPhoto' => $review['userPhoto'] ?? 'u_default.jpg',
+                'userPhoto' => $review['userPhoto'],
                 'restaurantId' => $review['idRestaurants'],
                 'restaurantName' => $review['restaurantName'],
-                'restaurantPicture' => $review['restaurantPhoto'] ?? 'r_default.jpg',
+                'restaurantPicture' => $review['restaurantPhoto'],
             ];
         }
 
@@ -91,15 +91,10 @@ class Home
 
     public static function getStars($rating)
     {
-        $stars = '';
-        for ($i = 1; $i <= 5; $i++) {
-            if ($i <= $rating) {
-                $stars .= '★'; // Étoile pleine
-            } else {
-                $stars .= '☆'; // Étoile vide
-            }
-        }
-        return $stars;
+        $fullStars = floor($rating);
+        $halfStar = ($rating - $fullStars) >= 0.5 ? '⯪' : ''; // Demi-étoile
+        $emptyStars = 5 - $fullStars - ($halfStar ? 1 : 0);
+
+        return str_repeat('★', $fullStars) . $halfStar . str_repeat('☆', $emptyStars);
     }
 }
- 
