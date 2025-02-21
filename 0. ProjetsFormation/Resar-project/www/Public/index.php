@@ -1,4 +1,5 @@
 <?php
+
 //Empêcher le document d’expirer lorsque nous voulons revenir à une page avec une demande POST
 ini_set('session.cache_limiter', 'public');
 session_cache_limiter(false);
@@ -39,8 +40,7 @@ try {
 
             //case search
 
-        case 'restaurants':
-            // require '../App/Views/Restaurants/restaurants_view.php';
+        case 'restaurants-list':
             (new Restaurants\Read())->execute($_POST);
             break;
 
@@ -54,10 +54,10 @@ try {
             break;
 
 
-        case 'Register-restaurant':
-            // (new RegisterRestaurant())->execute($_POST);
+        case 'register-restaurant':
             require '../App/Views/Register/registerRestaurant_view.php';
             break;
+
             //----------------------------------------------------------------------------------
 
             // case 'login':

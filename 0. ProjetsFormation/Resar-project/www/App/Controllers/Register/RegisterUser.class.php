@@ -50,6 +50,8 @@ class RegisterUser
                         $stmt = $pdo->prepare("INSERT INTO users (firstName, lastName, email, password) VALUES (?, ?, ?, ?)");
                         $stmt->execute([$prenom, $nom, $email, $hashedPassword]);
 
+                        // $_SESSION['success_message'] = $validationSuccess;
+                        header("Location: ?page=success");
                     } catch (PDOException $e) {
                         die("Erreur SQL : " . $e->getMessage());
                     }

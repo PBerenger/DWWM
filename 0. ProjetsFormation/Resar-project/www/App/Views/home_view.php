@@ -2,7 +2,7 @@
 
 <main>
     <div class="home-container">
-        <h1>Bienvenue sur ResaR</h1>
+        <h1>Bienvenue sur <span class="miroir-h">R</span>es<span class="miroir-xy">e</span>R</h1>
         <div class="home-top">
             <h2>Découvrir des restaurants</h2>
             <p>Bienvenue sur notre réseau social pour les amateurs de bonne cuisine. Découvrez des restaurants, réservez une table, et explorez leurs menus !</p>

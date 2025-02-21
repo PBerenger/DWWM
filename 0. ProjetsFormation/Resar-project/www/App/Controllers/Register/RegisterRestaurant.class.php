@@ -3,126 +3,136 @@
 namespace App\Controllers\Register;
 
 use App\Config\DbConnect;
-use PDOException;
+use \PDOException;
 
 class RegisterRestaurant
 {
-    public function execute(array $postData, array $filesData)
+    public function execute(array $postdata, array $files)
     {
-        if (session_status() === PHP_SESSION_NONE) {
-            session_start();
-        }
-
         $validationError = '';
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // Vérification des clés requises
-            $requiredKeys = ['prenom', 'nom', 'email', 'telephone', 'password', 'passwordRepeat'];
-            foreach ($requiredKeys as $key) {
-                if (!isset($postData[$key])) {
-                    $_SESSION['error_message'] = "Données invalides reçues.";
-                    header("Location: ?page=error");
-                    exit;
-                }
-            }
+            // Récupération et validation des données utilisateur
+            $prenom = trim($postdata['prenom']);
+            $nom = trim($postdata['nom']);
+            $email = trim($postdata['email']);
+            $telephone = trim($postdata['telephone']);
+            $password = $postdata['password'];
+            $passwordRepeat = $postdata['passwordRepeat'];
 
-            if (!isset($filesData['photoProfil'], $filesData['photoRestaurant'])) {
-                $_SESSION['error_message'] = "Les images sont requises.";
-                header("Location: ?page=error");
-                exit;
-            }
+            // Récupération et validation des données restaurant
+            $nomRestaurant = trim($postdata['nomRestaurant']);
+            $adresse = trim($postdata['address']);
+            $ville = trim($postdata['city']);
+            $codePostal = trim($postdata['zipCode']);
+            $pays = trim($postdata['country']);
+            $description = trim($postdata['description']);
 
-            // Nettoyage des entrées utilisateur
-            $prenom = trim($postData['prenom']);
-            $nom = trim($postData['nom']);
-            $email = trim($postData['email']);
-            $telephone = trim($postData['telephone']);
-            $password = $postData['password'];
-            $passwordRepeat = $postData['passwordRepeat'];
-            $photoProfil = $filesData['photoProfil'];
-            $photoRestaurant = $filesData['photoRestaurant'];
-
-            // Vérifications des champs obligatoires
-            if (empty($prenom) || empty($nom) || empty($email) || empty($telephone) || empty($password) || empty($passwordRepeat)) {
+            // Vérification des champs obligatoires
+            if (
+                empty($prenom) || empty($nom) || empty($email) || empty($telephone) || empty($password) || empty($passwordRepeat) ||
+                empty($nomRestaurant) || empty($adresse) || empty($ville) || empty($codePostal) || empty($pays) || empty($description)
+            ) {
                 $validationError = "Tous les champs doivent être remplis.";
             }
-            // Vérification du format du téléphone
-            elseif (!preg_match("/^[0-9]{10}$/", $telephone)) {
-                $validationError = "Le numéro de téléphone doit contenir 10 chiffres.";
-            }
             // Vérification du mot de passe
-            elseif (!preg_match("/^((?=\S*?[A-Z])(?=\S*?[a-z])(?=\S*?[0-9])(?=\S*?[$@!%*#?&]).{8,})\S$/", $password)) {
-                $validationError = "Le mot de passe doit contenir au moins :\n- 8 caractères\n- Une majuscule\n- Une minuscule\n- Un chiffre\n- Un caractère spécial parmi $@!%*#?&.";
+            elseif (!preg_match("/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[$@!%*#?&])[A-Za-z\d$@!%*#?&]{8,}$/", $password)) {
+                $validationError = "Le mot de passe doit contenir au moins :
+                                    - 8 caractères
+                                    - Une majuscule
+                                    - Une minuscule
+                                    - Un chiffre
+                                    - Un caractère spécial parmi $@!%*#?&.";
             }
             // Vérification de la correspondance des mots de passe
             elseif ($password !== $passwordRepeat) {
                 $validationError = "Les mots de passe ne correspondent pas.";
-            } else {
-                $pdo = DbConnect::getPDO();
-                $stmt = $pdo->prepare("SELECT idUsers FROM users WHERE email = ?");
-                $stmt->execute([$email]);
-
-                if ($stmt->fetch()) {
-                    $validationError = "L'email est déjà utilisé.";
-                }
             }
 
-            // Gestion des images si aucune erreur de validation précédente
-            if (empty($validationError)) {
-                $uploadDir = __DIR__ . '/../../uploads/';
-                if (!is_dir($uploadDir)) {
-                    mkdir($uploadDir, 0777, true);
-                }
-
-                // Types MIME acceptés et taille maximale
-                $allowedTypes = ['image/jpeg', 'image/png', 'image/gif'];
-                $maxFileSize = 2 * 1024 * 1024; // 2 Mo
-
-                if (!in_array($photoProfil['type'], $allowedTypes) || !in_array($photoRestaurant['type'], $allowedTypes)) {
-                    $validationError = "Seuls les fichiers JPG, PNG et GIF sont autorisés.";
-                } elseif ($photoProfil['size'] > $maxFileSize || $photoRestaurant['size'] > $maxFileSize) {
-                    $validationError = "La taille de chaque image ne doit pas dépasser 2 Mo.";
-                }
-
-                if (empty($validationError)) {
-                    $photoProfilPath = $uploadDir . basename($photoProfil['name']);
-                    $photoRestaurantPath = $uploadDir . basename($photoRestaurant['name']);
-
-                    if (!move_uploaded_file($photoProfil['tmp_name'], $photoProfilPath)) {
-                        $validationError = "Erreur lors du téléchargement de la photo de profil.";
-                    } elseif (!move_uploaded_file($photoRestaurant['tmp_name'], $photoRestaurantPath)) {
-                        unlink($photoProfilPath); // Supprime la première image si la seconde échoue
-                        $validationError = "Erreur lors du téléchargement de la photo du restaurant.";
-                    }
-                }
-            }
-
-            // Insertion dans la base de données si tout est correct
-            if (empty($validationError)) {
-                try {
-                    $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
-                    $stmt = $pdo->prepare("INSERT INTO users (firstName, lastName, email, phone, password, role, photoProfil, photoRestaurant) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-                    $stmt->execute([$prenom, $nom, $email, $telephone, $hashedPassword, 'restaurateur', basename($photoProfil['name']), basename($photoRestaurant['name'])]);
-
-                    $_SESSION['success_message'] = "Inscription réussie. Vous pouvez maintenant vous connecter.";
-                    header("Location: ?page=success");
-                    exit;
-                } catch (PDOException $e) {
-                    // Afficher l'erreur SQL uniquement en mode développement
-                    if ($_ENV['APP_ENV'] === 'dev') {
-                        $validationError = "Erreur SQL : " . $e->getMessage();
-                    } else {
-                        $validationError = "Une erreur s'est produite lors de l'inscription.";
-                    }
-                }
-            }
-
-            // Redirection en cas d'erreur
             if (!empty($validationError)) {
                 $_SESSION['error_message'] = $validationError;
                 header("Location: ?page=error");
                 exit;
             }
+
+            // Connexion à la base de données
+            $pdo = DbConnect::getPDO();
+            try {
+                $pdo->beginTransaction();
+
+                // Vérifier si l'email existe déjà
+                $stmt = $pdo->prepare("SELECT idUsers FROM users WHERE email = ?");
+                $stmt->execute([$email]);
+
+                if ($stmt->fetch()) {
+                    $pdo->rollBack();
+                    $_SESSION['error_message'] = "L'email est déjà utilisé.";
+                    header("Location: ?page=error");
+                    exit;
+                }
+
+                // Inscription de l'utilisateur
+                $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+                $stmt = $pdo->prepare("INSERT INTO users (firstName, lastName, email, password, telephone) VALUES (?, ?, ?, ?, ?)");
+                $stmt->execute([$prenom, $nom, $email, $hashedPassword, $telephone]);
+
+                // Récupérer l'ID utilisateur nouvellement créé
+                $userId = $pdo->lastInsertId();
+
+                // Inscription du restaurant
+                $stmt = $pdo->prepare("INSERT INTO restaurants (name, address, city, zipCode, country, description, owner_id) VALUES (?, ?, ?, ?, ?, ?, ?)");
+                $stmt->execute([$nomRestaurant, $adresse, $ville, $codePostal, $pays, $description, $userId]);
+
+                // Récupérer l'ID restaurant nouvellement créé
+                $restaurantId = $pdo->lastInsertId();
+
+                // Gérer l'upload des images
+                $photoProfilPath = $this->uploadImage($files['photoProfil'], "uploads/profils/", 150, 150);
+                $photoRestaurantPath = $this->uploadImage($files['photoRestaurant'], "uploads/restaurants/", 2048, 1200);
+
+                // Mise à jour des chemins d'images dans la base de données
+                $stmt = $pdo->prepare("UPDATE users SET profile_picture = ? WHERE idUsers = ?");
+                $stmt->execute([$photoProfilPath, $userId]);
+
+                $stmt = $pdo->prepare("UPDATE restaurants SET banner = ? WHERE idRestaurant = ?");
+                $stmt->execute([$photoRestaurantPath, $restaurantId]);
+
+                // Valider la transaction
+                $pdo->commit();
+
+                $_SESSION['success_message'] = "Inscription réussie !";
+                header("Location: ?page=success");
+                exit;
+            } catch (PDOException $e) {
+                $pdo->rollBack();
+                die("Erreur SQL : " . $e->getMessage());
+            }
         }
+    }
+
+    private function uploadImage($file, $directory, $minWidth, $minHeight)
+    {
+        if ($file['error'] !== UPLOAD_ERR_OK) {
+            return null;
+        }
+
+        // Vérification du type de fichier
+        $allowedTypes = ['image/jpeg', 'image/png', 'image/gif'];
+        if (!in_array($file['type'], $allowedTypes)) {
+            return null;
+        }
+
+        // Vérification des dimensions
+        list($width, $height) = getimagesize($file['tmp_name']);
+        if ($width < $minWidth || $height < $minHeight) {
+            return null;
+        }
+
+        // Déplacement du fichier
+        $fileName = uniqid() . "_" . basename($file['name']);
+        $filePath = $directory . $fileName;
+        move_uploaded_file($file['tmp_name'], $filePath);
+
+        return $filePath;
     }
 }

@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= htmlspecialchars($pageTitle ?? 'ResaR') ?></title>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/home.css">
     <link rel="stylesheet" href="/css/error-success.css">
     <link rel="stylesheet" href="/css/restaurants.css">
     <link rel="stylesheet" href="/css/restaurant-details.css">
-    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/registerRestaurant.css">
 
 </head>
 
@@ -22,10 +23,10 @@
             </button>
             <ul>
                 <li>
-                    <button id="btn-general" onclick="window.location.href='?page=restaurants'">Restaurants</button>
+                    <button id="btn-general" onclick="window.location.href='?page=restaurants-list'">Restaurants</button>
                 </li>
                 <li>
-                    <button id="btn-general" onclick="window.location.href='?page=Register-restaurant'">Je suis restaurateur</button>
+                    <button id="btn-general" onclick="window.location.href='?page=register-restaurant'">Vous êtes restaurateur</button>
                 </li>
                 <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
                     <li>
@@ -56,6 +57,11 @@
         <button id="close-register" class="close-btn">&times;</button>
         <img class="logo2" src="assets/logo/logo2.2.png" alt="Logo-img Accueil">
         <h2>Inscription</h2>
+        <h4>ou</h4>
+        <h2>Connexion</h2>
+        <h4>sur</h4>
+        <h1><span class="miroir-h">R</span>es<span class="miroir-xy">e</span>R</h1>
+
         <!-- Affichage des erreurs -->
         <?php if (!empty($validationError)): ?>
             <div class="error-message"><?= htmlspecialchars($validationError) ?></div>
@@ -74,7 +80,7 @@
             <input type="email" name="email" placeholder="Email" value="bou.ba@gmail.com" required>
             <input type="password" name="password" placeholder="Votre mot de passe" value="Password@123" required>
             <input type="password" name="passwordRepeat" placeholder="Confirmation du mot de passe" value="Password@123" required>
-            <button type="submit">S'inscrire</button>
+            <button type="submit" name="userSubmit">S'inscrire</button>
         </form>
         <p>ou</p>
         <button class="google-signin">Se connecter avec Google</button>

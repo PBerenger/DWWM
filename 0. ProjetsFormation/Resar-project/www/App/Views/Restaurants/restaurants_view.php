@@ -1,9 +1,4 @@
-<?php
-require_once __DIR__ . '/../../../Config/config.php';
-ob_start();
-?>
-
-<link rel="stylesheet" href="assets/css/restaurants.css">
+<?php ob_start(); ?>
 
 <main>
     <h2>Restaurants</h2>
