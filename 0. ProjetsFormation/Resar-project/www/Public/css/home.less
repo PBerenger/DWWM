@@ -13,47 +13,10 @@
         background-position: 0 70%;
     }
 
-    .search-bar {
-        position: fixed;
-        top: -50px;
-        left: 0;
-        right: 0;
-        padding: 10px;
-        background-color: rgba(255, 255, 255, 0.8);
-        z-index: 1000;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        background-color: var(--primary-color);
-
-        /* Départ caché */
-        opacity: 0;
-        transform: translateY(-50px);
-        transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
-    }
-
-    .search-bar.active {
-        top: 0;
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-
-    .search-bar input {
-        min-width: 1300px;
-        padding: 10px;
-        font-size: 16px;
-        border-radius: 5px;
-        border: none;
-        outline: none;
-    }
-
     .home-mid1 {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 10px 20px;
 
         .home-restaurants-slider {
             position: relative;
@@ -229,4 +192,75 @@
         }
     }
 
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .home-img-background {
+        height: 40vh;  // Ajuste la taille de l'image de fond sur les tablettes
+    }
+
+    .home-restaurants-slider {
+        margin-top: 10px;
+
+        .slider-prev,
+        .slider-next {
+            font-size: 18px;
+        }
+    }
+
+    .review-box {
+        max-width: 100%;  // Pour occuper toute la largeur sur les petits écrans
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .home-img-background {
+        height: 30vh;  // Réduit la taille de l'image de fond sur les petits écrans
+    }
+
+    .home-restaurants-slider {
+        margin-top: 0px 0px;
+
+        .slider-prev,
+        .slider-next {
+            display: none;
+        }
+    }
+
+    .home-bot {
+        .home-reviews {
+            flex-direction: column;  // Affiche les critiques sous forme de liste
+            gap: 15px;
+            align-items: center;
+        }
+
+        .review-box {
+            width: 100%;
+            max-width: 90%;
+            margin: 10px 0;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .home-img-background {
+        height: 25vh;  // Réduit davantage l'image de fond pour les très petits écrans
+    }
+
+    .home-restaurants-slider {
+        .home-restaurant-slide {
+            padding: 5px;
+        }
+
+        .restaurant-photo {
+            max-height: 250px;  // Limite la hauteur des photos de restaurant sur les petits écrans
+        }
+    }
+
+    .review-box {
+        width: 100%;
+        max-width: 100%;
+    }
 }

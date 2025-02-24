@@ -20,56 +20,49 @@
 <body>
     <header>
         <nav>
+            <div class="search-bar-fixed">
+                <form method="GET" action="index.php?page=search">
+                    <input type="text" name="search" placeholder="Rechercher un restaurant..." id="search-input" value="<?= htmlspecialchars($_GET['search'] ?? '') ?>">
+                </form>
+            </div>
+
             <button class="logo1" onclick="window.location.href='?page=home'">
                 <img src="assets/logo/logo1.png" alt="Logo-txt Accueil">
+            </button>
+            <button class="logo2" onclick="window.location.href='?page=home'">
                 <img src="assets/logo/logo2.1.png" alt="Logo-img Accueil">
             </button>
-            <ul>
-                <li>
-                    <button id="btn-general" onclick="window.location.href='?page=restaurants-list'" title="Liste des restaurants">Restaurants</button>
-                </li>
+
+            <button id="menu-toggle" class="menu-toggle">☰</button>
+            <button id="close-menu" class="close-menu">&times;</button>
+
+            <ul class="nav-links">
+                <li><button id="btn-general" onclick="window.location.href='?page=restaurants-list'" title="Liste des restaurants">Restaurants</button></li>
                 <li>
                     <?php if (!isset($_SESSION['user_id'])): ?>
                         <button id="btn-general" onclick="window.location.href='?page=register-restaurant'" title="Inscrire mon restaurant">Vous êtes restaurateur</button>
                     <?php elseif (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
-                        <button id="btn-general" onclick="window.location.href='?page=admin'" title="Accéder à l'administration du site">Administration</button>
+                        <button id="btn-general" onclick="window.location.href='?page=admin'" title="Administration">Administration</button>
                     <?php elseif (isset($_SESSION['role']) && $_SESSION['role'] === 'client'): ?>
-                        <button id="btn-general" onclick="window.location.href='?page=myProfil'" title="Modifier mes informations">Profil</button>
+                        <button id="btn-general" onclick="window.location.href='?page=myProfil'" title="Profil">Profil</button>
                     <?php elseif (isset($_SESSION['role']) && $_SESSION['role'] === 'owner'): ?>
-                        <button id="btn-general" onclick="window.location.href='?page=myRestaurant' " title="Modifier mon restaurant">Mon restaurant</button>
+                        <button id="btn-general" onclick="window.location.href='?page=myRestaurant'" title="Mon restaurant">Mon restaurant</button>
                     <?php endif; ?>
                 </li>
-
-                <!-- Bouton Déconnexion -->
                 <?php if (isset($_SESSION['user_id'])): ?>
-                    <li>
-                        <button id="btn-general" onclick="window.location.href='?page=logout'" title="Déconnectez-vous">Déconnexion</button>
-                    </li>
+                    <li><button id="btn-general" onclick="window.location.href='?page=logout'" title="Déconnexion">Déconnexion</button></li>
                 <?php else: ?>
-                    <!-- Bouton Connexion -->
-                    <li>
-                        <button id="btn-general" class="open-register" title="Connectez-vous ou inscrivez-vous">Connexion</button>
-                    </li>
+                    <li><button id="btn-general" class="open-register" title="Connexion">Connexion</button></li>
                 <?php endif; ?>
-
-
-                <!-- Affichage du smiley pour indiquer l'état de la connexion -->
-                <li class="user-status" title="<?= isset($_SESSION['user_id']) ? 'Vous êtes connecté' : "Vous n'êtes pas connecté" ?>">
-                    <?php if (isset($_SESSION['user_id'])): ?>
-                        🤗 <!-- Smiley heureux si connecté -->
-                    <?php else: ?>
-                        😴 <!-- Smiley triste si non connecté -->
-                    <?php endif; ?>
+                <li class="user-status" title="<?= isset($_SESSION['user_id']) ? 'Vous êtes connecté' : 'Vous n\'êtes pas connecté' ?>">
+                    <?= isset($_SESSION['user_id']) ? '🤗' : '😴' ?>
                 </li>
-
                 <li class="search-bar-nav">
                     <form method="GET" action="index.php?page=search">
-                        <input type="text" name="search" placeholder="Rechercher un restaurant..." id="search-input" value="<?= isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '' ?>" title="Recherchez un restaurant">
+                        <input type="text" name="search" placeholder="Rechercher un restaurant..." id="search-input" value="<?= isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '' ?>">
                     </form>
                 </li>
-                <li>
-                    <button id="dark-mode-toggle" title="Thème Sombre/clair">☀️</button>
-                </li>
+                <li><button id="dark-mode-toggle">☀️</button></li>
             </ul>
         </nav>
     </header>
@@ -101,6 +94,8 @@
 
         <p>ou</p>
         <button class="google-signin">Se connecter avec Google</button>
+
+        <div class="separation"></div>
 
         <h2>Inscription</h2>
 

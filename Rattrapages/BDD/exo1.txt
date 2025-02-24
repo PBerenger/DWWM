@@ -1,0 +1,21 @@
+Objectif : Concevoir une base de données pour une bibliothèque.
+
+Contexte
+Une bibliothèque souhaite informatiser son système de gestion des emprunts de livres. Vous devez concevoir une base de données permettant de gérer :
+
+Les livres
+Les auteurs
+Les lecteurs
+Les emprunts
+
+
+Travail demandé
+
+Dictionnaire de données :
+
+Identifier les entités et leurs attributs.
+Définir les types de données associés.
+Modélisation avec la méthode Merise :
+Réaliser un Modèle Conceptuel de Données (MCD).
+Transformer le MCD en Modèle Logique de Données (MLD).
+Proposer un schéma relationnel correspondant. 

@@ -1,0 +1,17 @@
+Exercice 2 : Conception avancée d'une base de données pour une plateforme de e-learning
+Objectif : Concevoir une base de données pour une plateforme de cours en ligne.
+
+Contexte
+Une entreprise souhaite développer une plateforme d’e-learning permettant aux étudiants de s’inscrire à des cours en ligne, de suivre leur progression et d’obtenir des certifications.
+
+Travail demandé
+
+Dictionnaire de données :
+Identifier les entités principales : utilisateurs (étudiants, professeurs), cours, modules, examens, certifications.
+Définir les relations et les contraintes d’intégrité.
+Modélisation avec la méthode Merise :
+Construire un MCD en identifiant les associations (ex. : un étudiant peut s’inscrire à plusieurs cours).
+Transformer le MCD en MLD.
+Définir les clés primaires et étrangères pour assurer la cohérence des données.
+Implémentation SQL (optionnelle) :
+Écrire les requêtes SQL pour la création des tables.

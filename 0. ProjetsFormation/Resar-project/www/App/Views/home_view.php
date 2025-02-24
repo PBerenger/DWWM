@@ -8,13 +8,6 @@
             <p>Bienvenue sur notre réseau social pour les amateurs de bonne cuisine. Découvrez des restaurants, réservez une table, et explorez leurs menus !</p>
         </div>
 
-        <div class="search-bar">
-            <form method="GET" action="index.php?page=search">
-                <input type="text" name="search" placeholder="Rechercher un restaurant..." id="search-input" value="<?= htmlspecialchars($_GET['search'] ?? '') ?>">
-            </form>
-        </div>
-
-
         <div class="home-mid1">
             <div class="home-restaurants-slider">
                 <div class="slider-container">
@@ -48,18 +41,26 @@
             </div>
         </div>
 
+        <div class="separation"></div>
+        <h2>LE site pour trouver un restaurant près de chez vous !</h2>
+        <div class="separation"></div>
+        
         <div class="home-img-background"></div>
-
+        
+        <div class="separation"></div>
         <div class="home-mid2">
             <h2>Inscrivez-vous</h2>
             <p>Créez un compte pour réserver une table, laisser des avis, et partager vos expériences culinaires avec la communauté.</p>
             <a href="index.php?page=register" class="btn-more-info">S'inscrire</a>
-
+            
+            <div class="separation"></div>
+            
             <h2>Enregistrez votre restaurant</h2>
             <p>Propriétaire d'un restaurant ? Inscrivez-vous pour ajouter votre établissement à notre base de données.</p>
             <a href="index.php?page=restaurant_registration" class="btn-more-info">Enregistrer un restaurant</a>
         </div>
-
+        
+        <div class="separation"></div>
         <div class="home-bot">
             <h2>Vos avis</h2>
             <div class="home-reviews">

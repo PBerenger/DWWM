@@ -1,13 +1,26 @@
-// dark mode
-
 document.addEventListener('DOMContentLoaded', () => {
+    // Search-bar
+    const searchBar = document.querySelector(".search-bar-fixed");
+    let lastScrollTop = 0;
+
+    window.addEventListener("scroll", function () {
+        let scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+        if (scrollTop > lastScrollTop) {
+            // Scroll vers le bas : afficher la barre de recherche
+            searchBar.classList.add("active");
+        } else if (scrollTop === 0) {
+            // Retour en haut de la page : cacher la barre
+            searchBar.classList.remove("active");
+        }
+
+        lastScrollTop = scrollTop;
+    });
+
+    // Dark mode
     const body = document.body;
     const darkModeToggle = document.getElementById("dark-mode-toggle");
-    const openRegister = document.querySelector(".open-register");
-    const closeRegister = document.getElementById("close-register");
-    const registerMenu = document.getElementById("register-menu");
 
-    // Mode sombre
     if (darkModeToggle) {
         if (localStorage.getItem('darkMode') === 'enabled') {
             body.classList.add('dark-mode');
@@ -27,17 +40,46 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Menu latéral
+    // Register menu
+    const openRegister = document.querySelector(".open-register");
+    const closeRegister = document.getElementById("close-register");
+    const registerMenu = document.getElementById("register-menu");
+
     if (openRegister && registerMenu) {
         openRegister.addEventListener("click", () => {
             registerMenu.classList.add("active");
         });
-    }    
+    }
 
     if (closeRegister && registerMenu) {
         closeRegister.addEventListener("click", () => {
             registerMenu.classList.remove("active");
         });
     }
-});
 
+    // Fermer le menu si l'on clique à l'extérieur
+    document.addEventListener('click', (event) => {
+        if (registerMenu.classList.contains("active") && !registerMenu.contains(event.target) && !openRegister.contains(event.target)) {
+            registerMenu.classList.remove("active");
+        }
+    });
+
+    // Menu burger
+    const menuToggle = document.getElementById('menu-toggle');
+    const closeMenu = document.getElementById('close-menu');
+    const navLinks = document.querySelector('.nav-links');
+
+    // Ajouter un événement pour ouvrir le menu
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.add('active');
+        closeMenu.classList.add('active');
+        menuToggle.style.display = 'none'; // Masquer le burger
+    });
+
+    // Ajouter un événement pour fermer le menu
+    closeMenu.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        closeMenu.classList.remove('active');
+        menuToggle.style.display = 'block'; // Afficher le burger
+    });
+});
