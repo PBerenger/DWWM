@@ -3,7 +3,6 @@
 namespace App\Controllers\Register;
 
 use App\Config\DbConnect;
-// use App\Models\{User, Restaurant};
 use \PDOException;
 
 class RegisterUser
@@ -47,11 +46,21 @@ class RegisterUser
                 } else {
                     try {
                         $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+                        
+                        // Insertion de l'utilisateur
                         $stmt = $pdo->prepare("INSERT INTO users (firstName, lastName, email, password) VALUES (?, ?, ?, ?)");
                         $stmt->execute([$prenom, $nom, $email, $hashedPassword]);
+                        
+                        // Récupérer l'ID du nouvel utilisateur
+                        $userId = $pdo->lastInsertId();
 
-                        // $_SESSION['success_message'] = $validationSuccess;
+                        // Ajouter le rôle 'client' dans la table user_roles
+                        $stmtRole = $pdo->prepare("INSERT INTO user_roles (user_id, role_id) VALUES (?, ?)");
+                        $stmtRole->execute([$userId, 2]); // '1' pour le rôle 'client'
+
+                        // Rediriger après l'inscription réussie
                         header("Location: ?page=success");
+                        exit;
                     } catch (PDOException $e) {
                         die("Erreur SQL : " . $e->getMessage());
                     }

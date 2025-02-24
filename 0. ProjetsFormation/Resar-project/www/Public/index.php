@@ -4,8 +4,10 @@
 ini_set('session.cache_limiter', 'public');
 session_cache_limiter(false);
 //Démarrer la session
-if (session_status() !== PHP_SESSION_ACTIVE)
-    session_start();
+// if (session_status() !== PHP_SESSION_ACTIVE)
+//     session_start();
+
+// var_dump($_SESSION);
 
 // Autoload des classes avec le namespace comme chemin
 spl_autoload_register(function ($class) {
@@ -19,7 +21,7 @@ spl_autoload_register(function ($class) {
 
 require_once "../Config/DbConnect.php";
 
-use App\Controllers\{User, Login, Restaurants, Home, Search};
+use App\Controllers\{User, LoginUser, Restaurants, Home, Search};
 use App\Controllers\Register\{RegisterUser, RegisterRestaurant};
 use App\Config\DbConnect;
 
@@ -53,16 +55,19 @@ try {
             (new RegisterUser())->execute($_POST);
             break;
 
+        case 'login-user':
+            if (isset($_POST['loginSubmit'])) {
+                $loginController = new LoginUser();
+                $loginController->execute($_POST);
+            }
+            break;
+
 
         case 'register-restaurant':
             require '../App/Views/Register/registerRestaurant_view.php';
             break;
 
             //----------------------------------------------------------------------------------
-
-            // case 'login':
-            //     require '../App/Views/login.php';
-            //     break;
 
             // case 'admin_restaurant':
             //     if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
@@ -80,6 +85,15 @@ try {
         case 'success':
             require '../App/Views/success.php';
             break;
+
+        case 'logout':
+            session_start();  // Démarre la session pour s'assurer qu'elle est active
+            session_unset();  // Libère toutes les variables de session
+            session_destroy();  // Détruit la session
+            header("Location: ?page=home");  // Redirige vers la page d'accueil
+            exit;
+            break;
+
 
         default:
             header("HTTP/1.1 404 Not Found");
