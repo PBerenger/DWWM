@@ -9,7 +9,10 @@
 
             <h3>Détails de l'erreur :</h3>
 
-            <p><?= isset($errorMessage) ? htmlspecialchars($errorMessage, ENT_QUOTES, 'UTF-8') : "Aucun message d'erreur disponible."; ?></p>
+            <p>
+                <?= isset($_SESSION['error_message']) ? htmlspecialchars($_SESSION['error_message'], ENT_QUOTES, 'UTF-8') : "Aucun message d'erreur disponible."; ?>
+            </p>
+
 
             <?php if (!empty($_SESSION["errorInscription"])): ?>
                 <?php foreach ($_SESSION["errorInscription"] as $error): ?>

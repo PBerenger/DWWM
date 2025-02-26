@@ -41,7 +41,7 @@ class LoginUser
                     }
                     $_SESSION['user_id'] = $user['idUsers'];
                     $_SESSION['role'] = $user['roleName']; // Stocker le rôle dans la session
-                    header("Location: ?page=home"); // Rediriger vers la page d'accueil
+                    header("Location: ?page=success"); // Rediriger vers la page d'accueil
                     exit;
                 } else {
                     $validationError = "Email ou mot de passe incorrect.";
@@ -50,7 +50,7 @@ class LoginUser
 
             if (!empty($validationError)) {
                 $_SESSION['error_message'] = $validationError;
-                header("Location: ?page=login"); // Rediriger vers la page de connexion avec une erreur
+                header("Location: ?page=error"); // Rediriger vers la page de connexion avec une erreur
                 exit;
             }
         }

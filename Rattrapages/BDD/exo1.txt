@@ -18,4 +18,4 @@ Définir les types de données associés.
 Modélisation avec la méthode Merise :
 Réaliser un Modèle Conceptuel de Données (MCD).
 Transformer le MCD en Modèle Logique de Données (MLD).
-Proposer un schéma relationnel correspondant. 
+Proposer un schéma relationnel correspondant.

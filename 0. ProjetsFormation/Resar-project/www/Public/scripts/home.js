@@ -53,3 +53,61 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+// slider tactile
+
+document.addEventListener("DOMContentLoaded", function () {
+    const sliderContainer = document.querySelector(".slider-container");
+    let startX = 0;
+    let isDragging = false;
+
+    sliderContainer.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+    });
+
+    sliderContainer.addEventListener("touchmove", (e) => {
+        if (!isDragging) return;
+
+        let moveX = e.touches[0].clientX - startX;
+
+        // Si l'utilisateur glisse vers la gauche, on passe au slide suivant
+        if (moveX < -50) {
+            nextSlide();
+            isDragging = false; // Empêcher plusieurs changements en un seul mouvement
+        }
+        // Si l'utilisateur glisse vers la droite, on passe au slide précédent
+        else if (moveX > 50) {
+            prevSlide();
+            isDragging = false;
+        }
+    });
+
+    sliderContainer.addEventListener("touchend", () => {
+        isDragging = false;
+    });
+
+    function nextSlide() {
+        const slides = document.querySelectorAll(".home-restaurant-slide");
+        const slider = document.querySelector(".slider-container");
+
+        let currentTransform = getComputedStyle(slider).transform;
+        let translateX = currentTransform !== "none" ? parseInt(currentTransform.split(",")[4]) : 0;
+
+        if (translateX > -((slides.length - 1) * slides[0].offsetWidth)) {
+            slider.style.transform = `translateX(${translateX - slides[0].offsetWidth}px)`;
+        }
+    }
+
+    function prevSlide() {
+        const slides = document.querySelectorAll(".home-restaurant-slide");
+        const slider = document.querySelector(".slider-container");
+
+        let currentTransform = getComputedStyle(slider).transform;
+        let translateX = currentTransform !== "none" ? parseInt(currentTransform.split(",")[4]) : 0;
+
+        if (translateX < 0) {
+            slider.style.transform = `translateX(${translateX + slides[0].offsetWidth}px)`;
+        }
+    }
+});
+

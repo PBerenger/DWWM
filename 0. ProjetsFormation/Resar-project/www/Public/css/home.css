@@ -96,7 +96,7 @@
   justify-content: space-between;
 }
 .home-container .home-bot .home-reviews .review-box {
-  background: #fff;
+  background: var(--third-color);
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   width: 100%;
@@ -177,7 +177,15 @@
     height: 30vh;
   }
   .home-restaurants-slider {
-    margin-top: 0px 0px;
+    margin-top: 0;
+  }
+  .home-restaurants-slider .slider-container {
+    width: 100%;
+    overflow: hidden;
+    transition: transform 0.5s ease-in-out;
+  }
+  .home-restaurants-slider .slider-container .home-restaurant-slide {
+    width: 100vw;
   }
   .home-restaurants-slider .slider-prev,
   .home-restaurants-slider .slider-next {
