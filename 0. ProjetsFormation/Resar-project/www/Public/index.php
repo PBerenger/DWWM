@@ -3,9 +3,6 @@
 //Empêcher le document d’expirer lorsque nous voulons revenir à une page avec une demande POST
 ini_set('session.cache_limiter', 'public');
 session_cache_limiter(false);
-//Démarrer la session
-// if (session_status() !== PHP_SESSION_ACTIVE)
-//     session_start();
 
 // var_dump($_SESSION);
 
@@ -64,10 +61,22 @@ try {
 
 
         case 'register-restaurant':
+            // var_dump($_POST);          
+            (new RegisterRestaurant())->execute($_POST, $_FILES);
             require '../App/Views/Register/registerRestaurant_view.php';
-            break;
 
+            break;
+            
             //----------------------------------------------------------------------------------
+
+
+            // case 'login-owner':
+            //     if (isset($_POST['loginSubmit'])) {
+            //         $loginController = new LoginUser();
+            //         $loginController->execute($_POST);
+            //     }
+            //     break;
+
 
             // case 'admin_restaurant':
             //     if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {

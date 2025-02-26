@@ -9,32 +9,30 @@
             <p>Augmentez vos revenus, dotez-vous d’une meilleure visibilité et fidélisez vos clients en rejoignant nos 55 000 restaurants partenaires déjà réservables sur ResaR, la première plateforme de recherche et de réservation de restaurants en Europe. Testez ResaR Manager, notre logiciel de réservation et de gestion de tables. Visibilité et inscription gratuite. Facturation à l'utilisation : les commissions sont basées sur le nombre de couverts réservés et honorés.</p>
         </div>
 
-        <form method="POST" action="?page=register-restaurant" enctype="multipart/form-data">
-            <!-- Section Informations Personnelles -->
+        <form method="POST" action="?page=register-user">
             <div class="section section-personnel">
                 <h3>Vos informations personnelles</h3>
                 <input type="text" name="prenom" placeholder="Prénom" value="Res" required>
                 <input type="text" name="nom" placeholder="Nom" value="Tau" required>
                 <input type="email" name="email" placeholder="Email" value="res.tau@gmail.com" required>
                 <input type="tel" name="telephone" pattern="[0-9]{10}" maxlength="10" placeholder="Votre téléphone" value="0123456789" required>
+                <input type="password" name="password" placeholder="Mot de passe" value="Password@456" required>
+                <input type="password" name="passwordRepeat" placeholder="Confirmation du mot de passe" value="Password@456" required>
             </div>
-
+            <button type="submit" name="userSubmit">S'inscrire</button>
+        </form>
+        <!-- Section Informations Personnelles -->
+        
+        <form method="POST" action="?page=register-restaurant" enctype="multipart/form-data">
             <!-- Section Informations Restaurant -->
             <div class="section section-restaurant">
                 <h3>Informations sur votre restaurant</h3>
                 <input type="text" name="nomRestaurant" placeholder="Nom du restaurant" value="ResiTauto" required>
                 <input type="text" name="address" placeholder="Adresse" value="12 place des roues" required>
                 <input type="text" name="city" placeholder="Ville" value="Lille" required>
-                <input type="text" name="zipCode" placeholder="Code postal" value="59000" required>
+                <input type="text" name="zip_Code" placeholder="Code postal" value="59000" required>
                 <input type="text" name="country" placeholder="Pays" value="france" required>
                 <textarea name="description" placeholder="Décrivez votre restaurant"></textarea>
-            </div>
-
-            <!-- Section Sécurité -->
-            <div class="section section-securite">
-                <h3>Informations de connexion</h3>
-                <input type="password" name="password" placeholder="Mot de passe" value="Password@456" required>
-                <input type="password" name="passwordRepeat" placeholder="Confirmation du mot de passe" value="Password@456" required>
             </div>
 
             <!-- Section Upload -->
