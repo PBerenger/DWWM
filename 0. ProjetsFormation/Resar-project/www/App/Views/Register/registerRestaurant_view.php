@@ -52,7 +52,7 @@
 
     </div>
 
-    <div class="rrestaurant-mid">
+    <div id="rrestaurant-mid" class="rrestaurant-mid">
         <h2>Pourquoi s'inscrire sur <span class="miroir-h">R</span>es<span class="miroir-xy">e</span>R ?</h2>
 
         <div class="reasons-container">

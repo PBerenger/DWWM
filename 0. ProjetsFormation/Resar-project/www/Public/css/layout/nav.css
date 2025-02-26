@@ -11,37 +11,6 @@ header nav {
   justify-content: space-between;
   padding: 0 20px;
 }
-header nav .search-bar-fixed {
-  position: fixed;
-  top: 0px;
-  left: 0;
-  right: 0;
-  padding: 10px;
-  background-color: rgba(255, 255, 255, 0.8);
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--primary-color);
-  /* Départ caché */
-  opacity: 0;
-  transform: translateY(-50px);
-  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
-}
-header nav .search-bar-fixed.active {
-  top: -1px;
-  opacity: 1;
-  transform: translateY(0);
-  width: 100%;
-}
-header nav .search-bar-fixed input {
-  width: 80vW;
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 5px;
-  border: none;
-  outline: none;
-}
 header nav ul {
   justify-content: flex-end;
   list-style: none;
@@ -73,11 +42,8 @@ header nav .search-bar-nav input {
   border-bottom: 2px solid var(--primary-background);
 }
 header nav .user-status {
-  margin-right: 10px;
-  /* Espacement entre le smiley et la barre de recherche */
+  margin-right: 20px;
   font-size: 1.5rem;
-  /* Taille du smiley */
-  cursor: pointer;
 }
 .register-menu {
   position: fixed;

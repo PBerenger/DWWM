@@ -20,11 +20,6 @@
 <body>
     <header>
         <nav>
-            <div class="search-bar-fixed">
-                <form method="GET" action="index.php?page=search">
-                    <input type="text" name="search" placeholder="Rechercher un restaurant..." id="search-input" value="<?= htmlspecialchars($_GET['search'] ?? '') ?>">
-                </form>
-            </div>
 
             <button class="logo1" onclick="window.location.href='?page=home'">
                 <img src="assets/logo/logo1.png" alt="Logo-txt Accueil">

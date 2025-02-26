@@ -45,21 +45,18 @@
         <h2>LE site pour trouver un restaurant près de chez vous !</h2>
         <div class="separation"></div>
         
-        <div class="home-img-background"></div>
+        <div class="home-img-background1"></div>
         
         <div class="separation"></div>
-        <div class="home-mid2">
-            <h2>Inscrivez-vous</h2>
-            <p>Créez un compte pour réserver une table, laisser des avis, et partager vos expériences culinaires avec la communauté.</p>
-            <a href="index.php?page=register" class="btn-more-info">S'inscrire</a>
-            
-            <div class="separation"></div>
-            
+        <div class="home-mid2">     
             <h2>Enregistrez votre restaurant</h2>
             <p>Propriétaire d'un restaurant ? Inscrivez-vous pour ajouter votre établissement à notre base de données.</p>
-            <a href="index.php?page=restaurant_registration" class="btn-more-info">Enregistrer un restaurant</a>
+            <a href="index.php?page=register-restaurant" class="btn-more-info">Enregistrer un restaurant</a>
+            <a href="index.php?page=register-restaurant#rrestaurant-mid" class="btn-more-info">En savoir plus</a>
         </div>
         
+        <div class="home-img-background2"></div>
+
         <div class="separation"></div>
         <div class="home-bot">
             <h2>Vos avis</h2>
